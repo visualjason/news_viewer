@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-10",
+    "revision": 1,
+    "title": "把 Agent 工具链做稳：4 条当天更新与一篇 CVPR 精读",
+    "item_count": 5,
+    "path": "data/archive/2026-10-10-r1.json"
+  },
+  {
     "issue_date": "2026-10-07",
     "revision": 1,
     "title": "把信息流，整理成值得读的一期",

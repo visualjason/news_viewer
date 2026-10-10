@@ -1,0 +1,128 @@
+{
+  "collected_at": "2026-10-10T18:01:15.927Z",
+  "window": {
+    "start": "2026-10-09T16:00:00Z",
+    "end": "2026-10-10T16:00:00Z",
+    "timezone": "Asia/Shanghai",
+    "end_exclusive": true
+  },
+  "releases": [
+    {
+      "repository": "RekklesNA/ProxmoxMCP-Plus",
+      "tag": "v0.6.1",
+      "published_at": "2026-10-09T16:00:12Z",
+      "url": "https://github.com/RekklesNA/ProxmoxMCP-Plus/releases/tag/v0.6.1",
+      "api_url": "https://api.github.com/repos/RekklesNA/ProxmoxMCP-Plus/releases/tags/v0.6.1"
+    },
+    {
+      "repository": "dinglebear-ai/labby",
+      "tag": "v2.6.2",
+      "published_at": "2026-10-10T02:37:34Z",
+      "url": "https://github.com/dinglebear-ai/labby/releases/tag/v2.6.2",
+      "api_url": "https://api.github.com/repos/dinglebear-ai/labby/releases/tags/v2.6.2"
+    },
+    {
+      "repository": "elicitly/elicitly",
+      "tag": "elicitly@0.8.3",
+      "published_at": "2026-10-10T05:53:46Z",
+      "url": "https://github.com/elicitly/elicitly/releases/tag/elicitly%400.8.3",
+      "api_url": "https://api.github.com/repos/elicitly/elicitly/releases/tags/elicitly%400.8.3"
+    },
+    {
+      "repository": "zensation-ai/zenbrain",
+      "tag": "v0.5.0",
+      "published_at": "2026-10-10T06:30:46Z",
+      "url": "https://github.com/zensation-ai/zenbrain/releases/tag/v0.5.0",
+      "api_url": "https://api.github.com/repos/zensation-ai/zenbrain/releases/tags/v0.5.0"
+    }
+  ],
+  "registry": {
+    "records_fetched": 100,
+    "pagination_complete": false,
+    "metadata": {
+      "nextCursor": "app.sallim/korea-realty:0.101.9",
+      "count": 100
+    }
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "未核实到当天合格新条目",
+      "detail": "已检查的 cs.AI recent 列表未提供可纳入 10 月 10 日的证据；不是对全部分类或全部投稿的穷尽结论。",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent"
+      ]
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "无合格日期证据",
+      "detail": "检查博客及候选文章；可核实的近期候选为 10 月 9 日，排除。",
+      "urls": [
+        "https://huggingface.co/blog",
+        "https://huggingface.co/blog/allenai/impactful-scheduling"
+      ]
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "未核实到当天合格新条目",
+      "detail": "METR、Artificial Analysis 与 NIST 检查中未取得满足日期与方法要求的 10 月 10 日新发布证据；动态页面存在覆盖限制。",
+      "urls": [
+        "https://metr.org/blog/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ]
+    },
+    {
+      "id": "langchain",
+      "status": "无合格日期证据",
+      "detail": "检查博客与最近 release；核实的近期条目早于本期窗口，排除。",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ]
+    },
+    {
+      "id": "llamaindex",
+      "status": "无合格日期证据",
+      "detail": "检查博客与 core release；未核实到本期窗口内的发布。",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ]
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "无协议新闻入选",
+      "detail": "协议及 TypeScript SDK 未核实到当天正式更新；第三方项目更新归入实践渠道，不代表协议变更。",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol/typescript-sdk/releases"
+      ]
+    },
+    {
+      "id": "openai-news",
+      "status": "无合格日期证据",
+      "detail": "官方新闻页可核实的近期候选早于 10 月 10 日，未纳入。",
+      "urls": [
+        "https://openai.com/news/"
+      ]
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "4 条正式 release 入选",
+      "detail": "Registry 查询仅读取第一批 100 条记录，按时间窗口过滤后回查 Labby、Elicitly、ZenBrain 的正式 release；另从项目正式发布核实 ProxmoxMCP-Plus。未遍历全部分页，注册不等于质量或安全认证。",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/v0.1/servers?limit=100&updated_since=2026-10-09T16%3A00%3A00Z"
+      ]
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "无合格日期证据",
+      "detail": "检查官网与 cookbook，未核实到当天有明确发布日期的合格更新；未调用付费服务。",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ]
+    }
+  ]
+}
