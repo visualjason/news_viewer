@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {safeUrl,validateIssue,selectItems,categoryOf} from '../lib.mjs';
+test('禁止脚本和本地来源链接',()=>{assert.equal(safeUrl('javascript:alert(1)'),null);assert.equal(safeUrl('file:///etc/passwd'),null);assert.equal(safeUrl('https://example.com'),'https://example.com/');});
+test('分类兼容和搜索可组合',()=>{const items=[{title:'Agent Tool',type:'blog',editorial_section:'ai_practice'},{title:'Release',type:'product'}];assert.equal(categoryOf(items[1]),'news');assert.equal(selectItems(items,'practice',' agent ').length,1);assert.equal(selectItems(items,'news','agent').length,0);});
+test('拒绝无效日期和重复条目',()=>{const issue={schema_version:'1.0',issue_date:'2026-10-07',revision:1,items:[{item_id:'a',title:'A'}]};assert.equal(validateIssue(issue),issue);assert.throws(()=>validateIssue({...issue,issue_date:'2026-02-30'}));assert.throws(()=>validateIssue({...issue,items:[...issue.items,...issue.items]}));});

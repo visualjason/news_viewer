@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "issue_date": "2026-10-07",
+  "revision": 1,
+  "briefing": {
+    "headline": "把信息流，整理成值得读的一期",
+    "takeaway": "这是一份用于验证阅读器的演示日报。新闻内容由你自己的采集或编辑流程提供；阅读器负责清晰呈现、分类和保留来源。",
+    "actions": [
+      "选择一个分类，快速扫描本期重点。",
+      "展开详情核对证据，再打开原始来源。",
+      "通过 JSON 导入，把自己的日报接入阅读器。"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "demo-reader",
+      "type": "github",
+      "title": "一个无需框架的日报阅读器",
+      "summary": "以静态页面和结构化 JSON 组织每日精选，适合在 GitHub Pages 上部署。此条为功能演示，不代表真实新闻。",
+      "why_it_matters": "数据与界面分离，更新日报不需要修改页面代码。",
+      "technical_analysis": "浏览器读取归档目录，根据 URL hash 加载指定期刊，再使用 DOM API 渲染文本。",
+      "application": "运行 npm run import -- issue.json 导入你自己的内容。",
+      "canonical_url": "https://github.com/visualjason/news_viewer",
+      "sources": [
+        {
+          "ref_id": "repo",
+          "title": "News Viewer 仓库",
+          "publisher": "GitHub",
+          "url": "https://github.com/visualjason/news_viewer"
+        }
+      ],
+      "deep_dive": [
+        {
+          "heading": "如何接入日报",
+          "content": "准备符合 schema_version 1.0 的 JSON，运行导入命令后提交 data 目录。\n同一天的不同修订使用 revision 区分。",
+          "ref_ids": [
+            "repo"
+          ]
+        }
+      ],
+      "caveats": "本项目不包含新闻采集、模型调用或事实核验服务。"
+    },
+    {
+      "item_id": "demo-practice",
+      "type": "blog",
+      "editorial_section": "ai_practice",
+      "title": "让每条摘要保留来源与行动建议",
+      "summary": "演示实践类内容的分类呈现：摘要、关注理由、下一步和证据分层展示。",
+      "why_it_matters": "读者可以先判断是否相关，再决定是否深入阅读。",
+      "application": "给条目填写 sources、evidence_note 和 caveats。",
+      "evidence_note": "此条仅用于展示数据字段。",
+      "practice": {
+        "try_it": [
+          "填写摘要与来源。",
+          "预览并检查原文链接。"
+        ],
+        "requirements": [
+          "Node.js 20 或更高版本"
+        ],
+        "limitations": [
+          "内容质量由上游编辑流程负责。"
+        ]
+      }
+    }
+  ],
+  "selection_notes": [
+    "本期为本项目自编的演示数据，不是参考站新闻内容。"
+  ]
+}
