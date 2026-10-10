@@ -1,0 +1,21 @@
+{
+  "timezone": "Asia/Shanghai",
+  "sources": [
+    {"id":"arxiv-ai","requested_id":"anxiv-ai","note":"暂按 arXiv AI 理解","urls":["https://arxiv.org/list/cs.AI/recent","https://arxiv.org/list/cs.CV/recent","https://arxiv.org/list/cs.LG/recent"],"focus":"AI、视觉、机器学习论文；预印本不能冒充会议已录用论文"},
+    {"id":"huggingface-blog","urls":["https://huggingface.co/blog"],"focus":"区分官方与社区作者，回到模型、代码和论文验证"},
+    {"id":"independent-evaluations","urls":["https://metr.org/","https://artificialanalysis.ai/","https://www.nist.gov/ai-measurement-and-evaluation"],"focus":"独立评测发现渠道；必须核实方法、样本、模型版本和测试日期，不能只转排行榜"},
+    {"id":"langchain","urls":["https://www.langchain.com/blog","https://github.com/langchain-ai/langchain/releases"],"focus":"Agent、LangGraph、评测和工程实践"},
+    {"id":"llamaindex","urls":["https://www.llamaindex.ai/blog","https://github.com/run-llama/llama_index/releases"],"focus":"RAG、文档处理、Agent 和工程实践"},
+    {"id":"modelcontextprotocol","urls":["https://modelcontextprotocol.io/","https://github.com/modelcontextprotocol"],"focus":"协议规范、SDK 和正式发布"},
+    {"id":"openai-news","urls":["https://openai.com/news/"],"focus":"官方产品和研究公告，区分公告与独立验证"},
+    {"id":"mcp-registry-practice","urls":["https://registry.modelcontextprotocol.io/"],"focus":"发现有源代码、安装说明、权限边界和使用案例的 MCP；注册不等于安全审核通过"},
+    {"id":"tinyfish-practice-discovery","urls":["https://www.tinyfish.ai/","https://github.com/tinyfish-io/tinyfish-cookbook"],"focus":"官方 Web Agent 示例和可复现实践；不默认调用付费服务或安装发现的代码"}
+  ],
+  "daily_paper": {
+    "count": 1,
+    "venues_priority": ["CVPR","ICCV","ECCV"],
+    "discovery_urls": ["https://openaccess.thecvf.com/","https://www.ecva.net/papers.php"],
+    "topics": ["目标检测","分割","多模态视觉","3D 视觉","视频理解","高效部署"],
+    "policy": "优先最近已正式收录且未分析的论文；可选经典论文，明确原始会议年份与今日分析日期。必须读取正文核实实验，不根据摘要编造详细分析。"
+  }
+}
