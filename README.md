@@ -42,3 +42,9 @@ npm run build
 - 默认数据明确标注为演示，不复制参考站新闻正文。
 
 技术分析与实现方案见 `docs/implementation.md`。
+
+## GitHub 热门与飙升
+
+日报新增独立分类，展示 AI 项目的用途、Star 总数、真实观测增量与采集时间。高 Star 是编辑精选，不是 GitHub 全站排名；首次采集显示“暂无增长基线”。项目精选不计入最近 24 小时新发布新闻。
+
+采集命令：`node scripts/github-radar.mjs <仓库外输出.json>`。配置见 `config/github-radar.json`，增长规则与历史保存见 `docs/daily-editorial.md`。采集器只读取公开 API 并输出候选快照，需由每日任务核实项目内容后导入日报。

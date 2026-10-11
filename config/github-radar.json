@@ -1,0 +1,10 @@
+{
+  "high_star_min": 10000,
+  "rising_min_delta": 100,
+  "baseline_min_hours": 20,
+  "baseline_max_hours": 28,
+  "daily_limit": 4,
+  "queries": ["topic:llm stars:>10000 archived:false", "topic:ai-agent stars:>100 archived:false"],
+  "watchlist": ["langchain-ai/langgraph", "langgenius/dify", "vllm-project/vllm", "ollama/ollama"],
+  "policy": "仅选 AI 相关项目。高 Star 为编辑精选，不冒充全站排名；飙升只按相同仓库 node_id 的真实相邻快照计算，不将 pushed_at 或总 Star 当增量。首次采集为基线，不得伪造历史增长。"
+}

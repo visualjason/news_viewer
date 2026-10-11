@@ -1,4 +1,4 @@
-import {categories,keyOf,categoryOf,safeUrl,validateIssue,selectItems,readMinutes} from './lib.mjs';
+import {categories,keyOf,categoryOf,safeUrl,validateIssue,selectItems,readMinutes,radarLabels} from './lib.mjs';
 const $ = id => document.getElementById(id);
 const node = (tag,text,cls) => { const e=document.createElement(tag); if(text != null)e.textContent=text; if(cls)e.className=cls; return e; };
 let catalog=[], issue, activeCategory='all', generation=0;
@@ -21,6 +21,7 @@ function renderStories(){
     const section=node('section',null,'category');section.id=`category-${type}`;section.append(node('h2',name));
     for(const item of group){
       const card=node('article',null,'story');const meta=node('div',null,'story-meta');meta.append(node('span',name,'badge'),node('span',item.publisher||item.sources?.[0]?.publisher||''));card.append(meta,node('h3',item.title),node('p',item.summary||'','summary'));paragraph(card,'值得关注',item.why_it_matters);paragraph(card,'建议行动',item.application);
+      const metrics=radarLabels(item.github_metrics);if(metrics.length){const strip=node('div',null,'github-metrics');for(const label of metrics)strip.append(node('span',label));card.insertBefore(strip,card.querySelector('h3'));}
       const details=node('details');details.append(node('summary','深入详情与原始证据 ＋'));const body=node('div',null,'detail-body');paragraph(body,'编辑解读',item.technical_analysis);paragraph(body,'证据范围',item.evidence_note);
       for(const part of item.deep_dive||[]){body.append(node('h4',part.heading),node('p',part.content));for(const id of part.ref_ids||[]){const source=(item.sources||[]).find(s=>s.ref_id===id);if(source)body.append(anchor(`↗ ${source.publisher||source.title}`,source.url));}}
       paragraph(body,'限制与边界',item.caveats);
