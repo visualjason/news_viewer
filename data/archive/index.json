@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-11",
+    "revision": 1,
+    "title": "新增 GitHub 热门项目观察：从 Star 热度回到工程用途",
+    "item_count": 5,
+    "path": "data/archive/2026-10-11-r1.json"
+  },
+  {
     "issue_date": "2026-10-10",
     "revision": 1,
     "title": "把 Agent 工具链做稳：4 条当天更新与一篇 CVPR 精读",

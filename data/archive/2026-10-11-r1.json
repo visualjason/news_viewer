@@ -1,0 +1,355 @@
+{
+  "schema_version": "1.0",
+  "issue_date": "2026-10-11",
+  "revision": 1,
+  "generated_at": "2026-10-11T01:40:45.913Z",
+  "window": {
+    "start": "2026-10-10T01:33:21.179Z",
+    "end": "2026-10-11T01:33:21.179Z",
+    "timezone": "Asia/Shanghai",
+    "end_exclusive": true
+  },
+  "briefing": {
+    "headline": "新增 GitHub 热门项目观察：从 Star 热度回到工程用途",
+    "takeaway": "本期新增 4 个 AI 高 Star 项目精选，并建立 40 个候选的真实指标基线；首次采集不宣称日增长。另附 CVPR 2022 Mask2Former 历史论文精读。本轮未筛出足够可核实且未重复的高价值新闻，不用旧闻补数。",
+    "actions": [
+      "按本地运行、应用工作流、推理服务和 Agent 编排选择相关项目。",
+      "查看 Star 采集时间；待相邻每日快照建立后再比较实际增长。",
+      "分割任务选型同时检查小目标、边界和完整推理链路。"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "github-radar-R_kgDOJ0Z1Pg",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "title": "Ollama：本地模型运行与应用接入",
+      "summary": "面向本地模型使用的工具，提供模型运行与 API 接入路径。适合个人实验、原型和需要控制运行位置的场景。",
+      "why_it_matters": "把模型运行环境与应用调用分开，便于快速验证模型是否适合任务。",
+      "application": "先用小模型检查内存、输出质量与调用延迟，再决定是否接入现有应用。",
+      "technical_analysis": "本条为高 Star 项目精选，不是今日新发布公告。编辑按工程用途挑选，未对项目执行安装或性能测试；具体可用功能以固定版本文档为准。",
+      "evidence_note": "Star 总数来自 GitHub 仓库 API，采集时间 2026-10-11T01:38:10.004Z。本次从两个 AI topic 搜索各取前 20 个项目，并合并观察名单，取得 40 个去重候选。本地尚无历史快照，增长值为 null；不是全站排名。",
+      "caveats": "模型权重有各自许可证与资源要求；项目热度不代表每个模型都适合离线或商用。",
+      "canonical_url": "https://github.com/ollama/ollama",
+      "sources": [
+        {
+          "ref_id": "repo",
+          "title": "项目 README 与原始仓库",
+          "publisher": "ollama/ollama",
+          "url": "https://github.com/ollama/ollama"
+        },
+        {
+          "ref_id": "api",
+          "title": "GitHub 仓库指标 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/ollama/ollama"
+        }
+      ],
+      "github_metrics": {
+        "stars": 182668,
+        "forks": 18194,
+        "observed_at": "2026-10-11T01:38:10.004Z",
+        "stars_delta": null,
+        "previous_observed_at": null,
+        "license": "MIT"
+      },
+      "key_facts": [
+        {
+          "fact": "语言：Go；API 许可证标识：MIT。"
+        }
+      ]
+    },
+    {
+      "item_id": "github-radar-R_kgDOJVxJug",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "title": "Dify：把 Agent 工作流与 RAG 组织成应用",
+      "summary": "提供工作流、模型与工具集成的应用平台，适合希望快速组织和迭代 AI 应用的团队。",
+      "why_it_matters": "可视化流程降低原型搭建成本，但正式应用仍需要评测、权限与运维约定。",
+      "application": "选择一条小型文档问答流程，检查检索质量、失败分支及人工复核节点。",
+      "technical_analysis": "本条为高 Star 项目精选，不是今日新发布公告。编辑按工程用途挑选，未对项目执行安装或性能测试；具体可用功能以固定版本文档为准。",
+      "evidence_note": "Star 总数来自 GitHub 仓库 API，采集时间 2026-10-11T01:38:09.226Z。本次从两个 AI topic 搜索各取前 20 个项目，并合并观察名单，取得 40 个去重候选。本地尚无历史快照，增长值为 null；不是全站排名。",
+      "caveats": "GitHub API 许可证标识为 NOASSERTION；使用前需阅读仓库实际 LICENSE 和附加条款，不能直接认定为标准宽松许可证。",
+      "canonical_url": "https://github.com/langgenius/dify",
+      "sources": [
+        {
+          "ref_id": "repo",
+          "title": "项目 README 与原始仓库",
+          "publisher": "langgenius/dify",
+          "url": "https://github.com/langgenius/dify"
+        },
+        {
+          "ref_id": "api",
+          "title": "GitHub 仓库指标 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/langgenius/dify"
+        }
+      ],
+      "github_metrics": {
+        "stars": 158102,
+        "forks": 24963,
+        "observed_at": "2026-10-11T01:38:09.226Z",
+        "stars_delta": null,
+        "previous_observed_at": null,
+        "license": "NOASSERTION"
+      },
+      "key_facts": [
+        {
+          "fact": "语言：TypeScript；API 许可证标识：NOASSERTION。"
+        }
+      ]
+    },
+    {
+      "item_id": "github-radar-R_kgDOI7xefg",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "title": "vLLM：面向服务端的大模型推理引擎",
+      "summary": "面向大模型推理与服务部署的项目，适合已有 GPU 环境、需要评估并发与吞吐的团队。",
+      "why_it_matters": "服务效果取决于模型、显存、请求长度和并发结构，需要在真实负载下测量。",
+      "application": "固定模型与推理精度，比较首 token 延迟、输出速度、p95 和峰值显存。",
+      "technical_analysis": "本条为高 Star 项目精选，不是今日新发布公告。编辑按工程用途挑选，未对项目执行安装或性能测试；具体可用功能以固定版本文档为准。",
+      "evidence_note": "Star 总数来自 GitHub 仓库 API，采集时间 2026-10-11T01:38:09.633Z。本次从两个 AI topic 搜索各取前 20 个项目，并合并观察名单，取得 40 个去重候选。本地尚无历史快照，增长值为 null；不是全站排名。",
+      "caveats": "不根据项目介绍推断任意硬件上的加速倍数；需逐项核对模型与设备支持。",
+      "canonical_url": "https://github.com/vllm-project/vllm",
+      "sources": [
+        {
+          "ref_id": "repo",
+          "title": "项目 README 与原始仓库",
+          "publisher": "vllm-project/vllm",
+          "url": "https://github.com/vllm-project/vllm"
+        },
+        {
+          "ref_id": "api",
+          "title": "GitHub 仓库指标 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/vllm-project/vllm"
+        }
+      ],
+      "github_metrics": {
+        "stars": 93527,
+        "forks": 23224,
+        "observed_at": "2026-10-11T01:38:09.633Z",
+        "stars_delta": null,
+        "previous_observed_at": null,
+        "license": "Apache-2.0"
+      },
+      "key_facts": [
+        {
+          "fact": "语言：Python；API 许可证标识：Apache-2.0。"
+        }
+      ]
+    },
+    {
+      "item_id": "github-radar-R_kgDOKFU0lQ",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "title": "LangGraph：有状态 Agent 的流程编排",
+      "summary": "提供构建有状态 Agent 流程的编排能力，适合需要控制执行路径、恢复和人工介入的应用。",
+      "why_it_matters": "复杂 Agent 的工程问题常在跨步骤状态与失败恢复，而非单次模型调用。",
+      "application": "用一个含人工确认和故障恢复的小流程，验证状态是否可解释、恢复是否一致。",
+      "technical_analysis": "本条为高 Star 项目精选，不是今日新发布公告。编辑按工程用途挑选，未对项目执行安装或性能测试；具体可用功能以固定版本文档为准。",
+      "evidence_note": "Star 总数来自 GitHub 仓库 API，采集时间 2026-10-11T01:38:08.880Z。本次从两个 AI topic 搜索各取前 20 个项目，并合并观察名单，取得 40 个去重候选。本地尚无历史快照，增长值为 null；不是全站排名。",
+      "caveats": "框架不能替代工具权限、业务审批与效果评测；不能用 Star 数证明可靠性。",
+      "canonical_url": "https://github.com/langchain-ai/langgraph",
+      "sources": [
+        {
+          "ref_id": "repo",
+          "title": "项目 README 与原始仓库",
+          "publisher": "langchain-ai/langgraph",
+          "url": "https://github.com/langchain-ai/langgraph"
+        },
+        {
+          "ref_id": "api",
+          "title": "GitHub 仓库指标 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/langchain-ai/langgraph"
+        }
+      ],
+      "github_metrics": {
+        "stars": 43029,
+        "forks": 7309,
+        "observed_at": "2026-10-11T01:38:08.880Z",
+        "stars_delta": null,
+        "previous_observed_at": null,
+        "license": "MIT"
+      },
+      "key_facts": [
+        {
+          "fact": "语言：Python；API 许可证标识：MIT。"
+        }
+      ]
+    },
+    {
+      "item_id": "cvpr2022-mask2former-2112-01527",
+      "type": "paper",
+      "title": "历史论文精读 · CVPR 2022：Mask2Former 如何统一三类分割架构",
+      "summary": "Masked-Attention Mask Transformer for Universal Image Segmentation，作者 Bowen Cheng、Ishan Misra、Alexander G. Schwing、Alexander Kirillov、Rohit Girdhar；CVPR 2022，1290–1299 页。本次分析日期为 2026-10-11，属于历史论文专题。",
+      "why_it_matters": "同一架构可复用到语义、实例和全景分割，减少为每个任务单独维护模型设计的工作。",
+      "application": "适合同时维护多类分割任务的团队。先明确标签、输出格式与评价指标，再判断统一架构能否降低维护成本。",
+      "technical_analysis": "研究问题是通用分割架构与专用模型之间的精度和训练效率差距。Mask2Former 以预测掩码限制交叉注意力的空间区域，并逐层轮换多尺度特征；“架构通用”不等于一份权重无需适配即可完成全部任务。",
+      "paper_metadata": {
+        "arxiv_id": "2112.01527",
+        "title": "Masked-Attention Mask Transformer for Universal Image Segmentation",
+        "venue": "CVPR",
+        "year": 2022,
+        "pages": "1290–1299",
+        "analysis_date": "2026-10-11",
+        "historical": true
+      },
+      "evidence_note": "已实际阅读 arXiv HTML 正文的方法、训练设置、实验消融和局限。正式 CVPR 论文集条目核对收录，作者仓库核对代码存在。指标为作者报告，本期未复现。",
+      "canonical_url": "https://openaccess.thecvf.com/content/CVPR2022/html/Cheng_Masked-Attention_Mask_Transformer_for_Universal_Image_Segmentation_CVPR_2022_paper.html",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "CVPR 2022 正式论文集记录",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/CVPR2022?day=2022-06-21"
+        },
+        {
+          "ref_id": "paper",
+          "title": "Mask2Former 全文",
+          "publisher": "论文作者",
+          "url": "https://arxiv.org/html/2112.01527"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者代码仓库",
+          "publisher": "facebookresearch",
+          "url": "https://github.com/facebookresearch/Mask2Former"
+        }
+      ],
+      "deep_dive": [
+        {
+          "heading": "方法与创新：让查询只看当前候选区域",
+          "content": "骨干提取特征 → 像素解码器 → 掩码约束的 Transformer 解码器 → 类别与掩码。前一层的预测区域约束下一层交叉注意力，不依赖真实标注作为推理输入；多尺度轮换兼顾细节与计算。训练还在采样点上计算掩码损失。",
+          "ref_ids": [
+            "paper"
+          ]
+        },
+        {
+          "heading": "实验与消融：精度提高并非免费提速",
+          "content": "表 2 的 COCO val2017 实例分割：R50、100 queries、50 epochs 为 43.7 AP、9.7 FPS。第 4.2 节计时条件是 V100、batch=1，包含后处理，不能当作当前硬件速度。表 4 的 R50 消融去掉 masked attention 后，AP 从 43.7 降至 37.8；说明该设计在这些比较条件下有贡献。",
+          "ref_ids": [
+            "paper"
+          ]
+        },
+        {
+          "heading": "局限：统一的是设计，任务训练仍需区分",
+          "content": "第 4.6 节及表 7 指出，使用全景标注训练的模型在其他任务上仍落后于相应任务专门训练的同架构模型，小目标也有不足。编辑判断：评估时应分别看任务精度、边界质量和小目标切片，不能只以“通用”概括迁移效果。",
+          "ref_ids": [
+            "paper"
+          ]
+        },
+        {
+          "heading": "复现条件与步骤（未执行）",
+          "content": "①固定作者仓库 commit、配置、权重与 Detectron2／CUDA 依赖，先检查历史依赖能否构建；②按 COCO val2017 实例分割配置核对 AP、AP_S 和边界质量，另行验证语义／全景任务；③保持输入缩放、骨干与训练设置一致，再做 masked attention 消融；④记录预处理、模型、后处理耗时及显存，针对本项目的数据和延迟预算决定是否采用。不要把更换骨干或输入大小的差异归因于单个模块。",
+          "ref_ids": [
+            "code"
+          ]
+        }
+      ],
+      "caveats": "2022 年结果不代表当下最优。未下载数据集、权重或执行第三方代码；复现卡是待执行方案。"
+    }
+  ],
+  "source_stats": {
+    "news_count": 0,
+    "github_radar_count": 4,
+    "historical_paper_count": 1,
+    "github_candidates": 40,
+    "registry_records_fetched": 100,
+    "registry_pagination_complete": false,
+    "coverage": [
+      {
+        "id": "arxiv-ai",
+        "status": "未收录新的合格新闻",
+        "detail": "已打开三个 recent 列表，最新可见日期为 10 月 9 日，未取得本次窗口内的合格新发布证据。",
+        "urls": [
+          "https://arxiv.org/list/cs.AI/recent",
+          "https://arxiv.org/list/cs.CV/recent",
+          "https://arxiv.org/list/cs.LG/recent"
+        ]
+      },
+      {
+        "id": "huggingface-blog",
+        "status": "未收录新的合格新闻",
+        "detail": "检查博客及候选文章；可核实的近期候选为 10 月 9 日，排除。",
+        "urls": [
+          "https://huggingface.co/blog",
+          "https://huggingface.co/blog/allenai/impactful-scheduling"
+        ]
+      },
+      {
+        "id": "independent-evaluations",
+        "status": "未收录新的合格新闻",
+        "detail": "METR、Artificial Analysis 与 NIST 检查中未取得满足日期与方法要求的 10 月 10 日新发布证据；动态页面存在覆盖限制。",
+        "urls": [
+          "https://metr.org/blog/",
+          "https://artificialanalysis.ai/",
+          "https://www.nist.gov/ai-measurement-and-evaluation"
+        ]
+      },
+      {
+        "id": "langchain",
+        "status": "未收录新的合格新闻",
+        "detail": "已打开博客，检查最近 5 条 release，最新发布时间为 10 月 8 日 UTC，早于本次窗口。",
+        "urls": [
+          "https://www.langchain.com/blog",
+          "https://github.com/langchain-ai/langchain/releases"
+        ]
+      },
+      {
+        "id": "llamaindex",
+        "status": "未收录新的合格新闻",
+        "detail": "博客最近可见条目为 10 月 8 日；最近 5 条 core release 最新为 9 月 21 日。",
+        "urls": [
+          "https://www.llamaindex.ai/blog",
+          "https://github.com/run-llama/llama_index/releases"
+        ]
+      },
+      {
+        "id": "modelcontextprotocol",
+        "status": "未收录新的合格新闻",
+        "detail": "已打开协议博客，检查 TypeScript SDK 最近 5 条 release，最新为 10 月 5 日。另发现 Cloudflare 10 月 10 日 skills 公告，但页面只给日期，缺乏时区及精确时间，无法确认严格滚动 24 小时边界，未作为合格新闻收录。",
+        "urls": [
+          "https://modelcontextprotocol.io/",
+          "https://github.com/modelcontextprotocol/typescript-sdk/releases",
+          "https://blog.modelcontextprotocol.io/",
+          "https://developers.cloudflare.com/changelog/post/2026-10-10-cloudflare-mcp-skills/"
+        ]
+      },
+      {
+        "id": "openai-news",
+        "status": "未收录新的合格新闻",
+        "detail": "官方新闻页可核实的近期候选早于 10 月 10 日，未纳入。",
+        "urls": [
+          "https://openai.com/news/"
+        ]
+      },
+      {
+        "id": "mcp-registry-practice",
+        "status": "未收录新的合格新闻",
+        "detail": "读取首批 100 条候选，未遍历后续分页。上一期已收录项目不重复；抽查 AnkiMCP 0.32.1 的正式 release 与 compare API，改动主要为评分入口，工程信息增量不足，排除。其他候选未逐一深入核验，不声称穷尽。",
+        "urls": [
+          "https://registry.modelcontextprotocol.io/v0.1/servers?limit=100&updated_since=2026-10-10T01%3A33%3A21.179Z"
+        ]
+      },
+      {
+        "id": "tinyfish-practice-discovery",
+        "status": "未收录新的合格新闻",
+        "detail": "已打开官网与 cookbook，release API 返回空数组；未取得窗口内有可靠发布时间的具体新实践。未调用付费服务。",
+        "urls": [
+          "https://www.tinyfish.ai/",
+          "https://github.com/tinyfish-io/tinyfish-cookbook"
+        ]
+      }
+    ]
+  },
+  "selection_notes": [
+    "新闻窗口为北京时间 2026-10-10 09:33:21 至 2026-10-11 09:33:21，按本次定时触发时间固定。",
+    "热门项目是截至采集时刻的工程精选，论文是历史专题，均不冒充最近 24 小时新发布新闻。",
+    "GitHub 取两个 AI topic 搜索的前 20 条并合并观察名单，共 40 个去重候选；不是全站热度榜。首次采集没有昨日快照，增长全部为 null。",
+    "九个指定渠道均检查并记录覆盖；Registry 未完整分页，动态页面及仅有日期的公告存在时间核验限制。",
+    "10 月 10 日已发布的 Labby、Elicitly、ZenBrain 等条目不重复收录。",
+    "完整来源覆盖和本期报告保存在 reports/daily/2026-10-11-r1.md。"
+  ]
+}
