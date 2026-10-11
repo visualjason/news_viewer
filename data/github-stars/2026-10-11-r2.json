@@ -1,0 +1,72 @@
+{
+  "collected_at": "2026-10-11T02:07:15.142Z",
+  "scope": "定向扩充通用开发工具；4 个项目首次观测，不替换 r1 的 40 项基线",
+  "lookback_days": 30,
+  "candidate_count": 4,
+  "queried_candidates": 4,
+  "repositories": [
+    {
+      "full_name": "oven-sh/bun",
+      "node_id": "MDEwOlJlcG9zaXRvcnkzNTc3Mjg5Njk=",
+      "stars": 96183,
+      "forks": 5106,
+      "description": "Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one",
+      "license": "NOASSERTION",
+      "language": "Rust",
+      "html_url": "https://github.com/oven-sh/bun",
+      "pushed_at": "2026-10-11T02:04:07Z",
+      "observed_at": "2026-10-11T02:05:43.158625Z",
+      "stars_delta": null,
+      "previous_observed_at": null
+    },
+    {
+      "full_name": "astral-sh/uv",
+      "node_id": "R_kgDOKbIFZQ",
+      "stars": 90593,
+      "forks": 3645,
+      "description": "An extremely fast Python package and project manager, written in Rust.",
+      "license": "Apache-2.0",
+      "language": "Rust",
+      "html_url": "https://github.com/astral-sh/uv",
+      "pushed_at": "2026-10-11T01:14:41Z",
+      "observed_at": "2026-10-11T02:05:40.0220683Z",
+      "stars_delta": null,
+      "previous_observed_at": null
+    },
+    {
+      "full_name": "junegunn/fzf",
+      "node_id": "MDEwOlJlcG9zaXRvcnkxMzgwNzYwNg==",
+      "stars": 83533,
+      "forks": 4984,
+      "description": ":cherry_blossom: A command-line fuzzy finder",
+      "license": "MIT",
+      "language": "Go",
+      "html_url": "https://github.com/junegunn/fzf",
+      "pushed_at": "2026-10-11T02:05:31Z",
+      "observed_at": "2026-10-11T02:05:41.0762814Z",
+      "stars_delta": null,
+      "previous_observed_at": null
+    },
+    {
+      "full_name": "sharkdp/bat",
+      "node_id": "MDEwOlJlcG9zaXRvcnkxMzA0NjQ5NjE=",
+      "stars": 60759,
+      "forks": 3966,
+      "description": "A cat(1) clone with wings.",
+      "license": "Apache-2.0",
+      "language": "Rust",
+      "html_url": "https://github.com/sharkdp/bat",
+      "pushed_at": "2026-10-07T19:49:04Z",
+      "observed_at": "2026-10-11T02:05:42.1345401Z",
+      "stars_delta": null,
+      "previous_observed_at": null
+    }
+  ],
+  "errors": [
+    {
+      "repository": "oven-sh/bun",
+      "endpoint": "releases/latest",
+      "reason": "Unauthenticated GitHub API rate limit; latest release not verified"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "issue_date": "2026-10-11",
-  "revision": 1,
-  "generated_at": "2026-10-11T01:40:45.913Z",
+  "revision": 2,
+  "generated_at": "2026-10-11T02:07:15.142Z",
   "window": {
     "start": "2026-10-10T01:33:21.179Z",
     "end": "2026-10-11T01:33:21.179Z",
@@ -10,45 +10,143 @@
     "end_exclusive": true
   },
   "briefing": {
-    "headline": "新增 GitHub 热门项目观察：从 Star 热度回到工程用途",
-    "takeaway": "本期新增 4 个 AI 高 Star 项目精选，并建立 40 个候选的真实指标基线；首次采集不宣称日增长。另附 CVPR 2022 Mask2Former 历史论文精读。本轮未筛出足够可核实且未重复的高价值新闻，不用旧闻补数。",
+    "headline": "从 Python 到终端与前端：4 个热门开发工具精选",
+    "takeaway": "按扩展后的范围，精选近一个月活跃的 Bun、uv、fzf、bat；展示真实 Star 总数与观测时间，暂不标记日增长。沿用今日 CVPR 2022 Mask2Former 论文精读，本修订没有新增已核实 AI 新闻。",
     "actions": [
-      "按本地运行、应用工作流、推理服务和 Agent 编排选择相关项目。",
-      "查看 Star 采集时间；待相邻每日快照建立后再比较实际增长。",
-      "分割任务选型同时检查小目标、边界和完整推理链路。"
+      "按 JavaScript 工具链、Python 环境、交互查找、终端代码阅读选择一个工具试用。",
+      "先在独立分支验证兼容性与收益，再决定迁移。",
+      "Star 增长待有效相邻每日快照后计算；今天保留真实基线。"
     ]
   },
   "items": [
     {
-      "item_id": "github-radar-R_kgDOJ0Z1Pg",
+      "item_id": "github-radar-MDEwOlJlcG9zaXRvcnkzNTc3Mjg5Njk=",
       "type": "github",
       "editorial_section": "github_radar",
-      "title": "Ollama：本地模型运行与应用接入",
-      "summary": "面向本地模型使用的工具，提供模型运行与 API 接入路径。适合个人实验、原型和需要控制运行位置的场景。",
-      "why_it_matters": "把模型运行环境与应用调用分开，便于快速验证模型是否适合任务。",
-      "application": "先用小模型检查内存、输出质量与调用延迟，再决定是否接入现有应用。",
-      "technical_analysis": "本条为高 Star 项目精选，不是今日新发布公告。编辑按工程用途挑选，未对项目执行安装或性能测试；具体可用功能以固定版本文档为准。",
-      "evidence_note": "Star 总数来自 GitHub 仓库 API，采集时间 2026-10-11T01:38:10.004Z。本次从两个 AI topic 搜索各取前 20 个项目，并合并观察名单，取得 40 个去重候选。本地尚无历史快照，增长值为 null；不是全站排名。",
-      "caveats": "模型权重有各自许可证与资源要求；项目热度不代表每个模型都适合离线或商用。",
-      "canonical_url": "https://github.com/ollama/ollama",
+      "title": "Bun：集中评估 JavaScript 运行、依赖、构建与测试",
+      "summary": "面向 JavaScript／TypeScript 应用的工具集，集成运行时、包管理器、构建与测试功能，适合用独立分支评估工具链。",
+      "why_it_matters": "统一工具入口可能减少配置维护，但收益取决于项目依赖、Node API 使用与部署环境。",
+      "application": "在隔离分支核对安装结果、测试和构建产物，再验证项目所需 Node API 与生产平台，最后决定是否迁移。",
+      "technical_analysis": "仓库最近推送为 2026-10-11T02:04:07Z；latest release 查询触发 GitHub API 限流，因此本期仅依据已核实仓库活动与 README 介绍。",
+      "evidence_note": "README 与仓库 API 已核对。Star 采集时间 2026-10-11T02:05:43.158625Z；近月活跃筛选依据 pushed_at，不能据此认定发布了新功能。本次定向核实 4 个通用开发工具，不是全站排名；没有有效每日增长基线。",
+      "caveats": "API 许可证标识为 NOASSERTION，使用前阅读实际 LICENSE 与依赖条款。未验证最新 release，也未做速度或 Node 完全兼容性判断。",
+      "canonical_url": "https://github.com/oven-sh/bun",
       "sources": [
         {
           "ref_id": "repo",
           "title": "项目 README 与原始仓库",
-          "publisher": "ollama/ollama",
-          "url": "https://github.com/ollama/ollama"
+          "publisher": "oven-sh/bun",
+          "url": "https://github.com/oven-sh/bun"
         },
         {
           "ref_id": "api",
           "title": "GitHub 仓库指标 API",
           "publisher": "GitHub",
-          "url": "https://api.github.com/repos/ollama/ollama"
+          "url": "https://api.github.com/repos/oven-sh/bun"
         }
       ],
       "github_metrics": {
-        "stars": 182668,
-        "forks": 18194,
-        "observed_at": "2026-10-11T01:38:10.004Z",
+        "stars": 96183,
+        "forks": 5106,
+        "observed_at": "2026-10-11T02:05:43.158625Z",
+        "stars_delta": null,
+        "previous_observed_at": null,
+        "license": "NOASSERTION"
+      },
+      "key_facts": [
+        {
+          "fact": "语言：Rust；API 许可证标识：NOASSERTION。"
+        },
+        {
+          "fact": "最近仓库推送：2026-10-11T02:04:07Z。"
+        }
+      ]
+    },
+    {
+      "item_id": "github-radar-R_kgDOKbIFZQ",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "title": "uv：把 Python 环境、依赖与工具管理放到同一流程",
+      "summary": "支持 Python 版本、项目依赖、锁文件及独立工具运行，适合需要统一本地开发与 CI 环境的 Python 团队。",
+      "why_it_matters": "环境准备与依赖解析分散在多个工具里，容易产生版本漂移；统一入口值得在一个小项目中验证。",
+      "application": "在试验分支明确固定 Python 版本，生成并提交锁文件，再用全新 CI 环境检查依赖同步与测试。",
+      "technical_analysis": "正式版 0.13.0 发布于 2026-10-09T19:49:55Z，包含默认 Python 版本与缓存兼容性调整；本期不将其归为最近 24 小时新公告。",
+      "evidence_note": "README 与仓库 API 已核对。Star 采集时间 2026-10-11T02:05:40.0220683Z；近月活跃筛选依据 pushed_at，不能据此认定发布了新功能。本次定向核实 4 个通用开发工具，不是全站排名；没有有效每日增长基线。",
+      "caveats": "本期未做性能基准或迁移测试。升级前阅读破坏性变更，不能仅按项目宣传推断加速倍数。",
+      "canonical_url": "https://github.com/astral-sh/uv",
+      "sources": [
+        {
+          "ref_id": "repo",
+          "title": "项目 README 与原始仓库",
+          "publisher": "astral-sh/uv",
+          "url": "https://github.com/astral-sh/uv"
+        },
+        {
+          "ref_id": "api",
+          "title": "GitHub 仓库指标 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/astral-sh/uv"
+        },
+        {
+          "ref_id": "release",
+          "title": "正式发布 0.13.0",
+          "publisher": "astral-sh/uv",
+          "url": "https://github.com/astral-sh/uv/releases/tag/0.13.0"
+        }
+      ],
+      "github_metrics": {
+        "stars": 90593,
+        "forks": 3645,
+        "observed_at": "2026-10-11T02:05:40.0220683Z",
+        "stars_delta": null,
+        "previous_observed_at": null,
+        "license": "Apache-2.0"
+      },
+      "key_facts": [
+        {
+          "fact": "语言：Rust；API 许可证标识：Apache-2.0。"
+        },
+        {
+          "fact": "最近仓库推送：2026-10-11T01:14:41Z。"
+        }
+      ]
+    },
+    {
+      "item_id": "github-radar-MDEwOlJlcG9zaXRvcnkxMzgwNzYwNg==",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "title": "fzf：给文件、历史命令和脚本增加交互筛选",
+      "summary": "通用命令行模糊查找器，可用于选择文件、搜索命令历史及构建终端菜单，也有 Shell 和编辑器集成。",
+      "why_it_matters": "适合频繁在大量路径或文本候选中定位目标的工作流，可以逐步接入已有脚本。",
+      "application": "先给一个只读文件列表接入 fzf，验证中文路径和空格处理，再考虑 Shell 历史与编辑器集成。",
+      "technical_analysis": "正式版 v0.74.4 发布于 2026-09-12T00:24:35Z，仍在近一个月范围内；发布说明列出终端转义与路径比较等修复。",
+      "evidence_note": "README 与仓库 API 已核对。Star 采集时间 2026-10-11T02:05:41.0762814Z；近月活跃筛选依据 pushed_at，不能据此认定发布了新功能。本次定向核实 4 个通用开发工具，不是全站排名；没有有效每日增长基线。",
+      "caveats": "交互筛选不等于全文搜索；复杂命令拼接需正确引用参数。本期未安装插件或执行第三方脚本。",
+      "canonical_url": "https://github.com/junegunn/fzf",
+      "sources": [
+        {
+          "ref_id": "repo",
+          "title": "项目 README 与原始仓库",
+          "publisher": "junegunn/fzf",
+          "url": "https://github.com/junegunn/fzf"
+        },
+        {
+          "ref_id": "api",
+          "title": "GitHub 仓库指标 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/junegunn/fzf"
+        },
+        {
+          "ref_id": "release",
+          "title": "正式发布 v0.74.4",
+          "publisher": "junegunn/fzf",
+          "url": "https://github.com/junegunn/fzf/releases/tag/v0.74.4"
+        }
+      ],
+      "github_metrics": {
+        "stars": 83533,
+        "forks": 4984,
+        "observed_at": "2026-10-11T02:05:41.0762814Z",
         "stars_delta": null,
         "previous_observed_at": null,
         "license": "MIT"
@@ -56,126 +154,58 @@
       "key_facts": [
         {
           "fact": "语言：Go；API 许可证标识：MIT。"
+        },
+        {
+          "fact": "最近仓库推送：2026-10-11T02:05:31Z。"
         }
       ]
     },
     {
-      "item_id": "github-radar-R_kgDOJVxJug",
+      "item_id": "github-radar-MDEwOlJlcG9zaXRvcnkxMzA0NjQ5NjE=",
       "type": "github",
       "editorial_section": "github_radar",
-      "title": "Dify：把 Agent 工作流与 RAG 组织成应用",
-      "summary": "提供工作流、模型与工具集成的应用平台，适合希望快速组织和迭代 AI 应用的团队。",
-      "why_it_matters": "可视化流程降低原型搭建成本，但正式应用仍需要评测、权限与运维约定。",
-      "application": "选择一条小型文档问答流程，检查检索质量、失败分支及人工复核节点。",
-      "technical_analysis": "本条为高 Star 项目精选，不是今日新发布公告。编辑按工程用途挑选，未对项目执行安装或性能测试；具体可用功能以固定版本文档为准。",
-      "evidence_note": "Star 总数来自 GitHub 仓库 API，采集时间 2026-10-11T01:38:09.226Z。本次从两个 AI topic 搜索各取前 20 个项目，并合并观察名单，取得 40 个去重候选。本地尚无历史快照，增长值为 null；不是全站排名。",
-      "caveats": "GitHub API 许可证标识为 NOASSERTION；使用前需阅读仓库实际 LICENSE 和附加条款，不能直接认定为标准宽松许可证。",
-      "canonical_url": "https://github.com/langgenius/dify",
+      "title": "bat：终端阅读代码时增加高亮和 Git 修改标记",
+      "summary": "面向终端文件阅读的工具，提供语法高亮、Git 修改提示、分页和不可打印字符显示，并可作为 fzf 预览器。",
+      "why_it_matters": "适合排查配置与快速浏览代码，让终端中的上下文更容易辨认。",
+      "application": "从只读查看配置开始；为脚本输出显式选择纯文本和分页选项，避免把视觉装饰传给下游程序。",
+      "technical_analysis": "仓库最近推送为 2026-10-07T19:49:04Z；latest release API 返回 v0.26.1（2025-12-02），这是近期活跃项目精选，不宣称本月发布新版本。",
+      "evidence_note": "README 与仓库 API 已核对。Star 采集时间 2026-10-11T02:05:42.1345401Z；近月活跃筛选依据 pushed_at，不能据此认定发布了新功能。本次定向核实 4 个通用开发工具，不是全站排名；没有有效每日增长基线。",
+      "caveats": "部分环境的命令名为 batcat；Git 标记不能替代完整 diff。本期没有运行跨终端兼容测试。",
+      "canonical_url": "https://github.com/sharkdp/bat",
       "sources": [
         {
           "ref_id": "repo",
           "title": "项目 README 与原始仓库",
-          "publisher": "langgenius/dify",
-          "url": "https://github.com/langgenius/dify"
+          "publisher": "sharkdp/bat",
+          "url": "https://github.com/sharkdp/bat"
         },
         {
           "ref_id": "api",
           "title": "GitHub 仓库指标 API",
           "publisher": "GitHub",
-          "url": "https://api.github.com/repos/langgenius/dify"
-        }
-      ],
-      "github_metrics": {
-        "stars": 158102,
-        "forks": 24963,
-        "observed_at": "2026-10-11T01:38:09.226Z",
-        "stars_delta": null,
-        "previous_observed_at": null,
-        "license": "NOASSERTION"
-      },
-      "key_facts": [
-        {
-          "fact": "语言：TypeScript；API 许可证标识：NOASSERTION。"
-        }
-      ]
-    },
-    {
-      "item_id": "github-radar-R_kgDOI7xefg",
-      "type": "github",
-      "editorial_section": "github_radar",
-      "title": "vLLM：面向服务端的大模型推理引擎",
-      "summary": "面向大模型推理与服务部署的项目，适合已有 GPU 环境、需要评估并发与吞吐的团队。",
-      "why_it_matters": "服务效果取决于模型、显存、请求长度和并发结构，需要在真实负载下测量。",
-      "application": "固定模型与推理精度，比较首 token 延迟、输出速度、p95 和峰值显存。",
-      "technical_analysis": "本条为高 Star 项目精选，不是今日新发布公告。编辑按工程用途挑选，未对项目执行安装或性能测试；具体可用功能以固定版本文档为准。",
-      "evidence_note": "Star 总数来自 GitHub 仓库 API，采集时间 2026-10-11T01:38:09.633Z。本次从两个 AI topic 搜索各取前 20 个项目，并合并观察名单，取得 40 个去重候选。本地尚无历史快照，增长值为 null；不是全站排名。",
-      "caveats": "不根据项目介绍推断任意硬件上的加速倍数；需逐项核对模型与设备支持。",
-      "canonical_url": "https://github.com/vllm-project/vllm",
-      "sources": [
-        {
-          "ref_id": "repo",
-          "title": "项目 README 与原始仓库",
-          "publisher": "vllm-project/vllm",
-          "url": "https://github.com/vllm-project/vllm"
+          "url": "https://api.github.com/repos/sharkdp/bat"
         },
         {
-          "ref_id": "api",
-          "title": "GitHub 仓库指标 API",
-          "publisher": "GitHub",
-          "url": "https://api.github.com/repos/vllm-project/vllm"
+          "ref_id": "release",
+          "title": "正式发布 v0.26.1",
+          "publisher": "sharkdp/bat",
+          "url": "https://github.com/sharkdp/bat/releases/tag/v0.26.1"
         }
       ],
       "github_metrics": {
-        "stars": 93527,
-        "forks": 23224,
-        "observed_at": "2026-10-11T01:38:09.633Z",
+        "stars": 60759,
+        "forks": 3966,
+        "observed_at": "2026-10-11T02:05:42.1345401Z",
         "stars_delta": null,
         "previous_observed_at": null,
         "license": "Apache-2.0"
       },
       "key_facts": [
         {
-          "fact": "语言：Python；API 许可证标识：Apache-2.0。"
-        }
-      ]
-    },
-    {
-      "item_id": "github-radar-R_kgDOKFU0lQ",
-      "type": "github",
-      "editorial_section": "github_radar",
-      "title": "LangGraph：有状态 Agent 的流程编排",
-      "summary": "提供构建有状态 Agent 流程的编排能力，适合需要控制执行路径、恢复和人工介入的应用。",
-      "why_it_matters": "复杂 Agent 的工程问题常在跨步骤状态与失败恢复，而非单次模型调用。",
-      "application": "用一个含人工确认和故障恢复的小流程，验证状态是否可解释、恢复是否一致。",
-      "technical_analysis": "本条为高 Star 项目精选，不是今日新发布公告。编辑按工程用途挑选，未对项目执行安装或性能测试；具体可用功能以固定版本文档为准。",
-      "evidence_note": "Star 总数来自 GitHub 仓库 API，采集时间 2026-10-11T01:38:08.880Z。本次从两个 AI topic 搜索各取前 20 个项目，并合并观察名单，取得 40 个去重候选。本地尚无历史快照，增长值为 null；不是全站排名。",
-      "caveats": "框架不能替代工具权限、业务审批与效果评测；不能用 Star 数证明可靠性。",
-      "canonical_url": "https://github.com/langchain-ai/langgraph",
-      "sources": [
-        {
-          "ref_id": "repo",
-          "title": "项目 README 与原始仓库",
-          "publisher": "langchain-ai/langgraph",
-          "url": "https://github.com/langchain-ai/langgraph"
+          "fact": "语言：Rust；API 许可证标识：Apache-2.0。"
         },
         {
-          "ref_id": "api",
-          "title": "GitHub 仓库指标 API",
-          "publisher": "GitHub",
-          "url": "https://api.github.com/repos/langchain-ai/langgraph"
-        }
-      ],
-      "github_metrics": {
-        "stars": 43029,
-        "forks": 7309,
-        "observed_at": "2026-10-11T01:38:08.880Z",
-        "stars_delta": null,
-        "previous_observed_at": null,
-        "license": "MIT"
-      },
-      "key_facts": [
-        {
-          "fact": "语言：Python；API 许可证标识：MIT。"
+          "fact": "最近仓库推送：2026-10-07T19:49:04Z。"
         }
       ]
     },
@@ -255,7 +285,7 @@
     "news_count": 0,
     "github_radar_count": 4,
     "historical_paper_count": 1,
-    "github_candidates": 40,
+    "github_candidates": 4,
     "registry_records_fetched": 100,
     "registry_pagination_complete": false,
     "coverage": [
@@ -342,14 +372,16 @@
           "https://github.com/tinyfish-io/tinyfish-cookbook"
         ]
       }
-    ]
+    ],
+    "github_discovery_scope": "定向核实 4 个通用开发工具；不代表全站或完整近月排名",
+    "coverage_inherited_from": "2026-10-11-r1",
+    "github_lookback_days": 30
   },
   "selection_notes": [
-    "新闻窗口为北京时间 2026-10-10 09:33:21 至 2026-10-11 09:33:21，按本次定时触发时间固定。",
-    "热门项目是截至采集时刻的工程精选，论文是历史专题，均不冒充最近 24 小时新发布新闻。",
-    "GitHub 取两个 AI topic 搜索的前 20 条并合并观察名单，共 40 个去重候选；不是全站热度榜。首次采集没有昨日快照，增长全部为 null。",
-    "九个指定渠道均检查并记录覆盖；Registry 未完整分页，动态页面及仅有日期的公告存在时间核验限制。",
-    "10 月 10 日已发布的 Labby、Elicitly、ZenBrain 等条目不重复收录。",
-    "完整来源覆盖和本期报告保存在 reports/daily/2026-10-11-r1.md。"
+    "本次 r2 仅刷新 GitHub 项目精选；九个 AI 来源覆盖、新闻窗口和 Mask2Former 论文分析沿用今天 r1，未把历史检查时间改成新的采集时间。",
+    "项目按近 30 天仓库活动与工程价值挑选，pushed_at 不是正式版本发布时间。uv、fzf 的 release 另行核实；bat 正式版较早；Bun release 查询限流，保留缺口。",
+    "4 个项目此前没有有效的 20–28 小时相邻指标快照，增长为 null，不将总 Star 或短时变化称为飙升。",
+    "上一修订及原有历史均保留；同日论文专题沿用，不计为新论文或新发布新闻。",
+    "本期报告：reports/daily/2026-10-11-r2.md；实际指标与来源记录分别保存在 data/github-stars 和 reports/sources。"
   ]
 }

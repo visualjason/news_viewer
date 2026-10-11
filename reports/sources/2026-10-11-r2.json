@@ -1,0 +1,166 @@
+{
+  "refreshed_at": "2026-10-11T02:07:15.142Z",
+  "revision_scope": "本次 r2 仅刷新 GitHub 项目精选；九个 AI 来源覆盖、新闻窗口和 Mask2Former 论文分析沿用今天 r1，未把历史检查时间改成新的采集时间。",
+  "coverage_inherited_from": "2026-10-11-r1",
+  "original_coverage": {
+    "collected_at": "2026-10-11T01:40:45.913Z",
+    "window": {
+      "start": "2026-10-10T01:33:21.179Z",
+      "end": "2026-10-11T01:33:21.179Z",
+      "timezone": "Asia/Shanghai",
+      "end_exclusive": true
+    },
+    "coverage": [
+      {
+        "id": "arxiv-ai",
+        "status": "未收录新的合格新闻",
+        "detail": "已打开三个 recent 列表，最新可见日期为 10 月 9 日，未取得本次窗口内的合格新发布证据。",
+        "urls": [
+          "https://arxiv.org/list/cs.AI/recent",
+          "https://arxiv.org/list/cs.CV/recent",
+          "https://arxiv.org/list/cs.LG/recent"
+        ]
+      },
+      {
+        "id": "huggingface-blog",
+        "status": "未收录新的合格新闻",
+        "detail": "检查博客及候选文章；可核实的近期候选为 10 月 9 日，排除。",
+        "urls": [
+          "https://huggingface.co/blog",
+          "https://huggingface.co/blog/allenai/impactful-scheduling"
+        ]
+      },
+      {
+        "id": "independent-evaluations",
+        "status": "未收录新的合格新闻",
+        "detail": "METR、Artificial Analysis 与 NIST 检查中未取得满足日期与方法要求的 10 月 10 日新发布证据；动态页面存在覆盖限制。",
+        "urls": [
+          "https://metr.org/blog/",
+          "https://artificialanalysis.ai/",
+          "https://www.nist.gov/ai-measurement-and-evaluation"
+        ]
+      },
+      {
+        "id": "langchain",
+        "status": "未收录新的合格新闻",
+        "detail": "已打开博客，检查最近 5 条 release，最新发布时间为 10 月 8 日 UTC，早于本次窗口。",
+        "urls": [
+          "https://www.langchain.com/blog",
+          "https://github.com/langchain-ai/langchain/releases"
+        ]
+      },
+      {
+        "id": "llamaindex",
+        "status": "未收录新的合格新闻",
+        "detail": "博客最近可见条目为 10 月 8 日；最近 5 条 core release 最新为 9 月 21 日。",
+        "urls": [
+          "https://www.llamaindex.ai/blog",
+          "https://github.com/run-llama/llama_index/releases"
+        ]
+      },
+      {
+        "id": "modelcontextprotocol",
+        "status": "未收录新的合格新闻",
+        "detail": "已打开协议博客，检查 TypeScript SDK 最近 5 条 release，最新为 10 月 5 日。另发现 Cloudflare 10 月 10 日 skills 公告，但页面只给日期，缺乏时区及精确时间，无法确认严格滚动 24 小时边界，未作为合格新闻收录。",
+        "urls": [
+          "https://modelcontextprotocol.io/",
+          "https://github.com/modelcontextprotocol/typescript-sdk/releases",
+          "https://blog.modelcontextprotocol.io/",
+          "https://developers.cloudflare.com/changelog/post/2026-10-10-cloudflare-mcp-skills/"
+        ]
+      },
+      {
+        "id": "openai-news",
+        "status": "未收录新的合格新闻",
+        "detail": "官方新闻页可核实的近期候选早于 10 月 10 日，未纳入。",
+        "urls": [
+          "https://openai.com/news/"
+        ]
+      },
+      {
+        "id": "mcp-registry-practice",
+        "status": "未收录新的合格新闻",
+        "detail": "读取首批 100 条候选，未遍历后续分页。上一期已收录项目不重复；抽查 AnkiMCP 0.32.1 的正式 release 与 compare API，改动主要为评分入口，工程信息增量不足，排除。其他候选未逐一深入核验，不声称穷尽。",
+        "urls": [
+          "https://registry.modelcontextprotocol.io/v0.1/servers?limit=100&updated_since=2026-10-10T01%3A33%3A21.179Z"
+        ]
+      },
+      {
+        "id": "tinyfish-practice-discovery",
+        "status": "未收录新的合格新闻",
+        "detail": "已打开官网与 cookbook，release API 返回空数组；未取得窗口内有可靠发布时间的具体新实践。未调用付费服务。",
+        "urls": [
+          "https://www.tinyfish.ai/",
+          "https://github.com/tinyfish-io/tinyfish-cookbook"
+        ]
+      }
+    ],
+    "github_discovery": [
+      {
+        "query": "topic:llm stars:>10000 archived:false",
+        "returned": 20,
+        "total_count": 251,
+        "incomplete_results": false
+      },
+      {
+        "query": "topic:ai-agent stars:>100 archived:false",
+        "returned": 20,
+        "total_count": 1218,
+        "incomplete_results": false
+      }
+    ],
+    "github_errors": [],
+    "news_selected": 0
+  },
+  "developer_tool_checks": [
+    {
+      "repository": "astral-sh/uv",
+      "observed_at": "2026-10-11T02:05:40.0220683Z",
+      "repo_api": "https://api.github.com/repos/astral-sh/uv",
+      "stars": 90593,
+      "pushed_at": "2026-10-11T01:14:41Z",
+      "release": {
+        "tag": "0.13.0",
+        "published_at": "2026-10-09T19:49:55Z",
+        "url": "https://github.com/astral-sh/uv/releases/tag/0.13.0"
+      },
+      "release_error": null
+    },
+    {
+      "repository": "junegunn/fzf",
+      "observed_at": "2026-10-11T02:05:41.0762814Z",
+      "repo_api": "https://api.github.com/repos/junegunn/fzf",
+      "stars": 83533,
+      "pushed_at": "2026-10-11T02:05:31Z",
+      "release": {
+        "tag": "v0.74.4",
+        "published_at": "2026-09-12T00:24:35Z",
+        "url": "https://github.com/junegunn/fzf/releases/tag/v0.74.4"
+      },
+      "release_error": null
+    },
+    {
+      "repository": "sharkdp/bat",
+      "observed_at": "2026-10-11T02:05:42.1345401Z",
+      "repo_api": "https://api.github.com/repos/sharkdp/bat",
+      "stars": 60759,
+      "pushed_at": "2026-10-07T19:49:04Z",
+      "release": {
+        "tag": "v0.26.1",
+        "published_at": "2025-12-02T20:48:10Z",
+        "url": "https://github.com/sharkdp/bat/releases/tag/v0.26.1"
+      },
+      "release_error": null
+    },
+    {
+      "repository": "oven-sh/bun",
+      "observed_at": "2026-10-11T02:05:43.158625Z",
+      "repo_api": "https://api.github.com/repos/oven-sh/bun",
+      "stars": 96183,
+      "pushed_at": "2026-10-11T02:04:07Z",
+      "release": null,
+      "release_error": "GitHub unauthenticated API rate limit; latest release not verified"
+    }
+  ],
+  "news_selected": 0
+}

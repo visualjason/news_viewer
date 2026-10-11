@@ -1,6 +1,13 @@
 [
   {
     "issue_date": "2026-10-11",
+    "revision": 2,
+    "title": "从 Python 到终端与前端：4 个热门开发工具精选",
+    "item_count": 5,
+    "path": "data/archive/2026-10-11-r2.json"
+  },
+  {
+    "issue_date": "2026-10-11",
     "revision": 1,
     "title": "新增 GitHub 热门项目观察：从 Star 热度回到工程用途",
     "item_count": 5,
