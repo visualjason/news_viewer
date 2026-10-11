@@ -1,211 +1,384 @@
 {
   "schema_version": "1.0",
   "issue_date": "2026-10-11",
-  "revision": 2,
-  "generated_at": "2026-10-11T02:07:15.142Z",
+  "revision": 3,
+  "generated_at": "2026-10-11T02:46:30.971Z",
   "window": {
-    "start": "2026-10-10T01:33:21.179Z",
-    "end": "2026-10-11T01:33:21.179Z",
+    "start": "2026-10-04T02:46:30.971Z",
+    "end": "2026-10-11T02:46:30.971Z",
     "timezone": "Asia/Shanghai",
-    "end_exclusive": true
+    "end_exclusive": true,
+    "lookback_days": 7
   },
   "briefing": {
-    "headline": "从 Python 到终端与前端：4 个热门开发工具精选",
-    "takeaway": "按扩展后的范围，精选近一个月活跃的 Bun、uv、fzf、bat；展示真实 Star 总数与观测时间，暂不标记日增长。沿用今日 CVPR 2022 Mask2Former 论文精读，本修订没有新增已核实 AI 新闻。",
+    "headline": "一周 AI 工程精选：文档、语音与 Agent 可靠性，再看两个新工具",
+    "takeaway": "新策略首次重采：9 条近一周未收录资讯，另选 jqweb、jsonize 两个低 Star 新项目与 Transformers 一个成熟工具。没有可靠每日增长基线，增长席位留空。今天的 CVPR 2022 Mask2Former 精读沿用，不重复计为新论文。",
     "actions": [
-      "按 JavaScript 工具链、Python 环境、交互查找、终端代码阅读选择一个工具试用。",
-      "先在独立分支验证兼容性与收益，再决定迁移。",
-      "Star 增长待有效相邻每日快照后计算；今天保留真实基线。"
+      "文档任务同时测转录、定位与结构完整性，不只看总分。",
+      "Agent 项目检查技能加载、权限和审计展示，与原始日志做独立核对。",
+      "先用脱敏样本试用两个 JSON 新工具，再判断是否纳入日常开发。"
     ]
   },
   "items": [
     {
-      "item_id": "github-radar-MDEwOlJlcG9zaXRvcnkzNTc3Mjg5Njk=",
-      "type": "github",
-      "editorial_section": "github_radar",
-      "title": "Bun：集中评估 JavaScript 运行、依赖、构建与测试",
-      "summary": "面向 JavaScript／TypeScript 应用的工具集，集成运行时、包管理器、构建与测试功能，适合用独立分支评估工具链。",
-      "why_it_matters": "统一工具入口可能减少配置维护，但收益取决于项目依赖、Node API 使用与部署环境。",
-      "application": "在隔离分支核对安装结果、测试和构建产物，再验证项目所需 Node API 与生产平台，最后决定是否迁移。",
-      "technical_analysis": "仓库最近推送为 2026-10-11T02:04:07Z；latest release 查询触发 GitHub API 限流，因此本期仅依据已核实仓库活动与 README 介绍。",
-      "evidence_note": "README 与仓库 API 已核对。Star 采集时间 2026-10-11T02:05:43.158625Z；近月活跃筛选依据 pushed_at，不能据此认定发布了新功能。本次定向核实 4 个通用开发工具，不是全站排名；没有有效每日增长基线。",
-      "caveats": "API 许可证标识为 NOASSERTION，使用前阅读实际 LICENSE 与依赖条款。未验证最新 release，也未做速度或 Node 完全兼容性判断。",
-      "canonical_url": "https://github.com/oven-sh/bun",
+      "item_id": "openai-intelligent-ui-20261007",
+      "type": "product",
+      "title": "ChatGPT 的 Intelligent UI：从文字回答扩展到交互界面",
+      "published_at": "2026-10-07",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "OpenAI 公告把 GPT-6 与 Intelligent UI 扩展到更多 ChatGPT 用户，回答可组合图形、表单和交互元素。公告明确此次调整面向 Chat 体验，Work 与 Codex 的模型不随之变化。",
+      "why_it_matters": "问答产品的交付形式正在扩展到可操作界面；评估时应同时检查内容、交互与用户理解。",
+      "application": "选一个已有的比较或解释任务，检查交互控件是否有助于理解，并核对关键事实。",
+      "technical_analysis": "公告描述原生可流式组件与编译流程；属于厂商产品介绍，不能据此推断所有客户端或账户已完成开放。",
+      "caveats": "只核对官方公告；未做独立效果测试，不把内部性能评价写成通用结论。",
+      "evidence_note": "已打开原始正文核对事实与发布日期；仅给日期的来源保留日精度，不虚构发布时间及时区。以下行动建议为编辑判断，未进行独立性能或安全测试。",
+      "canonical_url": "https://openai.com/index/gpt-6-for-everyone/",
       "sources": [
         {
-          "ref_id": "repo",
-          "title": "项目 README 与原始仓库",
-          "publisher": "oven-sh/bun",
-          "url": "https://github.com/oven-sh/bun"
-        },
-        {
-          "ref_id": "api",
-          "title": "GitHub 仓库指标 API",
-          "publisher": "GitHub",
-          "url": "https://api.github.com/repos/oven-sh/bun"
-        }
-      ],
-      "github_metrics": {
-        "stars": 96183,
-        "forks": 5106,
-        "observed_at": "2026-10-11T02:05:43.158625Z",
-        "stars_delta": null,
-        "previous_observed_at": null,
-        "license": "NOASSERTION"
-      },
-      "key_facts": [
-        {
-          "fact": "语言：Rust；API 许可证标识：NOASSERTION。"
-        },
-        {
-          "fact": "最近仓库推送：2026-10-11T02:04:07Z。"
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/gpt-6-for-everyone/"
         }
       ]
     },
     {
-      "item_id": "github-radar-R_kgDOKbIFZQ",
-      "type": "github",
-      "editorial_section": "github_radar",
-      "title": "uv：把 Python 环境、依赖与工具管理放到同一流程",
-      "summary": "支持 Python 版本、项目依赖、锁文件及独立工具运行，适合需要统一本地开发与 CI 环境的 Python 团队。",
-      "why_it_matters": "环境准备与依赖解析分散在多个工具里，容易产生版本漂移；统一入口值得在一个小项目中验证。",
-      "application": "在试验分支明确固定 Python 版本，生成并提交锁文件，再用全新 CI 环境检查依赖同步与测试。",
-      "technical_analysis": "正式版 0.13.0 发布于 2026-10-09T19:49:55Z，包含默认 Python 版本与缓存兼容性调整；本期不将其归为最近 24 小时新公告。",
-      "evidence_note": "README 与仓库 API 已核对。Star 采集时间 2026-10-11T02:05:40.0220683Z；近月活跃筛选依据 pushed_at，不能据此认定发布了新功能。本次定向核实 4 个通用开发工具，不是全站排名；没有有效每日增长基线。",
-      "caveats": "本期未做性能基准或迁移测试。升级前阅读破坏性变更，不能仅按项目宣传推断加速倍数。",
-      "canonical_url": "https://github.com/astral-sh/uv",
+      "item_id": "lightonocr3-20261008",
+      "type": "product",
+      "title": "LightOnOCR-3：文字转录与版面定位放进同一模型",
+      "published_at": "2026-10-08",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "LightOn AI 发布 0.8B、1B、4B 三种 OCR 模型；除文字转录，还支持带标签的区域框、图片描述和图表数据输出。已核实作者代码仓库及模型页存在。",
+      "why_it_matters": "文档检索和抽取不仅需要文字，还需要定位、阅读顺序及版面信息。",
+      "application": "用包含扫描、表格和多栏的小型自有样本集，分别检查文字正确率、区域定位与结构完整性。",
+      "technical_analysis": "原文区分默认转录与 grounding 模式；表格成绩涉及格式规范化，不能把总分直接等同于真实业务准确率。",
+      "caveats": "这是发布团队报告，非独立评测；未下载权重、执行基准或验证中文业务表现。",
+      "evidence_note": "已打开原始正文核对事实与发布日期；仅给日期的来源保留日精度，不虚构发布时间及时区。以下行动建议为编辑判断，未进行独立性能或安全测试。",
+      "canonical_url": "https://huggingface.co/blog/lightonai/lightonocr-3",
       "sources": [
         {
-          "ref_id": "repo",
-          "title": "项目 README 与原始仓库",
-          "publisher": "astral-sh/uv",
-          "url": "https://github.com/astral-sh/uv"
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "LightOn AI / Hugging Face 社区文章",
+          "url": "https://huggingface.co/blog/lightonai/lightonocr-3"
         },
         {
-          "ref_id": "api",
-          "title": "GitHub 仓库指标 API",
-          "publisher": "GitHub",
-          "url": "https://api.github.com/repos/astral-sh/uv"
+          "ref_id": "code",
+          "title": "作者代码仓库",
+          "publisher": "LightOn AI",
+          "url": "https://github.com/lightonai/LightOnOCR"
         },
         {
-          "ref_id": "release",
-          "title": "正式发布 0.13.0",
-          "publisher": "astral-sh/uv",
-          "url": "https://github.com/astral-sh/uv/releases/tag/0.13.0"
-        }
-      ],
-      "github_metrics": {
-        "stars": 90593,
-        "forks": 3645,
-        "observed_at": "2026-10-11T02:05:40.0220683Z",
-        "stars_delta": null,
-        "previous_observed_at": null,
-        "license": "Apache-2.0"
-      },
-      "key_facts": [
-        {
-          "fact": "语言：Rust；API 许可证标识：Apache-2.0。"
-        },
-        {
-          "fact": "最近仓库推送：2026-10-11T01:14:41Z。"
+          "ref_id": "model",
+          "title": "0.8B 模型页",
+          "publisher": "LightOn AI",
+          "url": "https://huggingface.co/lightonai/LightOnOCR-3-0.8B"
         }
       ]
     },
     {
-      "item_id": "github-radar-MDEwOlJlcG9zaXRvcnkxMzgwNzYwNg==",
-      "type": "github",
-      "editorial_section": "github_radar",
-      "title": "fzf：给文件、历史命令和脚本增加交互筛选",
-      "summary": "通用命令行模糊查找器，可用于选择文件、搜索命令历史及构建终端菜单，也有 Shell 和编辑器集成。",
-      "why_it_matters": "适合频繁在大量路径或文本候选中定位目标的工作流，可以逐步接入已有脚本。",
-      "application": "先给一个只读文件列表接入 fzf，验证中文路径和空格处理，再考虑 Shell 历史与编辑器集成。",
-      "technical_analysis": "正式版 v0.74.4 发布于 2026-09-12T00:24:35Z，仍在近一个月范围内；发布说明列出终端转义与路径比较等修复。",
-      "evidence_note": "README 与仓库 API 已核对。Star 采集时间 2026-10-11T02:05:41.0762814Z；近月活跃筛选依据 pushed_at，不能据此认定发布了新功能。本次定向核实 4 个通用开发工具，不是全站排名；没有有效每日增长基线。",
-      "caveats": "交互筛选不等于全文搜索；复杂命令拼接需正确引用参数。本期未安装插件或执行第三方脚本。",
-      "canonical_url": "https://github.com/junegunn/fzf",
+      "item_id": "falcon-asr-20261007",
+      "type": "product",
+      "title": "Falcon ASR：面向阿拉伯语方言的语音识别与词级时间戳",
+      "published_at": "2026-10-07",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "TII 介绍 1.6B 参数的 Falcon ASR，重点覆盖阿拉伯语及阿联酋方言，也支持英语、法语、西班牙语和葡萄牙语，并提供词级时间戳。",
+      "why_it_matters": "方言、混合语言和电话录音需要单独验证，通用语音模型的总体成绩难以替代具体场景测试。",
+      "application": "按方言、噪声、录音设备分组准备样本，分别测词错误率与时间戳对齐。",
+      "technical_analysis": "团队报告六个阿拉伯语测试集等权平均 WER 为 20.92%；竞品值来自其 9 月 30 日榜单快照，阿联酋补充测试是内部数据。",
+      "caveats": "结果为作者报告，不是本期独立复测；文中 API 与原生应用是计划项，不能写成已上线。",
+      "evidence_note": "已打开原始正文核对事实与发布日期；仅给日期的来源保留日精度，不虚构发布时间及时区。以下行动建议为编辑判断，未进行独立性能或安全测试。",
+      "canonical_url": "https://huggingface.co/blog/tiiuae/falcon-asr",
       "sources": [
         {
-          "ref_id": "repo",
-          "title": "项目 README 与原始仓库",
-          "publisher": "junegunn/fzf",
-          "url": "https://github.com/junegunn/fzf"
-        },
-        {
-          "ref_id": "api",
-          "title": "GitHub 仓库指标 API",
-          "publisher": "GitHub",
-          "url": "https://api.github.com/repos/junegunn/fzf"
-        },
-        {
-          "ref_id": "release",
-          "title": "正式发布 v0.74.4",
-          "publisher": "junegunn/fzf",
-          "url": "https://github.com/junegunn/fzf/releases/tag/v0.74.4"
-        }
-      ],
-      "github_metrics": {
-        "stars": 83533,
-        "forks": 4984,
-        "observed_at": "2026-10-11T02:05:41.0762814Z",
-        "stars_delta": null,
-        "previous_observed_at": null,
-        "license": "MIT"
-      },
-      "key_facts": [
-        {
-          "fact": "语言：Go；API 许可证标识：MIT。"
-        },
-        {
-          "fact": "最近仓库推送：2026-10-11T02:05:31Z。"
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "TII / Hugging Face 团队文章",
+          "url": "https://huggingface.co/blog/tiiuae/falcon-asr"
         }
       ]
     },
     {
-      "item_id": "github-radar-MDEwOlJlcG9zaXRvcnkxMzA0NjQ5NjE=",
+      "item_id": "ai2-gpu-fairshare-20261009",
+      "type": "blog",
+      "title": "Ai2 的 GPU 调度实践：用时间预算处理抢占与资源公平",
+      "published_at": "2026-10-09",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "Ai2 分享分层 GPU 时间预算、公平份额调度和最短运行时间约定，允许可恢复任务在取得阶段进展后重新排队。",
+      "why_it_matters": "高占用率不等于资源分配合理；预算与可恢复执行可以缓解长期占卡和优先级膨胀。",
+      "application": "先检查训练任务的检查点恢复能力，回放历史负载，再比较队列等待、抢占成本和团队实际 GPU 时间。",
+      "technical_analysis": "作者的 30 天观察中集群占用率维持 98%；调试任务排队改善的模拟与实际结果分开报告，不能相互替代。",
+      "caveats": "属于单机构经验；不代表相同策略在不同集群、交互任务和负载上都有同等收益。",
+      "evidence_note": "已打开原始正文核对事实与发布日期；仅给日期的来源保留日精度，不虚构发布时间及时区。以下行动建议为编辑判断，未进行独立性能或安全测试。",
+      "canonical_url": "https://huggingface.co/blog/allenai/impactful-scheduling",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "Ai2 / Hugging Face 企业文章",
+          "url": "https://huggingface.co/blog/allenai/impactful-scheduling"
+        }
+      ]
+    },
+    {
+      "item_id": "deepagents-skills-20261007",
+      "type": "blog",
+      "title": "Deep Agents 更新技能机制：绑定工具、预加载与会话内重载",
+      "published_at": "2026-10-07",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "LangChain 介绍技能绑定工具、运行时固定技能和会话内刷新技能目录。工具可在读取对应技能后再加载，应用也可提前把用户指定的技能放入上下文。",
+      "why_it_matters": "技能库变大后，按需加载有助于控制上下文；长会话也需要明确的技能更新机制。",
+      "application": "从一个只读工具开始，核对技能读取前后的可用工具，再测长会话更新和运行时权限。",
+      "technical_analysis": "工具绑定使用 metadata.include_tools 与 SkillsMiddleware；提示缓存收益取决于模型是否支持会话中增加工具。",
+      "caveats": "固定技能的指令由应用准备；不要把按需加载理解为自动权限审核。未执行 SDK 示例。",
+      "evidence_note": "已打开原始正文核对事实与发布日期；仅给日期的来源保留日精度，不虚构发布时间及时区。以下行动建议为编辑判断，未进行独立性能或安全测试。",
+      "canonical_url": "https://www.langchain.com/blog/revamping-skills-in-deep-agents",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "LangChain",
+          "url": "https://www.langchain.com/blog/revamping-skills-in-deep-agents"
+        }
+      ]
+    },
+    {
+      "item_id": "opendocrouter-20261007",
+      "type": "product",
+      "title": "OpenDocRouter：用统一接口比较文档解析模型",
+      "published_at": "2026-10-07",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "LlamaIndex 推出文档到 Markdown 的模型接入平台，以版本化处理方案统一提示、处理和设置，并可选输出布局与定位信息。",
+      "why_it_matters": "统一接入方式让团队更容易在同一批文档上比较质量和成本，但仍需保留可复查的原始结果。",
+      "application": "固定一套文档和字段验收标准，记录模型、处理方案、失败页、耗时与费用，再做选择。",
+      "technical_analysis": "官方说明支持同步与异步处理；布局输出通过额外定位引擎统一，不能将其都归因于模型原生能力。",
+      "caveats": "这是托管付费服务；本期未上传文档或调用 API，厂商基准不能代替独立业务评估。",
+      "evidence_note": "已打开原始正文核对事实与发布日期；仅给日期的来源保留日精度，不虚构发布时间及时区。以下行动建议为编辑判断，未进行独立性能或安全测试。",
+      "canonical_url": "https://www.llamaindex.ai/blog/introducing-opendocrouter",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "LlamaIndex",
+          "url": "https://www.llamaindex.ai/blog/introducing-opendocrouter"
+        }
+      ]
+    },
+    {
+      "item_id": "cloudflare-mcp-skills-20261010",
+      "type": "blog",
+      "title": "Cloudflare MCP 开始提供技能发现与按需读取",
+      "published_at": "2026-10-10",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "Cloudflare 公告其 API MCP 服务通过 Skills over MCP 扩展提供技能。支持该扩展的客户端可发现技能并按 URI 读取文件。",
+      "why_it_matters": "服务相关的操作指导可以和 MCP 接口一起分发，减少单独同步说明的工作。",
+      "application": "先确认客户端支持扩展和服务能力声明，再以只读权限验证技能发现、文件校验及加载流程。",
+      "technical_analysis": "官方给出服务地址 https://mcp.cloudflare.com/mcp；扩展规范说明发现与加载流程，读取文件本身不等于技能已激活。",
+      "caveats": "客户端支持是前提；清单摘要用于一致性验证，不证明内容可信。仅阅读公告、扩展文档和源码仓库，未连接服务。",
+      "evidence_note": "已打开原始正文核对事实与发布日期；仅给日期的来源保留日精度，不虚构发布时间及时区。以下行动建议为编辑判断，未进行独立性能或安全测试。",
+      "canonical_url": "https://developers.cloudflare.com/changelog/post/2026-10-10-cloudflare-mcp-skills/",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "Cloudflare",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-10-10-cloudflare-mcp-skills/"
+        },
+        {
+          "ref_id": "spec",
+          "title": "Skills 扩展规范",
+          "publisher": "MCP",
+          "url": "https://modelcontextprotocol.io/extensions/skills/overview"
+        },
+        {
+          "ref_id": "code",
+          "title": "Cloudflare 技能仓库",
+          "publisher": "Cloudflare",
+          "url": "https://github.com/cloudflare/skills"
+        }
+      ],
+      "editorial_section": "ai_practice"
+    },
+    {
+      "item_id": "metr-observability-20261006",
+      "type": "blog",
+      "title": "METR：Agent 审计界面也应按安全关键系统对待",
+      "published_at": "2026-10-06",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "METR 披露在隔离测试中发现 Inspect 日志查看器的概念验证漏洞，可改变审阅者看到的页面；底层日志没有被修改，维护团队已修补。",
+      "why_it_matters": "保存了日志并不意味着审计展示可信；模型输出、展示层与原始证据之间需要独立校验。",
+      "application": "核对查看器依赖更新，把原始日志存储与渲染隔离，并检查文本、数学公式和富内容的渲染边界。",
+      "technical_analysis": "报告明确未在评测中观察到 Agent 利用该漏洞，不能把受控概念验证写成已经发生的生产攻击。",
+      "caveats": "这是安全工程报告，非模型排行榜；没有统一成功率指标，不据此推断所有 Agent 都会隐瞒行为。",
+      "evidence_note": "已打开原始正文核对事实与发布日期；仅给日期的来源保留日精度，不虚构发布时间及时区。以下行动建议为编辑判断，未进行独立性能或安全测试。",
+      "canonical_url": "https://metr.org/blog/2026-10-06-ai-systems-could-cover-up-misbehavior/",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "METR",
+          "url": "https://metr.org/blog/2026-10-06-ai-systems-could-cover-up-misbehavior/"
+        }
+      ]
+    },
+    {
+      "item_id": "arxiv-2610-12466",
+      "type": "paper",
+      "title": "预印本：理解 AI 时间跨度指标时，需要同时看统计诊断",
+      "published_at": "2026-10-08T17:59:50Z",
+      "published_at_precision": "second",
+      "publication_timezone": "UTC",
+      "summary": "两位研究者重新分析 METR 的 228 个任务与 26 个 AI 系统，使用样条和项目反应理论估计时间跨度，并提出辅助诊断图。",
+      "why_it_matters": "以人类完成时间表达能力很直观，但相同倍数的时间跨度增长未必意味着相同的能力增量。",
+      "application": "引用时间跨度成绩时，同时保留任务分布、成功概率阈值、统计拟合与诊断图，避免外推到全部工作。",
+      "technical_analysis": "已读正文第 2、3 节：作者研究人类任务耗时与 AI 难度的非线性关系；不是测量 AI 实际运行时间。",
+      "caveats": "arXiv 预印本，未核实正式会议录用；重分析局限于现有任务集，不否定一切时间跨度评测。",
+      "evidence_note": "已打开原始正文核对事实与发布日期；仅给日期的来源保留日精度，不虚构发布时间及时区。以下行动建议为编辑判断，未进行独立性能或安全测试。",
+      "canonical_url": "https://arxiv.org/abs/2610.12466",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "提交记录与摘要",
+          "publisher": "Drew T. Nguyen、William Fithian / arXiv",
+          "url": "https://arxiv.org/abs/2610.12466"
+        },
+        {
+          "ref_id": "fulltext",
+          "title": "论文正文",
+          "publisher": "Drew T. Nguyen、William Fithian / arXiv",
+          "url": "https://arxiv.org/html/2610.12466v1"
+        }
+      ],
+      "research_status": "preprint"
+    },
+    {
+      "item_id": "github-radar-R_kgDOULGvXA",
       "type": "github",
       "editorial_section": "github_radar",
-      "title": "bat：终端阅读代码时增加高亮和 Git 修改标记",
-      "summary": "面向终端文件阅读的工具，提供语法高亮、Git 修改提示、分页和不可打印字符显示，并可作为 fzf 预览器。",
-      "why_it_matters": "适合排查配置与快速浏览代码，让终端中的上下文更容易辨认。",
-      "application": "从只读查看配置开始；为脚本输出显式选择纯文本和分页选项，避免把视觉装饰传给下游程序。",
-      "technical_analysis": "仓库最近推送为 2026-10-07T19:49:04Z；latest release API 返回 v0.26.1（2025-12-02），这是近期活跃项目精选，不宣称本月发布新版本。",
-      "evidence_note": "README 与仓库 API 已核对。Star 采集时间 2026-10-11T02:05:42.1345401Z；近月活跃筛选依据 pushed_at，不能据此认定发布了新功能。本次定向核实 4 个通用开发工具，不是全站排名；没有有效每日增长基线。",
-      "caveats": "部分环境的命令名为 batcat；Git 标记不能替代完整 diff。本期没有运行跨终端兼容测试。",
-      "canonical_url": "https://github.com/sharkdp/bat",
+      "radar_lane": "new",
+      "title": "新项目观察 · jqweb：把 JSON 变成可交互的本地阅读页",
+      "summary": "将文件或管道中的 JSON 展示为树状页面，支持搜索和 jq 风格查询，也可输出离线 HTML。",
+      "why_it_matters": "适合探索不熟悉的 API 响应和嵌套结构，无需先知道目标字段路径。",
+      "application": "用脱敏 JSON 试验树形导航，再确认本地绑定地址及导出文件的分享范围。",
+      "caveats": "README 给出本地浏览与离线导出方式；本期未安装运行。新仓库日期不等于首次产品上线日。",
+      "technical_analysis": "仓库创建：2026-09-01T17:02:52Z；最近推送：2026-10-10T13:45:39Z。两者分别表示仓库年龄和代码活动，不是正式版本发布或 Star 增长证明。",
+      "evidence_note": "GitHub API 指标观测于 2026-10-11T02:41:25.032Z，已阅读 README。搜索与历史合并有 108 个候选，本轮查询 48 个；非全站榜单。缺少有效 20–28 小时每日快照，不称飙升。",
+      "canonical_url": "https://github.com/zafnz/jqweb",
+      "github_metrics": {
+        "stars": 10,
+        "forks": 1,
+        "license": "MIT",
+        "observed_at": "2026-10-11T02:41:25.032Z",
+        "stars_delta": null,
+        "previous_observed_at": null
+      },
       "sources": [
         {
           "ref_id": "repo",
-          "title": "项目 README 与原始仓库",
-          "publisher": "sharkdp/bat",
-          "url": "https://github.com/sharkdp/bat"
+          "title": "仓库与 README",
+          "publisher": "zafnz/jqweb",
+          "url": "https://github.com/zafnz/jqweb"
         },
         {
           "ref_id": "api",
-          "title": "GitHub 仓库指标 API",
+          "title": "真实指标 API",
           "publisher": "GitHub",
-          "url": "https://api.github.com/repos/sharkdp/bat"
-        },
-        {
-          "ref_id": "release",
-          "title": "正式发布 v0.26.1",
-          "publisher": "sharkdp/bat",
-          "url": "https://github.com/sharkdp/bat/releases/tag/v0.26.1"
+          "url": "https://api.github.com/repos/zafnz/jqweb"
         }
       ],
-      "github_metrics": {
-        "stars": 60759,
-        "forks": 3966,
-        "observed_at": "2026-10-11T02:05:42.1345401Z",
-        "stars_delta": null,
-        "previous_observed_at": null,
-        "license": "Apache-2.0"
-      },
       "key_facts": [
         {
-          "fact": "语言：Rust；API 许可证标识：Apache-2.0。"
+          "fact": "API 许可证：MIT；Star 总数：10。"
+        }
+      ]
+    },
+    {
+      "item_id": "github-radar-R_kgDOUP04Zw",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "radar_lane": "new",
+      "title": "新项目观察 · jsonize：把命令输出接入 JSON 管道",
+      "summary": "提供 jz 命令，将支持的命令输出、数据文件或显式参数转换为 JSON，供后续工具处理。",
+      "why_it_matters": "对缺少原生 JSON 输出的命令，结构化转换可以减少脆弱的文本切分。",
+      "application": "优先使用命令原生 JSON；需要转换时固定输入样例与解析器，核对退出状态和字段类型。",
+      "caveats": "只处理支持或明确定义的格式，不解析任意自由文本；README 提醒 Windows 语言与代码页覆盖有限。本期未执行。",
+      "technical_analysis": "仓库创建：2026-09-06T04:04:05Z；最近推送：2026-10-09T10:10:21Z。两者分别表示仓库年龄和代码活动，不是正式版本发布或 Star 增长证明。",
+      "evidence_note": "GitHub API 指标观测于 2026-10-11T02:41:32.208Z，已阅读 README。搜索与历史合并有 108 个候选，本轮查询 48 个；非全站榜单。缺少有效 20–28 小时每日快照，不称飙升。",
+      "canonical_url": "https://github.com/nao1215/jsonize",
+      "github_metrics": {
+        "stars": 20,
+        "forks": 0,
+        "license": "MIT",
+        "observed_at": "2026-10-11T02:41:32.208Z",
+        "stars_delta": null,
+        "previous_observed_at": null
+      },
+      "sources": [
+        {
+          "ref_id": "repo",
+          "title": "仓库与 README",
+          "publisher": "nao1215/jsonize",
+          "url": "https://github.com/nao1215/jsonize"
         },
         {
-          "fact": "最近仓库推送：2026-10-07T19:49:04Z。"
+          "ref_id": "api",
+          "title": "真实指标 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/nao1215/jsonize"
+        }
+      ],
+      "key_facts": [
+        {
+          "fact": "API 许可证：MIT；Star 总数：20。"
+        }
+      ]
+    },
+    {
+      "item_id": "github-radar-MDEwOlJlcG9zaXRvcnkxNTUyMjA2NDE=",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "radar_lane": "established",
+      "title": "成熟工具 · Transformers：统一模型加载与定义的入口",
+      "summary": "提供文本、视觉、音频和多模态模型的定义、推理与训练接口，是本期 OCR 与语音工具链选型的基础观察项。",
+      "why_it_matters": "同一模型接入生态时，框架版本、处理器和具体权重必须一起核对。",
+      "application": "固定依赖版本与模型 revision，用小样本验证输入预处理、输出格式和部署支持。",
+      "caveats": "仅按近期仓库活动与工程用途精选，未宣称本周发布了新版本；库许可证不覆盖全部模型权重。",
+      "technical_analysis": "仓库创建：2018-10-29T13:56:00Z；最近推送：2026-10-11T01:24:19Z。两者分别表示仓库年龄和代码活动，不是正式版本发布或 Star 增长证明。",
+      "evidence_note": "GitHub API 指标观测于 2026-10-11T02:41:39.745Z，已阅读 README。搜索与历史合并有 108 个候选，本轮查询 48 个；非全站榜单。缺少有效 20–28 小时每日快照，不称飙升。",
+      "canonical_url": "https://github.com/huggingface/transformers",
+      "github_metrics": {
+        "stars": 167296,
+        "forks": 34800,
+        "license": "Apache-2.0",
+        "observed_at": "2026-10-11T02:41:39.745Z",
+        "stars_delta": null,
+        "previous_observed_at": null
+      },
+      "sources": [
+        {
+          "ref_id": "repo",
+          "title": "仓库与 README",
+          "publisher": "huggingface/transformers",
+          "url": "https://github.com/huggingface/transformers"
+        },
+        {
+          "ref_id": "api",
+          "title": "真实指标 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/huggingface/transformers"
+        }
+      ],
+      "key_facts": [
+        {
+          "fact": "API 许可证：Apache-2.0；Star 总数：167296。"
         }
       ]
     },
@@ -282,106 +455,125 @@
     }
   ],
   "source_stats": {
-    "news_count": 0,
-    "github_radar_count": 4,
+    "news_count": 9,
+    "weekly_preprint_count": 1,
+    "github_radar_count": 3,
+    "new_project_count": 2,
+    "established_project_count": 1,
+    "rising_project_count": 0,
     "historical_paper_count": 1,
-    "github_candidates": 4,
+    "github_candidates": 108,
+    "github_queried_candidates": 48,
     "registry_records_fetched": 100,
     "registry_pagination_complete": false,
     "coverage": [
       {
         "id": "arxiv-ai",
-        "status": "未收录新的合格新闻",
-        "detail": "已打开三个 recent 列表，最新可见日期为 10 月 9 日，未取得本次窗口内的合格新发布证据。",
+        "detail": "本轮打开 cs.AI、cs.CV、cs.LG recent 首屏，并读取 2610.12466 提交记录和正文，入选 1 条预印本。列表未完整分页，不宣称覆盖全部周内论文。",
         "urls": [
           "https://arxiv.org/list/cs.AI/recent",
           "https://arxiv.org/list/cs.CV/recent",
           "https://arxiv.org/list/cs.LG/recent"
-        ]
+        ],
+        "checked_during": "2026-10-11 本次 r3 采集",
+        "status": "已检查，覆盖与限制见说明"
       },
       {
         "id": "huggingface-blog",
-        "status": "未收录新的合格新闻",
-        "detail": "检查博客及候选文章；可核实的近期候选为 10 月 9 日，排除。",
+        "detail": "检查博客及 LightOn AI、TII、Ai2 原文，入选 OCR、ASR 与 GPU 调度 3 条；明确机构作者，不全部称 Hugging Face 官方研究。",
         "urls": [
           "https://huggingface.co/blog",
+          "https://huggingface.co/blog/lightonai/lightonocr-3",
+          "https://huggingface.co/blog/tiiuae/falcon-asr",
           "https://huggingface.co/blog/allenai/impactful-scheduling"
-        ]
+        ],
+        "checked_during": "2026-10-11 本次 r3 采集",
+        "status": "已检查，覆盖与限制见说明"
       },
       {
         "id": "independent-evaluations",
-        "status": "未收录新的合格新闻",
-        "detail": "METR、Artificial Analysis 与 NIST 检查中未取得满足日期与方法要求的 10 月 10 日新发布证据；动态页面存在覆盖限制。",
+        "detail": "打开 METR 更新及原文、Artificial Analysis 与 NIST 页面，入选 METR 安全工程报告 1 条；未取得其余两个渠道适合本期的带方法和日期的新评测，不转录动态榜单。",
         "urls": [
           "https://metr.org/blog/",
           "https://artificialanalysis.ai/",
           "https://www.nist.gov/ai-measurement-and-evaluation"
-        ]
+        ],
+        "checked_during": "2026-10-11 本次 r3 采集",
+        "status": "已检查，覆盖与限制见说明"
       },
       {
         "id": "langchain",
-        "status": "未收录新的合格新闻",
-        "detail": "已打开博客，检查最近 5 条 release，最新发布时间为 10 月 8 日 UTC，早于本次窗口。",
+        "detail": "检查博客与最近 3 条 GitHub release，入选技能机制更新。blog.langchain.com 旧地址读取失败，改用可读的 langchain.com 正式正文。",
         "urls": [
           "https://www.langchain.com/blog",
-          "https://github.com/langchain-ai/langchain/releases"
-        ]
+          "https://www.langchain.com/blog/revamping-skills-in-deep-agents",
+          "https://api.github.com/repos/langchain-ai/langchain/releases?per_page=3"
+        ],
+        "checked_during": "2026-10-11 本次 r3 采集",
+        "status": "已检查，覆盖与限制见说明"
       },
       {
         "id": "llamaindex",
-        "status": "未收录新的合格新闻",
-        "detail": "博客最近可见条目为 10 月 8 日；最近 5 条 core release 最新为 9 月 21 日。",
+        "detail": "打开官方博客、OpenDocRouter 正文与最近 3 条 core release，入选新平台介绍；core release 最新为 9 月 21 日，未冒充周内版本。",
         "urls": [
           "https://www.llamaindex.ai/blog",
-          "https://github.com/run-llama/llama_index/releases"
-        ]
+          "https://www.llamaindex.ai/blog/introducing-opendocrouter",
+          "https://api.github.com/repos/run-llama/llama_index/releases?per_page=3"
+        ],
+        "checked_during": "2026-10-11 本次 r3 采集",
+        "status": "已检查，覆盖与限制见说明"
       },
       {
         "id": "modelcontextprotocol",
-        "status": "未收录新的合格新闻",
-        "detail": "已打开协议博客，检查 TypeScript SDK 最近 5 条 release，最新为 10 月 5 日。另发现 Cloudflare 10 月 10 日 skills 公告，但页面只给日期，缺乏时区及精确时间，无法确认严格滚动 24 小时边界，未作为合格新闻收录。",
+        "detail": "打开 MCP 博客、Skills 扩展规范及 TypeScript SDK 最近 3 条 release；从实践渠道核实 Cloudflare 10 月 10 日公告并入选。官方博客首屏最新为 8 月路线图，不把博客与 SDK 发布时间混用。",
         "urls": [
-          "https://modelcontextprotocol.io/",
-          "https://github.com/modelcontextprotocol/typescript-sdk/releases",
           "https://blog.modelcontextprotocol.io/",
-          "https://developers.cloudflare.com/changelog/post/2026-10-10-cloudflare-mcp-skills/"
-        ]
+          "https://modelcontextprotocol.io/extensions/skills/overview",
+          "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/releases?per_page=3"
+        ],
+        "checked_during": "2026-10-11 本次 r3 采集",
+        "status": "已检查，覆盖与限制见说明"
       },
       {
         "id": "openai-news",
-        "status": "未收录新的合格新闻",
-        "detail": "官方新闻页可核实的近期候选早于 10 月 10 日，未纳入。",
+        "detail": "检查官方新闻页并阅读 10 月 7 日 GPT-6 与 Intelligent UI 公告，入选 1 条；未验证每个账户实际开放情况。",
         "urls": [
-          "https://openai.com/news/"
-        ]
+          "https://openai.com/news/",
+          "https://openai.com/index/gpt-6-for-everyone/"
+        ],
+        "checked_during": "2026-10-11 本次 r3 采集",
+        "status": "已检查，覆盖与限制见说明"
       },
       {
         "id": "mcp-registry-practice",
-        "status": "未收录新的合格新闻",
-        "detail": "读取首批 100 条候选，未遍历后续分页。上一期已收录项目不重复；抽查 AnkiMCP 0.32.1 的正式 release 与 compare API，改动主要为评分入口，工程信息增量不足，排除。其他候选未逐一深入核验，不声称穷尽。",
+        "detail": "重新获取 Registry 首批 100 条记录，仍有 nextCursor，未完成分页。已发布的 ProxmoxMCP、Labby、Elicitly、ZenBrain 不重复收录；本轮未从这批记录新增可靠专题。Cloudflare 实践来自官方公告，不冒称 Registry 搜索结果。",
         "urls": [
-          "https://registry.modelcontextprotocol.io/v0.1/servers?limit=100&updated_since=2026-10-10T01%3A33%3A21.179Z"
-        ]
+          "https://registry.modelcontextprotocol.io/",
+          "https://registry.modelcontextprotocol.io/v0.1/servers?limit=100"
+        ],
+        "checked_during": "2026-10-11 本次 r3 采集",
+        "status": "已检查，覆盖与限制见说明"
       },
       {
         "id": "tinyfish-practice-discovery",
-        "status": "未收录新的合格新闻",
-        "detail": "已打开官网与 cookbook，release API 返回空数组；未取得窗口内有可靠发布时间的具体新实践。未调用付费服务。",
+        "detail": "打开官网、cookbook README 并查 release API（空列表）；没有取得可可靠标注周内首次发布的实践。未调用付费服务或安装代码。",
         "urls": [
           "https://www.tinyfish.ai/",
-          "https://github.com/tinyfish-io/tinyfish-cookbook"
-        ]
+          "https://github.com/tinyfish-io/tinyfish-cookbook",
+          "https://api.github.com/repos/tinyfish-io/tinyfish-cookbook/releases?per_page=3"
+        ],
+        "checked_during": "2026-10-11 本次 r3 采集",
+        "status": "已检查，覆盖与限制见说明"
       }
-    ],
-    "github_discovery_scope": "定向核实 4 个通用开发工具；不代表全站或完整近月排名",
-    "coverage_inherited_from": "2026-10-11-r1",
-    "github_lookback_days": 30
+    ]
   },
   "selection_notes": [
-    "本次 r2 仅刷新 GitHub 项目精选；九个 AI 来源覆盖、新闻窗口和 Mask2Former 论文分析沿用今天 r1，未把历史检查时间改成新的采集时间。",
-    "项目按近 30 天仓库活动与工程价值挑选，pushed_at 不是正式版本发布时间。uv、fzf 的 release 另行核实；bat 正式版较早；Bun release 查询限流，保留缺口。",
-    "4 个项目此前没有有效的 20–28 小时相邻指标快照，增长为 null，不将总 Star 或短时变化称为飙升。",
-    "上一修订及原有历史均保留；同日论文专题沿用，不计为新论文或新发布新闻。",
-    "本期报告：reports/daily/2026-10-11-r2.md；实际指标与来源记录分别保存在 data/github-stars 和 reports/sources。"
+    "资讯窗口按本次生成时刻滚动回看 7 天；入选条目发布于 10 月 6–10 日，真实日期保留，不叫 10 月 11 日当天发布。",
+    "新策略重采全部九个指定渠道；首屏列表、动态榜单和 Registry 分页存在覆盖限制。",
+    "按历史 canonical URL 与稳定事件标识去重；10 月 10 日四条已发 MCP 资讯不重复。",
+    "GitHub 候选新项目预留预算有效，本期新项目 Star 分别为 10 与 20；入选看工程用途，不声称已验证质量或增长。",
+    "48 个实际仓库指标全部缺少有效每日增长基线；增长席位留空，未用成熟项目凑满 4 个。",
+    "每日视觉论文沿用同日已完成的 Mask2Former 精读，保留稳定标识与原始 2022 年份；本修订未重新复现。",
+    "原始来源中的模型成绩与产品能力均为对应发布者声明；可执行建议属于编辑判断，本期未调用付费 API。"
   ]
 }

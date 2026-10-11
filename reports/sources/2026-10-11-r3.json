@@ -1,0 +1,363 @@
+{
+  "collected_at": "2026-10-11T02:46:30.971Z",
+  "window": {
+    "start": "2026-10-04T02:46:30.971Z",
+    "end": "2026-10-11T02:46:30.971Z",
+    "timezone": "Asia/Shanghai",
+    "end_exclusive": true,
+    "lookback_days": 7
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "detail": "本轮打开 cs.AI、cs.CV、cs.LG recent 首屏，并读取 2610.12466 提交记录和正文，入选 1 条预印本。列表未完整分页，不宣称覆盖全部周内论文。",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "checked_during": "2026-10-11 本次 r3 采集",
+      "status": "已检查，覆盖与限制见说明"
+    },
+    {
+      "id": "huggingface-blog",
+      "detail": "检查博客及 LightOn AI、TII、Ai2 原文，入选 OCR、ASR 与 GPU 调度 3 条；明确机构作者，不全部称 Hugging Face 官方研究。",
+      "urls": [
+        "https://huggingface.co/blog",
+        "https://huggingface.co/blog/lightonai/lightonocr-3",
+        "https://huggingface.co/blog/tiiuae/falcon-asr",
+        "https://huggingface.co/blog/allenai/impactful-scheduling"
+      ],
+      "checked_during": "2026-10-11 本次 r3 采集",
+      "status": "已检查，覆盖与限制见说明"
+    },
+    {
+      "id": "independent-evaluations",
+      "detail": "打开 METR 更新及原文、Artificial Analysis 与 NIST 页面，入选 METR 安全工程报告 1 条；未取得其余两个渠道适合本期的带方法和日期的新评测，不转录动态榜单。",
+      "urls": [
+        "https://metr.org/blog/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "checked_during": "2026-10-11 本次 r3 采集",
+      "status": "已检查，覆盖与限制见说明"
+    },
+    {
+      "id": "langchain",
+      "detail": "检查博客与最近 3 条 GitHub release，入选技能机制更新。blog.langchain.com 旧地址读取失败，改用可读的 langchain.com 正式正文。",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://www.langchain.com/blog/revamping-skills-in-deep-agents",
+        "https://api.github.com/repos/langchain-ai/langchain/releases?per_page=3"
+      ],
+      "checked_during": "2026-10-11 本次 r3 采集",
+      "status": "已检查，覆盖与限制见说明"
+    },
+    {
+      "id": "llamaindex",
+      "detail": "打开官方博客、OpenDocRouter 正文与最近 3 条 core release，入选新平台介绍；core release 最新为 9 月 21 日，未冒充周内版本。",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://www.llamaindex.ai/blog/introducing-opendocrouter",
+        "https://api.github.com/repos/run-llama/llama_index/releases?per_page=3"
+      ],
+      "checked_during": "2026-10-11 本次 r3 采集",
+      "status": "已检查，覆盖与限制见说明"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "detail": "打开 MCP 博客、Skills 扩展规范及 TypeScript SDK 最近 3 条 release；从实践渠道核实 Cloudflare 10 月 10 日公告并入选。官方博客首屏最新为 8 月路线图，不把博客与 SDK 发布时间混用。",
+      "urls": [
+        "https://blog.modelcontextprotocol.io/",
+        "https://modelcontextprotocol.io/extensions/skills/overview",
+        "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/releases?per_page=3"
+      ],
+      "checked_during": "2026-10-11 本次 r3 采集",
+      "status": "已检查，覆盖与限制见说明"
+    },
+    {
+      "id": "openai-news",
+      "detail": "检查官方新闻页并阅读 10 月 7 日 GPT-6 与 Intelligent UI 公告，入选 1 条；未验证每个账户实际开放情况。",
+      "urls": [
+        "https://openai.com/news/",
+        "https://openai.com/index/gpt-6-for-everyone/"
+      ],
+      "checked_during": "2026-10-11 本次 r3 采集",
+      "status": "已检查，覆盖与限制见说明"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "detail": "重新获取 Registry 首批 100 条记录，仍有 nextCursor，未完成分页。已发布的 ProxmoxMCP、Labby、Elicitly、ZenBrain 不重复收录；本轮未从这批记录新增可靠专题。Cloudflare 实践来自官方公告，不冒称 Registry 搜索结果。",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/",
+        "https://registry.modelcontextprotocol.io/v0.1/servers?limit=100"
+      ],
+      "checked_during": "2026-10-11 本次 r3 采集",
+      "status": "已检查，覆盖与限制见说明"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "detail": "打开官网、cookbook README 并查 release API（空列表）；没有取得可可靠标注周内首次发布的实践。未调用付费服务或安装代码。",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook",
+        "https://api.github.com/repos/tinyfish-io/tinyfish-cookbook/releases?per_page=3"
+      ],
+      "checked_during": "2026-10-11 本次 r3 采集",
+      "status": "已检查，覆盖与限制见说明"
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "openai-intelligent-ui-20261007",
+      "published_at": "2026-10-07",
+      "precision": "day",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/gpt-6-for-everyone/"
+        }
+      ]
+    },
+    {
+      "item_id": "lightonocr3-20261008",
+      "published_at": "2026-10-08",
+      "precision": "day",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "LightOn AI / Hugging Face 社区文章",
+          "url": "https://huggingface.co/blog/lightonai/lightonocr-3"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者代码仓库",
+          "publisher": "LightOn AI",
+          "url": "https://github.com/lightonai/LightOnOCR"
+        },
+        {
+          "ref_id": "model",
+          "title": "0.8B 模型页",
+          "publisher": "LightOn AI",
+          "url": "https://huggingface.co/lightonai/LightOnOCR-3-0.8B"
+        }
+      ]
+    },
+    {
+      "item_id": "falcon-asr-20261007",
+      "published_at": "2026-10-07",
+      "precision": "day",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "TII / Hugging Face 团队文章",
+          "url": "https://huggingface.co/blog/tiiuae/falcon-asr"
+        }
+      ]
+    },
+    {
+      "item_id": "ai2-gpu-fairshare-20261009",
+      "published_at": "2026-10-09",
+      "precision": "day",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "Ai2 / Hugging Face 企业文章",
+          "url": "https://huggingface.co/blog/allenai/impactful-scheduling"
+        }
+      ]
+    },
+    {
+      "item_id": "deepagents-skills-20261007",
+      "published_at": "2026-10-07",
+      "precision": "day",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "LangChain",
+          "url": "https://www.langchain.com/blog/revamping-skills-in-deep-agents"
+        }
+      ]
+    },
+    {
+      "item_id": "opendocrouter-20261007",
+      "published_at": "2026-10-07",
+      "precision": "day",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "LlamaIndex",
+          "url": "https://www.llamaindex.ai/blog/introducing-opendocrouter"
+        }
+      ]
+    },
+    {
+      "item_id": "cloudflare-mcp-skills-20261010",
+      "published_at": "2026-10-10",
+      "precision": "day",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "Cloudflare",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-10-10-cloudflare-mcp-skills/"
+        },
+        {
+          "ref_id": "spec",
+          "title": "Skills 扩展规范",
+          "publisher": "MCP",
+          "url": "https://modelcontextprotocol.io/extensions/skills/overview"
+        },
+        {
+          "ref_id": "code",
+          "title": "Cloudflare 技能仓库",
+          "publisher": "Cloudflare",
+          "url": "https://github.com/cloudflare/skills"
+        }
+      ]
+    },
+    {
+      "item_id": "metr-observability-20261006",
+      "published_at": "2026-10-06",
+      "precision": "day",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始发布正文",
+          "publisher": "METR",
+          "url": "https://metr.org/blog/2026-10-06-ai-systems-could-cover-up-misbehavior/"
+        }
+      ]
+    },
+    {
+      "item_id": "arxiv-2610-12466",
+      "published_at": "2026-10-08T17:59:50Z",
+      "precision": "second",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "提交记录与摘要",
+          "publisher": "Drew T. Nguyen、William Fithian / arXiv",
+          "url": "https://arxiv.org/abs/2610.12466"
+        },
+        {
+          "ref_id": "fulltext",
+          "title": "论文正文",
+          "publisher": "Drew T. Nguyen、William Fithian / arXiv",
+          "url": "https://arxiv.org/html/2610.12466v1"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "snapshot": "data/github-stars/2026-10-11-r3.json",
+    "candidate_count": 108,
+    "queried_candidates": 48,
+    "errors": [],
+    "selected": [
+      {
+        "item_id": "github-radar-R_kgDOULGvXA",
+        "lane": "new",
+        "url": "https://github.com/zafnz/jqweb"
+      },
+      {
+        "item_id": "github-radar-R_kgDOUP04Zw",
+        "lane": "new",
+        "url": "https://github.com/nao1215/jsonize"
+      },
+      {
+        "item_id": "github-radar-MDEwOlJlcG9zaXRvcnkxNTUyMjA2NDE=",
+        "lane": "established",
+        "url": "https://github.com/huggingface/transformers"
+      }
+    ],
+    "rising_gap": "No valid 20–28h baseline"
+  },
+  "release_checks": [
+    {
+      "repo": "modelcontextprotocol/typescript-sdk",
+      "collected_at": "2026-10-11T02:43:25.9931227Z",
+      "error": null,
+      "releases": [
+        {
+          "tag": "v2.3.1",
+          "published_at": "2026-10-05T11:54:56Z",
+          "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.3.1"
+        },
+        {
+          "tag": "1.32.1",
+          "published_at": "2026-10-05T11:42:59Z",
+          "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/1.32.1"
+        },
+        {
+          "tag": "@modelcontextprotocol/server@2.3.1",
+          "published_at": "2026-10-05T11:49:34Z",
+          "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol/server%402.3.1"
+        }
+      ]
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "collected_at": "2026-10-11T02:43:26.3582124Z",
+      "error": null,
+      "releases": [
+        {
+          "tag": "langchain==1.4.4",
+          "published_at": "2026-10-08T22:14:22Z",
+          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.4"
+        },
+        {
+          "tag": "langchain-openai==1.7.0",
+          "published_at": "2026-10-08T16:07:53Z",
+          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.7.0"
+        },
+        {
+          "tag": "langchain-core==1.6.9",
+          "published_at": "2026-10-08T20:11:32Z",
+          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.6.9"
+        }
+      ]
+    },
+    {
+      "repo": "run-llama/llama_index",
+      "collected_at": "2026-10-11T02:43:26.7246707Z",
+      "error": null,
+      "releases": [
+        {
+          "tag": "v0.14.25",
+          "published_at": "2026-09-21T16:22:27Z",
+          "url": "https://github.com/run-llama/llama_index/releases/tag/v0.14.25"
+        },
+        {
+          "tag": "v0.14.24",
+          "published_at": "2026-08-19T18:48:01Z",
+          "url": "https://github.com/run-llama/llama_index/releases/tag/v0.14.24"
+        },
+        {
+          "tag": "v0.14.23",
+          "published_at": "2026-06-24T19:36:43Z",
+          "url": "https://github.com/run-llama/llama_index/releases/tag/v0.14.23"
+        }
+      ]
+    },
+    {
+      "repo": "tinyfish-io/tinyfish-cookbook",
+      "collected_at": "2026-10-11T02:43:27.0615225Z",
+      "error": null,
+      "releases": []
+    }
+  ],
+  "registry": {
+    "fetched": 100,
+    "pagination_complete": false,
+    "next_cursor": "ai.agent-bev/bev-door:0.2.3"
+  },
+  "paper_inherited_from": "2026-10-11-r1"
+}

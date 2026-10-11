@@ -1,6 +1,13 @@
 [
   {
     "issue_date": "2026-10-11",
+    "revision": 3,
+    "title": "一周 AI 工程精选：文档、语音与 Agent 可靠性，再看两个新工具",
+    "item_count": 13,
+    "path": "data/archive/2026-10-11-r3.json"
+  },
+  {
+    "issue_date": "2026-10-11",
     "revision": 2,
     "title": "从 Python 到终端与前端：4 个热门开发工具精选",
     "item_count": 5,
