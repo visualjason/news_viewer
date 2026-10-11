@@ -4,7 +4,10 @@
   "baseline_min_hours": 20,
   "baseline_max_hours": 28,
   "daily_limit": 4,
-  "queries": ["topic:llm stars:>10000 archived:false", "topic:ai-agent stars:>100 archived:false"],
+  "lookback_days": 30,
+  "search_page_size": 10,
+  "max_candidates": 50,
+  "queries": ["topic:developer-tools stars:>100 pushed:>={since} archived:false", "topic:command-line stars:>100 pushed:>={since} archived:false", "topic:devops stars:>100 pushed:>={since} archived:false", "topic:llm stars:>10000 pushed:>={since} archived:false", "topic:ai-agent stars:>100 pushed:>={since} archived:false"],
   "watchlist": ["langchain-ai/langgraph", "langgenius/dify", "vllm-project/vllm", "ollama/ollama"],
-  "policy": "仅选 AI 相关项目。高 Star 为编辑精选，不冒充全站排名；飙升只按相同仓库 node_id 的真实相邻快照计算，不将 pushed_at 或总 Star 当增量。首次采集为基线，不得伪造历史增长。"
+  "policy": "可选 AI 项目及通用开发工具，包括命令行、编辑器、前后端、数据库、测试、构建、DevOps 等；优先最近 30 天活跃或有重要更新的项目。pushed_at 只用于发现活跃候选，重要更新需核对正式 release。高 Star 为编辑精选，不冒充全站排名；飙升只按相同仓库 node_id 的真实相邻快照计算，不将 pushed_at 或总 Star 当增量。首次采集为基线，不得伪造历史增长。"
 }

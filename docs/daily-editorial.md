@@ -26,7 +26,9 @@
 
 ## GitHub 热门与飙升
 
-新增用户授权的每日项目精选，独立于最近 24 小时新闻。读取 config/github-radar.json，以 AI topic 搜索、近期活跃项目和 GitHub Trending 发现候选，回查仓库 API 与 README。排除归档、fork 和与 AI 无关项目；只按 Star 不能证明工程质量。默认高 Star 至少 10,000，每期精选最多 4 个，轮换项目，近期重复只有实质更新或显著增长才再次精选。
+新增用户授权的每日项目精选，独立于最近 24 小时新闻。范围包括 AI 项目与通用开发工具，如命令行、编辑器、前后端、数据库、测试、构建及 DevOps；允许精选最近 30 天活跃或有重要更新的项目，不要求当天新发布。读取 config/github-radar.json，以开发工具及 AI topic 搜索、近期活跃项目和 GitHub Trending 发现候选，回查仓库 API 与 README。排除归档、fork 和无工程使用价值的项目；只按 Star 不能证明工程质量。pushed_at 仅表示代码活动，重要更新应核对正式 release 时间与变更。默认高 Star 至少 10,000，每期精选最多 4 个，轮换项目，近期重复只有实质更新或显著增长才再次精选。AI 新闻仍按最近 24 小时筛选。
+
+采集器将 {since} 替换为执行时刻前 30 天的日期；各 topic 搜索最多 10 条，以轮换方式合并发现候选，并优先保留历史观察列表，单轮最多查询 50 个仓库。输出 candidate_count 与 queried_candidates，达到上限时记录未覆盖范围，不能宣称完整搜索了过去一个月所有项目。
 
 运行 `node scripts/github-radar.mjs <仓库外输出.json>` 获取候选与真实时间戳，检查 errors/discovery，保留覆盖缺口。审阅后将快照追加至 data/github-stars/YYYY-MM-DD-rN.json，不覆盖旧快照；每次继续跟踪已入选项目，同时从 topic／Trending 发现新候选。增长按相同 node_id 的约 24 小时相邻快照计算，允许 20–28 小时观测间隔，页面显示实际小时数。默认净增至少 100 Star 作为飙升候选，兼顾相对增长率和工程价值。缺少有效基线时增长填 null，不能用总 Star、提交活跃度或短时间增量冒充日增长。GitHub Trending 的页面指标只能注明它自己的窗口与来源，不能混作本地净增量。
 
