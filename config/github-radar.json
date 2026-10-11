@@ -6,8 +6,63 @@
   "daily_limit": 4,
   "lookback_days": 30,
   "search_page_size": 10,
-  "max_candidates": 50,
-  "queries": ["topic:developer-tools stars:>100 pushed:>={since} archived:false", "topic:command-line stars:>100 pushed:>={since} archived:false", "topic:devops stars:>100 pushed:>={since} archived:false", "topic:llm stars:>10000 pushed:>={since} archived:false", "topic:ai-agent stars:>100 pushed:>={since} archived:false"],
-  "watchlist": ["langchain-ai/langgraph", "langgenius/dify", "vllm-project/vllm", "ollama/ollama"],
-  "policy": "可选 AI 项目及通用开发工具，包括命令行、编辑器、前后端、数据库、测试、构建、DevOps 等；优先最近 30 天活跃或有重要更新的项目。pushed_at 只用于发现活跃候选，重要更新需核对正式 release。高 Star 为编辑精选，不冒充全站排名；飙升只按相同仓库 node_id 的真实相邻快照计算，不将 pushed_at 或总 Star 当增量。首次采集为基线，不得伪造历史增长。"
+  "max_candidates": 48,
+  "queries": [
+    {
+      "lane": "established",
+      "sort": "stars",
+      "query": "topic:developer-tools stars:>=10000 pushed:>={since} archived:false fork:false"
+    },
+    {
+      "lane": "established",
+      "sort": "stars",
+      "query": "topic:llm stars:>=10000 pushed:>={since} archived:false fork:false"
+    },
+    {
+      "lane": "activity",
+      "sort": "updated",
+      "query": "topic:command-line stars:>=10 pushed:>={since} archived:false fork:false"
+    },
+    {
+      "lane": "activity",
+      "sort": "updated",
+      "query": "topic:devops stars:>=10 pushed:>={since} archived:false fork:false"
+    },
+    {
+      "lane": "activity",
+      "sort": "updated",
+      "query": "topic:ai-agent stars:>=10 pushed:>={since} archived:false fork:false"
+    },
+    {
+      "lane": "new",
+      "sort": "updated",
+      "query": "topic:developer-tools stars:>=10 created:>={new_since} pushed:>={since} archived:false fork:false"
+    },
+    {
+      "lane": "new",
+      "sort": "updated",
+      "query": "topic:command-line stars:>=10 created:>={new_since} pushed:>={since} archived:false fork:false"
+    },
+    {
+      "lane": "new",
+      "sort": "updated",
+      "query": "topic:ai-agent stars:>=10 created:>={new_since} pushed:>={since} archived:false fork:false"
+    }
+  ],
+  "watchlist": [
+    "langchain-ai/langgraph",
+    "langgenius/dify",
+    "vllm-project/vllm",
+    "ollama/ollama"
+  ],
+  "policy": "AI 与通用开发工具均可。项目回看近 30 天；新项目默认创建于近 90 天，发现阶段仅设 10 Star 低门槛，不受成熟项目 10000 Star 门槛限制。每期最多 4 个：成熟最多 1、增长目标 1、新项目目标 2；有合格新项目时保留 2 席，不足则少发，不用老项目填满。增长候选为有效日快照净增至少 100，或净增至少 20 且相对增长至少 10%；绝对与相对指标都展示。查询分成熟、近期活动、新项目，活动与新项目按 updated 发现，不冒充增长排名。候选预算优先给新项目 24 席、其他发现 12 席，其余跟踪历史，空余可回填。必须核对 README、实际用途、许可证及维护；created_at 不证明产品刚上线，pushed_at 不证明正式发布。首次观测增长 null，新项目可凭工程价值入选，标新项目观察，不称飙升。",
+  "new_project_days": 90,
+  "new_candidate_quota": 24,
+  "rising_relative_min_percent": 10,
+  "rising_relative_min_delta": 20,
+  "editorial_slots": {
+    "established_max": 1,
+    "rising_target": 1,
+    "new_target": 2
+  }
 }
