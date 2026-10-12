@@ -1,0 +1,542 @@
+{
+  "collection_started_at": "2026-10-12T00:35:39.448Z",
+  "collected_at": "2026-10-12T00:39:42.529Z",
+  "window": {
+    "start": "2026-10-05T00:39:42.529Z",
+    "end": "2026-10-12T00:39:42.529Z",
+    "timezone": "Asia/Shanghai",
+    "end_exclusive": true,
+    "lookback_days": 7
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-12 本次人工采集",
+      "detail": "检查 cs.AI、cs.CV、cs.LG recent 首屏，最新批次为 10 月 9 日；入选 2610.12464，按提交记录保留 10 月 8 日 UTC，不把列表日期当提交时间。未遍历所有论文。",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ]
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-12 本次人工采集",
+      "detail": "检查主博客与社区入口，入选 ML Intern 作者实践和 LiquidAI 团队 open d1；此前 LightOnOCR、Falcon ASR、Ai2 调度不重复。社区作者与官方发布身份分开。",
+      "urls": [
+        "https://huggingface.co/blog"
+      ]
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-12 本次人工采集",
+      "detail": "打开 METR 博客、Artificial Analysis、NIST；METR 10 月 6 日文章已收录，不重复。动态榜单与项目介绍未提供本轮可独立核实的新报告，未转榜单冒充新评测。",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ]
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-12 本次人工采集",
+      "detail": "检查博客并读 Slack reactions 教程、v0.9 公告及 Snyk 案例；合并同一接口的发布与教程信息，只选教程一条，另选 Snyk 案例。",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ]
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-12 本次人工采集",
+      "detail": "检查博客并读 Markdown Is All You Need；OpenDocRouter 已收录不重复。未从无明确日期的列表项推断新发布。",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ]
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-12 本次人工采集",
+      "detail": "打开官方博客并读 TypeScript SDK release/API；入选 10 月 5 日 2.3.1 补丁，仍在真实滚动七天窗口内。未遍历全部 SDK 仓库。",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ]
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-12 本次人工采集",
+      "detail": "打开官方新闻页并读 10 月 8 日影响行动调查；Intelligent UI 已收录不重复，调查归因仅按平台报告表述。",
+      "urls": [
+        "https://openai.com/news/"
+      ]
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-12 本次人工采集",
+      "detail": "重新获取首批 100 条，存在 nextCursor，未完成分页。未从这批发现足够明确、未重复的实践，不将注册解释为审核通过。",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ]
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-12 本次人工采集",
+      "detail": "打开官网与 cookbook README；本轮没有核实到新的周内具体实践发布时间，因此不选。未调用服务或执行代码。",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ]
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "hf-ml-intern-20261008",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Hugging Face 作者实践",
+          "url": "https://huggingface.co/blog/building-with-ml-intern"
+        }
+      ]
+    },
+    {
+      "item_id": "liquid-open-d1-20261007",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LiquidAI / Hugging Face 团队文章",
+          "url": "https://huggingface.co/blog/LiquidAI/open-d1"
+        }
+      ]
+    },
+    {
+      "item_id": "llama-markdown-20261008",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LlamaIndex",
+          "url": "https://www.llamaindex.ai/blog/markdown-is-all-you-need"
+        }
+      ]
+    },
+    {
+      "item_id": "mda-reactions-20261009",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain",
+          "url": "https://www.langchain.com/blog/slack-sdk-managed-deep-agents"
+        }
+      ]
+    },
+    {
+      "item_id": "snyk-assist-case-20261008",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Snyk 作者 / LangChain",
+          "url": "https://www.langchain.com/blog/how-snyk-turned-an-internal-support-agent-into-a-customer-feature"
+        }
+      ]
+    },
+    {
+      "item_id": "openai-false-front-20261008",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations/"
+        }
+      ]
+    },
+    {
+      "item_id": "mcp-sdk-2-3-1-20261005",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Model Context Protocol",
+          "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.3.1"
+        }
+      ]
+    },
+    {
+      "item_id": "arxiv-2610-12464",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Jiahua Dong 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.12464"
+        },
+        {
+          "ref_id": "fulltext",
+          "title": "论文正文",
+          "publisher": "作者",
+          "url": "https://arxiv.org/html/2610.12464v1"
+        }
+      ]
+    },
+    {
+      "item_id": "github-mapbox-mapbox-cli",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "mapbox/mapbox-cli",
+          "url": "https://github.com/mapbox/mapbox-cli"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API 与指标",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/mapbox/mapbox-cli"
+        }
+      ]
+    },
+    {
+      "item_id": "github-rociiu-talorys",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "rociiu/talorys",
+          "url": "https://github.com/rociiu/talorys"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API 与指标",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/rociiu/talorys"
+        }
+      ]
+    },
+    {
+      "item_id": "github-can1357-oh-my-pi",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "can1357/oh-my-pi",
+          "url": "https://github.com/can1357/oh-my-pi"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API 与指标",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/can1357/oh-my-pi"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-mae-arxiv-2111-06377",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "CVPR 2022 正式会议论文页",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/html/He_Masked_Autoencoders_Are_Scalable_Vision_Learners_CVPR_2022_paper.html"
+        },
+        {
+          "ref_id": "fulltext",
+          "title": "论文全文 v3 与实验附录",
+          "publisher": "作者 / arXiv",
+          "url": "https://arxiv.org/html/2111.06377v3"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者 PyTorch 实现与许可",
+          "publisher": "facebookresearch",
+          "url": "https://github.com/facebookresearch/mae"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 123,
+    "queried_candidates": 48,
+    "errors": [],
+    "snapshot": "data/github-stars/2026-10-12-r1.json",
+    "selected": [
+      {
+        "item_id": "github-mapbox-mapbox-cli",
+        "lane": "new",
+        "metrics": {
+          "stars": 13,
+          "forks": 2,
+          "license": "MIT",
+          "observed_at": "2026-10-12T00:35:49.505Z",
+          "stars_delta": 0,
+          "previous_observed_at": "2026-10-11T02:41:30.079Z",
+          "growth_percent": 0
+        }
+      },
+      {
+        "item_id": "github-rociiu-talorys",
+        "lane": "new",
+        "metrics": {
+          "stars": 750,
+          "forks": 56,
+          "license": "MIT",
+          "observed_at": "2026-10-12T00:35:46.731Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-can1357-oh-my-pi",
+        "lane": "rising",
+        "metrics": {
+          "stars": 35063,
+          "forks": 3815,
+          "license": "MIT",
+          "observed_at": "2026-10-12T00:35:51.186Z",
+          "stars_delta": 125,
+          "previous_observed_at": "2026-10-11T01:38:23.750Z",
+          "growth_percent": 0.3577766328925525
+        }
+      }
+    ]
+  },
+  "registry": {
+    "fetched": 100,
+    "pagination_complete": false
+  },
+  "sdk_releases": [
+    {
+      "url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403661217",
+      "assets_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403661217/assets",
+      "upload_url": "https://uploads.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403661217/assets{?name,label}",
+      "html_url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.3.1",
+      "id": 403661217,
+      "author": {
+        "login": "felixweinberger",
+        "id": 3823880,
+        "node_id": "MDQ6VXNlcjM4MjM4ODA=",
+        "avatar_url": "https://avatars.githubusercontent.com/u/3823880?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/felixweinberger",
+        "html_url": "https://github.com/felixweinberger",
+        "followers_url": "https://api.github.com/users/felixweinberger/followers",
+        "following_url": "https://api.github.com/users/felixweinberger/following{/other_user}",
+        "gists_url": "https://api.github.com/users/felixweinberger/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/felixweinberger/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/felixweinberger/subscriptions",
+        "organizations_url": "https://api.github.com/users/felixweinberger/orgs",
+        "repos_url": "https://api.github.com/users/felixweinberger/repos",
+        "events_url": "https://api.github.com/users/felixweinberger/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/felixweinberger/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDOM2nl2s4YD2Gh",
+      "tag_name": "v2.3.1",
+      "target_commitish": "main",
+      "name": "2.3.1",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-10-05T11:46:43Z",
+      "updated_at": "2026-10-05T11:54:56Z",
+      "published_at": "2026-10-05T11:54:56Z",
+      "assets": [],
+      "tarball_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/tarball/v2.3.1",
+      "zipball_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/zipball/v2.3.1",
+      "body": "| Package | Version |\r\n|---|---|\r\n| `@modelcontextprotocol/client` | 2.3.1 |\r\n| `@modelcontextprotocol/server` | 2.3.1 |\r\n| `@modelcontextprotocol/core` | 2.3.1 |\r\n| `@modelcontextprotocol/server-legacy` | 2.3.1 |\r\n| `@modelcontextprotocol/codemod` | 2.3.1 |\r\n| `@modelcontextprotocol/node`, `express`, `hono`, `fastify` | unchanged |\r\n\r\n## Changes\r\n\r\n- `requireBearerAuth` in `@modelcontextprotocol/server-legacy` takes the optional `expectedResource` that `@modelcontextprotocol/server` 2.3.0 added: it accepts only tokens issued for this server (the token's audience). Off unless you set it. (#2952)\r\n- The npm pages of `@modelcontextprotocol/server` and `@modelcontextprotocol/client` now open with one note that links the documentation, the migration guide and the issue form. (#2955)"
+    },
+    {
+      "url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403652211",
+      "assets_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403652211/assets",
+      "upload_url": "https://uploads.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403652211/assets{?name,label}",
+      "html_url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/1.32.1",
+      "id": 403652211,
+      "author": {
+        "login": "felixweinberger",
+        "id": 3823880,
+        "node_id": "MDQ6VXNlcjM4MjM4ODA=",
+        "avatar_url": "https://avatars.githubusercontent.com/u/3823880?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/felixweinberger",
+        "html_url": "https://github.com/felixweinberger",
+        "followers_url": "https://api.github.com/users/felixweinberger/followers",
+        "following_url": "https://api.github.com/users/felixweinberger/following{/other_user}",
+        "gists_url": "https://api.github.com/users/felixweinberger/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/felixweinberger/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/felixweinberger/subscriptions",
+        "organizations_url": "https://api.github.com/users/felixweinberger/orgs",
+        "repos_url": "https://api.github.com/users/felixweinberger/repos",
+        "events_url": "https://api.github.com/users/felixweinberger/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/felixweinberger/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDOM2nl2s4YDz5z",
+      "tag_name": "1.32.1",
+      "target_commitish": "v1.x",
+      "name": "1.32.1",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-10-05T11:40:05Z",
+      "updated_at": "2026-10-05T11:42:59Z",
+      "published_at": "2026-10-05T11:42:59Z",
+      "assets": [],
+      "tarball_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/tarball/1.32.1",
+      "zipball_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/zipball/1.32.1",
+      "body": "## What's Changed\r\n* [v1.x] docs: state the principles in CLAUDE.md by @claude[bot] in https://github.com/modelcontextprotocol/typescript-sdk/pull/2939\r\n* [v1.x] docs: point the README at v2 and say what v1.x supports by @claude[bot] in https://github.com/modelcontextprotocol/typescript-sdk/pull/2942\r\n* chore: bump version to 1.32.1 by @claude[bot] in https://github.com/modelcontextprotocol/typescript-sdk/pull/2954\r\n\r\n\r\n**Full Changelog**: https://github.com/modelcontextprotocol/typescript-sdk/compare/1.32.0...1.32.1",
+      "mentions_count": 1
+    },
+    {
+      "url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403657115",
+      "assets_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403657115/assets",
+      "upload_url": "https://uploads.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403657115/assets{?name,label}",
+      "html_url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol/server%402.3.1",
+      "id": 403657115,
+      "author": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "node_id": "MDM6Qm90NDE4OTgyODI=",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+        "html_url": "https://github.com/apps/github-actions",
+        "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+        "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+        "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+        "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+        "type": "Bot",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDOM2nl2s4YD1Gb",
+      "tag_name": "@modelcontextprotocol/server@2.3.1",
+      "target_commitish": "main",
+      "name": "@modelcontextprotocol/server@2.3.1",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-10-05T11:49:28Z",
+      "updated_at": "2026-10-05T11:49:34Z",
+      "published_at": "2026-10-05T11:49:34Z",
+      "assets": [],
+      "tarball_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/tarball/@modelcontextprotocol/server@2.3.1",
+      "zipball_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/zipball/@modelcontextprotocol/server@2.3.1",
+      "body": "### Patch Changes\n\n- Updated dependencies []:\n    - @modelcontextprotocol/core@2.3.1"
+    },
+    {
+      "url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403657179",
+      "assets_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403657179/assets",
+      "upload_url": "https://uploads.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403657179/assets{?name,label}",
+      "html_url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol/server-legacy%402.3.1",
+      "id": 403657179,
+      "author": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "node_id": "MDM6Qm90NDE4OTgyODI=",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+        "html_url": "https://github.com/apps/github-actions",
+        "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+        "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+        "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+        "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+        "type": "Bot",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDOM2nl2s4YD1Hb",
+      "tag_name": "@modelcontextprotocol/server-legacy@2.3.1",
+      "target_commitish": "main",
+      "name": "@modelcontextprotocol/server-legacy@2.3.1",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-10-05T11:49:28Z",
+      "updated_at": "2026-10-05T11:49:40Z",
+      "published_at": "2026-10-05T11:49:40Z",
+      "assets": [],
+      "tarball_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/tarball/@modelcontextprotocol/server-legacy@2.3.1",
+      "zipball_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/zipball/@modelcontextprotocol/server-legacy@2.3.1",
+      "body": "### Patch Changes\n\n- [#2952](https://github.com/modelcontextprotocol/typescript-sdk/pull/2952) [`5a18673`](https://github.com/modelcontextprotocol/typescript-sdk/commit/5a1867390b91b8836f49af76c45427279f513325) Thanks [@claude](https://github.com/apps/claude)! - `requireBearerAuth` in `@modelcontextprotocol/server-legacy` takes the optional `expectedResource` that `@modelcontextprotocol/server` 2.3.0 and `@modelcontextprotocol/sdk` 1.32.0 added: the resource the token must be issued for (its audience), usually the server's URL. When it is set, a token is accepted only if the verifier reports that value in `AuthInfo.resource`; the two are compared as strings, ignoring a fragment and one trailing slash. A token reported for another value, or for none, is answered `401 invalid_token` with the usual `WWW-Authenticate` challenge. When it is not set, nothing changes. The package stays frozen otherwise; this option is added so that its `requireBearerAuth` matches the 1.x middleware it is a copy of.\n\n- Updated dependencies []:\n    - @modelcontextprotocol/core@2.3.1"
+    },
+    {
+      "url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403657212",
+      "assets_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403657212/assets",
+      "upload_url": "https://uploads.github.com/repos/modelcontextprotocol/typescript-sdk/releases/403657212/assets{?name,label}",
+      "html_url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol/core%402.3.1",
+      "id": 403657212,
+      "author": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "node_id": "MDM6Qm90NDE4OTgyODI=",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+        "html_url": "https://github.com/apps/github-actions",
+        "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+        "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+        "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+        "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+        "type": "Bot",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDOM2nl2s4YD1H8",
+      "tag_name": "@modelcontextprotocol/core@2.3.1",
+      "target_commitish": "main",
+      "name": "@modelcontextprotocol/core@2.3.1",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-10-05T11:49:28Z",
+      "updated_at": "2026-10-05T11:49:43Z",
+      "published_at": "2026-10-05T11:49:43Z",
+      "assets": [],
+      "tarball_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/tarball/@modelcontextprotocol/core@2.3.1",
+      "zipball_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk/zipball/@modelcontextprotocol/core@2.3.1",
+      "body": ""
+    }
+  ],
+  "paper": {
+    "stable_id": "arxiv:2111.06377",
+    "venue": "CVPR 2022",
+    "fulltext": "arXiv v3",
+    "cvf_access": "web initial 403; local HTTP succeeded"
+  }
+}

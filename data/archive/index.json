@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-12",
+    "revision": 1,
+    "title": "从 Agent 回执到鉴权：8 条周内精选、两个新项目与 MAE 精读",
+    "item_count": 12,
+    "path": "data/archive/2026-10-12-r1.json"
+  },
+  {
     "issue_date": "2026-10-11",
     "revision": 3,
     "title": "一周 AI 工程精选：文档、语音与 Agent 可靠性，再看两个新工具",
