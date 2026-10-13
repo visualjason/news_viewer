@@ -1,0 +1,449 @@
+{
+  "collected_at": "2026-10-13T15:06:48.713Z",
+  "window": {
+    "start": "2026-10-06T15:06:48.713Z",
+    "end": "2026-10-13T15:06:48.713Z",
+    "timezone": "Asia/Shanghai",
+    "end_exclusive": true,
+    "lookback_days": 7
+  },
+  "base_issue": "2026-10-13-r1",
+  "new_items": [
+    "langchain-scaledown-20261013",
+    "uibk-embedding-v1-20261012",
+    "basis-global-emotions-20261012"
+  ],
+  "carried_item_ids": [
+    "lighton-colgrep-agent-20261012",
+    "alphaedge-sparseup-fr-20261012",
+    "nvidia-nemotron-olympiad-20261007",
+    "langchain-stripe-link-20261008",
+    "langchain-1-4-5-20261012",
+    "carbon-annotator-20261008",
+    "lerobot-quality-guide-20261008",
+    "arxiv-2610-13947",
+    "github-pullboard-dev-pullboard",
+    "github-stamparm-thebleep",
+    "github-graphify-labs-graphify",
+    "paper-dust3r-arxiv-2312-14132"
+  ],
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-13 晚间增补采集",
+      "detail": "复查 cs.AI/cs.CV/cs.LG recent 首屏，最新可见批次仍为 10 月 12 日；本次没有新增经全文审阅的研究。沿用今天已完成的 DUSt3R 专题，不再增加第二篇历史论文。",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ]
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-13 晚间增补采集",
+      "detail": "复查主博客和社区入口；新增 UIBK 英文检索模型与 Basis 配对表达语音，读原文并核对模型/数据卡和许可；两者原始日期均为 10 月 12 日。",
+      "urls": [
+        "https://huggingface.co/blog"
+      ]
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-13 晚间增补采集",
+      "detail": "复查 METR、Artificial Analysis、NIST；METR 最新可见 10 月 6 日事件已收录，动态榜单没有形成可核实的新独立报告。本次不以社区作者自评替代独立评测。",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ]
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-13 晚间增补采集",
+      "detail": "复查博客和 GitHub releases；发现并全文阅读 10 月 13 日 ScaleDown 集成，作为实质新内容追加。1.4.5 等 release 已在早版处理。",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ]
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-13 晚间增补采集",
+      "detail": "复查博客与 release API；可见 10 月 8 日 Markdown 文章已收录，最新 release 仍为 9 月 21 日；不从无日期营销条目推断发布。",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ]
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-13 晚间增补采集",
+      "detail": "复查协议入口、官方博客及 TypeScript SDK release API；最新 SDK 仍 10 月 5 日，不在本轮七天窗口，不重复。未遍历全部 SDK。",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ]
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-13 晚间增补采集",
+      "detail": "复查官方新闻入口，最新可见 10 月 8 日调查及此前产品内容已收录；本次未发现合格的新公告。",
+      "urls": [
+        "https://openai.com/news/"
+      ]
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-13 晚间增补采集",
+      "detail": "再次读取 API 首批 100 条，仍有 nextCursor，未遍历全部页；没有进一步核实到合格的新实践，注册不代表审核。",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ]
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-13 晚间增补采集",
+      "detail": "复查官网与 cookbook README，没有核实到新的周内具体实践日期；未执行代码或调用服务。",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ]
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "langchain-scaledown-20261013",
+      "carried_from": null,
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "官方集成文章",
+          "publisher": "LangChain",
+          "url": "https://www.langchain.com/blog/building-long-running-agents-with-scaledown-and-deep-agents"
+        }
+      ]
+    },
+    {
+      "item_id": "uibk-embedding-v1-20261012",
+      "carried_from": null,
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "作者发布文章",
+          "publisher": "Abdelrahman Abdallah / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/abdoelsayed/uibk-embedding-v1"
+        },
+        {
+          "ref_id": "model",
+          "title": "模型卡与使用条件",
+          "publisher": "DataScience-UIBK",
+          "url": "https://huggingface.co/DataScience-UIBK/uibk-embedding-v1"
+        }
+      ]
+    },
+    {
+      "item_id": "basis-global-emotions-20261012",
+      "carried_from": null,
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "发布文章",
+          "publisher": "Basis / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/basis-ai/global-emotions"
+        },
+        {
+          "ref_id": "dataset",
+          "title": "数据卡与字段",
+          "publisher": "Basis",
+          "url": "https://huggingface.co/datasets/basis-ai/basis-global-emotions"
+        },
+        {
+          "ref_id": "license",
+          "title": "数据许可 1.0",
+          "publisher": "Basis",
+          "url": "https://huggingface.co/datasets/basis-ai/basis-global-emotions/blob/main/LICENSE"
+        }
+      ]
+    },
+    {
+      "item_id": "lighton-colgrep-agent-20261012",
+      "carried_from": "2026-10-13-r1",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LightOn AI / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/lightonai/colgrep-agent"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者检索工具仓库",
+          "publisher": "LightOn AI",
+          "url": "https://github.com/lightonai/next-plaid"
+        }
+      ]
+    },
+    {
+      "item_id": "alphaedge-sparseup-fr-20261012",
+      "carried_from": "2026-10-13-r1",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "alphaedge-ai / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/alphaedge-ai/french-sparseup"
+        }
+      ]
+    },
+    {
+      "item_id": "nvidia-nemotron-olympiad-20261007",
+      "carried_from": "2026-10-13-r1",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "NVIDIA / Hugging Face 团队文章",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026"
+        }
+      ]
+    },
+    {
+      "item_id": "langchain-stripe-link-20261008",
+      "carried_from": "2026-10-13-r1",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain",
+          "url": "https://www.langchain.com/blog/agents-that-can-pay-with-stripe-link"
+        },
+        {
+          "ref_id": "code",
+          "title": "Restock 示例仓库",
+          "publisher": "LangChain",
+          "url": "https://github.com/langchain-samples/restock-agent"
+        }
+      ]
+    },
+    {
+      "item_id": "langchain-1-4-5-20261012",
+      "carried_from": "2026-10-13-r1",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain / GitHub release",
+          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.5"
+        }
+      ]
+    },
+    {
+      "item_id": "carbon-annotator-20261008",
+      "carried_from": "2026-10-13-r1",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "HuggingFaceBio / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/HuggingFaceBio/carbon-annotator-genbank-genome-annotation"
+        }
+      ]
+    },
+    {
+      "item_id": "lerobot-quality-guide-20261008",
+      "carried_from": "2026-10-13-r1",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Harpreet Sahota / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/harpreetsahota/a-practical-guide-to-lerobot-dataset-quality-metri"
+        }
+      ]
+    },
+    {
+      "item_id": "arxiv-2610-13947",
+      "carried_from": "2026-10-13-r1",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Xudong Cai 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.13947"
+        }
+      ]
+    },
+    {
+      "item_id": "github-pullboard-dev-pullboard",
+      "carried_from": "2026-10-13-r1",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "pullboard-dev/pullboard",
+          "url": "https://github.com/pullboard-dev/pullboard"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/pullboard-dev/pullboard"
+        }
+      ]
+    },
+    {
+      "item_id": "github-stamparm-thebleep",
+      "carried_from": "2026-10-13-r1",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "stamparm/thebleep",
+          "url": "https://github.com/stamparm/thebleep"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/stamparm/thebleep"
+        }
+      ]
+    },
+    {
+      "item_id": "github-graphify-labs-graphify",
+      "carried_from": "2026-10-13-r1",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "Graphify-Labs/graphify",
+          "url": "https://github.com/Graphify-Labs/graphify"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/Graphify-Labs/graphify"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-dust3r-arxiv-2312-14132",
+      "carried_from": "2026-10-13-r1",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "CVPR 2024 正式会议页",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_DUSt3R_Geometric_3D_Vision_Made_Easy_CVPR_2024_paper.html"
+        },
+        {
+          "ref_id": "fulltext",
+          "title": "论文全文及附录 v3",
+          "publisher": "作者 / arXiv",
+          "url": "https://arxiv.org/html/2312.14132v3"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者实现、训练说明与许可",
+          "publisher": "Naver",
+          "url": "https://github.com/naver/dust3r"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 167,
+    "queried_candidates": 48,
+    "errors": [],
+    "snapshot": "data/github-stars/2026-10-13-r2.json",
+    "editorial_metrics": "carried unchanged from r1; current snapshot has no valid daily baseline for selected repositories",
+    "discovery": [
+      {
+        "query": "topic:developer-tools stars:>=10000 pushed:>=2026-09-13 archived:false fork:false",
+        "lane": "established",
+        "sort": "stars",
+        "returned": 10,
+        "total_count": 67,
+        "incomplete_results": false
+      },
+      {
+        "query": "topic:llm stars:>=10000 pushed:>=2026-09-13 archived:false fork:false",
+        "lane": "established",
+        "sort": "stars",
+        "returned": 10,
+        "total_count": 195,
+        "incomplete_results": false
+      },
+      {
+        "query": "topic:command-line stars:>=10 pushed:>=2026-09-13 archived:false fork:false",
+        "lane": "activity",
+        "sort": "updated",
+        "returned": 10,
+        "total_count": 550,
+        "incomplete_results": false
+      },
+      {
+        "query": "topic:devops stars:>=10 pushed:>=2026-09-13 archived:false fork:false",
+        "lane": "activity",
+        "sort": "updated",
+        "returned": 10,
+        "total_count": 1225,
+        "incomplete_results": false
+      },
+      {
+        "query": "topic:ai-agent stars:>=10 pushed:>=2026-09-13 archived:false fork:false",
+        "lane": "activity",
+        "sort": "updated",
+        "returned": 10,
+        "total_count": 2185,
+        "incomplete_results": false
+      },
+      {
+        "query": "topic:developer-tools stars:>=10 created:>=2026-07-15 pushed:>=2026-09-13 archived:false fork:false",
+        "lane": "new",
+        "sort": "updated",
+        "returned": 10,
+        "total_count": 1001,
+        "incomplete_results": false
+      },
+      {
+        "query": "topic:command-line stars:>=10 created:>=2026-07-15 pushed:>=2026-09-13 archived:false fork:false",
+        "lane": "new",
+        "sort": "updated",
+        "returned": 10,
+        "total_count": 24,
+        "incomplete_results": false
+      },
+      {
+        "query": "topic:ai-agent stars:>=10 created:>=2026-07-15 pushed:>=2026-09-13 archived:false fork:false",
+        "lane": "new",
+        "sort": "updated",
+        "returned": 10,
+        "total_count": 670,
+        "incomplete_results": false
+      }
+    ]
+  },
+  "registry": {
+    "count": 100,
+    "pagination_complete": false
+  },
+  "paper": {
+    "stable_id": "arxiv:2312.14132",
+    "carried_from": "2026-10-13-r1",
+    "new_analysis": false
+  },
+  "access_notes": [
+    "ScaleDown: web open internal error; official full text read through local HTTP",
+    "Only public pages, no dataset/audio download or paid calls"
+  ]
+}

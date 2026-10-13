@@ -1,25 +1,113 @@
 {
   "schema_version": "1.0",
   "issue_date": "2026-10-13",
-  "revision": 1,
-  "generated_at": "2026-10-13T00:30:42.805Z",
+  "revision": 2,
+  "generated_at": "2026-10-13T15:06:48.713Z",
   "window": {
-    "start": "2026-10-06T00:30:42.805Z",
-    "end": "2026-10-13T00:30:42.805Z",
+    "start": "2026-10-06T15:06:48.713Z",
+    "end": "2026-10-13T15:06:48.713Z",
     "timezone": "Asia/Shanghai",
     "end_exclusive": true,
     "lookback_days": 7
   },
   "briefing": {
-    "headline": "代码检索与 Agent 支付：8 条周内精选、三个开源项目及 DUSt3R 精读",
-    "takeaway": "新增 ColGrep-Agent、法语稀疏检索、LangChain 1.4.5 等未收录进展。GitHub 保留 Pullboard、thebleep 两个新项目，以及 Graphify 的有效快照增长观察。视觉专题转到 CVPR 2024 的 3D 重建论文 DUSt3R。",
+    "headline": "晚间增补：ScaleDown 上下文管理、统一检索与表达语音数据",
+    "takeaway": "本修订新增 3 条未收录进展，总计 11 条周内资讯；沿用早版 3 个 GitHub 项目及今天已完成的 DUSt3R 精读，保留它们的原始观测时间，不重复计算为新内容。",
     "actions": [
-      "代码检索代理同时评准确率、延迟和总成本。",
-      "支付工作流分别检查订单确认、钱包授权与重复请求。",
-      "重建点图先验证尺度与精度，再用于下游。"
+      "上下文压缩评估约束保留、完整结果回退和总成本。",
+      "统一检索同时检查效果、索引大小与语言范围。",
+      "语音配对评估按说话人隔离，脚本不当作已验证转写。"
     ]
   },
   "items": [
+    {
+      "item_id": "langchain-scaledown-20261013",
+      "type": "blog",
+      "editorial_section": "ai_practice",
+      "title": "LangChain 接入 ScaleDown：把历史摘要、工具压缩与字段提取移出主模型",
+      "published_at": "2026-10-13",
+      "canonical_url": "https://www.langchain.com/blog/building-long-running-agents-with-scaledown-and-deep-agents",
+      "summary": "LangChain 发布 langchain-scaledown 集成与 LangSmith Gateway 支持，以专用模型处理中间上下文工作。",
+      "why_it_matters": "长任务的成本与质量受到历史和工具输出管理影响，可分别测量这些步骤。",
+      "application": "对同一批长任务比较原始流程与压缩流程，记录关键约束保留、错误率、总费用和延迟；保留读取完整工具结果的回退。",
+      "technical_analysis": "三种中间件分别处理会话摘要、工具输出压缩和字段提取；漂移分类示例需要自定义中间件，并非现成的自动纠偏保证。",
+      "evidence_note": "已读官方 10 月 13 日文章全文；网页工具打开报内部错误，本机 HTTP 成功。它是新集成，与早版 1.4.5 通用 summarizer 参数分开；不把厂商倍数宣传当独立验证。",
+      "caveats": "依赖外部模型服务与密钥；本文未调用、付费或复测。压缩可能丢证据，分类也可能误停正常任务。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "官方集成文章",
+          "publisher": "LangChain",
+          "url": "https://www.langchain.com/blog/building-long-running-agents-with-scaledown-and-deep-agents"
+        }
+      ],
+      "published_at_precision": "day",
+      "publication_timezone": null
+    },
+    {
+      "item_id": "uibk-embedding-v1-20261012",
+      "type": "product",
+      "title": "UIBK-Embedding-v1：把稠密与晚交互信号放进一次 MaxSim 检索",
+      "published_at": "2026-10-12",
+      "canonical_url": "https://huggingface.co/blog/abdoelsayed/uibk-embedding-v1",
+      "summary": "作者发布 179M 英文检索模型，共享编码器结合句级与 token 级表示，在单个 ColBERT/PLAID 索引中组合评分。",
+      "why_it_matters": "可减少双检索器的索引与融合流程，适合评估检索系统复杂度和效果的取舍。",
+      "application": "固定英语语料及切块，对照单向量与普通晚交互检索，同时测 nDCG、索引容量和查询延迟。",
+      "technical_analysis": "把稠密表示切成三个槽并用标记维区分 token；模型卡要求 query/document 提示，查询 256 token（token 分支取前 64）、文档 2048。",
+      "evidence_note": "已读作者社区文章的方法、实验与限制，并核对模型卡；发布于 10 月 12 日，不称今日首发。模型卡标 Apache 2.0。",
+      "caveats": "仅英语；多向量索引仍比单向量大，其他向量变换索引未测试。需要自定义远程代码，先审阅并固定版本；未独立复测。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "作者发布文章",
+          "publisher": "Abdelrahman Abdallah / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/abdoelsayed/uibk-embedding-v1"
+        },
+        {
+          "ref_id": "model",
+          "title": "模型卡与使用条件",
+          "publisher": "DataScience-UIBK",
+          "url": "https://huggingface.co/DataScience-UIBK/uibk-embedding-v1"
+        }
+      ],
+      "published_at_precision": "day",
+      "publication_timezone": null
+    },
+    {
+      "item_id": "basis-global-emotions-20261012",
+      "type": "product",
+      "title": "Basis Global Emotions：用同人同文本配对语音研究情绪强度",
+      "published_at": "2026-10-12",
+      "canonical_url": "https://huggingface.co/blog/basis-ai/global-emotions",
+      "summary": "Basis 发布约 525 小时表达性语音，覆盖 108 个地区语言变体；同一说话人以不同强度演绎相同台词，便于对照分析。",
+      "why_it_matters": "配对结构可以减少文本和音色混杂，帮助评估语音表达控制。",
+      "application": "先选一个 locale，按 series_id 组织配对、speaker_id 划分训练与评估；把 steer 与 intensity 联合使用。",
+      "technical_analysis": "发布者统计 137,696 条录音、10,420 位说话人；given_line 是要求朗读的脚本，不是人工核对的逐字转写。",
+      "evidence_note": "已读 10 月 12 日发布文、数据卡与自定义许可。免费版本不含人工验证转写，不把文章中的 open-source 用语解释为无限再分发。",
+      "caveats": "需取得访问权限；Basis Data License 1.0 允许合规研究/商用，但限制源材料转售和再分发，另有隐私及声音身份条款。未下载音频或训练。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "发布文章",
+          "publisher": "Basis / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/basis-ai/global-emotions"
+        },
+        {
+          "ref_id": "dataset",
+          "title": "数据卡与字段",
+          "publisher": "Basis",
+          "url": "https://huggingface.co/datasets/basis-ai/basis-global-emotions"
+        },
+        {
+          "ref_id": "license",
+          "title": "数据许可 1.0",
+          "publisher": "Basis",
+          "url": "https://huggingface.co/datasets/basis-ai/basis-global-emotions/blob/main/LICENSE"
+        }
+      ],
+      "published_at_precision": "day",
+      "publication_timezone": null
+    },
     {
       "item_id": "lighton-colgrep-agent-20261012",
       "type": "product",
@@ -47,7 +135,8 @@
           "publisher": "LightOn AI",
           "url": "https://github.com/lightonai/next-plaid"
         }
-      ]
+      ],
+      "carried_from": "2026-10-13-r1"
     },
     {
       "item_id": "alphaedge-sparseup-fr-20261012",
@@ -70,7 +159,8 @@
           "publisher": "alphaedge-ai / Hugging Face 社区",
           "url": "https://huggingface.co/blog/alphaedge-ai/french-sparseup"
         }
-      ]
+      ],
+      "carried_from": "2026-10-13-r1"
     },
     {
       "item_id": "nvidia-nemotron-olympiad-20261007",
@@ -93,7 +183,8 @@
           "publisher": "NVIDIA / Hugging Face 团队文章",
           "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026"
         }
-      ]
+      ],
+      "carried_from": "2026-10-13-r1"
     },
     {
       "item_id": "langchain-stripe-link-20261008",
@@ -123,7 +214,8 @@
           "url": "https://github.com/langchain-samples/restock-agent"
         }
       ],
-      "editorial_section": "ai_practice"
+      "editorial_section": "ai_practice",
+      "carried_from": "2026-10-13-r1"
     },
     {
       "item_id": "langchain-1-4-5-20261012",
@@ -147,7 +239,8 @@
           "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.5"
         }
       ],
-      "editorial_section": "ai_practice"
+      "editorial_section": "ai_practice",
+      "carried_from": "2026-10-13-r1"
     },
     {
       "item_id": "carbon-annotator-20261008",
@@ -170,7 +263,8 @@
           "publisher": "HuggingFaceBio / Hugging Face 社区",
           "url": "https://huggingface.co/blog/HuggingFaceBio/carbon-annotator-genbank-genome-annotation"
         }
-      ]
+      ],
+      "carried_from": "2026-10-13-r1"
     },
     {
       "item_id": "lerobot-quality-guide-20261008",
@@ -194,7 +288,8 @@
           "url": "https://huggingface.co/blog/harpreetsahota/a-practical-guide-to-lerobot-dataset-quality-metri"
         }
       ],
-      "editorial_section": "ai_practice"
+      "editorial_section": "ai_practice",
+      "carried_from": "2026-10-13-r1"
     },
     {
       "item_id": "arxiv-2610-13947",
@@ -218,7 +313,8 @@
           "url": "https://arxiv.org/abs/2610.13947"
         }
       ],
-      "research_status": "preprint"
+      "research_status": "preprint",
+      "carried_from": "2026-10-13-r1"
     },
     {
       "item_id": "github-pullboard-dev-pullboard",
@@ -257,7 +353,8 @@
           "publisher": "GitHub",
           "url": "https://api.github.com/repos/pullboard-dev/pullboard"
         }
-      ]
+      ],
+      "carried_from": "2026-10-13-r1"
     },
     {
       "item_id": "github-stamparm-thebleep",
@@ -296,7 +393,8 @@
           "publisher": "GitHub",
           "url": "https://api.github.com/repos/stamparm/thebleep"
         }
-      ]
+      ],
+      "carried_from": "2026-10-13-r1"
     },
     {
       "item_id": "github-graphify-labs-graphify",
@@ -335,7 +433,8 @@
           "publisher": "GitHub",
           "url": "https://api.github.com/repos/Graphify-Labs/graphify"
         }
-      ]
+      ],
+      "carried_from": "2026-10-13-r1"
     },
     {
       "item_id": "paper-dust3r-arxiv-2312-14132",
@@ -427,18 +526,19 @@
           "publisher": "Naver",
           "url": "https://github.com/naver/dust3r"
         }
-      ]
+      ],
+      "carried_from": "2026-10-13-r1"
     }
   ],
   "source_stats": {
-    "news_count": 8,
+    "news_count": 11,
     "weekly_preprint_count": 1,
     "github_radar_count": 3,
     "new_project_count": 2,
     "rising_project_count": 1,
     "established_project_count": 0,
     "historical_paper_count": 1,
-    "github_candidates": 142,
+    "github_candidates": 167,
     "github_queried_candidates": 48,
     "registry_records_fetched": 100,
     "registry_pagination_complete": false,
@@ -446,8 +546,8 @@
       {
         "id": "arxiv-ai",
         "status": "checked",
-        "checked_during": "2026-10-13 本次人工采集",
-        "detail": "检查 cs.AI/cs.CV/cs.LG recent；最新列表批次 10 月 12 日。选 Artisan，保留 10 月 9 日提交时间；仅按摘要作简报。每日 DUSt3R 另读全文，不计周内新闻。未穷尽所有论文。",
+        "checked_during": "2026-10-13 晚间增补采集",
+        "detail": "复查 cs.AI/cs.CV/cs.LG recent 首屏，最新可见批次仍为 10 月 12 日；本次没有新增经全文审阅的研究。沿用今天已完成的 DUSt3R 专题，不再增加第二篇历史论文。",
         "urls": [
           "https://arxiv.org/list/cs.AI/recent",
           "https://arxiv.org/list/cs.CV/recent",
@@ -457,8 +557,8 @@
       {
         "id": "huggingface-blog",
         "status": "checked",
-        "checked_during": "2026-10-13 本次人工采集",
-        "detail": "检查主博客和社区；读 ColGrep、Sparseup-fr、Nemotron、Carbon-A 与 LeRobot 指南。明确社区作者、团队文章身份，不把全部内容归作 Hugging Face 官方发布。",
+        "checked_during": "2026-10-13 晚间增补采集",
+        "detail": "复查主博客和社区入口；新增 UIBK 英文检索模型与 Basis 配对表达语音，读原文并核对模型/数据卡和许可；两者原始日期均为 10 月 12 日。",
         "urls": [
           "https://huggingface.co/blog"
         ]
@@ -466,8 +566,8 @@
       {
         "id": "independent-evaluations",
         "status": "checked",
-        "checked_during": "2026-10-13 本次人工采集",
-        "detail": "检查 METR、Artificial Analysis、NIST；METR 10 月 6 日文章已收录，动态榜单与项目介绍没有形成可核实的新增评测报告，本轮不选。动态加载与首屏检查存在覆盖限制。",
+        "checked_during": "2026-10-13 晚间增补采集",
+        "detail": "复查 METR、Artificial Analysis、NIST；METR 最新可见 10 月 6 日事件已收录，动态榜单没有形成可核实的新独立报告。本次不以社区作者自评替代独立评测。",
         "urls": [
           "https://metr.org/",
           "https://artificialanalysis.ai/",
@@ -477,8 +577,8 @@
       {
         "id": "langchain",
         "status": "checked",
-        "checked_during": "2026-10-13 本次人工采集",
-        "detail": "检查博客、Restock 支付案例、作者示例仓库与 GitHub release/API；选 10 月 8 日案例及 10 月 12 日 1.4.5，不重复既有 Slack 回执及 Snyk 案例。",
+        "checked_during": "2026-10-13 晚间增补采集",
+        "detail": "复查博客和 GitHub releases；发现并全文阅读 10 月 13 日 ScaleDown 集成，作为实质新内容追加。1.4.5 等 release 已在早版处理。",
         "urls": [
           "https://www.langchain.com/blog",
           "https://github.com/langchain-ai/langchain/releases"
@@ -487,8 +587,8 @@
       {
         "id": "llamaindex",
         "status": "checked",
-        "checked_during": "2026-10-13 本次人工采集",
-        "detail": "检查博客及 releases；最新可见 10 月 8 日 Markdown 文章已收录，release 列表最新 9 月 21 日。本轮没有合格的新事件，不强行补条目。",
+        "checked_during": "2026-10-13 晚间增补采集",
+        "detail": "复查博客与 release API；可见 10 月 8 日 Markdown 文章已收录，最新 release 仍为 9 月 21 日；不从无日期营销条目推断发布。",
         "urls": [
           "https://www.llamaindex.ai/blog",
           "https://github.com/run-llama/llama_index/releases"
@@ -497,8 +597,8 @@
       {
         "id": "modelcontextprotocol",
         "status": "checked",
-        "checked_during": "2026-10-13 本次人工采集",
-        "detail": "检查官方博客与 TypeScript SDK releases；最新可见 SDK 10 月 5 日已在上期收录且超出本次窗口，未遍历全部 SDK 仓库。无新的合格入选。",
+        "checked_during": "2026-10-13 晚间增补采集",
+        "detail": "复查协议入口、官方博客及 TypeScript SDK release API；最新 SDK 仍 10 月 5 日，不在本轮七天窗口，不重复。未遍历全部 SDK。",
         "urls": [
           "https://modelcontextprotocol.io/",
           "https://github.com/modelcontextprotocol"
@@ -507,8 +607,8 @@
       {
         "id": "openai-news",
         "status": "checked",
-        "checked_during": "2026-10-13 本次人工采集",
-        "detail": "检查官方新闻入口；可见的 GPT-6、Intelligent UI 与 10 月 8 日调查事件已收录。10 月 6 日仅标日期的材料无法确定是否落入精确滚动窗口，未选。",
+        "checked_during": "2026-10-13 晚间增补采集",
+        "detail": "复查官方新闻入口，最新可见 10 月 8 日调查及此前产品内容已收录；本次未发现合格的新公告。",
         "urls": [
           "https://openai.com/news/"
         ]
@@ -516,8 +616,8 @@
       {
         "id": "mcp-registry-practice",
         "status": "checked",
-        "checked_during": "2026-10-13 本次人工采集",
-        "detail": "API 获取首批 100 条，仍有 nextCursor，未完成分页；没有核实到未重复且工程价值明确的新实践，不将注册视为审核或推荐。",
+        "checked_during": "2026-10-13 晚间增补采集",
+        "detail": "再次读取 API 首批 100 条，仍有 nextCursor，未遍历全部页；没有进一步核实到合格的新实践，注册不代表审核。",
         "urls": [
           "https://registry.modelcontextprotocol.io/"
         ]
@@ -525,22 +625,25 @@
       {
         "id": "tinyfish-practice-discovery",
         "status": "checked",
-        "checked_during": "2026-10-13 本次人工采集",
-        "detail": "检查官网与 cookbook README，没有核实到新的周内具体实践日期；未调用付费服务或执行代码。",
+        "checked_during": "2026-10-13 晚间增补采集",
+        "detail": "复查官网与 cookbook README，没有核实到新的周内具体实践日期；未执行代码或调用服务。",
         "urls": [
           "https://www.tinyfish.ai/",
           "https://github.com/tinyfish-io/tinyfish-cookbook"
         ]
       }
-    ]
+    ],
+    "new_since_previous_revision": 3,
+    "carried_item_count": 12
   },
   "selection_notes": [
-    "资讯滚动七天；原始日期为 10 月 7–12 日，按原始来源保留，不冒充今日发布。",
-    "历史 canonical URL 与事件去重；没有可核实的新独立评测、LlamaIndex、MCP 或 TinyFish 事件时明确留缺。",
-    "GitHub 月度回看与日增长分开；142 个候选仅实际查询 48 个，采集器 0 错误，不能声称全覆盖。",
-    "两个新项目首次快照增长为 null；Graphify 用同 node_id 的 23.78 小时有效快照，净增 320，约 0.255%。成熟席位空缺不凑数。",
-    "补充 API 复查前两个项目成功，第三个 Graphify 触发匿名 API 限流；其指标及许可使用先前成功的本轮采集快照，README 已读，不使用失败请求残留值。",
-    "DUSt3R 为历史 CVPR 2024 专题，全文采用 2024 年 12 月的 arXiv v3，版本区别写明，不计入周内新闻。",
-    "Registry 仅一页，动态榜单与来源首屏可能漏项；建议是编辑判断，未执行第三方代码、模型训练或付费操作。"
+    "同日增补 2026-10-13-r1，只新增 3 个未收录事件，12 条沿用内容逐项标 carried_from；旧版本保留。",
+    "滚动七天窗口 2026-10-06T15:06:48.713Z 至 2026-10-13T15:06:48.713Z，原始发布日期和分析日期分开。",
+    "GitHub 候选本轮 167、实际查询 48、0 采集错误；检查 Trending 仅用于发现，不拿其显示值当日增。",
+    "本轮距离早版不足 20 小时，精选项目在本轮快照没有有效 20–28 小时基线；不把短间隔变化包装为日增。三个项目沿用早版观测和指标，不声称本轮再次飙升。",
+    "早版 Pullboard 本轮未进实际查询预算；三个项目没有经过新一轮完整 README 审阅，保持早版推荐与许可记录，不作为新增推荐。",
+    "每日一篇论文已由早版完成；DUSt3R 专题原样沿用，分析日期仍为今天，会议年份 2024，不计入七天新闻。",
+    "九个渠道均复查；Registry 仅首批 100、动态榜单与来源首屏仍有覆盖缺口。ScaleDown 网页工具打开失败，本机 HTTP 全文成功。",
+    "建议属于编辑判断，厂商结果未独立复测；未安装、训练、购买或调用付费服务。"
   ]
 }
