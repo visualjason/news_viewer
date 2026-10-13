@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-13",
+    "revision": 1,
+    "title": "代码检索与 Agent 支付：8 条周内精选、三个开源项目及 DUSt3R 精读",
+    "item_count": 12,
+    "path": "data/archive/2026-10-13-r1.json"
+  },
+  {
     "issue_date": "2026-10-12",
     "revision": 1,
     "title": "从 Agent 回执到鉴权：8 条周内精选、两个新项目与 MAE 精读",
