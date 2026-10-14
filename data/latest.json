@@ -1,462 +1,317 @@
 {
   "schema_version": "1.0",
-  "issue_date": "2026-10-13",
-  "revision": 2,
-  "generated_at": "2026-10-13T15:06:48.713Z",
+  "issue_date": "2026-10-14",
+  "revision": 1,
+  "generated_at": "2026-10-14T00:25:58.822Z",
   "window": {
-    "start": "2026-10-06T15:06:48.713Z",
-    "end": "2026-10-13T15:06:48.713Z",
+    "start": "2026-10-07T00:25:58.822Z",
+    "end": "2026-10-14T00:25:58.822Z",
     "timezone": "Asia/Shanghai",
     "end_exclusive": true,
     "lookback_days": 7
   },
   "briefing": {
-    "headline": "晚间增补：ScaleDown 上下文管理、统一检索与表达语音数据",
-    "takeaway": "本修订新增 3 条未收录进展，总计 11 条周内资讯；沿用早版 3 个 GitHub 项目及今天已完成的 DUSt3R 精读，保留它们的原始观测时间，不重复计算为新内容。",
+    "headline": "本地 Agent 与行为检索：6 条资讯、两个新项目及 GMFlow 精读",
+    "takeaway": "新增 LFM2.5、Llama Windows、ASR 适配、LangSmith AI Search、Orange 治理案例与遮挡推理研究。开源精选 Pixel、Explain Diff 和 Firecrawl；视频专题为 CVPR 2022 GMFlow。",
     "actions": [
-      "上下文压缩评估约束保留、完整结果回退和总成本。",
-      "统一检索同时检查效果、索引大小与语言范围。",
-      "语音配对评估按说话人隔离，脚本不当作已验证转写。"
+      "本地模型同时核对总权重内存、整轮成功率与许可。",
+      "轨迹检索回看被裁剪的工具证据，人工验证命中。",
+      "光流性能按数据域、遮挡、硬件和细化次数分别比较。"
     ]
   },
   "items": [
     {
-      "item_id": "langchain-scaledown-20261013",
-      "type": "blog",
-      "editorial_section": "ai_practice",
-      "title": "LangChain 接入 ScaleDown：把历史摘要、工具压缩与字段提取移出主模型",
-      "published_at": "2026-10-13",
-      "canonical_url": "https://www.langchain.com/blog/building-long-running-agents-with-scaledown-and-deep-agents",
-      "summary": "LangChain 发布 langchain-scaledown 集成与 LangSmith Gateway 支持，以专用模型处理中间上下文工作。",
-      "why_it_matters": "长任务的成本与质量受到历史和工具输出管理影响，可分别测量这些步骤。",
-      "application": "对同一批长任务比较原始流程与压缩流程，记录关键约束保留、错误率、总费用和延迟；保留读取完整工具结果的回退。",
-      "technical_analysis": "三种中间件分别处理会话摘要、工具输出压缩和字段提取；漂移分类示例需要自定义中间件，并非现成的自动纠偏保证。",
-      "evidence_note": "已读官方 10 月 13 日文章全文；网页工具打开报内部错误，本机 HTTP 成功。它是新集成，与早版 1.4.5 通用 summarizer 参数分开；不把厂商倍数宣传当独立验证。",
-      "caveats": "依赖外部模型服务与密钥；本文未调用、付费或复测。压缩可能丢证据，分类也可能误停正常任务。",
-      "sources": [
-        {
-          "ref_id": "primary",
-          "title": "官方集成文章",
-          "publisher": "LangChain",
-          "url": "https://www.langchain.com/blog/building-long-running-agents-with-scaledown-and-deep-agents"
-        }
-      ],
-      "published_at_precision": "day",
-      "publication_timezone": null
-    },
-    {
-      "item_id": "uibk-embedding-v1-20261012",
+      "item_id": "liquid-lfm25-24b-a2b-20261013",
       "type": "product",
-      "title": "UIBK-Embedding-v1：把稠密与晚交互信号放进一次 MaxSim 检索",
-      "published_at": "2026-10-12",
-      "canonical_url": "https://huggingface.co/blog/abdoelsayed/uibk-embedding-v1",
-      "summary": "作者发布 179M 英文检索模型，共享编码器结合句级与 token 级表示，在单个 ColBERT/PLAID 索引中组合评分。",
-      "why_it_matters": "可减少双检索器的索引与融合流程，适合评估检索系统复杂度和效果的取舍。",
-      "application": "固定英语语料及切块，对照单向量与普通晚交互检索，同时测 nDCG、索引容量和查询延迟。",
-      "technical_analysis": "把稠密表示切成三个槽并用标记维区分 token；模型卡要求 query/document 提示，查询 256 token（token 分支取前 64）、文档 2048。",
-      "evidence_note": "已读作者社区文章的方法、实验与限制，并核对模型卡；发布于 10 月 12 日，不称今日首发。模型卡标 Apache 2.0。",
-      "caveats": "仅英语；多向量索引仍比单向量大，其他向量变换索引未测试。需要自定义远程代码，先审阅并固定版本；未独立复测。",
+      "title": "LFM2.5-24B-A2B：2B 活跃参数的本地推理 Agent 模型",
+      "published_at": "2026-10-13",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "LiquidAI 发布 24B 总参数、每 token 约 2B 活跃参数的推理模型，扩展到约 131K 上下文并支持本地工具调用工作流。",
+      "why_it_matters": "可作为本地 Agent 的候选，但活跃参数少不代表只需存放 2B 权重。",
+      "application": "固定量化、上下文长度与工具任务，对比成功率、首 token 延迟、整轮耗时和内存。",
+      "technical_analysis": "团队表格显示工具与指令任务有优势，但 SWE-Bench Verified 51.00 低于所比 Qwen 模型 66.20；B300 的 21K output tok/s 是高并发总吞吐，不是单用户生成速度。",
+      "caveats": "厂商评测，未独立复测；模型卡为 lfm1.0 自定义许可，不能称 Apache/MIT 无限制模型。",
+      "evidence_note": "原始来源日期已核对；只给日期的文章不补造时间及时区。建议是编辑判断，作者效果未独立复测。",
+      "canonical_url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
       "sources": [
         {
           "ref_id": "primary",
-          "title": "作者发布文章",
-          "publisher": "Abdelrahman Abdallah / Hugging Face 社区",
-          "url": "https://huggingface.co/blog/abdoelsayed/uibk-embedding-v1"
+          "title": "原始来源",
+          "publisher": "LiquidAI 团队",
+          "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b"
         },
         {
           "ref_id": "model",
-          "title": "模型卡与使用条件",
-          "publisher": "DataScience-UIBK",
-          "url": "https://huggingface.co/DataScience-UIBK/uibk-embedding-v1"
+          "title": "模型卡与许可",
+          "publisher": "LiquidAI",
+          "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B"
         }
-      ],
-      "published_at_precision": "day",
-      "publication_timezone": null
+      ]
     },
     {
-      "item_id": "basis-global-emotions-20261012",
+      "item_id": "llama-windows-20261013",
       "type": "product",
-      "title": "Basis Global Emotions：用同人同文本配对语音研究情绪强度",
-      "published_at": "2026-10-12",
-      "canonical_url": "https://huggingface.co/blog/basis-ai/global-emotions",
-      "summary": "Basis 发布约 525 小时表达性语音，覆盖 108 个地区语言变体；同一说话人以不同强度演绎相同台词，便于对照分析。",
-      "why_it_matters": "配对结构可以减少文本和音色混杂，帮助评估语音表达控制。",
-      "application": "先选一个 locale，按 series_id 组织配对、speaker_id 划分训练与评估；把 steer 与 intensity 联合使用。",
-      "technical_analysis": "发布者统计 137,696 条录音、10,420 位说话人；given_line 是要求朗读的脚本，不是人工核对的逐字转写。",
-      "evidence_note": "已读 10 月 12 日发布文、数据卡与自定义许可。免费版本不含人工验证转写，不把文章中的 open-source 用语解释为无限再分发。",
-      "caveats": "需取得访问权限；Basis Data License 1.0 允许合规研究/商用，但限制源材料转售和再分发，另有隐私及声音身份条款。未下载音频或训练。",
-      "sources": [
-        {
-          "ref_id": "primary",
-          "title": "发布文章",
-          "publisher": "Basis / Hugging Face 社区",
-          "url": "https://huggingface.co/blog/basis-ai/global-emotions"
-        },
-        {
-          "ref_id": "dataset",
-          "title": "数据卡与字段",
-          "publisher": "Basis",
-          "url": "https://huggingface.co/datasets/basis-ai/basis-global-emotions"
-        },
-        {
-          "ref_id": "license",
-          "title": "数据许可 1.0",
-          "publisher": "Basis",
-          "url": "https://huggingface.co/datasets/basis-ai/basis-global-emotions/blob/main/LICENSE"
-        }
-      ],
-      "published_at_precision": "day",
-      "publication_timezone": null
-    },
-    {
-      "item_id": "lighton-colgrep-agent-20261012",
-      "type": "product",
-      "title": "ColGrep-Agent：让小模型承担代码检索，再把证据交给主 Agent",
-      "published_at": "2026-10-12",
+      "title": "Llama Windows：从 Windows 11 托盘管理本地 llama.cpp",
+      "published_at": "2026-10-13",
       "published_at_precision": "day",
       "publication_timezone": null,
-      "summary": "LightOn AI 介绍 2B 代码检索 Agent，通过 ColGrep 搜索、引用追踪和只读终端整理文件路径、行号与代码证据。",
-      "why_it_matters": "把检索与推理分开，可能减少主模型上下文消耗。",
-      "application": "用同一批仓库问题对比 grep 与检索代理，同时记录准确率、缓存成本、延迟和本地显存。",
-      "technical_analysis": "作者以 Sonnet 5.5 做主模型，对 13 个未见训练仓库的 52 道检索题，各设置重复 3 次，共 624 会话；报告 token 减少 34%、计入缓存的成本减少 40%，准确率无统计显著变化。",
-      "caveats": "作者评测，未独立复测；这是检索实验，不是端到端修复代码成绩。本地小模型的延迟和资源成本需另测。",
-      "evidence_note": "已打开原始来源并核对日期；仅给日期的文章不补造时间及时区。建议为编辑判断，作者结果未独立复测。",
-      "canonical_url": "https://huggingface.co/blog/lightonai/colgrep-agent",
+      "summary": "作者宣布 WinUI 3 托盘应用，整合 Hub 模型下载、加载与 llama.cpp 服务管理，并提供本地兼容 API。",
+      "why_it_matters": "降低 Windows 使用本地模型的配置门槛，也方便应用复用同一缓存和服务。",
+      "application": "先选适合内存的小模型，核对运行后端、缓存目录与本地 API，再测工具兼容性。",
+      "technical_analysis": "文章给出 localhost:9931/v1 接口、Windows on Arm 支持及已有服务连接/自动管理流程；需要先联网获取应用和模型，后续本地推理与外部工具联网应分别判断。",
+      "caveats": "发布者功能说明，未安装测试；模型许可、内存与硬件条件另行核对，不把本地推理等同整个 Agent 永不联网。",
+      "evidence_note": "原始来源日期已核对；只给日期的文章不补造时间及时区。建议是编辑判断，作者效果未独立复测。",
+      "canonical_url": "https://huggingface.co/blog/huggingface/llama-windows",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "publisher": "LightOn AI / Hugging Face 社区",
-          "url": "https://huggingface.co/blog/lightonai/colgrep-agent"
+          "publisher": "Hugging Face 作者团队",
+          "url": "https://huggingface.co/blog/huggingface/llama-windows"
         },
         {
           "ref_id": "code",
-          "title": "作者检索工具仓库",
-          "publisher": "LightOn AI",
-          "url": "https://github.com/lightonai/next-plaid"
+          "title": "作者代码仓库",
+          "publisher": "ggml-org",
+          "url": "https://github.com/ggml-org/Llama-Windows"
         }
-      ],
-      "carried_from": "2026-10-13-r1"
+      ]
     },
     {
-      "item_id": "alphaedge-sparseup-fr-20261012",
+      "item_id": "nvidia-asr-skills-20261013",
       "type": "blog",
-      "title": "Sparseup-fr：法语稀疏检索复现，先检查评测集与切块条件",
-      "published_at": "2026-10-12",
+      "title": "NVIDIA ASR 适配实践：领域改善与通用英语遗忘一起评估",
+      "published_at": "2026-10-13",
       "published_at_precision": "day",
       "publication_timezone": null,
-      "summary": "作者介绍法语 Sparseup 复现，组合 mLateOn-unsupervised 主干与裁剪词表的 mmBERT MLM 头，并清理 NanoBEIR-fr 中疑似泄漏样本。",
-      "why_it_matters": "检索效果不仅由模型决定，语种、数据清理与文档切块也会改变比较结果。",
-      "application": "固定法语测试集及分块规则，对比 BM25、稠密与稀疏检索；保存清理规则及原始样本映射。",
-      "technical_analysis": "文章使用 50,240 词表，查询/文档上限 256/1024；还比较截断与重叠滑窗。作者报告单张 RTX 6000 Pro 训练约 55 小时。",
-      "caveats": "社区复现，未独立验证；评测清理没有解决全部标注问题，不能把不同切块条件的分数视为纯模型提升。",
-      "evidence_note": "已打开原始来源并核对日期；仅给日期的文章不补造时间及时区。建议为编辑判断，作者结果未独立复测。",
-      "canonical_url": "https://huggingface.co/blog/alphaedge-ai/french-sparseup",
+      "summary": "NVIDIA 分享编排 skill 与 NeMo 专项 skill 配合的分阶段语音适配，分别保存数据划分、训练配置和评测证据。",
+      "why_it_matters": "领域精度提高可能以通用能力退化为代价，单看训练曲线容易误判。",
+      "application": "保持预训练模型的 tokenizer 和音频预处理；分离训练、开发和测试，并记录领域与通用集 WER。",
+      "technical_analysis": "作者在两小时 ATCO2 Gold 测试上将 Nemotron WER 从 77.00% 降至 22.46%，LibriSpeech test-clean 从 3.50% 变为 3.63%；评测使用 320 ms 流式块与贪心解码。",
+      "caveats": "作者领域个例，不是任意 ASR 的保证；Gold 精调权重仍标计划发布。安装 skill 不等于准备好 GPU/NeMo，本文未安装或训练。",
+      "evidence_note": "原始来源日期已核对；只给日期的文章不补造时间及时区。建议是编辑判断，作者效果未独立复测。 两个 skill 深层 GitHub 链接在网页工具返回内部错误，本文不声称已完成代码审计；流程依据可读发布原文。",
+      "canonical_url": "https://huggingface.co/blog/nvidia/fine-tune-asr-with-nvidia-nemotron-speech-skills",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "publisher": "alphaedge-ai / Hugging Face 社区",
-          "url": "https://huggingface.co/blog/alphaedge-ai/french-sparseup"
+          "publisher": "NVIDIA 作者 / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/nvidia/fine-tune-asr-with-nvidia-nemotron-speech-skills"
         }
       ],
-      "carried_from": "2026-10-13-r1"
+      "editorial_section": "ai_practice"
     },
     {
-      "item_id": "nvidia-nemotron-olympiad-20261007",
-      "type": "blog",
-      "title": "Nemotron 奥赛系统：把专门训练和验证循环一起计入成绩",
-      "published_at": "2026-10-07",
+      "item_id": "langsmith-ai-search-20261013",
+      "type": "product",
+      "title": "LangSmith AI Search：按行为找轨迹，留意 8K 上下文裁剪",
+      "published_at": "2026-10-13",
       "published_at_precision": "day",
       "publication_timezone": null,
-      "summary": "NVIDIA 介绍分别面向 IOI 编程与 IMO 数学的专门系统，把监督训练、强化学习与生成—验证—修订流程结合。",
-      "why_it_matters": "高难任务的系统成绩不能直接归因于单一基础模型。",
-      "application": "复用其验证思路时，分别记录基础模型、搜索次数、验证器和测试时算力。",
-      "technical_analysis": "作者报告 IOI 535.4/600、IMO 30/42，分别对照金牌线；IOI 为按比赛约束开展的非官方测试，IMO 证明由官方阅卷者评分是作者披露。",
-      "caveats": "厂商报告，不是官方参赛排名；专门训练与测试时计算条件限制了结果外推。",
-      "evidence_note": "已打开原始来源并核对日期；仅给日期的文章不补造时间及时区。建议为编辑判断，作者结果未独立复测。",
-      "canonical_url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026",
-      "sources": [
-        {
-          "ref_id": "primary",
-          "title": "原始来源",
-          "publisher": "NVIDIA / Hugging Face 团队文章",
-          "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026"
-        }
-      ],
-      "carried_from": "2026-10-13-r1"
-    },
-    {
-      "item_id": "langchain-stripe-link-20261008",
-      "type": "blog",
-      "title": "Restock Agent 支付案例：购物车确认与钱包授权分别检查",
-      "published_at": "2026-10-08",
-      "published_at_precision": "day",
-      "publication_timezone": null,
-      "summary": "LangChain 展示 Slack 补货 Agent：通过 Zinc 搜索商品、构建购物车，再借助 Stripe Link 和 MPP 处理支付请求。",
-      "why_it_matters": "Agent 能调用支付工具之后，需要明确每笔订单的授权边界。",
-      "application": "先在模拟模式验证购物车确认、金额变化、订单过期及重复请求，再考虑真实付款。",
-      "technical_analysis": "流程包括 Slack 购物车审阅和 Link 钱包同意；钱包会话本身不能替代订单批准，工具仍检查已确认订单。凭据由连接与沙箱管理。",
-      "caveats": "案例限定美国/美元等条件，不能推断任意商家通用；模拟流程仍可能依赖模型及平台服务，本文未运行或付款。",
-      "evidence_note": "已打开原始来源并核对日期；仅给日期的文章不补造时间及时区。建议为编辑判断，作者结果未独立复测。",
-      "canonical_url": "https://www.langchain.com/blog/agents-that-can-pay-with-stripe-link",
+      "summary": "LangSmith 增加自然语言搜索 Agent 行为的公测功能；结构过滤先缩小候选，再由决策模型检查去重后的会话轨迹。",
+      "why_it_matters": "适合发现失败案例并建立评测集，但模型匹配不能直接当作已证实事故。",
+      "application": "用已人工标注的成功、假完成和工具错误轨迹测试误报与漏报，回看命中记录的原始工具证据。",
+      "technical_analysis": "轨迹采用 8K token 预算，优先用户消息和最终回复，再填工具等内容；关键工具错误可能被裁掉。官方称公测在 LangSmith Cloud GCP US/EU/APAC 提供。",
+      "caveats": "产品公告而非独立检出率测评；语义细微差别和预算裁剪仍是限制。未启用账号功能或上传轨迹。",
+      "evidence_note": "原始来源日期已核对；只给日期的文章不补造时间及时区。建议是编辑判断，作者效果未独立复测。 官方网页工具直开失败，本机 HTTP 全文读取成功。",
+      "canonical_url": "https://www.langchain.com/blog/agent-traces-ai-search-langsmith",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
           "publisher": "LangChain",
-          "url": "https://www.langchain.com/blog/agents-that-can-pay-with-stripe-link"
-        },
-        {
-          "ref_id": "code",
-          "title": "Restock 示例仓库",
-          "publisher": "LangChain",
-          "url": "https://github.com/langchain-samples/restock-agent"
+          "url": "https://www.langchain.com/blog/agent-traces-ai-search-langsmith"
         }
       ],
-      "editorial_section": "ai_practice",
-      "carried_from": "2026-10-13-r1"
+      "editorial_section": "ai_practice"
     },
     {
-      "item_id": "langchain-1-4-5-20261012",
+      "item_id": "orange-agent-governance-20261013",
       "type": "blog",
-      "title": "LangChain 1.4.5：SummarizationMiddleware 可接入自定义 summarizer",
-      "published_at": "2026-10-12T19:28:41Z",
-      "published_at_precision": "second",
-      "publication_timezone": "UTC",
-      "summary": "正式发布说明新增 SummarizationMiddleware 的 summarizer 参数支持，让摘要步骤可接入自定义实现。",
-      "why_it_matters": "长会话压缩策略可以按任务需要调整，但摘要丢失约束仍需测试。",
-      "application": "锁定版本，用长对话检查关键事实、工具状态和用户约束在压缩后是否保留。",
-      "technical_analysis": "本条依据 release 的 accept summarizer 变更（#41225），不据此推断默认摘要行为、性能或兼容性全面改变。",
-      "caveats": "已核对 release 正文与 API 时间；未运行新版本，具体接口及迁移应以该版本代码为准。",
-      "evidence_note": "已打开原始来源并核对日期；仅给日期的文章不补造时间及时区。建议为编辑判断，作者结果未独立复测。",
-      "canonical_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.5",
-      "sources": [
-        {
-          "ref_id": "primary",
-          "title": "原始来源",
-          "publisher": "LangChain / GitHub release",
-          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.5"
-        }
-      ],
-      "editorial_section": "ai_practice",
-      "carried_from": "2026-10-13-r1"
-    },
-    {
-      "item_id": "carbon-annotator-20261008",
-      "type": "blog",
-      "title": "Carbon-A：基因注释模型扩大候选发现，预测与实验证据要分层",
-      "published_at": "2026-10-08",
+      "title": "Orange Business 案例：Agent 注册表、MCP 治理与三层评测",
+      "published_at": "2026-10-13",
       "published_at_precision": "day",
       "publication_timezone": null,
-      "summary": "作者介绍 1.2B Carbon-A 模型及注释数据库，用长 DNA 上下文预测蛋白编码区域，报告跨物种的大规模候选发现。",
-      "why_it_matters": "这一案例展示模型如何辅助科研数据整理，也暴露预测标签与确认事实的区别。",
-      "application": "评估数据产品时，分别保存预测候选、参考注释与实验支持；检查物种留出和数据泄漏。",
-      "technical_analysis": "模型上下文为 98,304 碱基，覆盖双链预测；作者报告 22,617 个物种约 5.66 亿新基因候选，实验验证只覆盖部分物种和候选。",
-      "caveats": "不能把全部候选称为已证实新基因；这是作者发布与评测，未独立复验。",
-      "evidence_note": "已打开原始来源并核对日期；仅给日期的文章不补造时间及时区。建议为编辑判断，作者结果未独立复测。",
-      "canonical_url": "https://huggingface.co/blog/HuggingFaceBio/carbon-annotator-genbank-genome-annotation",
+      "summary": "案例介绍 Studio、Portal、Console 分工，通过 Agent/MCP 注册表组织版本和工具访问，并在发布前运行回归评估。",
+      "why_it_matters": "企业 Agent 的质量控制需要把检索、工具行为与生产运行分开观察。",
+      "application": "建立检索召回/引用、工具选择/拒绝、生产失败/费用三组评测；提示版本按环境验证再上线。",
+      "technical_analysis": "文章描述 RAG 质量、Agent 行为和生产轨迹监控三个层次；MCP 目录是组织治理层，不等于公共 Registry 或独立安全审核。",
+      "caveats": "厂商客户案例，无独立审计或可比效果试验；10 月 13 日是案例文章日期，不推断平台当天首发。",
+      "evidence_note": "原始来源日期已核对；只给日期的文章不补造时间及时区。建议是编辑判断，作者效果未独立复测。 官方网页工具直开失败，本机 HTTP 全文读取成功。",
+      "canonical_url": "https://www.langchain.com/blog/how-orange-business-built-live-intelligence-on-langchain-and-langsmith",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "publisher": "HuggingFaceBio / Hugging Face 社区",
-          "url": "https://huggingface.co/blog/HuggingFaceBio/carbon-annotator-genbank-genome-annotation"
+          "publisher": "LangChain / Orange Business 案例",
+          "url": "https://www.langchain.com/blog/how-orange-business-built-live-intelligence-on-langchain-and-langsmith"
         }
       ],
-      "carried_from": "2026-10-13-r1"
+      "editorial_section": "ai_practice"
     },
     {
-      "item_id": "lerobot-quality-guide-20261008",
-      "type": "blog",
-      "title": "LeRobot 数据质量实践：先查结构完整性，再把可疑片段送审",
-      "published_at": "2026-10-08",
-      "published_at_precision": "day",
-      "publication_timezone": null,
-      "summary": "作者给出机器人数据质量检查流程，从元数据与 Parquet 完整性到任务内轨迹比较，避免只靠一个总分筛掉数据。",
-      "why_it_matters": "数据清洗如果混淆任务和动作表示，可能误删有效示范。",
-      "application": "先检查帧缺口、长度一致性和非有限值；把可疑片段标注为人工审阅队列，再做过滤前后训练对照。",
-      "technical_analysis": "同任务内比较 episode；明确 action 与 state、关节布局及动作类型，不猜测字段语义。相关指标不应重复投票。",
-      "caveats": "社区工程指南，不是 LeRobot 新版本公告；质量分数不能直接证明训练收益，本文未执行插件或训练。",
-      "evidence_note": "已打开原始来源并核对日期；仅给日期的文章不补造时间及时区。建议为编辑判断，作者结果未独立复测。",
-      "canonical_url": "https://huggingface.co/blog/harpreetsahota/a-practical-guide-to-lerobot-dataset-quality-metri",
-      "sources": [
-        {
-          "ref_id": "primary",
-          "title": "原始来源",
-          "publisher": "Harpreet Sahota / Hugging Face 社区",
-          "url": "https://huggingface.co/blog/harpreetsahota/a-practical-guide-to-lerobot-dataset-quality-metri"
-        }
-      ],
-      "editorial_section": "ai_practice",
-      "carried_from": "2026-10-13-r1"
-    },
-    {
-      "item_id": "arxiv-2610-13947",
+      "item_id": "arxiv-2610-13790",
       "type": "paper",
-      "title": "预印本 Artisan：把物理反馈加入可关节运动的 3D 资产生成",
-      "published_at": "2026-10-09T17:59:41Z",
+      "title": "预印本 OccludeBench：从影子和反射推断遮挡物，仍是 VLM 难题",
+      "published_at": "2026-10-09T16:04:54Z",
       "published_at_precision": "second",
       "publication_timezone": "UTC",
-      "summary": "Artisan 在 Articraft 基础上结合多 Agent 与物理仿真反馈，关注关节碰撞、重力稳定性及质量和材料属性。",
-      "why_it_matters": "视觉上合理的 3D 资产未必能在仿真中正确运动。",
-      "application": "评估生成资产时分别检查几何、运动碰撞和物理属性，不只评渲染图。",
-      "technical_analysis": "摘要描述的基准包含 100 个参考资产、50 个稳定性提示及 50 个带质量信息的 ABO 资产；10 月 12 日列表批次不等于提交日期。",
-      "caveats": "仅阅读摘要和提交记录作方向性简报，未读全文实验，不引述性能排名或数值；未核实正式会议录用。",
-      "evidence_note": "已打开原始来源并核对日期；仅给日期的文章不补造时间及时区。建议为编辑判断，作者结果未独立复测。",
-      "canonical_url": "https://arxiv.org/abs/2610.13947",
+      "summary": "作者构建完全遮挡物体推断基准，区分依据具体物理线索的直接判断与依据场景语义的间接判断。",
+      "why_it_matters": "认识场景主题与识别细小物理证据是不同能力，综合分数可能掩盖差距。",
+      "application": "给视觉 Agent 增加影子、反射、遮挡等单独测试，并要求标出实际线索；生成补全只作假设。",
+      "technical_analysis": "摘要报告五个 VLM 的直接/间接案例平均准确率为 42.7%/62.7%；作者用分阶段诊断定位瓶颈。",
+      "caveats": "仅读摘要与提交记录作方向简报，未读全文实验，不推广到全部 VLM；未核实正式会议录用。",
+      "evidence_note": "原始来源日期已核对；只给日期的文章不补造时间及时区。建议是编辑判断，作者效果未独立复测。",
+      "canonical_url": "https://arxiv.org/abs/2610.13790",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "publisher": "Xudong Cai 等 / arXiv",
-          "url": "https://arxiv.org/abs/2610.13947"
+          "publisher": "Jasin Cekinmez 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.13790"
         }
       ],
-      "research_status": "preprint",
-      "carried_from": "2026-10-13-r1"
+      "research_status": "preprint"
     },
     {
-      "item_id": "github-pullboard-dev-pullboard",
+      "item_id": "github-pixel-cli-pixel",
       "type": "github",
       "editorial_section": "github_radar",
       "radar_lane": "new",
-      "title": "新项目观察 · Pullboard：把需求、任务认领与提交验证放进仓库",
-      "summary": "通过仓库中的协调队列组织已批准需求、任务认领和隔离工作区，并要求另一 Agent 检查具体提交。",
-      "why_it_matters": "适合研究多 Agent 协作如何留下可审阅的执行证据。",
-      "application": "在测试仓库检查任务并发认领、变更差异和验收证据。",
-      "technical_analysis": "README 说明它不自行调用模型，需要接入现有 Agent；协调记录不能保证代码正确。",
-      "created_at": "2026-10-07T04:14:39Z",
-      "pushed_at": "2026-10-13T00:20:49Z",
-      "canonical_url": "https://github.com/pullboard-dev/pullboard",
+      "title": "新项目观察 · Pixel：本地索引代码签名和调用关系",
+      "summary": "Rust CLI 统一符号、调用者、搜索与仓库工作线索，向编程 Agent 提供有范围的证据。",
+      "why_it_matters": "可减少无目标的整文件阅读，适合验证确定性检索在 Agent 中的价值。",
+      "application": "在公开测试仓库比较索引覆盖和人工核验结果，再看实际会话耗时及成本。",
+      "technical_analysis": "README 的 94.5% 是八个大文件上签名读取相对整文件的中位阅读量减少，不是端到端 token 成本；支持说明以 macOS/Linux 为主，未确认 Windows 可用。",
+      "canonical_url": "https://github.com/Pixel-CLI/pixel",
+      "created_at": "2026-08-30T00:11:10Z",
+      "pushed_at": "2026-10-14T00:20:04Z",
       "github_metrics": {
-        "stars": 109,
+        "stars": 27,
+        "forks": 3,
+        "license": "MIT",
+        "observed_at": "2026-10-14T00:20:39.709Z",
+        "stars_delta": null,
+        "previous_observed_at": null,
+        "growth_percent": null
+      },
+      "evidence_note": "README 与公开 API 核对：非 fork、未归档。创建 2026-08-30T00:11:10Z，push 2026-10-14T00:20:04Z 仅表示活动。首次观测，无增长基线。",
+      "caveats": "未安装执行；Star 不代表质量，候选池有限。API 主许可 MIT，具体子目录许可见说明。",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "Pixel-CLI/pixel",
+          "url": "https://github.com/Pixel-CLI/pixel"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库公开 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/Pixel-CLI/pixel"
+        }
+      ]
+    },
+    {
+      "item_id": "github-malav2110-explain-diff-html",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "radar_lane": "new",
+      "title": "新项目观察 · Explain Diff：沿代码流程生成 PR 阅读页",
+      "summary": "Agent skill 把变更、相关调用及背景组织成单页 HTML，包含流程说明、源码位置与交互小测。",
+      "why_it_matters": "可以帮助审阅者理解跨文件改动，但解释本身仍需验证。",
+      "application": "先用一个小型公开 PR，检查目标提交上的文件行号、调用关系及每条结论。",
+      "technical_analysis": "核心页面内联 CSS/JS；Mermaid 图使用 CDN，需要网络，不能把所有页面称完全离线。主体 MIT，README 另说明借鉴的 CC-BY-4.0 内容来源。",
+      "canonical_url": "https://github.com/malav2110/explain-diff-html",
+      "created_at": "2026-09-12T19:36:44Z",
+      "pushed_at": "2026-10-14T00:14:44Z",
+      "github_metrics": {
+        "stars": 15,
         "forks": 5,
         "license": "MIT",
-        "observed_at": "2026-10-13T00:22:39.842Z",
+        "observed_at": "2026-10-14T00:20:40.524Z",
         "stars_delta": null,
         "previous_observed_at": null,
         "growth_percent": null
       },
-      "evidence_note": "公开 API 快照与 README 已核对。首次观测，无增长基线。 创建 2026-10-07T04:14:39Z；push 2026-10-13T00:20:49Z 仅代表活动，不代表发布。",
-      "caveats": "许可证 MIT；未安装执行或独立测试。候选池有限，不是 GitHub 全站榜单。",
+      "evidence_note": "README 与公开 API 核对：非 fork、未归档。创建 2026-09-12T19:36:44Z，push 2026-10-14T00:14:44Z 仅表示活动。首次观测，无增长基线。",
+      "caveats": "未安装执行；Star 不代表质量，候选池有限。API 主许可 MIT，具体子目录许可见说明。",
       "sources": [
         {
           "ref_id": "readme",
           "title": "项目 README",
-          "publisher": "pullboard-dev/pullboard",
-          "url": "https://github.com/pullboard-dev/pullboard"
+          "publisher": "malav2110/explain-diff-html",
+          "url": "https://github.com/malav2110/explain-diff-html"
         },
         {
           "ref_id": "api",
-          "title": "仓库 API",
+          "title": "仓库公开 API",
           "publisher": "GitHub",
-          "url": "https://api.github.com/repos/pullboard-dev/pullboard"
+          "url": "https://api.github.com/repos/malav2110/explain-diff-html"
         }
-      ],
-      "carried_from": "2026-10-13-r1"
+      ]
     },
     {
-      "item_id": "github-stamparm-thebleep",
-      "type": "github",
-      "editorial_section": "github_radar",
-      "radar_lane": "new",
-      "title": "新项目观察 · thebleep：解释并修正终端命令",
-      "summary": "为失败或准备执行的命令提供修正，展示规则和置信度，并从本地接受的修正中学习；支持 API/MCP 接入。",
-      "why_it_matters": "通用开发工具也值得跟踪；25 Star 的明确用途项目不必与成熟项目竞争总量排名。",
-      "application": "先用无副作用命令查看建议及解释，再决定是否接受；核对 PowerShell 等目标环境的实际支持。",
-      "technical_analysis": "README 定位为 The Fuck 的后继工具，声明支持 Python 3.9–3.14 与多个系统；创建日期不等于产品首发日期，建议也不能代替命令审阅。",
-      "created_at": "2026-08-17T20:09:01Z",
-      "pushed_at": "2026-10-13T00:15:03Z",
-      "canonical_url": "https://github.com/stamparm/thebleep",
-      "github_metrics": {
-        "stars": 25,
-        "forks": 4,
-        "license": "MIT",
-        "observed_at": "2026-10-13T00:22:40.254Z",
-        "stars_delta": null,
-        "previous_observed_at": null,
-        "growth_percent": null
-      },
-      "evidence_note": "公开 API 快照与 README 已核对。首次观测，无增长基线。 创建 2026-08-17T20:09:01Z；push 2026-10-13T00:15:03Z 仅代表活动，不代表发布。",
-      "caveats": "许可证 MIT；未安装执行或独立测试。候选池有限，不是 GitHub 全站榜单。",
-      "sources": [
-        {
-          "ref_id": "readme",
-          "title": "项目 README",
-          "publisher": "stamparm/thebleep",
-          "url": "https://github.com/stamparm/thebleep"
-        },
-        {
-          "ref_id": "api",
-          "title": "仓库 API",
-          "publisher": "GitHub",
-          "url": "https://api.github.com/repos/stamparm/thebleep"
-        }
-      ],
-      "carried_from": "2026-10-13-r1"
-    },
-    {
-      "item_id": "github-graphify-labs-graphify",
+      "item_id": "github-firecrawl-firecrawl",
       "type": "github",
       "editorial_section": "github_radar",
       "radar_lane": "rising",
-      "title": "增长观察 · Graphify：把代码和文档组织成可查询知识图",
-      "summary": "把代码、文档、SQL 与配置等映射成知识图，区分确定提取关系与模型推断关系。",
-      "why_it_matters": "跨文件检索可以增加结构线索，并保留关系来源供人工核查。",
-      "application": "先对小型公开仓库生成图，抽查边能否回溯源码，确认哪些非代码文件会交给外部模型。",
-      "technical_analysis": "代码路径使用本地 AST 解析；文档、PDF、图像等处理可能使用模型服务，不能把整个流程理解为完全离线。",
-      "created_at": "2026-04-03T15:49:07Z",
-      "pushed_at": "2026-10-12T22:19:19Z",
-      "canonical_url": "https://github.com/Graphify-Labs/graphify",
+      "title": "增长观察 · Firecrawl：网页采集输出给数据管线和 Agent",
+      "summary": "提供网页抓取、爬取及面向应用的数据输出，可选自托管或云服务。",
+      "why_it_matters": "适合研究采集结果、结构化数据与后续检索之间的衔接。",
+      "application": "选少量允许采集的公开页面，核对动态内容完整性、失败记录及原始出处，再决定部署方式。",
+      "technical_analysis": "README 区分开源与云版本，云功能不保证全部可自托管；主体 AGPL-3.0，SDK 和部分 UI 使用 MIT，按目录核对。",
+      "canonical_url": "https://github.com/firecrawl/firecrawl",
+      "created_at": "2024-04-15T21:02:29Z",
+      "pushed_at": "2026-10-13T22:58:04Z",
       "github_metrics": {
-        "stars": 125880,
-        "forks": 12147,
-        "license": "Apache-2.0",
-        "observed_at": "2026-10-13T00:22:57.133Z",
-        "stars_delta": 320,
-        "previous_observed_at": "2026-10-12T00:35:52.568Z",
-        "growth_percent": 0.2548582351067219
+        "stars": 191211,
+        "forks": 10145,
+        "license": "AGPL-3.0",
+        "observed_at": "2026-10-14T00:20:49.230Z",
+        "stars_delta": 345,
+        "previous_observed_at": "2026-10-13T00:22:51.757Z",
+        "growth_percent": 0.18075508471912233
       },
-      "evidence_note": "公开 API 快照与 README 已核对。实际观测间隔 23.78 小时，净增 320 Star，增幅 0.255%。 创建 2026-04-03T15:49:07Z；push 2026-10-12T22:19:19Z 仅代表活动，不代表发布。",
-      "caveats": "许可证 Apache-2.0；未安装执行或独立测试。候选池有限，不是 GitHub 全站榜单。",
+      "evidence_note": "README 与公开 API 核对：非 fork、未归档。创建 2024-04-15T21:02:29Z，push 2026-10-13T22:58:04Z 仅表示活动。同 node_id 实际间隔 23.97 小时，净增 345 Star、0.181%。",
+      "caveats": "未安装执行；Star 不代表质量，候选池有限。API 主许可 AGPL-3.0，具体子目录许可见说明。",
       "sources": [
         {
           "ref_id": "readme",
           "title": "项目 README",
-          "publisher": "Graphify-Labs/graphify",
-          "url": "https://github.com/Graphify-Labs/graphify"
+          "publisher": "firecrawl/firecrawl",
+          "url": "https://github.com/firecrawl/firecrawl"
         },
         {
           "ref_id": "api",
-          "title": "仓库 API",
+          "title": "仓库公开 API",
           "publisher": "GitHub",
-          "url": "https://api.github.com/repos/Graphify-Labs/graphify"
+          "url": "https://api.github.com/repos/firecrawl/firecrawl"
         }
-      ],
-      "carried_from": "2026-10-13-r1"
+      ]
     },
     {
-      "item_id": "paper-dust3r-arxiv-2312-14132",
+      "item_id": "paper-gmflow-arxiv-2111-13680",
       "type": "paper",
       "research_status": "historical_conference_paper",
-      "paper_id": "arxiv:2312.14132",
-      "analysis_date": "2026-10-13",
+      "paper_id": "arxiv:2111.13680",
+      "analysis_date": "2026-10-14",
       "conference": "CVPR",
-      "conference_year": 2024,
-      "published_at": "2024-06",
+      "conference_year": 2022,
+      "published_at": "2022-06",
       "published_at_precision": "month",
-      "title": "每日论文精读 · CVPR 2024 DUSt3R：先预测点图，再恢复相机与场景",
-      "summary": "历史论文专题，今日分析。DUSt3R 从未标定、未知姿态的照片直接预测共同坐标系中的密集点图，再支持匹配、相机恢复与多视图重建。",
-      "why_it_matters": "把复杂几何管线中的多个前置任务转成统一的三维回归问题，适合研究低门槛重建；不是本周新论文。",
-      "application": "先用作者权重处理有重叠的静态照片，对照已知尺度或深度评估，再决定是否用于测量。",
-      "technical_analysis": "共享编码器与跨注意力解码器输出两张点图及置信度；多视图再优化坐标变换和尺度。输出点图不自动满足严格相机几何，也没有天然绝对尺度。",
-      "canonical_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_DUSt3R_Geometric_3D_Vision_Made_Easy_CVPR_2024_paper.html",
-      "evidence_note": "CVF 正式页经本机 HTTP 核实 CVPR 2024、20697–20709 页；完整阅读 arXiv v3 主文与附录。v3 更新于 2024-12-02，晚于会议，以下表号及数值以该版本为准。未运行实验。",
+      "title": "每日论文精读 · CVPR 2022 GMFlow：用全局匹配减少光流迭代",
+      "summary": "历史论文专题，今日分析。GMFlow 通过特征增强、全局相关和 softmax 匹配估计帧间光流，再传播到难匹配区域，并可做一次高分辨率细化。",
+      "why_it_matters": "为视频运动估计提供减少顺序迭代的思路；速度和泛化要结合分辨率、硬件与数据域评估。",
+      "application": "先用作者权重核验公开样例，再在自有视频分别测遮挡、大位移、耗时与显存。",
+      "technical_analysis": "两帧经共享 CNN 和 Transformer 增强，用匹配概率加权目标坐标，再减源坐标得位移；遮挡处通过特征自相似传播，不等于获得真实可见对应。",
+      "canonical_url": "https://openaccess.thecvf.com/content/CVPR2022/html/Xu_GMFlow_Learning_Optical_Flow_via_Global_Matching_CVPR_2022_paper.html",
+      "evidence_note": "CVF 经本机 HTTP 核实 CVPR 2022、8121–8130 页；阅读 arXiv v3（2022-06-10）主文和附录 A–D，表号按该版。网页工具打开 CVF 内部错误，本机成功。未运行训练。",
       "deep_dive": [
         {
           "heading": "身份与研究问题",
-          "content": "稳定标识 arxiv:2312.14132。作者 Shuzhe Wang、Vincent Leroy、Yohann Cabon、Boris Chidlovskii、Jerome Revaud。研究如何绕过先估计内参、匹配与相机姿态的依赖，从普通照片恢复密集几何。会议年份 2024，分析日期 2026-10-13。",
+          "content": "稳定标识 arxiv:2111.13680；作者 Haofei Xu、Jing Zhang、Jianfei Cai、Hamid Rezatofighi、Dacheng Tao。研究大位移光流能否减少多轮顺序细化；2022 年会议论文，2026-10-14 分析，不是本周新发布。",
           "ref_ids": [
             "cvf",
             "fulltext"
@@ -464,81 +319,73 @@
         },
         {
           "heading": "方法流程 · 第 3 节",
-          "content": "两张图像经共享 ViT 编码器，再通过双解码器的跨注意力交换信息，回归点图和置信度；两张点图都用第一相机坐标表示。训练按平均点距离归一化预测与真值尺度，以置信度加权三维误差，并正则化以避免模型把置信度全部降为零。",
+          "content": "共享 CNN 提取 1/8 特征 → 加位置编码 → 六层自/跨注意力增强 → 全像素相关 → softmax 与坐标期望得到光流 → 自注意力传播。可在 1/4 特征上 warp 后做局部残差细化，并共享权重；用加权 L1 监督各阶段。",
           "ref_ids": [
             "fulltext"
           ]
         },
         {
-          "heading": "从点图到多视图",
-          "content": "点图的 Z 坐标可作深度，三维互近邻可建立匹配；恢复内参时仍使用主点居中、方形像素等假设，姿态可经 PnP/RANSAC 等估计。多视图构建图像连接图，优化每对点图的刚体变换与尺度，使用三维一致性目标，而非传统二维重投影 bundle adjustment。",
+          "heading": "主要实验 · 表 3",
+          "content": "Chairs/Things 训练、Sintel train 泛化，GMFlow 一次细化 clean/final EPE 为 1.08/2.48，RAFT 31 次为 1.41/2.69；436×1024 输入，V100 耗时 151/170 ms，A100 为 66/91 ms。这里不是微调后测试榜成绩，亦不代表所有设备上的实时能力。",
           "ref_ids": [
             "fulltext"
           ]
         },
         {
-          "heading": "姿态实验 · v3 表 2",
-          "content": "10 帧/45 对条件下，CO3Dv2 的全局对齐版本 mAA@30 为 76.7，PnP 版本 77.2，PoseDiff 66.5；RealEstate10K 分别为 67.7、61.2、48.0。全局对齐并非所有指标都优于 PnP。DUSt3R 未在 RealEstate10K 训练，但使用过小部分 CO3D，两个数据集的泛化条件不同。",
+          "heading": "消融 · 表 2(a)(d)",
+          "content": "同样 Chairs/Things 设置，去跨注意力使 Sintel final EPE 从 3.44 升至 6.32。加入传播时，unmatched final 从 19.50 降至 15.52，但 matched 从 1.95 略升为 1.98，说明收益有区域差异。",
           "ref_ids": [
             "fulltext"
           ]
         },
         {
-          "heading": "深度消融与精度边界 · v3 表 3、4",
-          "content": "表 3 的尺度对齐多视图深度设置中，512 模型平均相对误差 4.73，224 模型 6.85，224 无 CroCo 预训练为 9.37；这支持分辨率和初始化的价值，不能解释成同等计算预算下的提升。表 4 DTU 的 512 模型总体误差 1.741 mm，GeoMVSNet 为 0.295 mm；后者使用真值相机和 DTU 训练，DUSt3R 为零样本且评测时对齐到真值坐标，条件不同，也说明它并非最高精度测量方案。",
-          "ref_ids": [
-            "fulltext"
-          ]
-        },
-        {
-          "heading": "局限与工程价值",
-          "content": "尺度不确定，点图在提取相机约束前可能不是严格物理相机的投影；透明/反射表面等几何定义困难。图像对数随视图数增加，多视图优化仍有资源成本。作者实验不能证明任意动态场景可靠；实际用途需单独验证。可作为重建初始化与几何研究入口，不宜直接把输出当量测真值。",
+          "heading": "局限 · 表 4、6 与附录 B",
+          "content": "Chairs/Things 到 KITTI train，GMFlow F1-all 23.40，RAFT 17.46，越低越好，合成到真实域并未占优。遮挡仍难；全局匹配矩阵随像素数量平方增长，附录讨论分块节省内存。适合运动初始化或视频处理，不能直接把预测当量测真值。",
           "ref_ids": [
             "fulltext"
           ]
         },
         {
           "heading": "复现条件与步骤",
-          "content": "作者仓库 naver/dust3r，CC BY-NC-SA 4.0，含非商业限制。优先固定代码提交、依赖与官方 checkpoint，按 README 准备子模块和环境；选两张有重叠的静态照片跑点图，再扩到多视图对齐，记录输入分辨率、权重、置信度阈值、时间和显存，并与已知尺度/深度比较。v3 表 7 训练分 224 线性头 50 epoch、512 线性头 100、DPT 头 90，batch 为 128/64/64；公开 README 的训练配方与此存在差异且提及未公开数据集，不能保证从头严格重现全部论文结果。",
+          "content": "作者仓库 Apache-2.0，README 基于 Python 3.8/PyTorch 1.9/CUDA 10.2。固定代码、环境与作者权重，先跑相邻帧 demo，再按 evaluate 脚本核对数据目录；分别记录无细化/一次细化、输入尺寸、GPU、EPE 与时间。训练先 Chairs 100K，再 Things；消融 200K、最终 800K 不混用。基础训练默认四张 16GB V100，细化版默认需求更高；调整 batch/训练步数需注明。",
           "ref_ids": [
-            "fulltext",
-            "code"
+            "code",
+            "fulltext"
           ]
         }
       ],
-      "caveats": "历史论文、作者实验，未独立复现；晚期 arXiv 版本与会议版不应默认为逐项相同，商业使用需核对许可。",
+      "caveats": "历史作者实验，未独立复现；后续仓库增加的模型配置与原论文结果需分清。",
       "sources": [
         {
           "ref_id": "cvf",
-          "title": "CVPR 2024 正式会议页",
+          "title": "正式 CVPR 2022 论文页",
           "publisher": "CVF",
-          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_DUSt3R_Geometric_3D_Vision_Made_Easy_CVPR_2024_paper.html"
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/html/Xu_GMFlow_Learning_Optical_Flow_via_Global_Matching_CVPR_2022_paper.html"
         },
         {
           "ref_id": "fulltext",
-          "title": "论文全文及附录 v3",
+          "title": "论文主文与附录 v3",
           "publisher": "作者 / arXiv",
-          "url": "https://arxiv.org/html/2312.14132v3"
+          "url": "https://arxiv.org/html/2111.13680v3"
         },
         {
           "ref_id": "code",
-          "title": "作者实现、训练说明与许可",
-          "publisher": "Naver",
-          "url": "https://github.com/naver/dust3r"
+          "title": "作者实现与配置",
+          "publisher": "Haofei Xu 等",
+          "url": "https://github.com/haofeixu/gmflow"
         }
-      ],
-      "carried_from": "2026-10-13-r1"
+      ]
     }
   ],
   "source_stats": {
-    "news_count": 11,
+    "news_count": 6,
     "weekly_preprint_count": 1,
     "github_radar_count": 3,
     "new_project_count": 2,
     "rising_project_count": 1,
     "established_project_count": 0,
     "historical_paper_count": 1,
-    "github_candidates": 167,
+    "github_candidates": 182,
     "github_queried_candidates": 48,
     "registry_records_fetched": 100,
     "registry_pagination_complete": false,
@@ -546,104 +393,101 @@
       {
         "id": "arxiv-ai",
         "status": "checked",
-        "checked_during": "2026-10-13 晚间增补采集",
-        "detail": "复查 cs.AI/cs.CV/cs.LG recent 首屏，最新可见批次仍为 10 月 12 日；本次没有新增经全文审阅的研究。沿用今天已完成的 DUSt3R 专题，不再增加第二篇历史论文。",
+        "checked_during": "2026-10-14",
         "urls": [
           "https://arxiv.org/list/cs.AI/recent",
           "https://arxiv.org/list/cs.CV/recent",
           "https://arxiv.org/list/cs.LG/recent"
-        ]
+        ],
+        "detail": "检查 cs.AI/CV/LG recent，最新可见列表仍为 10 月 12 日；选未收录 OccludeBench，按 10 月 9 日提交时间，摘要级简报。GMFlow 另读全文，不计周内新闻。首屏不代表全部论文。"
       },
       {
         "id": "huggingface-blog",
         "status": "checked",
-        "checked_during": "2026-10-13 晚间增补采集",
-        "detail": "复查主博客和社区入口；新增 UIBK 英文检索模型与 Basis 配对表达语音，读原文并核对模型/数据卡和许可；两者原始日期均为 10 月 12 日。",
+        "checked_during": "2026-10-14",
         "urls": [
           "https://huggingface.co/blog"
-        ]
+        ],
+        "detail": "检查主博客和社区，阅读 10 月 13 日 LFM2.5、Llama Windows、NVIDIA ASR 原文；核对模型卡和代码入口，分清厂商及社区身份。ASR 两个 skill 深层链接工具失败，不声称代码已审计。"
       },
       {
         "id": "independent-evaluations",
         "status": "checked",
-        "checked_during": "2026-10-13 晚间增补采集",
-        "detail": "复查 METR、Artificial Analysis、NIST；METR 最新可见 10 月 6 日事件已收录，动态榜单没有形成可核实的新独立报告。本次不以社区作者自评替代独立评测。",
+        "checked_during": "2026-10-14",
         "urls": [
           "https://metr.org/",
           "https://artificialanalysis.ai/",
           "https://www.nist.gov/ai-measurement-and-evaluation"
-        ]
+        ],
+        "detail": "检查 METR、Artificial Analysis、NIST；METR 既有 10 月 6 日已收录且已超窗。AA 动态榜单未提供本轮可核实新报告；NIST 入口重定向到 SI measurement and evaluation，不能据此编造 AI 评测。"
       },
       {
         "id": "langchain",
         "status": "checked",
-        "checked_during": "2026-10-13 晚间增补采集",
-        "detail": "复查博客和 GitHub releases；发现并全文阅读 10 月 13 日 ScaleDown 集成，作为实质新内容追加。1.4.5 等 release 已在早版处理。",
+        "checked_during": "2026-10-14",
         "urls": [
           "https://www.langchain.com/blog",
           "https://github.com/langchain-ai/langchain/releases"
-        ]
+        ],
+        "detail": "检查博客及 release API；新选 AI Search 与 Orange 案例，原文网页工具失败、本机 HTTP 全文成功。ScaleDown 和 1.4.5 已收录，不重复。"
       },
       {
         "id": "llamaindex",
         "status": "checked",
-        "checked_during": "2026-10-13 晚间增补采集",
-        "detail": "复查博客与 release API；可见 10 月 8 日 Markdown 文章已收录，最新 release 仍为 9 月 21 日；不从无日期营销条目推断发布。",
+        "checked_during": "2026-10-14",
         "urls": [
           "https://www.llamaindex.ai/blog",
           "https://github.com/run-llama/llama_index/releases"
-        ]
+        ],
+        "detail": "检查博客及 release API；可见 Markdown 事件已收录，最新 release 仍 9 月 21 日；未从无日期营销入口推断新消息。"
       },
       {
         "id": "modelcontextprotocol",
         "status": "checked",
-        "checked_during": "2026-10-13 晚间增补采集",
-        "detail": "复查协议入口、官方博客及 TypeScript SDK release API；最新 SDK 仍 10 月 5 日，不在本轮七天窗口，不重复。未遍历全部 SDK。",
+        "checked_during": "2026-10-14",
         "urls": [
           "https://modelcontextprotocol.io/",
           "https://github.com/modelcontextprotocol"
-        ]
+        ],
+        "detail": "检查官方博客与 TypeScript SDK release API；最新可见 10 月 5 日 2.3.1 超窗，不重复；未遍历全部 SDK。"
       },
       {
         "id": "openai-news",
         "status": "checked",
-        "checked_during": "2026-10-13 晚间增补采集",
-        "detail": "复查官方新闻入口，最新可见 10 月 8 日调查及此前产品内容已收录；本次未发现合格的新公告。",
+        "checked_during": "2026-10-14",
         "urls": [
           "https://openai.com/news/"
-        ]
+        ],
+        "detail": "检查新闻页，可见 10 月 8 日调查和较早产品事件已收录，无本轮合格新增。"
       },
       {
         "id": "mcp-registry-practice",
         "status": "checked",
-        "checked_during": "2026-10-13 晚间增补采集",
-        "detail": "再次读取 API 首批 100 条，仍有 nextCursor，未遍历全部页；没有进一步核实到合格的新实践，注册不代表审核。",
+        "checked_during": "2026-10-14",
         "urls": [
           "https://registry.modelcontextprotocol.io/"
-        ]
+        ],
+        "detail": "读取 API 首批 100 条，仍有 nextCursor，未完成分页；无经代码/配置进一步核实的新实践入选，注册不等于安全审核。"
       },
       {
         "id": "tinyfish-practice-discovery",
         "status": "checked",
-        "checked_during": "2026-10-13 晚间增补采集",
-        "detail": "复查官网与 cookbook README，没有核实到新的周内具体实践日期；未执行代码或调用服务。",
+        "checked_during": "2026-10-14",
         "urls": [
           "https://www.tinyfish.ai/",
           "https://github.com/tinyfish-io/tinyfish-cookbook"
-        ]
+        ],
+        "detail": "检查官网及 cookbook README，没有核实新的周内具体实践日期，不调用付费服务或执行发现代码。"
       }
-    ],
-    "new_since_previous_revision": 3,
-    "carried_item_count": 12
+    ]
   },
   "selection_notes": [
-    "同日增补 2026-10-13-r1，只新增 3 个未收录事件，12 条沿用内容逐项标 carried_from；旧版本保留。",
-    "滚动七天窗口 2026-10-06T15:06:48.713Z 至 2026-10-13T15:06:48.713Z，原始发布日期和分析日期分开。",
-    "GitHub 候选本轮 167、实际查询 48、0 采集错误；检查 Trending 仅用于发现，不拿其显示值当日增。",
-    "本轮距离早版不足 20 小时，精选项目在本轮快照没有有效 20–28 小时基线；不把短间隔变化包装为日增。三个项目沿用早版观测和指标，不声称本轮再次飙升。",
-    "早版 Pullboard 本轮未进实际查询预算；三个项目没有经过新一轮完整 README 审阅，保持早版推荐与许可记录，不作为新增推荐。",
-    "每日一篇论文已由早版完成；DUSt3R 专题原样沿用，分析日期仍为今天，会议年份 2024，不计入七天新闻。",
-    "九个渠道均复查；Registry 仅首批 100、动态榜单与来源首屏仍有覆盖缺口。ScaleDown 网页工具打开失败，本机 HTTP 全文成功。",
-    "建议属于编辑判断，厂商结果未独立复测；未安装、训练、购买或调用付费服务。"
+    "资讯滚动七天，按历史 URL/事件去重；本轮仅选 6 条质量合格内容，不补重复新闻凑满 8 条。",
+    "原始新闻发布于 10 月 9 日及 13 日，不冒充今日首次发布。历史 GMFlow 专题独立统计。",
+    "GitHub 月度回看；182 个候选实际查询 48，采集器 0 错误，Trending 仅发现，不是全站榜。",
+    "新项目 Pixel 27 Star、Explain Diff 15 Star，近 90 天创建且近 30 天活跃；首次快照增长 null。Firecrawl 同 node_id 有效间隔约 23.97 小时，净增 345、约 0.181%。",
+    "成熟高 Star 席位空缺，保留两个新项目，不按总 Star 统一排序；所有项目均未归档且不是 fork。",
+    "九渠道首屏、动态页面与 Registry 部分分页有覆盖限制；NIST 重定向及技能深链访问失败如实记录。",
+    "建议为编辑判断；未安装第三方项目、下载模型、训练、上传私有数据或调用付费服务。"
   ]
 }

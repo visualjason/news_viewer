@@ -1,0 +1,319 @@
+{
+  "collection_started_at": "2026-10-14T00:20:33.486Z",
+  "collected_at": "2026-10-14T00:25:58.822Z",
+  "window": {
+    "start": "2026-10-07T00:25:58.822Z",
+    "end": "2026-10-14T00:25:58.822Z",
+    "timezone": "Asia/Shanghai",
+    "end_exclusive": true,
+    "lookback_days": 7
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-14",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "detail": "检查 cs.AI/CV/LG recent，最新可见列表仍为 10 月 12 日；选未收录 OccludeBench，按 10 月 9 日提交时间，摘要级简报。GMFlow 另读全文，不计周内新闻。首屏不代表全部论文。"
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-14",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "detail": "检查主博客和社区，阅读 10 月 13 日 LFM2.5、Llama Windows、NVIDIA ASR 原文；核对模型卡和代码入口，分清厂商及社区身份。ASR 两个 skill 深层链接工具失败，不声称代码已审计。"
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-14",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "detail": "检查 METR、Artificial Analysis、NIST；METR 既有 10 月 6 日已收录且已超窗。AA 动态榜单未提供本轮可核实新报告；NIST 入口重定向到 SI measurement and evaluation，不能据此编造 AI 评测。"
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-14",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "detail": "检查博客及 release API；新选 AI Search 与 Orange 案例，原文网页工具失败、本机 HTTP 全文成功。ScaleDown 和 1.4.5 已收录，不重复。"
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-14",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "detail": "检查博客及 release API；可见 Markdown 事件已收录，最新 release 仍 9 月 21 日；未从无日期营销入口推断新消息。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-14",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "detail": "检查官方博客与 TypeScript SDK release API；最新可见 10 月 5 日 2.3.1 超窗，不重复；未遍历全部 SDK。"
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-14",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "detail": "检查新闻页，可见 10 月 8 日调查和较早产品事件已收录，无本轮合格新增。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-14",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "detail": "读取 API 首批 100 条，仍有 nextCursor，未完成分页；无经代码/配置进一步核实的新实践入选，注册不等于安全审核。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-14",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "detail": "检查官网及 cookbook README，没有核实新的周内具体实践日期，不调用付费服务或执行发现代码。"
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "liquid-lfm25-24b-a2b-20261013",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LiquidAI 团队",
+          "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b"
+        },
+        {
+          "ref_id": "model",
+          "title": "模型卡与许可",
+          "publisher": "LiquidAI",
+          "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B"
+        }
+      ]
+    },
+    {
+      "item_id": "llama-windows-20261013",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Hugging Face 作者团队",
+          "url": "https://huggingface.co/blog/huggingface/llama-windows"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者代码仓库",
+          "publisher": "ggml-org",
+          "url": "https://github.com/ggml-org/Llama-Windows"
+        }
+      ]
+    },
+    {
+      "item_id": "nvidia-asr-skills-20261013",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "NVIDIA 作者 / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/nvidia/fine-tune-asr-with-nvidia-nemotron-speech-skills"
+        }
+      ]
+    },
+    {
+      "item_id": "langsmith-ai-search-20261013",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain",
+          "url": "https://www.langchain.com/blog/agent-traces-ai-search-langsmith"
+        }
+      ]
+    },
+    {
+      "item_id": "orange-agent-governance-20261013",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain / Orange Business 案例",
+          "url": "https://www.langchain.com/blog/how-orange-business-built-live-intelligence-on-langchain-and-langsmith"
+        }
+      ]
+    },
+    {
+      "item_id": "arxiv-2610-13790",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Jasin Cekinmez 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.13790"
+        }
+      ]
+    },
+    {
+      "item_id": "github-pixel-cli-pixel",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "Pixel-CLI/pixel",
+          "url": "https://github.com/Pixel-CLI/pixel"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库公开 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/Pixel-CLI/pixel"
+        }
+      ]
+    },
+    {
+      "item_id": "github-malav2110-explain-diff-html",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "malav2110/explain-diff-html",
+          "url": "https://github.com/malav2110/explain-diff-html"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库公开 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/malav2110/explain-diff-html"
+        }
+      ]
+    },
+    {
+      "item_id": "github-firecrawl-firecrawl",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "firecrawl/firecrawl",
+          "url": "https://github.com/firecrawl/firecrawl"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库公开 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/firecrawl/firecrawl"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-gmflow-arxiv-2111-13680",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "正式 CVPR 2022 论文页",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/html/Xu_GMFlow_Learning_Optical_Flow_via_Global_Matching_CVPR_2022_paper.html"
+        },
+        {
+          "ref_id": "fulltext",
+          "title": "论文主文与附录 v3",
+          "publisher": "作者 / arXiv",
+          "url": "https://arxiv.org/html/2111.13680v3"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者实现与配置",
+          "publisher": "Haofei Xu 等",
+          "url": "https://github.com/haofeixu/gmflow"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 182,
+    "queried_candidates": 48,
+    "errors": [],
+    "selected": [
+      {
+        "item_id": "github-pixel-cli-pixel",
+        "lane": "new",
+        "metrics": {
+          "stars": 27,
+          "forks": 3,
+          "license": "MIT",
+          "observed_at": "2026-10-14T00:20:39.709Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-malav2110-explain-diff-html",
+        "lane": "new",
+        "metrics": {
+          "stars": 15,
+          "forks": 5,
+          "license": "MIT",
+          "observed_at": "2026-10-14T00:20:40.524Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-firecrawl-firecrawl",
+        "lane": "rising",
+        "metrics": {
+          "stars": 191211,
+          "forks": 10145,
+          "license": "AGPL-3.0",
+          "observed_at": "2026-10-14T00:20:49.230Z",
+          "stars_delta": 345,
+          "previous_observed_at": "2026-10-13T00:22:51.757Z",
+          "growth_percent": 0.18075508471912233
+        }
+      }
+    ],
+    "snapshot": "data/github-stars/2026-10-14-r1.json"
+  },
+  "registry": {
+    "count": 100,
+    "pagination_complete": false
+  },
+  "paper": {
+    "stable_id": "arxiv:2111.13680",
+    "venue": "CVPR 2022",
+    "pages": "8121-8130",
+    "fulltext": "arXiv v3 main and appendices A-D",
+    "cvf_access": "web tool internal error; local HTTP success"
+  },
+  "access_notes": [
+    "LangChain new articles: direct web open failed; local HTTP fulltext succeeded",
+    "NIST redirects to SI measurement and evaluation",
+    "Two ASR skill deep links: web internal errors; source article remains readable"
+  ]
+}

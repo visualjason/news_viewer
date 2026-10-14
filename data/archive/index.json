@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-14",
+    "revision": 1,
+    "title": "本地 Agent 与行为检索：6 条资讯、两个新项目及 GMFlow 精读",
+    "item_count": 10,
+    "path": "data/archive/2026-10-14-r1.json"
+  },
+  {
     "issue_date": "2026-10-13",
     "revision": 2,
     "title": "晚间增补：ScaleDown 上下文管理、统一检索与表达语音数据",
