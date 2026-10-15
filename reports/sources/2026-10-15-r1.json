@@ -1,0 +1,303 @@
+{
+  "collection_started_at": "2026-10-15T00:25:54.259Z",
+  "collected_at": "2026-10-15T00:29:41.912Z",
+  "window": {
+    "start": "2026-10-08T00:29:41.912Z",
+    "end": "2026-10-15T00:29:41.912Z",
+    "timezone": "Asia/Shanghai",
+    "end_exclusive": true,
+    "lookback_days": 7
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-15",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "detail": "检查 AI/CV/LG recent，最新批次为 10 月 14 日；选 AesCode，提交时间保留 13 日，仅读摘要做简报。MobileOne 正文另读，不计周内新闻。未遍历全部论文。"
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-15",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "detail": "检查主博客/社区，阅读 UltraBERT 与 Ai2 HiRO-ACEv2；前者为作者实验，后者气候模拟不能描述为观测天气预报。不重复前几天模型和语音案例。"
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-15",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "detail": "检查 METR、Artificial Analysis、NIST；METR 最新可见 10 月 6 日已超窗。AA 动态榜单未形成可核实的新独立报告；NIST 入口仍重定向 SI measurement and evaluation，不编造 AI 评测。"
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-15",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "detail": "检查博客并读 14 日记忆教程，release API 与正式页核实 1.4.6；先前 AI Search、Orange、ScaleDown 不重复。"
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-15",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "detail": "检查博客及 release API；可见已收录事件不重复，最新 release 仍 9 月 21 日，未从无日期列表推断新发布。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-15",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "detail": "检查官方博客及 TypeScript SDK API，最新可见仍 10 月 5 日超窗；没有新的合格协议或 SDK 更新入选，未遍历全部仓库。"
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-15",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "detail": "检查官方新闻入口；可见 10 月 8 日调查已收录，日期精度不足以证明还在当前精确窗口，不重复旧事件。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-15",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "detail": "读取 Registry 首批 100，有 nextCursor，未完成分页；未核实足够明确的新实践，不把注册当安全审核。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-15",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "detail": "检查官网和 cookbook README，无本轮核实的新实践发布日期；未调用付费服务。"
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "ultrabert-20261014",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "DMIS Lab / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/dmis-lab/ultrabert"
+        }
+      ]
+    },
+    {
+      "item_id": "hiro-acev2-20261014",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Ai2 / Hugging Face 团队文章",
+          "url": "https://huggingface.co/blog/allenai/hiro-acev2"
+        }
+      ]
+    },
+    {
+      "item_id": "deepagents-memory-guide-20261014",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain",
+          "url": "https://www.langchain.com/blog/context-engineering-deep-agents-remember"
+        }
+      ]
+    },
+    {
+      "item_id": "langchain-1-4-6-20261014",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain / GitHub release",
+          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.6"
+        }
+      ]
+    },
+    {
+      "item_id": "arxiv-2610-18860",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Xin Gao 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.18860"
+        }
+      ]
+    },
+    {
+      "item_id": "github-kunkunkunqoq-sonicroute",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "kunkunkunQoQ/SonicRoute",
+          "url": "https://github.com/kunkunkunQoQ/SonicRoute"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库公开 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/kunkunkunQoQ/SonicRoute"
+        }
+      ]
+    },
+    {
+      "item_id": "github-grunion-ai-weave",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "grunion-ai/weave",
+          "url": "https://github.com/grunion-ai/weave"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库公开 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/grunion-ai/weave"
+        }
+      ]
+    },
+    {
+      "item_id": "github-nousresearch-hermes-agent",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "NousResearch/hermes-agent",
+          "url": "https://github.com/NousResearch/hermes-agent"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库公开 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/NousResearch/hermes-agent"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-mobileone-arxiv-2206-04040",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "CVPR 2023 正式页",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Vasu_MobileOne_An_Improved_One_Millisecond_Mobile_Backbone_CVPR_2023_paper.html"
+        },
+        {
+          "ref_id": "fulltext",
+          "title": "论文主文与附录 v2",
+          "publisher": "作者 / arXiv",
+          "url": "https://arxiv.org/html/2206.04040v2"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者实现与 ModelBench",
+          "publisher": "Apple",
+          "url": "https://github.com/apple-aiml-research/ml-mobileone"
+        },
+        {
+          "ref_id": "license",
+          "title": "实现许可",
+          "publisher": "Apple",
+          "url": "https://github.com/apple-aiml-research/ml-mobileone/blob/main/LICENSE"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 197,
+    "queried_candidates": 48,
+    "errors": [],
+    "selected": [
+      {
+        "item_id": "github-kunkunkunqoq-sonicroute",
+        "lane": "new",
+        "metrics": {
+          "stars": 13,
+          "forks": 0,
+          "license": "MIT",
+          "observed_at": "2026-10-15T00:26:02.881Z",
+          "stars_delta": 2,
+          "previous_observed_at": "2026-10-14T00:20:39.149Z",
+          "growth_percent": 18.181818181818183
+        }
+      },
+      {
+        "item_id": "github-grunion-ai-weave",
+        "lane": "new",
+        "metrics": {
+          "stars": 13,
+          "forks": 3,
+          "license": "MIT",
+          "observed_at": "2026-10-15T00:26:05.727Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-nousresearch-hermes-agent",
+        "lane": "rising",
+        "metrics": {
+          "stars": 253798,
+          "forks": 55064,
+          "license": "MIT",
+          "observed_at": "2026-10-15T00:26:07.986Z",
+          "stars_delta": 313,
+          "previous_observed_at": "2026-10-14T00:20:46.067Z",
+          "growth_percent": 0.12347870682683393
+        }
+      }
+    ],
+    "snapshot": "data/github-stars/2026-10-15-r1.json"
+  },
+  "registry": {
+    "count": 100,
+    "pagination_complete": false
+  },
+  "paper": {
+    "stable_id": "arxiv:2206.04040",
+    "venue": "CVPR 2023",
+    "pages": "7907-7917",
+    "fulltext": "arXiv v2 main and appendices B-F",
+    "cvf_access": "web tool internal error; local HTTP success",
+    "timing_caveat": "paper iPhone12 vs repository iPhone12 Pro label; minimum phone latency distinct from median CPU/GPU"
+  },
+  "release": {
+    "tag": "langchain==1.4.6",
+    "published_at": "2026-10-14T17:28:06Z",
+    "scope": "release note only; complete PR implementation not read"
+  }
+}

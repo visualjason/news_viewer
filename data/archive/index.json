@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-15",
+    "revision": 1,
+    "title": "编码器与可恢复记忆：5 条资讯、三个开源项目及 MobileOne 精读",
+    "item_count": 9,
+    "path": "data/archive/2026-10-15-r1.json"
+  },
+  {
     "issue_date": "2026-10-14",
     "revision": 1,
     "title": "本地 Agent 与行为检索：6 条资讯、两个新项目及 GMFlow 精读",
