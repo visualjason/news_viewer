@@ -1,0 +1,352 @@
+{
+  "collection_started_at": "2026-10-16T00:11:52.507Z",
+  "collected_at": "2026-10-16T00:15:58.644Z",
+  "window": {
+    "start": "2026-10-09T00:15:58.644Z",
+    "end": "2026-10-16T00:15:58.644Z",
+    "timezone": "Asia/Shanghai",
+    "end_exclusive": true,
+    "lookback_days": 7
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-16",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "detail": "检查 AI/CV/LG recent，选 14 日提交的 CTXGAP，摘要级简报，不把列表日期当提交时间。CoCoOp 全文另读，历史论文独立统计；未穷尽所有论文。"
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-16",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "detail": "检查主博客与社区，选 tokenizer 工程、Apertus 技术说明、Granite Switch、Muse Spark、FLUX.3；核对发布者模型卡/集合。Apertus 权重是 7 月发布，文章 15 日，不计作新模型发布。"
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-16",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "detail": "检查 METR、Artificial Analysis、NIST。METR 旧事件已超窗；动态榜单没有形成本轮合格新独立报告，NIST 仍重定向 SI 页面。LlamaIndex 自建评测不混称独立机构评测。"
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-16",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "detail": "检查博客及 release API；月刊和旧教程多为已收录事件不重复；新选 Core 1.6.11，按 release 限定事实范围，未审完整 PR。"
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-16",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "detail": "博客发现并阅读 15 日 ExtractBench Pro 正文，含合成过程、六类难点、测试条件；初次猜测长 URL 404，随后由官网实际链接进入 introducing-extractbench-pro 成功。release 仍 9 月 21 日。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-16",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "detail": "检查官方博客和 TypeScript SDK release API，最新可见仍 10 月 5 日超窗，无新的合格协议发布；未遍历全部 SDK。"
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-16",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "detail": "检查官方新闻入口，既有产品/调查事件已收录且未核实到新公告，不重复。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-16",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "detail": "读取首批 100，有 nextCursor 未完成分页；未核实新的代码/配置实践入选，注册不是安全审核。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-16",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "detail": "检查官网和 cookbook README，未核实新的周内实践日期；没有调用付费服务或执行代码。"
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "bert-normalization-20261015",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Hugging Face 作者",
+          "url": "https://huggingface.co/blog/huggingface/tokenmaxxing-bert"
+        }
+      ]
+    },
+    {
+      "item_id": "apertus15-notes-20261015",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Swiss AI / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/swiss-ai/apertus-v15-release-notes"
+        }
+      ]
+    },
+    {
+      "item_id": "granite-switch41-20261015",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "IBM Granite",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1"
+        },
+        {
+          "ref_id": "model",
+          "title": "模型卡、限制与许可",
+          "publisher": "IBM",
+          "url": "https://huggingface.co/ibm-granite/granite-switch-4.1-8b"
+        }
+      ]
+    },
+    {
+      "item_id": "meta-muse-spark-open-20261015",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Hugging Face 集成介绍 / Meta 模型",
+          "url": "https://huggingface.co/blog/meta-muse-spark-open"
+        },
+        {
+          "ref_id": "models",
+          "title": "发布者模型集合",
+          "publisher": "Meta",
+          "url": "https://huggingface.co/collections/meta-models/muse-spark-open"
+        }
+      ]
+    },
+    {
+      "item_id": "flux3-diffusers-20261015",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Hugging Face Diffusers",
+          "url": "https://huggingface.co/blog/flux-3"
+        },
+        {
+          "ref_id": "model",
+          "title": "蒸馏模型卡与许可",
+          "publisher": "Black Forest Labs",
+          "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein"
+        }
+      ]
+    },
+    {
+      "item_id": "extractbench-pro-20261015",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LlamaIndex",
+          "url": "https://www.llamaindex.ai/blog/introducing-extractbench-pro"
+        }
+      ]
+    },
+    {
+      "item_id": "langchain-core-1-6-11-20261015",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain / GitHub release",
+          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.6.11"
+        }
+      ]
+    },
+    {
+      "item_id": "arxiv-2610-20003",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Guoyang Xu 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.20003"
+        }
+      ]
+    },
+    {
+      "item_id": "github-atif-1402-parse",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "atif-1402/parse",
+          "url": "https://github.com/atif-1402/parse"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/atif-1402/parse"
+        }
+      ]
+    },
+    {
+      "item_id": "github-polinnizhong-dsh-knit",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "PolinniZhong/dsh-knit",
+          "url": "https://github.com/PolinniZhong/dsh-knit"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/PolinniZhong/dsh-knit"
+        }
+      ]
+    },
+    {
+      "item_id": "github-affaan-m-ecc",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "affaan-m/ECC",
+          "url": "https://github.com/affaan-m/ECC"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/affaan-m/ECC"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-cocoop-arxiv-2203-05557",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "正式 CVPR 2022 页",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/html/Zhou_Conditional_Prompt_Learning_for_Vision-Language_Models_CVPR_2022_paper.html"
+        },
+        {
+          "ref_id": "fulltext",
+          "title": "论文全文 v1",
+          "publisher": "作者 / arXiv",
+          "url": "https://arxiv.org/html/2203.05557v1"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者实现与 COCOOP.md",
+          "publisher": "Kaiyang Zhou 等",
+          "url": "https://github.com/KaiyangZhou/CoOp"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 208,
+    "queried_candidates": 48,
+    "errors": [],
+    "selected": [
+      {
+        "item_id": "github-atif-1402-parse",
+        "lane": "new",
+        "metrics": {
+          "stars": 13,
+          "forks": 1,
+          "license": "MIT",
+          "observed_at": "2026-10-16T00:12:04.885Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-polinnizhong-dsh-knit",
+        "lane": "new",
+        "metrics": {
+          "stars": 54,
+          "forks": 0,
+          "license": "MIT",
+          "observed_at": "2026-10-16T00:12:01.558Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-affaan-m-ecc",
+        "lane": "rising",
+        "metrics": {
+          "stars": 280363,
+          "forks": 41699,
+          "license": "MIT",
+          "observed_at": "2026-10-16T00:12:05.948Z",
+          "stars_delta": 879,
+          "previous_observed_at": "2026-10-15T00:26:06.335Z",
+          "growth_percent": 0.31450816504701523
+        }
+      }
+    ],
+    "snapshot": "data/github-stars/2026-10-16-r1.json"
+  },
+  "registry": {
+    "count": 100,
+    "pagination_complete": false
+  },
+  "paper": {
+    "stable_id": "arxiv:2203.05557",
+    "venue": "CVPR 2022",
+    "pages": "16816-16825",
+    "fulltext": "arXiv v1 complete main text and experiments",
+    "code": "author README and COCOOP.md read",
+    "cvf_access": "local HTTP success"
+  },
+  "access_notes": [
+    "Initial guessed ExtractBench Pro URL 404; actual official link introducing-extractbench-pro readable through web and local HTTP",
+    "No paid services or third-party code executed"
+  ],
+  "release": {
+    "tag": "langchain-core==1.6.11",
+    "published_at": "2026-10-15T18:32:35Z",
+    "scope": "release note only; complete PR not read"
+  }
+}
