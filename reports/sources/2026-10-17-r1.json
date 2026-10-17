@@ -1,0 +1,343 @@
+{
+  "collection_started_at": "2026-10-17T00:38:24.405Z",
+  "collected_at": "2026-10-17T00:42:13.464Z",
+  "window": {
+    "start": "2026-10-10T00:42:13.464Z",
+    "end": "2026-10-17T00:42:13.464Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7,
+    "end_exclusive": true
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-17",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "detail": "打开 AI/CV/LG recent 首批列表并核对 FDE-Gym、LEASH 原始提交记录；两条均摘要级简报，未穷尽分页或审全文，列表日期不是提交时间。历史论文另读正式全文。"
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-17",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "detail": "检查主博客和社区列表，核实 16 日 Beam 和 Indic 文章及 Beam 发布者模型卡。Indic 原文仍写即将发布，生成配方链接经网页工具访问失败，未声称已验证仓库可运行。Ai2 调度文章原始日期 9 日已超窗，排除。"
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-17",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "detail": "检查 METR、Artificial Analysis、NIST；METR 14 日评估提案作为方法动态收录，不包装为新评测结果。AA 动态榜单未核实到合格独立报告；NIST 配置入口仍重定向 SI measurement 页面。"
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-17",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "detail": "检查博客与 release API，收录 15 日评测 FAQ 和 16 日 Core 1.6.12；月刊及已收录事件去重，不把小补丁描述成全面能力升级。"
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-17",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "detail": "检查官网博客及 release API；ExtractBench Pro 已收录无新进展不重复，release 最新可见仍 9 月 21 日超窗。博客动态/日期提取有局限，未穷尽全部文章。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-17",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "detail": "检查官方博客与 TypeScript SDK release API，最新可见 v2.3.1、10 月 5 日超窗；未遍历全部语言 SDK。"
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-17",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "detail": "新闻入口解析有限，补充域内搜索并打开 16 日 Stack Overflow 客户案例；自述采用数据与独立评测分开，Decisions API 是探索意向。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-17",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "detail": "实际请求首批 100 条且仍有 nextCursor，未完成分页；没有核实到足够完整的新代码实践入选，注册不代表审核。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-17",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "detail": "检查官网和 cookbook README，未核实新的周内实践日期；没有调用付费服务或执行第三方示例。"
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "reflection-beam-20261016",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Hugging Face / Reflection",
+          "url": "https://huggingface.co/blog/reflection-beam"
+        },
+        {
+          "ref_id": "model",
+          "title": "模型卡及许可",
+          "publisher": "Reflection",
+          "url": "https://huggingface.co/reflection/Beam-1.0-501B-A23B"
+        }
+      ]
+    },
+    {
+      "item_id": "indic-pretraining-20261016",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "NVIDIA / AI4Bharat",
+          "url": "https://huggingface.co/blog/nvidia/scaling-indic-pretraining"
+        }
+      ]
+    },
+    {
+      "item_id": "langchain-evals-faq-20261015",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain",
+          "url": "https://www.langchain.com/blog/common-questions-about-agent-evals"
+        }
+      ]
+    },
+    {
+      "item_id": "langchain-core-1-6-12-20261016",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain / GitHub",
+          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.6.12"
+        }
+      ]
+    },
+    {
+      "item_id": "arxiv-2610-22350",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Dongxu Yang 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.22350"
+        }
+      ]
+    },
+    {
+      "item_id": "arxiv-2610-22280",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Qingni Wang 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.22280"
+        }
+      ]
+    },
+    {
+      "item_id": "metr-assessment-proposal-20261014",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "METR",
+          "url": "https://metr.org/blog/2026-10-14-better-informing-the-public-about-loss-of-control-risks/"
+        }
+      ]
+    },
+    {
+      "item_id": "openai-stackoverflow-case-20261016",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "OpenAI 客户案例 / Stack Overflow",
+          "url": "https://openai.com/index/stack-overflow-chatgpt-plugin/"
+        }
+      ]
+    },
+    {
+      "item_id": "github-tui-lipan-rozi",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "仓库 README",
+          "publisher": "tui-lipan/rozi",
+          "url": "https://github.com/tui-lipan/rozi"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/tui-lipan/rozi"
+        }
+      ]
+    },
+    {
+      "item_id": "github-padovanl-portop",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "仓库 README",
+          "publisher": "padovanl/portop",
+          "url": "https://github.com/padovanl/portop"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/padovanl/portop"
+        }
+      ]
+    },
+    {
+      "item_id": "github-dietrichgebert-ponytail",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "仓库 README",
+          "publisher": "DietrichGebert/ponytail",
+          "url": "https://github.com/DietrichGebert/ponytail"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/DietrichGebert/ponytail"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-video-swin-arxiv-2106-13230",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "正式会议页",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/html/Liu_Video_Swin_Transformer_CVPR_2022_paper.html"
+        },
+        {
+          "ref_id": "pdf",
+          "title": "正式会议版全文",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_Video_Swin_Transformer_CVPR_2022_paper.pdf"
+        },
+        {
+          "ref_id": "arxiv",
+          "title": "预印本 v1（用于版本核对）",
+          "publisher": "作者 / arXiv",
+          "url": "https://arxiv.org/html/2106.13230v1"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者实现及 README",
+          "publisher": "SwinTransformer",
+          "url": "https://github.com/SwinTransformer/Video-Swin-Transformer"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 226,
+    "queried_candidates": 48,
+    "errors": [],
+    "selected": [
+      {
+        "item_id": "github-tui-lipan-rozi",
+        "lane": "new",
+        "metrics": {
+          "stars": 10,
+          "forks": 2,
+          "license": "MPL-2.0",
+          "observed_at": "2026-10-17T00:38:32.129Z",
+          "stars_delta": 0,
+          "previous_observed_at": "2026-10-16T00:12:00.197Z",
+          "growth_percent": 0
+        }
+      },
+      {
+        "item_id": "github-padovanl-portop",
+        "lane": "new",
+        "metrics": {
+          "stars": 256,
+          "forks": 10,
+          "license": "MIT",
+          "observed_at": "2026-10-17T00:38:40.226Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-dietrichgebert-ponytail",
+        "lane": "rising",
+        "metrics": {
+          "stars": 165230,
+          "forks": 8924,
+          "license": "MIT",
+          "observed_at": "2026-10-17T00:38:40.960Z",
+          "stars_delta": 827,
+          "previous_observed_at": "2026-10-16T00:12:08.292Z",
+          "growth_percent": 0.5030321831110138
+        }
+      }
+    ]
+  },
+  "registry": {
+    "records": 100,
+    "pagination_complete": false
+  },
+  "paper": {
+    "id": "arxiv:2106.13230",
+    "venue": "CVPR 2022",
+    "pages": "3202-3211",
+    "fulltext": "Official conference PDF complete main text and experiments read",
+    "version_note": "arXiv v1 and current README K600 86.1; conference paper 85.9. Conference values used.",
+    "supplement": "No separate supplement listed on formal page; not claimed read",
+    "code": "Author README read; no code execution"
+  },
+  "access_notes": [
+    "CVF webpage through web tool Internal Error; local HTTP formal webpage and PDF succeeded",
+    "GitHub API inaccessible through web tool; collector public API succeeded",
+    "Indic recipe link failed in web tool; no claim of checked code or full corpus availability",
+    "NIST configured URL redirects SI measurement page"
+  ]
+}

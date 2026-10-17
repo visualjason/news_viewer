@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-17",
+    "revision": 1,
+    "title": "从开放模型到交付验收：8 条资讯、三个项目与 Video Swin 精读",
+    "item_count": 12,
+    "path": "data/archive/2026-10-17-r1.json"
+  },
+  {
     "issue_date": "2026-10-16",
     "revision": 1,
     "title": "多模态权重与文档长尾：8 条精选、三个项目及 CoCoOp 精读",
