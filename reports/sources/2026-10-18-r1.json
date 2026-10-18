@@ -1,0 +1,303 @@
+{
+  "collection_started_at": "2026-10-18T01:28:59.804Z",
+  "collected_at": "2026-10-18T01:33:00.062Z",
+  "window": {
+    "start": "2026-10-11T01:33:00.062Z",
+    "end": "2026-10-18T01:33:00.062Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7,
+    "end_exclusive": true
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-18",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "detail": "检查 AI/CV/LG recent 首批列表，MLExpert 打开原始摘要/提交历史作方向简报，未审全文；列表并非全量覆盖。DN-DETR 历史专题另读正式全文及补充。"
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-18",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "detail": "主博客最新可见 Beam、Indic 等已收录，未见合格新官方发布；社区选 15 日记忆修订教程，仅依据导言和更新/读取语义章节，不宣称完整文献或实验复查。"
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-18",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "detail": "检查 METR、Artificial Analysis、NIST。METR 14 日提案已收录，无实质新进展不重复；AA 动态榜单没有核实新的独立报告，NIST 配置 URL 仍跳转 SI 页面；不以客户案例填独立评测。"
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-18",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "detail": "检查官方博客和 release API，最新可见 Core 1.6.12 与评测 FAQ 已收录，未重复。没有遍历所有扩展包。"
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-18",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "detail": "检查博客及 release API；ExtractBench Pro 已收录，release 最新可见仍 9 月 21 日超窗；博客动态和日期提取有限。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-18",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "detail": "检查官方博客及 TypeScript SDK release API，最新可见 v2.3.1、10 月 5 日超窗，未穷尽所有语言 SDK。"
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-18",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "detail": "新闻入口解析有限，补充域内搜索并打开本周未收录的 Amp、Third Moment、Itaú 三篇案例，保留真实日期和自述限制，不称今天首发。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-18",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "detail": "首批实际取 100 条且仍有 nextCursor，未完成分页。REA 由 GitHub 项目渠道发现，不假定其注册在 Registry，也不称获得安全认证。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-18",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "detail": "检查官网与 cookbook README，未核实新的周内可复现实践日期；未执行样例或调用付费服务。"
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "openai-thirdmoment-case-20261014",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "OpenAI / Third Moment Research 客户案例",
+          "url": "https://openai.com/index/third-moment-research/"
+        }
+      ]
+    },
+    {
+      "item_id": "openai-amp-case-20261014",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "OpenAI / Amp 客户案例",
+          "url": "https://openai.com/index/amp-beyond-coding/"
+        }
+      ]
+    },
+    {
+      "item_id": "openai-itau-case-20261016",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "OpenAI / Itaú 客户案例",
+          "url": "https://openai.com/index/itau-generative-ai/"
+        }
+      ]
+    },
+    {
+      "item_id": "arxiv-2610-22344",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Shangheng Du 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.22344"
+        }
+      ]
+    },
+    {
+      "item_id": "hf-belief-revision-20261015",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Rahul Vimalkanth、Tanish Chudiwal / HF 社区",
+          "url": "https://huggingface.co/blog/boltwave/llm-memory-belief-revision"
+        }
+      ]
+    },
+    {
+      "item_id": "github-nateships-rolle",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "nateships/rolle",
+          "url": "https://github.com/nateships/rolle"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/nateships/rolle"
+        }
+      ]
+    },
+    {
+      "item_id": "github-lulu-loopp-folio-terminal",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "lulu-loopp/folio-terminal",
+          "url": "https://github.com/lulu-loopp/folio-terminal"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/lulu-loopp/folio-terminal"
+        }
+      ]
+    },
+    {
+      "item_id": "github-morluto-rea",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "morluto/rea",
+          "url": "https://github.com/morluto/rea"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/morluto/rea"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-dn-detr-arxiv-2203-01305",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "正式会议记录",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/html/Li_DN-DETR_Accelerate_DETR_Training_by_Introducing_Query_DeNoising_CVPR_2022_paper.html"
+        },
+        {
+          "ref_id": "pdf",
+          "title": "会议版全文",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Li_DN-DETR_Accelerate_DETR_Training_by_Introducing_Query_DeNoising_CVPR_2022_paper.pdf"
+        },
+        {
+          "ref_id": "supp",
+          "title": "补充材料",
+          "publisher": "作者 / CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/supplemental/Li_DN-DETR_Accelerate_DETR_CVPR_2022_supplemental.pdf"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者实现及复现说明",
+          "publisher": "IDEA-Research",
+          "url": "https://github.com/IDEA-Research/DN-DETR"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 237,
+    "queried_candidates": 48,
+    "errors": [],
+    "selected": [
+      {
+        "item_id": "github-nateships-rolle",
+        "lane": "new",
+        "metrics": {
+          "stars": 26,
+          "forks": 0,
+          "license": "GPL-3.0",
+          "observed_at": "2026-10-18T01:29:06.082Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-lulu-loopp-folio-terminal",
+        "lane": "new",
+        "metrics": {
+          "stars": 77,
+          "forks": 5,
+          "license": "Apache-2.0",
+          "observed_at": "2026-10-18T01:29:10.407Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-morluto-rea",
+        "lane": "rising",
+        "metrics": {
+          "stars": 308105,
+          "forks": 77960,
+          "license": "MIT",
+          "observed_at": "2026-10-18T01:29:13.769Z",
+          "stars_delta": 17044,
+          "previous_observed_at": "2026-10-17T00:38:38.389Z",
+          "growth_percent": 5.855817165473904
+        }
+      }
+    ]
+  },
+  "registry": {
+    "records": 100,
+    "pagination_complete": false
+  },
+  "paper": {
+    "id": "arxiv:2203.01305",
+    "venue": "CVPR 2022",
+    "pages": "13619-13627",
+    "fulltext": "Complete conference main text and experiments read",
+    "supplement": "Full Section 7 read including tables 1-4; no training performed",
+    "code": "Author README read; old author URL redirects to IDEA-Research/DN-DETR; later optimized results separated from conference tables"
+  },
+  "access_notes": [
+    "Formal CVF page web tool failed; local HTTP formal page, conference PDF and supplement succeeded",
+    "NIST configured URL redirects SI measurement",
+    "OpenAI news parsed entry incomplete; direct official case pages found by domain search and read",
+    "GitHub uses API metrics and README; no third-party code executed"
+  ]
+}
