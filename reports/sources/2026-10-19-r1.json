@@ -1,0 +1,287 @@
+{
+  "collection_started_at": "2026-10-19T00:51:34.209Z",
+  "collected_at": "2026-10-19T00:55:02.440Z",
+  "window": {
+    "start": "2026-10-12T00:55:02.440Z",
+    "end": "2026-10-19T00:55:02.440Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7,
+    "end_exclusive": true
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-19",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "detail": "检查 AI/CV/LG recent 首批，选 15 日两篇预印本，核对摘要与原始提交时间；明确摘要级简报，未审全文，也未穷尽列表。历史 Mask DINO 另读正式全文及补充。"
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-19",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "detail": "官方主博客最新可见内容多已收录，无实质进展不重复；社区选 14 日更新后行为检查的定向综述，协议未实现/校准，不能称已证实能力。"
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-19",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "detail": "检查 METR、AA、NIST；METR 14 日提案已收录，AA 动态榜单无核实到的新报告；NIST 配置入口仍重定向 SI 页面。本轮没有合格新独立评测，不凑数。"
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-19",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "detail": "博客及 release API 检查，最新可见 Core 1.6.12 与 FAQ 已收录；没有遍历所有集成包。"
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-19",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "detail": "官网博客与 release API 检查，ExtractBench Pro 已收录无新进展；release 最新可见 9 月 21 日超窗。动态正文/日期提取有限。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-19",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "detail": "检查官方博客与 TypeScript SDK release API，最新可见 v2.3.1、10 月 5 日超窗；未遍历全部 SDK。"
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-19",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "detail": "检查新闻入口并补充官方域日期搜索，结果多为社区讨论或已收录案例，未把用户帖子当官方公告；本轮不重复。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-19",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "detail": "请求首批 100 条且有 nextCursor，未完成分页；gadak 从 GitHub 发现并核对 README 的 MCP 能力，不假定其注册或已审核。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-19",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "detail": "检查官网与 cookbook README，无核实到的新周内实践日期；未执行样例、调用付费服务。"
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "arxiv-2610-22297",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Dixi Yao、Tahseen Rabbani、Tian Li / arXiv",
+          "url": "https://arxiv.org/abs/2610.22297"
+        }
+      ]
+    },
+    {
+      "item_id": "arxiv-2610-22331",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Siqi Chen 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.22331"
+        }
+      ]
+    },
+    {
+      "item_id": "hf-agent-preservation-20261014",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Val Alexander / Hugging Face 社区",
+          "url": "https://huggingface.co/blog/BunsDev/when-agents-improve-themselves-what-should-stay"
+        }
+      ]
+    },
+    {
+      "item_id": "github-midagedev-gadak",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "midagedev/gadak",
+          "url": "https://github.com/midagedev/gadak"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/midagedev/gadak"
+        }
+      ]
+    },
+    {
+      "item_id": "github-neboto-neboto-tui",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "neboto/neboto-tui",
+          "url": "https://github.com/neboto/neboto-tui"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/neboto/neboto-tui"
+        }
+      ]
+    },
+    {
+      "item_id": "github-harry0703-moneyprinterturbo",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "项目 README",
+          "publisher": "harry0703/MoneyPrinterTurbo",
+          "url": "https://github.com/harry0703/MoneyPrinterTurbo"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/harry0703/MoneyPrinterTurbo"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-maskdino-arxiv-2206-02777",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "正式会议页",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Li_Mask_DINO_Towards_a_Unified_Transformer-Based_Framework_for_Object_Detection_CVPR_2023_paper.html"
+        },
+        {
+          "ref_id": "pdf",
+          "title": "会议版全文",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Li_Mask_DINO_Towards_a_Unified_Transformer-Based_Framework_for_Object_Detection_CVPR_2023_paper.pdf"
+        },
+        {
+          "ref_id": "supp",
+          "title": "补充材料",
+          "publisher": "作者 / CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/supplemental/Li_Mask_DINO_Towards_CVPR_2023_supplemental.pdf"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者实现及 INSTALL",
+          "publisher": "IDEA-Research",
+          "url": "https://github.com/IDEA-Research/MaskDINO"
+        },
+        {
+          "ref_id": "arxiv",
+          "title": "稳定论文记录",
+          "publisher": "作者 / arXiv",
+          "url": "https://arxiv.org/abs/2206.02777"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 251,
+    "queried_candidates": 48,
+    "errors": [],
+    "selected": [
+      {
+        "item_id": "github-midagedev-gadak",
+        "lane": "new",
+        "metrics": {
+          "stars": 44,
+          "forks": 5,
+          "license": "Apache-2.0",
+          "observed_at": "2026-10-19T00:51:45.992Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-neboto-neboto-tui",
+        "lane": "new",
+        "metrics": {
+          "stars": 21,
+          "forks": 1,
+          "license": "MIT",
+          "observed_at": "2026-10-19T00:51:50.207Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-harry0703-moneyprinterturbo",
+        "lane": "rising",
+        "metrics": {
+          "stars": 132794,
+          "forks": 20969,
+          "license": "MIT",
+          "observed_at": "2026-10-19T00:51:57.263Z",
+          "stars_delta": 387,
+          "previous_observed_at": "2026-10-18T01:29:21.807Z",
+          "growth_percent": 0.2922806196047037
+        }
+      }
+    ]
+  },
+  "registry": {
+    "records": 100,
+    "pagination_complete": false
+  },
+  "paper": {
+    "id": "arxiv:2206.02777",
+    "venue": "CVPR 2023",
+    "pages": "3041-3050",
+    "fulltext": "Conference main text and experiment tables read",
+    "supplement": "A-D read; implementation and large model conditions checked",
+    "code": "Author README and INSTALL read; no training"
+  },
+  "access_notes": [
+    "CVF formal webpage/PDF/supplement retrieved through local HTTP",
+    "NIST configured URL redirects SI measurement page",
+    "OpenAI latest-date domain search mainly community threads, not treated as official announcement",
+    "Limited first-page discovery; Registry pagination incomplete"
+  ]
+}
