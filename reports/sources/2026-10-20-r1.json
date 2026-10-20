@@ -1,0 +1,280 @@
+{
+  "collection_started_at": "2026-10-20T00:19:40.589Z",
+  "collected_at": "2026-10-20T00:22:49.234Z",
+  "window": {
+    "start": "2026-10-13T00:22:49.234Z",
+    "end": "2026-10-20T00:22:49.234Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7,
+    "end_exclusive": true
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-20",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "detail": "打开 AI/CV/LG recent 首批列表，未将未审的新标题凑成资讯；不声称穷尽。历史 pixelSplat 专题通过正式会议、全文和补充另核对。"
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-20",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "detail": "收录 19 日 TorchNeuron 集成说明、LightOn 发布者检索文章与模型卡、社区 MoE 排序实验。保留公测预告、硬件/形状和离线批次限制；作者评测未复测。"
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-20",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "detail": "检查 METR、Artificial Analysis、NIST。METR 已收录提案不重复，AA 动态榜单无合格新独立报告，NIST 配置入口仍跳转 SI 页面。厂商/社区性能数据不当独立评测。"
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-20",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "detail": "19 日 Numan 新案例已读，区分已运行的分类门禁与原型会话模拟；release API 最新可见 Core 1.6.12 已收录，无新实质进展不重复。"
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-20",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "detail": "博客和 release API 检查，ExtractBench Pro 等已收录，最新可见 release 仍 9 月 21 日超窗。动态页日期提取不完整，未穷尽文章。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-20",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "detail": "官方博客及 TypeScript SDK release API 已查，最新可见 v2.3.1、10 月 5 日超窗，未遍历所有 SDK。"
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-20",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "detail": "官方新闻入口检查未获得可核实的新正文公告，既有案例不重复；入口动态解析有缺口，不等于官方确定没有更新。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-20",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "detail": "实际读取首批 100，nextCursor 仍存在，未完成分页；没有核实完整的新 MCP 实践入选，注册不等于审核。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-20",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "detail": "检查官网与 cookbook README，未核实新的周内实践日期，未运行样例、调用付费服务。"
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "torchneuron-hf-20261019",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Hugging Face",
+          "url": "https://huggingface.co/blog/hf-torchneuron"
+        }
+      ]
+    },
+    {
+      "item_id": "slideon-mslideon-20261019",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LightOn 作者 / HF 社区",
+          "url": "https://huggingface.co/blog/lightonai/slideon-mslideon"
+        },
+        {
+          "ref_id": "en-model",
+          "title": "英语模型卡",
+          "publisher": "LightOn",
+          "url": "https://huggingface.co/lightonai/SlideOn"
+        },
+        {
+          "ref_id": "multi-model",
+          "title": "多语模型卡",
+          "publisher": "LightOn",
+          "url": "https://huggingface.co/lightonai/mSlideOn"
+        }
+      ]
+    },
+    {
+      "item_id": "moe-sort-prompts-20261019",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Abdennacer Badaoui / HF 社区",
+          "url": "https://huggingface.co/blog/badaoui/sort-your-prompts"
+        }
+      ]
+    },
+    {
+      "item_id": "numan-eval-case-20261019",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Numan / LangChain",
+          "url": "https://www.langchain.com/blog/how-numan-built-an-eval-first-ai-health-coach-with-langgraph-and-langsmith"
+        }
+      ]
+    },
+    {
+      "item_id": "github-victorrentea-human-review",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "仓库 README",
+          "publisher": "victorrentea/human-review",
+          "url": "https://github.com/victorrentea/human-review"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/victorrentea/human-review"
+        }
+      ]
+    },
+    {
+      "item_id": "github-tinydesk-project-tinydesk-shell",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "仓库 README",
+          "publisher": "tinydesk-project/tinydesk-shell",
+          "url": "https://github.com/tinydesk-project/tinydesk-shell"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/tinydesk-project/tinydesk-shell"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-pixelsplat-arxiv-2312-12337",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "正式会议页",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Charatan_pixelSplat_3D_Gaussian_Splats_from_Image_Pairs_for_Scalable_Generalizable_CVPR_2024_paper.html"
+        },
+        {
+          "ref_id": "pdf",
+          "title": "正式全文",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Charatan_pixelSplat_3D_Gaussian_Splats_from_Image_Pairs_for_Scalable_Generalizable_CVPR_2024_paper.pdf"
+        },
+        {
+          "ref_id": "supp",
+          "title": "补充材料",
+          "publisher": "作者 / CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Charatan_pixelSplat_3D_Gaussian_CVPR_2024_supplemental.pdf"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者实现与 README",
+          "publisher": "David Charatan",
+          "url": "https://github.com/dcharatan/pixelsplat"
+        },
+        {
+          "ref_id": "arxiv",
+          "title": "论文稳定记录",
+          "publisher": "作者 / arXiv",
+          "url": "https://arxiv.org/abs/2312.12337"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 264,
+    "queried_candidates": 48,
+    "errors": [],
+    "selected": [
+      {
+        "item_id": "github-victorrentea-human-review",
+        "lane": "new",
+        "metrics": {
+          "stars": 29,
+          "forks": 20,
+          "license": "MIT",
+          "observed_at": "2026-10-20T00:19:48.758Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-tinydesk-project-tinydesk-shell",
+        "lane": "new",
+        "metrics": {
+          "stars": 15,
+          "forks": 8,
+          "license": "MIT",
+          "observed_at": "2026-10-20T00:19:54.342Z",
+          "stars_delta": 0,
+          "previous_observed_at": "2026-10-19T00:51:41.926Z",
+          "growth_percent": 0
+        }
+      }
+    ]
+  },
+  "registry": {
+    "records": 100,
+    "pagination_complete": false
+  },
+  "paper": {
+    "id": "arxiv:2312.12337",
+    "venue": "CVPR 2024",
+    "pages": "19457-19467",
+    "fulltext": "Conference main text and experiments read",
+    "supplement": "Sections 7-10 text and captions read; figures not visually evaluated",
+    "code": "Author README read; camera-ready and older results differentiated; no execution"
+  },
+  "access_notes": [
+    "CVF formal record, main and supplementary PDFs retrieved via local HTTP",
+    "NIST redirects SI measurement page",
+    "Dynamic news entry and first-page discovery have coverage gaps",
+    "No third-party code, skills, paid API or hardware execution"
+  ]
+}

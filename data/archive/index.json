@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-20",
+    "revision": 1,
+    "title": "检索与推理工程：4 条新资讯、两个新项目及 pixelSplat 精读",
+    "item_count": 7,
+    "path": "data/archive/2026-10-20-r1.json"
+  },
+  {
     "issue_date": "2026-10-19",
     "revision": 1,
     "title": "检索隐私与任务协作：3 条周内补遗、三个项目及 Mask DINO 精读",
