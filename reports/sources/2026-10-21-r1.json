@@ -1,0 +1,334 @@
+{
+  "collection_started_at": "2026-10-21T11:23:17.604Z",
+  "collected_at": "2026-10-21T11:32:19.015Z",
+  "window": {
+    "start": "2026-10-14T11:32:19.015Z",
+    "end": "2026-10-21T11:32:19.015Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7,
+    "end_exclusive": true
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-21",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "detail": "检查 AI/CV/LG recent 首批列表，选择两篇 20 日 v1 预印本，仅作摘要级速览，未读其全文不编写详细消融。历史视频专题另读取正式 CVPR 正文和补充。列表未全部分页。"
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-21",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "detail": "检查官方博客与社区入口；读 20 日后训练课程、21 日 bekko 文章及模型卡。课程是学习资源，模型性能是作者结果，bekko 作者也开发所用基准。未逐项运行课程或模型。"
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-21",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "detail": "检查 METR、Artificial Analysis、NIST。入选 METR 20 日外部评审、AA 19 日 HealthBench 与 PersonalityBench 原始文章及后者方法页。记录评审访问限制、自动评委与快照时点。NIST 配置入口跳转 SI 页面，存在覆盖缺口。"
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-21",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "detail": "博客最新可读 Numan 与评测指南已收录不重复；release API 最新 Core 1.6.12、16 日已收录。不声称遍历所有包或客户案例。"
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-21",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "detail": "打开博客和 release API；动态博客无法完整提取日期，未核实本期合格新正文；最新 release 0.14.25、9 月 21 日超窗。记录缺口，不推断没有更新。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-21",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "detail": "检查官方规范入口与官方域名搜索，TypeScript SDK release API 最新 2.3.1、10 月 5 日超窗；未查遍全部 SDK，不将工作组日程当协议正式发布。"
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-21",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "detail": "新闻入口和官方域名搜索后读 19 日低资源编程公告。结果属于厂商评测，SQLite 子集通过率与生产迁移保证分开；未运行公开测试套件。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-21",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "detail": "实际拉取首批 100 条，仍有 nextCursor，未穷尽分页；未完成可验证新实践核实，不将注册条目直接推荐或称安全通过。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-21",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "detail": "检查官网与 cookbook README，没有核实周内新案例的独立发布日期；未运行样例、安装发现代码或调用付费服务。"
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "bekko-static-embedding-20261021",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Yuichi Tateno / HF 社区",
+          "url": "https://huggingface.co/blog/hotchpotch/bekko-static-embedding"
+        },
+        {
+          "ref_id": "model",
+          "title": "模型卡",
+          "publisher": "作者 / Hugging Face",
+          "url": "https://huggingface.co/hotchpotch/bekko-static-embedding-v1"
+        }
+      ]
+    },
+    {
+      "item_id": "hf-agent-training-curriculum-20261020",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Hugging Face 作者 / 社区文章",
+          "url": "https://huggingface.co/blog/huggingface/train-agents"
+        }
+      ]
+    },
+    {
+      "item_id": "agent-s4-arxiv-2610-28601",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Saaket Agashe 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.28601"
+        }
+      ]
+    },
+    {
+      "item_id": "amtp-arxiv-2610-28619",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Emile Anand 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.28619"
+        }
+      ]
+    },
+    {
+      "item_id": "metr-august-risk-review-20261020",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "METR",
+          "url": "https://metr.org/blog/2026-10-20-misalignment-risk-report-august-2026-review/"
+        }
+      ]
+    },
+    {
+      "item_id": "aa-healthbench-report-20261019",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Artificial Analysis",
+          "url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations"
+        }
+      ]
+    },
+    {
+      "item_id": "aa-personalitybench-20261019",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Artificial Analysis",
+          "url": "https://artificialanalysis.ai/articles/aa-personalitybench"
+        },
+        {
+          "ref_id": "methods",
+          "title": "完整方法说明",
+          "publisher": "Artificial Analysis",
+          "url": "https://artificialanalysis.ai/methodology/aa-personalitybench"
+        }
+      ]
+    },
+    {
+      "item_id": "openai-low-resource-code-20261019",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/low-resource-programming-languages/"
+        }
+      ]
+    },
+    {
+      "item_id": "github-pulkitxm-quinjet",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "仓库 README",
+          "publisher": "pulkitxm/quinjet",
+          "url": "https://github.com/pulkitxm/quinjet"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/pulkitxm/quinjet"
+        }
+      ]
+    },
+    {
+      "item_id": "github-slidict-wip",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "仓库 README",
+          "publisher": "slidict/wip",
+          "url": "https://github.com/slidict/wip"
+        },
+        {
+          "ref_id": "api",
+          "title": "仓库 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/slidict/wip"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-videomaev2-arxiv-2303-16727",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "正式会议记录",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Wang_VideoMAE_V2_Scaling_Video_Masked_Autoencoders_With_Dual_Masking_CVPR_2023_paper.html"
+        },
+        {
+          "ref_id": "pdf",
+          "title": "正式全文",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_VideoMAE_V2_Scaling_Video_Masked_Autoencoders_With_Dual_Masking_CVPR_2023_paper.pdf"
+        },
+        {
+          "ref_id": "supp",
+          "title": "补充材料 A–D",
+          "publisher": "作者 / CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/supplemental/Wang_VideoMAE_V2_Scaling_CVPR_2023_supplemental.pdf"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者实现及 README",
+          "publisher": "OpenGVLab",
+          "url": "https://github.com/OpenGVLab/VideoMAEv2"
+        },
+        {
+          "ref_id": "install",
+          "title": "作者安装条件",
+          "publisher": "OpenGVLab",
+          "url": "https://github.com/OpenGVLab/VideoMAEv2/blob/master/docs/INSTALL.md"
+        },
+        {
+          "ref_id": "arxiv",
+          "title": "稳定论文记录",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2303.16727"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 283,
+    "queried_candidates": 48,
+    "errors": [],
+    "previous_issue_observation_gap_hours": 35.06028194444445,
+    "selected": [
+      {
+        "item_id": "github-pulkitxm-quinjet",
+        "lane": "new",
+        "metrics": {
+          "stars": 13,
+          "forks": 2,
+          "license": "MIT",
+          "observed_at": "2026-10-21T11:23:25.946Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-slidict-wip",
+        "lane": "new",
+        "metrics": {
+          "stars": 39,
+          "forks": 3,
+          "license": "MIT",
+          "observed_at": "2026-10-21T11:23:27.405Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      }
+    ]
+  },
+  "registry": {
+    "records": 100,
+    "pagination_complete": false
+  },
+  "paper": {
+    "id": "arxiv:2303.16727",
+    "venue": "CVPR 2023",
+    "pages": "14549-14560",
+    "fulltext": "Formal main text sections 1–5 and experimental tables read through local PDF text extraction",
+    "supplement": "A–D text and tables read; no visual qualitative figure assessment",
+    "code": "Author README and INSTALL read; no execution"
+  },
+  "access_notes": [
+    "CVF formal record available through search; direct web tool returned 403, PDF retrieved via local proxy",
+    "Two current preprints are abstract-level only",
+    "NIST configured entry redirects SI measurement page",
+    "News article dates are not necessarily test execution dates; missing times not invented",
+    "Registry first page and finite GitHub candidate discovery are partial",
+    "No third-party code or paid service executed",
+    "Link HEAD checks returned 200 for all selected URLs except OpenAI article (local proxy HEAD 403); that full article was readable through web browser text extraction, including date and sections. Do not interpret the HEAD denial as a missing article."
+  ]
+}

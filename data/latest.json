@@ -1,317 +1,425 @@
 {
   "schema_version": "1.0",
-  "issue_date": "2026-10-20",
+  "issue_date": "2026-10-21",
   "revision": 1,
-  "generated_at": "2026-10-20T00:22:49.234Z",
+  "generated_at": "2026-10-21T11:32:19.015Z",
   "window": {
-    "start": "2026-10-13T00:22:49.234Z",
-    "end": "2026-10-20T00:22:49.234Z",
+    "start": "2026-10-14T11:32:19.015Z",
+    "end": "2026-10-21T11:32:19.015Z",
     "timezone": "Asia/Shanghai",
     "lookback_days": 7,
     "end_exclusive": true
   },
   "briefing": {
-    "headline": "检索与推理工程：4 条新资讯、两个新项目及 pixelSplat 精读",
-    "takeaway": "关注 TorchNeuron 原生后端、SlideOn 稀疏检索、MoE 批次排序与真实执行图评测。新项目选 human-review、TinyDesk Shell；历史论文轮换到 3D 前馈重建。",
+    "headline": "评测与 Agent 工程：8 条资讯、两个开发工具及 VideoMAE V2 精读",
+    "takeaway": "关注默认沟通风格、长度调整与行为保持评测，以及 Agent 接口演化和后训练路径；开发工具选 Quinjet、wip，论文轮换到视频预训练。",
     "actions": [
-      "试加速前固定硬件、形状、缓存与吞吐测量范围。",
-      "评测走真实执行图，原型评测与发布门禁分开。",
-      "3D 质量、完整几何和新视角渲染速度分别验收。"
+      "为业务任务分别验收正确性、完整性和表达风格。",
+      "迁移旧程序时保留逐字节输出基线，关注隐含业务规则。",
+      "比较视频模型时固定数据、帧数、视图聚合和训练预算。"
     ]
   },
   "items": [
     {
-      "item_id": "torchneuron-hf-20261019",
+      "item_id": "bekko-static-embedding-20261021",
       "type": "product",
-      "title": "TorchNeuron：Trainium 获得原生 PyTorch 后端，公测时间需分清",
-      "published_at": "2026-10-19",
+      "title": "bekko：用静态多语向量降低 CPU 检索编码成本",
+      "published_at": "2026-10-21",
       "published_at_precision": "day",
       "publication_timezone": null,
-      "summary": "集成文章介绍 eager、torch.compile 和分布式接口，以及 Transformers、Diffusers 等库的原生设备路径。",
-      "why_it_matters": "有望减少加速器专用模型分支的维护负担。",
-      "application": "在目标实例先固定库版本、模型与输入形状，验证编译、缓存和分布式行为，再迁移任务。",
-      "technical_analysis": "文章发表于 19 日，称 20 日起 public beta；示例推荐静态生成缓存，训练示例仍关闭自动动态形状。",
-      "caveats": "依据集成说明，未登录 AWS 或运行。不能将公测预告当已验证全区域可用，也不保证所有模型/形状无需改动。",
-      "evidence_note": "原始文章已打开，日期只到日，不补造时区和具体时刻。建议为编辑判断，作者结果未独立复测。",
-      "canonical_url": "https://huggingface.co/blog/hf-torchneuron",
+      "summary": "模型用 token 查表和均值池化编码，默认输出 1024 维，支持维度截断。",
+      "why_it_matters": "适合把无 GPU 的检索编码器纳入成本比较。",
+      "application": "在自己的语料上与 BM25、小型 Transformer 比较召回、中文表现、内存和延迟。",
+      "technical_analysis": "作者同时开发所用 HAKARI-Bench；文章表 2 中，模型在 MMTEB Retrieval 接近 e5-small，但 Nano 多语检索和总体均分仍落后。",
+      "caveats": "已读文章和模型卡，未运行。静态向量缺少上下文交互；“零 Transformer”不等于零权重、零内存，也不承诺普遍更快。",
+      "evidence_note": "原始发布日期已核实到日，不补造时区或时刻。事实与作者结果见来源，建议属于编辑判断。",
+      "canonical_url": "https://huggingface.co/blog/hotchpotch/bekko-static-embedding",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "publisher": "Hugging Face",
-          "url": "https://huggingface.co/blog/hf-torchneuron"
+          "publisher": "Yuichi Tateno / HF 社区",
+          "url": "https://huggingface.co/blog/hotchpotch/bekko-static-embedding"
+        },
+        {
+          "ref_id": "model",
+          "title": "模型卡",
+          "publisher": "作者 / Hugging Face",
+          "url": "https://huggingface.co/hotchpotch/bekko-static-embedding-v1"
         }
       ]
     },
     {
-      "item_id": "slideon-mslideon-20261019",
-      "type": "product",
-      "title": "SlideOn 与 mSlideOn：把稠密和多向量检索知识转为稀疏表示",
-      "published_at": "2026-10-19",
-      "published_at_precision": "day",
-      "publication_timezone": null,
-      "summary": "174M 英语和 339M 多语检索模型，通过 SAE 预训练和检索微调产生适合倒排索引的稀疏向量。",
-      "why_it_matters": "可按搜索延迟与存储预算调剪枝，而不只选择单一向量维度。",
-      "application": "固定文档与查询集，对照 BM25/现有检索器，扫描剪枝预算并记录召回、nDCG、索引体积和查询耗时。",
-      "technical_analysis": "模型卡说明 latent 是学习的特征而非 tokenizer 词表；稀疏编码与倒排搜索需要对应索引实现。",
-      "caveats": "作者评测未独立复测；英语、多语、长文和代码任务的适用范围分别核对，不把少数榜单结果当普遍优势。未下载模型或执行 remote code。",
-      "evidence_note": "原始文章已打开，日期只到日，不补造时区和具体时刻。建议为编辑判断，作者结果未独立复测。",
-      "canonical_url": "https://huggingface.co/blog/lightonai/slideon-mslideon",
-      "sources": [
-        {
-          "ref_id": "primary",
-          "title": "原始来源",
-          "publisher": "LightOn 作者 / HF 社区",
-          "url": "https://huggingface.co/blog/lightonai/slideon-mslideon"
-        },
-        {
-          "ref_id": "en-model",
-          "title": "英语模型卡",
-          "publisher": "LightOn",
-          "url": "https://huggingface.co/lightonai/SlideOn"
-        },
-        {
-          "ref_id": "multi-model",
-          "title": "多语模型卡",
-          "publisher": "LightOn",
-          "url": "https://huggingface.co/lightonai/mSlideOn"
-        }
-      ]
-    },
-    {
-      "item_id": "moe-sort-prompts-20261019",
+      "item_id": "hf-agent-training-curriculum-20261020",
       "type": "blog",
-      "title": "MoE 离线推理：相似请求分组可能减少批次读取的专家权重",
-      "published_at": "2026-10-19",
+      "title": "Agent 后训练课程：从模仿轨迹到在真实执行框架中强化学习",
+      "published_at": "2026-10-20",
       "published_at_precision": "day",
       "publication_timezone": null,
-      "summary": "作者在离线 vLLM 工作负载按领域或嵌入聚类重排请求，让同批解码更常使用相同专家。",
-      "why_it_matters": "批次构成可能影响访存，优化不一定要改模型或内核。",
-      "application": "先在固定离线数据上比较吞吐、分组成本与输出差异；在线服务另测排队和公平性。",
-      "technical_analysis": "文中使用 AMD MI300X、vLLM 0.27、768 条跨域请求及固定生成长度，报告 Qwen 批次 32 的吞吐增益 17.3%。",
-      "caveats": "社区作者实验未复测；自然长度和无标签流量收益不同。重排有批次非确定性，不能承诺输出逐位相同或在线服务免费加速。",
-      "evidence_note": "原始文章已打开，日期只到日，不补造时区和具体时刻。建议为编辑判断，作者结果未独立复测。",
-      "canonical_url": "https://huggingface.co/blog/badaoui/sort-your-prompts",
+      "summary": "课程串起 SFT、蒸馏、GRPO、交互环境和异步训练，并列出数据、奖励与环境准备条件。",
+      "why_it_matters": "团队能按现有验证能力选择训练阶段。",
+      "application": "先建设小型任务集与可执行判定，再决定需要模仿轨迹、教师反馈还是环境奖励。",
+      "technical_analysis": "课程区分单次答案得分与完整多轮运行；异步阶段把生成与训练分开，不能只优化最后一句答案。",
+      "caveats": "读取课程入口，未逐一观看视频、审查所有脚本或运行训练；不是新模型性能公告，也不意味着必须依次完成全部阶段。",
+      "evidence_note": "原始发布日期已核实到日，不补造时区或时刻。事实与作者结果见来源，建议属于编辑判断。",
+      "canonical_url": "https://huggingface.co/blog/huggingface/train-agents",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "publisher": "Abdennacer Badaoui / HF 社区",
-          "url": "https://huggingface.co/blog/badaoui/sort-your-prompts"
+          "publisher": "Hugging Face 作者 / 社区文章",
+          "url": "https://huggingface.co/blog/huggingface/train-agents"
         }
       ],
       "editorial_section": "ai_practice"
     },
     {
-      "item_id": "numan-eval-case-20261019",
-      "type": "blog",
-      "title": "Numan 评测案例：按类别判定多轮行为，测试走真实 Agent 图",
-      "published_at": "2026-10-19",
-      "published_at_precision": "day",
-      "publication_timezone": null,
-      "summary": "团队解释固定单轮标准和预写多轮脚本的失效方式，改用分类评估、真实图执行与人工校准。",
-      "why_it_matters": "总分可能掩盖某类失败，测试拷贝的提示也可能与生产漂移。",
-      "application": "让回归走同一执行图，按行为类别保留失败；动态会话模拟与已批准的发布门禁分开。",
-      "technical_analysis": "会话模拟仍是原型，工程起草的标准未经临床签署时不作为该层发布门禁或安全主张；线上自动评估仍是下一步。",
-      "caveats": "客户案例，无独立安全/疗效认证。本条只讨论软件评测，不推断其监管资格；未运行系统或审查内部真实会话。",
-      "evidence_note": "原始文章已打开，日期只到日，不补造时区和具体时刻。建议为编辑判断，作者结果未独立复测。",
-      "canonical_url": "https://www.langchain.com/blog/how-numan-built-an-eval-first-ai-health-coach-with-langgraph-and-langsmith",
+      "item_id": "agent-s4-arxiv-2610-28601",
+      "type": "paper",
+      "title": "研究速览 · Agent S4：让任务经验反过来改进 Agent 接口",
+      "published_at": "2026-10-20T17:47:37Z",
+      "published_at_precision": "second",
+      "publication_timezone": "UTC",
+      "summary": "预印本提出根据任务轨迹生成、修订工具接口和用法知识，再通过未向元 Agent 暴露的验证任务选择候选。",
+      "why_it_matters": "接口设计可作为模型之外的改进变量。",
+      "application": "先在隔离任务集比较固定接口和学习接口，分开训练、验证与测试，并计入接口演化成本。",
+      "technical_analysis": "摘要报告同模型在 ScienceBoard 的成功率从 41.4% 到 58.6%；这是作者实验主张。",
+      "caveats": "仅核实摘要与提交记录，未阅读全文、代码或成本测量；无成功标签指轨迹分析阶段，不表示整个方法完全不依赖评估反馈。",
+      "evidence_note": "arXiv v1 精确提交时刻已核实；仅摘要级速览，作者结果未经独立复测。",
+      "canonical_url": "https://arxiv.org/abs/2610.28601",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "publisher": "Numan / LangChain",
-          "url": "https://www.langchain.com/blog/how-numan-built-an-eval-first-ai-health-coach-with-langgraph-and-langsmith"
+          "publisher": "Saaket Agashe 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.28601"
         }
       ],
-      "editorial_section": "ai_practice"
+      "research_status": "preprint",
+      "editorial_section": "weekly_research"
     },
     {
-      "item_id": "github-victorrentea-human-review",
+      "item_id": "amtp-arxiv-2610-28619",
+      "type": "paper",
+      "title": "研究速览 · AMTP：按验证反馈调整多 token 预测长度",
+      "published_at": "2026-10-20T17:56:32Z",
+      "published_at_precision": "second",
+      "publication_timezone": "UTC",
+      "summary": "轻量在线控制器在每轮草拟前选择预测长度，尝试平衡接受率和计算浪费，保持精确验证器不变。",
+      "why_it_matters": "固定预测窗口可能错过不同上下文的吞吐差异。",
+      "application": "在目标硬件记录接受前缀、控制开销、总耗时与长尾延迟，和固定窗口对照。",
+      "technical_analysis": "摘要称在五组模型配对、AIME 2025/GSM8K 上，10 个设置中 8 个持平或超过固定窗口，最高吞吐增益 10%。",
+      "caveats": "只读摘要与提交记录，未核查理论假设和全文实验；相对常规解码的最高倍数不能当相对固定窗口的普遍收益。",
+      "evidence_note": "arXiv v1 精确提交时刻已核实；仅摘要级速览，作者结果未经独立复测。",
+      "canonical_url": "https://arxiv.org/abs/2610.28619",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Emile Anand 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.28619"
+        }
+      ],
+      "research_status": "preprint",
+      "editorial_section": "weekly_research"
+    },
+    {
+      "item_id": "metr-august-risk-review-20261020",
+      "type": "news",
+      "title": "METR 新外部评审：低风险判断与监控证据的充分性要分开",
+      "published_at": "2026-10-20",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "METR 评审 Anthropic 八月风险报告中的高风险情境失对齐部分，大体同意所覆盖模型风险较低，但不确信原方法能可靠发现更高风险。",
+      "why_it_matters": "评测代理任务与生产监控配置的差异会影响结论。",
+      "application": "给 Agent 评测增加真实监控链路的端到端对抗测试，记录覆盖模型与截止日期。",
+      "technical_analysis": "评审强调判断主要来自模型能力限制，而不是已证明防护充分；访问范围仅为该内部报告，属于轻量外部评审。",
+      "caveats": "不是对全部最新模型的独立实测；Anthropic 有出版否决/删改权，METR 称实际无删节且结论未改。发布于今天窗口内，不代表八月报告是新发布。",
+      "evidence_note": "原始发布日期已核实到日，不补造时区或时刻。事实与作者结果见来源，建议属于编辑判断。",
+      "canonical_url": "https://metr.org/blog/2026-10-20-misalignment-risk-report-august-2026-review/",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "METR",
+          "url": "https://metr.org/blog/2026-10-20-misalignment-risk-report-august-2026-review/"
+        }
+      ]
+    },
+    {
+      "item_id": "aa-healthbench-report-20261019",
+      "type": "news",
+      "title": "HealthBench 新榜单：原始得分与长度调整可能改变模型排序",
+      "published_at": "2026-10-19",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "AA 发布 HealthBench 和 Professional 的比较结果，同时展示原始、长度调整分数与成本。",
+      "why_it_matters": "长度约束、完整性与沟通质量应分别验收。",
+      "application": "参考评分维度为自己的对话任务建立分类回归，不只看总分。",
+      "technical_analysis": "样本为 5000/525 段对话，使用医生制定标准，但由 GPT-4.1 / GPT-5.4 low 分别判分；调整规则以 2000 字符为界。",
+      "caveats": "读原始发布文章；测试执行日期未单独列出，不将文章日期当测试时间。未复测。它是自动评分基准，不等于医生逐条审查结果或临床效果认证。",
+      "evidence_note": "原始发布日期已核实到日，不补造时区或时刻。事实与作者结果见来源，建议属于编辑判断。",
+      "canonical_url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Artificial Analysis",
+          "url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations"
+        }
+      ]
+    },
+    {
+      "item_id": "aa-personalitybench-20261019",
+      "type": "news",
+      "title": "AA-PersonalityBench：把回答风格与任务正确性分开测量",
+      "published_at": "2026-10-19",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "新基准用 30 项特质和 21 个程序统计指标描述模型的默认沟通方式。",
+      "why_it_matters": "能为产品的表达方式提供可比较的维度。",
+      "application": "挑选与产品相关的结构、信息密度、透明度维度，再用实际中文系统提示验证。",
+      "technical_analysis": "900 个英文问题、无 system prompt、每模型每题回答一次；LLM 评委成对比较，汇成 8 个指数。文章结果快照截至 10 月 20 日。",
+      "caveats": "并非“人格好坏”或事实准确率排行榜。完整问题集不公开，评委偏好、英文单轮与实际提示差异限制外推。",
+      "evidence_note": "原始发布日期已核实到日，不补造时区或时刻。事实与作者结果见来源，建议属于编辑判断。",
+      "canonical_url": "https://artificialanalysis.ai/articles/aa-personalitybench",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Artificial Analysis",
+          "url": "https://artificialanalysis.ai/articles/aa-personalitybench"
+        },
+        {
+          "ref_id": "methods",
+          "title": "完整方法说明",
+          "publisher": "Artificial Analysis",
+          "url": "https://artificialanalysis.ai/methodology/aa-personalitybench"
+        }
+      ]
+    },
+    {
+      "item_id": "openai-low-resource-code-20261019",
+      "type": "news",
+      "title": "低资源编程评测：新建软件与保留旧系统行为分别测试",
+      "published_at": "2026-10-19",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "OpenAI 公布跨 20 种语言构建 SQLite 兼容引擎，以及 COBOL 迁移的两类评测。",
+      "why_it_matters": "编译成功不能证明业务语义一致。",
+      "application": "迁移前建立输出对照，覆盖定点数截断、缺失记录和异常分支，再分模块验收。",
+      "technical_analysis": "厂商报告 Astra 的 MultiLangBench 平均测试通过率为 87.4%；迁移要求可观察输出逐字节一致，全部隐藏测试通过才算成功。",
+      "caveats": "已读公告，未审查完整测试集或复现；通过率不等于整个 SQLite 已完全实现，迁移测试成绩不保证任意生产系统可直接替换。",
+      "evidence_note": "原始发布日期已核实到日，不补造时区或时刻。事实与作者结果见来源，建议属于编辑判断。",
+      "canonical_url": "https://openai.com/index/low-resource-programming-languages/",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/low-resource-programming-languages/"
+        }
+      ]
+    },
+    {
+      "item_id": "github-pulkitxm-quinjet",
       "type": "github",
       "editorial_section": "github_radar",
       "radar_lane": "new",
-      "title": "新项目观察 · human-review：把变更证据汇成可串讲的评审页",
-      "summary": "面向 Claude Code 的技能项目，将需求、代码片段、API 差异、测试和演示等整理为一个评审页面。",
-      "why_it_matters": "可参考其按问题组织证据的方式，减少串讲时只讲实现、不讲影响和验收的遗漏。",
-      "application": "先查看公开 demo，再在小变更上审阅其所需工具和输出；用源码/测试原始证据核对生成结论。",
-      "technical_analysis": "README/API 已核对，非 fork、未归档；创建及 push 时间仅用于发现，不是产品首发日期或增长证明。",
-      "canonical_url": "https://github.com/victorrentea/human-review",
-      "created_at": "2026-08-21T21:43:25Z",
-      "pushed_at": "2026-10-20T00:16:03Z",
+      "title": "新项目观察 · Quinjet：终端内统一查看 Git 改动、历史与 PR",
+      "summary": "Rust 编写的 Git TUI，同时提供 JSON/流式 CLI，支持逐文件 diff、暂存与 PR 检查日志。",
+      "why_it_matters": "适合希望在终端串起改动审阅与提交的开发者。",
+      "application": "先在测试仓库比较暂存、改名和冲突显示；再验证团队的签名、hooks 与多账户设置。",
+      "technical_analysis": "README/API 核实 MIT、非 fork、未归档；PR 功能另需已认证的 gh，本地 Git 功能无需 gh。",
+      "caveats": "可执行提交、回滚和删除，不能当只读工具；文档称破坏性命令需确认，未运行或审计。",
+      "canonical_url": "https://github.com/pulkitxm/quinjet",
+      "created_at": "2026-08-13T08:11:25Z",
+      "pushed_at": "2026-10-21T11:21:55Z",
       "github_metrics": {
-        "stars": 29,
-        "forks": 20,
+        "stars": 13,
+        "forks": 2,
         "license": "MIT",
-        "observed_at": "2026-10-20T00:19:48.758Z",
+        "observed_at": "2026-10-21T11:23:25.946Z",
         "stars_delta": null,
         "previous_observed_at": null,
         "growth_percent": null
       },
-      "evidence_note": "创建 2026-08-21T21:43:25Z，push 2026-10-20T00:16:03Z。没有有效日基线，增长 null。",
-      "caveats": "MIT；README 的完整性和速度是作者主张，生成页面不替代人工审查。面向特定宿主，不假定跨客户端无缝工作。未安装或调用该技能。 有限候选不是全站排名，热度不证明质量。",
+      "evidence_note": "创建 2026-08-13T08:11:25Z，最近 push 2026-10-21T11:21:55Z，观测 2026-10-21T11:23:25.946Z。没有 20–28h 有效基线，日增长为 null；创建和更新时间不证明首次发布或飙升。",
       "sources": [
         {
           "ref_id": "readme",
           "title": "仓库 README",
-          "publisher": "victorrentea/human-review",
-          "url": "https://github.com/victorrentea/human-review"
+          "publisher": "pulkitxm/quinjet",
+          "url": "https://github.com/pulkitxm/quinjet"
         },
         {
           "ref_id": "api",
           "title": "仓库 API",
           "publisher": "GitHub",
-          "url": "https://api.github.com/repos/victorrentea/human-review"
+          "url": "https://api.github.com/repos/pulkitxm/quinjet"
         }
       ]
     },
     {
-      "item_id": "github-tinydesk-project-tinydesk-shell",
+      "item_id": "github-slidict-wip",
       "type": "github",
       "editorial_section": "github_radar",
       "radar_lane": "new",
-      "title": "新项目观察 · TinyDesk Shell：微控制器与 PC 共用的命令行核心",
-      "summary": "为 ESP32 等设备提供脚本、文件、用户与网络命令，并有 Linux/Windows 主机端口便于开发。",
-      "why_it_matters": "可作嵌入式交互、板级配置和主机回归测试的参考。",
-      "application": "先在隔离主机目录或测试开发板验证基础命令、脚本和配置，再检查实际板卡引脚及网络服务设置。",
-      "technical_analysis": "README/API 已核对，非 fork、未归档；创建及 push 时间仅用于发现，不是产品首发日期或增长证明。",
-      "canonical_url": "https://github.com/tinydesk-project/tinydesk-shell",
-      "created_at": "2026-09-27T23:01:24Z",
-      "pushed_at": "2026-10-18T19:41:32Z",
+      "title": "新项目观察 · wip：用项目配置组织 Windows WSLC 开发容器",
+      "summary": "以 wip.yml 汇总容器、镜像、环境与命令，转交 WSLC 执行，提供直接容器及 compose 两类工作流。",
+      "why_it_matters": "适合 Windows 开发者探索把团队启动步骤归入版本控制。",
+      "application": "先核对本机 WSL2/WSLC 条件，在测试项目验证配置、健康检查和命令转发。",
+      "technical_analysis": "README/API 核实 MIT、非 fork、未归档；当前介绍 C# Native AOT 二进制，容器操作依赖 wslc，自身不提供容器引擎。",
+      "caveats": "早期版本跟随 WSLC 接口演进，不保证完整 Docker Compose 兼容；未安装、改动本机容器或运行 AI 初始化功能。",
+      "canonical_url": "https://github.com/slidict/wip",
+      "created_at": "2026-07-31T09:12:00Z",
+      "pushed_at": "2026-10-21T11:21:21Z",
       "github_metrics": {
-        "stars": 15,
-        "forks": 8,
+        "stars": 39,
+        "forks": 3,
         "license": "MIT",
-        "observed_at": "2026-10-20T00:19:54.342Z",
-        "stars_delta": 0,
-        "previous_observed_at": "2026-10-19T00:51:41.926Z",
-        "growth_percent": 0
+        "observed_at": "2026-10-21T11:23:27.405Z",
+        "stars_delta": null,
+        "previous_observed_at": null,
+        "growth_percent": null
       },
-      "evidence_note": "创建 2026-09-27T23:01:24Z，push 2026-10-18T19:41:32Z。同 node_id 观测 23.47 小时，净增 0、增幅 0.000%。",
-      "caveats": "MIT；开发预览，ESP-IDF 5.3.1 等条件需匹配具体板卡。SSH/SFTP 等功能不等于完整安全审计；没有刷写硬件或执行代码。 有限候选不是全站排名，热度不证明质量。",
+      "evidence_note": "创建 2026-07-31T09:12:00Z，最近 push 2026-10-21T11:21:21Z，观测 2026-10-21T11:23:27.405Z。没有 20–28h 有效基线，日增长为 null；创建和更新时间不证明首次发布或飙升。",
       "sources": [
         {
           "ref_id": "readme",
           "title": "仓库 README",
-          "publisher": "tinydesk-project/tinydesk-shell",
-          "url": "https://github.com/tinydesk-project/tinydesk-shell"
+          "publisher": "slidict/wip",
+          "url": "https://github.com/slidict/wip"
         },
         {
           "ref_id": "api",
           "title": "仓库 API",
           "publisher": "GitHub",
-          "url": "https://api.github.com/repos/tinydesk-project/tinydesk-shell"
+          "url": "https://api.github.com/repos/slidict/wip"
         }
       ]
     },
     {
-      "item_id": "paper-pixelsplat-arxiv-2312-12337",
-      "paper_id": "arxiv:2312.12337",
+      "item_id": "paper-videomaev2-arxiv-2303-16727",
+      "paper_id": "arxiv:2303.16727",
       "type": "paper",
       "research_status": "historical_conference_paper",
       "conference": "CVPR",
-      "conference_year": 2024,
-      "analysis_date": "2026-10-20",
-      "published_at": "2024-06",
+      "conference_year": 2023,
+      "analysis_date": "2026-10-21",
+      "published_at": "2023-06",
       "published_at_precision": "month",
-      "title": "每日论文精读 · CVPR 2024 pixelSplat：两视图前馈预测可渲染的 3D 高斯",
-      "summary": "历史论文专题，今日分析。模型从带相机参数的图像对预测高斯辐射场，用极线交互处理场景尺度，并以概率采样预测高斯位置。",
-      "why_it_matters": "显式场景可重复渲染，重建编码与每帧渲染成本需要分开评估。",
-      "application": "先在官方测试索引复核两视图新视角质量与耗时，另测视角外推、反光及几何完整性。",
-      "technical_analysis": "双视图特征通过带深度编码的极线注意力交互；每像素预测离散深度分布、偏移、协方差和颜色，高斯不透明度与采样概率关联，从而学习位置分布。",
-      "canonical_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Charatan_pixelSplat_3D_Gaussian_Splats_from_Image_Pairs_for_Scalable_Generalizable_CVPR_2024_paper.html",
-      "evidence_note": "正式会议页核实 CVPR 2024、19457–19467 页；读取会议全文、补充 7–10 节文本和作者 README，arXiv 稳定标识已核对。未运行或复现。",
+      "title": "每日论文精读 · CVPR 2023 VideoMAE V2：双掩码如何降低视频预训练成本",
+      "summary": "历史论文专题，今日分析。把视频掩码自编码器扩到十亿参数，重点是减少解码重建的 token，并采用无监督预训练、有监督中间训练、目标任务微调。",
+      "why_it_matters": "效率瓶颈可能落在小解码器的大输入上；省训练成本与降低部署成本需要分别验证。",
+      "application": "先用作者小模型做视频分类或特征提取，再对齐数据、视图数和计算预算评估收益。",
+      "technical_analysis": "编码器保留少量 tube token；解码器也仅重建部分位置，通过 running-cell 采样覆盖时空信息。损失只作用于解码可见但编码不可见的位置。",
+      "canonical_url": "https://openaccess.thecvf.com/content/CVPR2023/html/Wang_VideoMAE_V2_Scaling_Video_Masked_Autoencoders_With_Dual_Masking_CVPR_2023_paper.html",
+      "evidence_note": "CVF 正式会议记录核实 CVPR 2023、14549–14560 页；下载读取正式正文和补充 A–D 的文本，核实作者 README 与安装说明；未训练、未逐图做定性评价。",
       "deep_dive": [
         {
           "heading": "身份与问题",
-          "content": "David Charatan、Sizhe Lester Li、Andrea Tagliasacchi、Vincent Sitzmann；arxiv:2312.12337，预印本 2023，正式 CVPR 2024。今日分析 2026-10-20，不算周内新研究。任务是从稀疏图像泛化重建可编辑场景，区别于为每个场景长时间优化。",
+          "content": "Limin Wang、Bingkun Huang、Zhiyu Zhao、Zhan Tong、Yinan He、Yi Wang、Yali Wang、Yu Qiao；arxiv:2303.16727。原始年份 2023，分析日期 2026-10-21，不计近七天新闻。研究视频自监督表示：原 VideoMAE 的高编码掩码率，仍未消除全量解码 token 的开销。",
           "ref_ids": [
             "cvf",
             "arxiv"
           ]
         },
         {
-          "heading": "方法 · 第 4 节",
-          "content": "输入两张图及相机内外参。极线采样附带由位姿三角化得到的深度编码，让跨视图特征符合 SfM 的场景尺度；再用图内注意力传播信息。网络预测深度桶概率与桶内偏移，采样后反投影高斯均值；不透明度绑定采样概率，使渲染梯度影响分布，避免直接回归位置的局部极小。",
+          "heading": "方法与流程 · 正文第 3 节",
+          "content": "视频切为时空块，编码器用高比例 tube masking；解码器保留编码特征，并以 running-cell 方式选择部分待重建位置。重建归一化像素，排除编码已见位置的损失。再用混合无标签视频预训练、K710 标签做中间训练，最后迁移到目标任务。",
           "ref_ids": [
             "pdf"
           ]
         },
         {
-          "heading": "实验与成本 · 表 1",
-          "content": "RealEstate10k/ACID，256×256，按作者提供划分与重训基线比较。RealEstate10k PSNR/SSIM/LPIPS 为 26.09/0.863/0.136，Du 等基线 24.78/0.820/0.213。表列场景编码 0.102 秒、每帧渲染 0.002 秒，Du 为 0.016/1.309；不能只用渲染比值宣称所有端到端场景同倍加速。表中部分基线训练显存为按射线数外推。",
+          "heading": "消融与效率 · 表 1–2",
+          "content": "SSv2、ViT-B、800 epoch 消融：无解码掩码 Top-1 70.28，50% running-cell 且只算未见位置为 70.15；随机掩码 64.87，不能任意删 token。表 2 的 64 GPU、1200 epoch 时间：B 为 28.4→15.9h；g 为估算 356→241h，后者基线由五轮外推。加速仅指该预训练设置。",
           "ref_ids": [
             "pdf"
           ]
         },
         {
-          "heading": "消融 · 表 2",
-          "content": "RealEstate10k：去掉极线编码 PSNR 26.09→19.89；去深度编码为 24.97；改直接回归、去概率采样为 24.62，分别支持几何交互和概率预测的作用。深度正则版本为 25.28，几何可视化改善不能假定渲染指标也提升。",
+          "heading": "效果与比较条件 · 表 3–6",
+          "content": "表 3 同为 16×224×224 输入、K400 的 5×3 多视图：V2-g 87.2，单视图 83.9。表 5 加 K710 中间训练后为 88.5；表 6 的 90.0 还使用 64 帧、更大空间输入，不能归因于双掩码单项或当单视图成绩。数据、模型和监督变化须分开。",
           "ref_ids": [
             "pdf"
           ]
         },
         {
-          "heading": "限制 · 正文与补充第 9 节",
-          "content": "仍需要相机参数，不保证恢复公制尺度；视角外推可能呈薄片状，反射面可透明。两视图高斯直接并集，没有融合去重，也不生成未观测部分；增加视图会使极线注意力显存昂贵。新视角照片质量不等同准确、完整的工程几何。",
+          "heading": "训练与复现条件 · 补充 A–C",
+          "content": "g 为约 10.11 亿参数。预训练使用 64 张 80GB A100、1200 epoch；编码/解码掩码率 0.9/0.5，编码 FP16、解码 FP32。batch 8192 包含重复增强视图。混合数据共约 134.8 万片段，其中包含自采 Instagram 子集；能取得相同数据是重现条件，不保证今日仍全部可下载。",
+          "ref_ids": [
+            "supp"
+          ]
+        },
+        {
+          "heading": "应用与局限 · 正文讨论、补充 D",
+          "content": "可作分类和时空动作检测骨干；视频问答和开放世界理解不能由这些指标直接推出。H→g 的边际收益缩小，中间 K710 训练在 SSv2 上还出现退步。小模型蒸馏能减少推理负担，但训练资源、教师与数据均额外，不能与从零小模型混为一谈。",
           "ref_ids": [
             "pdf",
             "supp"
           ]
         },
         {
-          "heading": "复现步骤 · 补充第 7 节、作者代码",
-          "content": "固定 camera-ready 代码与 checkpoint，避免混用旧版指标。Python 3.10+，PyTorch 与高斯 rasterizer 编译 CUDA 必须匹配；准备官方格式的数据和 evaluation index，先测试 re10k checkpoint。训练文中 300k steps、batch 7、约单卡 80GB，每场景 4 个 target view，150k 后加入权重 0.05 的 LPIPS；每条射线采样 3 个高斯。降低 batch 可试运行但训练条件已变化，另记编码/渲染耗时与显存。",
+          "heading": "可执行复现路线 · 作者仓库",
+          "content": "固定作者 commit、对应 checkpoint 和数据划分。安装页示例 Python 3.8、PyTorch 1.12.1，推荐 timm 0.4.12，PyTorch 2.0 支持未全面测试。权重已迁至 HF；先按 DATASET/FINETUNE 指引跑小批量推理并核对视图聚合，再测吞吐和显存。资源不足优先评估蒸馏 B/S，明确不等价于重现 g 的原训练。",
           "ref_ids": [
             "code",
-            "supp"
+            "install"
           ]
         }
       ],
-      "caveats": "历史作者结果，未独立复现；补充三视图结果额外给中间参考视图，不能当两视图配置。只读取补充文本，未逐图评价定性图。",
+      "caveats": "论文作者结果未经独立复现；历史比较不是当前最佳模型榜。本文仅按文本解释已读实验，不为定性图片或真实业务收益背书。",
       "sources": [
         {
           "ref_id": "cvf",
-          "title": "正式会议页",
+          "title": "正式会议记录",
           "publisher": "CVF",
-          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Charatan_pixelSplat_3D_Gaussian_Splats_from_Image_Pairs_for_Scalable_Generalizable_CVPR_2024_paper.html"
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Wang_VideoMAE_V2_Scaling_Video_Masked_Autoencoders_With_Dual_Masking_CVPR_2023_paper.html"
         },
         {
           "ref_id": "pdf",
           "title": "正式全文",
           "publisher": "CVF",
-          "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Charatan_pixelSplat_3D_Gaussian_Splats_from_Image_Pairs_for_Scalable_Generalizable_CVPR_2024_paper.pdf"
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_VideoMAE_V2_Scaling_Video_Masked_Autoencoders_With_Dual_Masking_CVPR_2023_paper.pdf"
         },
         {
           "ref_id": "supp",
-          "title": "补充材料",
+          "title": "补充材料 A–D",
           "publisher": "作者 / CVF",
-          "url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Charatan_pixelSplat_3D_Gaussian_CVPR_2024_supplemental.pdf"
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/supplemental/Wang_VideoMAE_V2_Scaling_CVPR_2023_supplemental.pdf"
         },
         {
           "ref_id": "code",
-          "title": "作者实现与 README",
-          "publisher": "David Charatan",
-          "url": "https://github.com/dcharatan/pixelsplat"
+          "title": "作者实现及 README",
+          "publisher": "OpenGVLab",
+          "url": "https://github.com/OpenGVLab/VideoMAEv2"
+        },
+        {
+          "ref_id": "install",
+          "title": "作者安装条件",
+          "publisher": "OpenGVLab",
+          "url": "https://github.com/OpenGVLab/VideoMAEv2/blob/master/docs/INSTALL.md"
         },
         {
           "ref_id": "arxiv",
-          "title": "论文稳定记录",
-          "publisher": "作者 / arXiv",
-          "url": "https://arxiv.org/abs/2312.12337"
+          "title": "稳定论文记录",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2303.16727"
         }
       ]
     }
   ],
   "source_stats": {
-    "news_count": 4,
-    "weekly_preprint_count": 0,
+    "news_count": 8,
+    "weekly_preprint_count": 2,
     "github_radar_count": 2,
     "new_project_count": 2,
     "rising_project_count": 0,
     "established_project_count": 0,
     "historical_paper_count": 1,
-    "github_candidates": 264,
+    "github_candidates": 283,
     "github_queried_candidates": 48,
     "registry_records_fetched": 100,
     "registry_pagination_complete": false,
@@ -319,100 +427,101 @@
       {
         "id": "arxiv-ai",
         "status": "checked",
-        "checked_during": "2026-10-20",
+        "checked_during": "2026-10-21",
         "urls": [
           "https://arxiv.org/list/cs.AI/recent",
           "https://arxiv.org/list/cs.CV/recent",
           "https://arxiv.org/list/cs.LG/recent"
         ],
-        "detail": "打开 AI/CV/LG recent 首批列表，未将未审的新标题凑成资讯；不声称穷尽。历史 pixelSplat 专题通过正式会议、全文和补充另核对。"
+        "detail": "检查 AI/CV/LG recent 首批列表，选择两篇 20 日 v1 预印本，仅作摘要级速览，未读其全文不编写详细消融。历史视频专题另读取正式 CVPR 正文和补充。列表未全部分页。"
       },
       {
         "id": "huggingface-blog",
         "status": "checked",
-        "checked_during": "2026-10-20",
+        "checked_during": "2026-10-21",
         "urls": [
           "https://huggingface.co/blog"
         ],
-        "detail": "收录 19 日 TorchNeuron 集成说明、LightOn 发布者检索文章与模型卡、社区 MoE 排序实验。保留公测预告、硬件/形状和离线批次限制；作者评测未复测。"
+        "detail": "检查官方博客与社区入口；读 20 日后训练课程、21 日 bekko 文章及模型卡。课程是学习资源，模型性能是作者结果，bekko 作者也开发所用基准。未逐项运行课程或模型。"
       },
       {
         "id": "independent-evaluations",
         "status": "checked",
-        "checked_during": "2026-10-20",
+        "checked_during": "2026-10-21",
         "urls": [
           "https://metr.org/",
           "https://artificialanalysis.ai/",
           "https://www.nist.gov/ai-measurement-and-evaluation"
         ],
-        "detail": "检查 METR、Artificial Analysis、NIST。METR 已收录提案不重复，AA 动态榜单无合格新独立报告，NIST 配置入口仍跳转 SI 页面。厂商/社区性能数据不当独立评测。"
+        "detail": "检查 METR、Artificial Analysis、NIST。入选 METR 20 日外部评审、AA 19 日 HealthBench 与 PersonalityBench 原始文章及后者方法页。记录评审访问限制、自动评委与快照时点。NIST 配置入口跳转 SI 页面，存在覆盖缺口。"
       },
       {
         "id": "langchain",
         "status": "checked",
-        "checked_during": "2026-10-20",
+        "checked_during": "2026-10-21",
         "urls": [
           "https://www.langchain.com/blog",
           "https://github.com/langchain-ai/langchain/releases"
         ],
-        "detail": "19 日 Numan 新案例已读，区分已运行的分类门禁与原型会话模拟；release API 最新可见 Core 1.6.12 已收录，无新实质进展不重复。"
+        "detail": "博客最新可读 Numan 与评测指南已收录不重复；release API 最新 Core 1.6.12、16 日已收录。不声称遍历所有包或客户案例。"
       },
       {
         "id": "llamaindex",
         "status": "checked",
-        "checked_during": "2026-10-20",
+        "checked_during": "2026-10-21",
         "urls": [
           "https://www.llamaindex.ai/blog",
           "https://github.com/run-llama/llama_index/releases"
         ],
-        "detail": "博客和 release API 检查，ExtractBench Pro 等已收录，最新可见 release 仍 9 月 21 日超窗。动态页日期提取不完整，未穷尽文章。"
+        "detail": "打开博客和 release API；动态博客无法完整提取日期，未核实本期合格新正文；最新 release 0.14.25、9 月 21 日超窗。记录缺口，不推断没有更新。"
       },
       {
         "id": "modelcontextprotocol",
         "status": "checked",
-        "checked_during": "2026-10-20",
+        "checked_during": "2026-10-21",
         "urls": [
           "https://modelcontextprotocol.io/",
           "https://github.com/modelcontextprotocol"
         ],
-        "detail": "官方博客及 TypeScript SDK release API 已查，最新可见 v2.3.1、10 月 5 日超窗，未遍历所有 SDK。"
+        "detail": "检查官方规范入口与官方域名搜索，TypeScript SDK release API 最新 2.3.1、10 月 5 日超窗；未查遍全部 SDK，不将工作组日程当协议正式发布。"
       },
       {
         "id": "openai-news",
         "status": "checked",
-        "checked_during": "2026-10-20",
+        "checked_during": "2026-10-21",
         "urls": [
           "https://openai.com/news/"
         ],
-        "detail": "官方新闻入口检查未获得可核实的新正文公告，既有案例不重复；入口动态解析有缺口，不等于官方确定没有更新。"
+        "detail": "新闻入口和官方域名搜索后读 19 日低资源编程公告。结果属于厂商评测，SQLite 子集通过率与生产迁移保证分开；未运行公开测试套件。"
       },
       {
         "id": "mcp-registry-practice",
         "status": "checked",
-        "checked_during": "2026-10-20",
+        "checked_during": "2026-10-21",
         "urls": [
           "https://registry.modelcontextprotocol.io/"
         ],
-        "detail": "实际读取首批 100，nextCursor 仍存在，未完成分页；没有核实完整的新 MCP 实践入选，注册不等于审核。"
+        "detail": "实际拉取首批 100 条，仍有 nextCursor，未穷尽分页；未完成可验证新实践核实，不将注册条目直接推荐或称安全通过。"
       },
       {
         "id": "tinyfish-practice-discovery",
         "status": "checked",
-        "checked_during": "2026-10-20",
+        "checked_during": "2026-10-21",
         "urls": [
           "https://www.tinyfish.ai/",
           "https://github.com/tinyfish-io/tinyfish-cookbook"
         ],
-        "detail": "检查官网与 cookbook README，未核实新的周内实践日期，未运行样例、调用付费服务。"
+        "detail": "检查官网与 cookbook README，没有核实周内新案例的独立发布日期；未运行样例、安装发现代码或调用付费服务。"
       }
     ]
   },
   "selection_notes": [
-    "真实执行时刻滚动七天，本期资讯原始日期均为 19 日，不写成今天首次发布；只有日级日期不补造时刻。",
-    "历史 URL/事件/论文标识去重，4 条通过筛选，少发不凑数。研究专题为 CVPR 2024 历史论文，不计近七天研究。",
-    "GitHub 按配置分池：264 候选实际查询 48，0 采集错误；topic 搜索与 Trending 仅用于发现，非全站排名。",
-    "新项目 human-review 29 Star 首次日增长 null；TinyDesk Shell 15 Star，约 23.47h 净增 0，不称飙升。增长候选中近期已推荐、许可待核或无有效基线的没有再次占位，成熟席位也留空。",
-    "TorchNeuron 是 19 日公告、20 日公测计划，未实测可用性；Numan 模拟层仍原型，不把其当已批准安全门禁。",
-    "九渠道均记录入口检查与覆盖缺口；Registry 首批分页未穷尽。未安装第三方技能、刷写硬件、运行模型或调用付费服务。"
+    "实际执行时刻滚动七天，原始日期 19–21 日；UTC 窗口 2026-10-14T11:32:19.015Z 至 2026-10-21T11:32:19.015Z，以北京时间展示。日级日期不补造时刻。",
+    "按全部历史 canonical URL/事件/论文 ID 去重；本期 8 条资讯含两篇摘要级预印本，另加 1 篇 CVPR 2023 历史全文专题。",
+    "GitHub 候选 283、查询 48、错误 0；按配置分池，另检查 Trending 月视图及 AI/开发工具 topic，仅作发现，不称全站排名。",
+    "本次与上一期快照约 35.06h，超过 20–28h 有效日窗口；无有效增长基线，stars_delta 为 null。新项目 Quinjet 13 Star、wip 39 Star，不称已证实飙升；增长/成熟席位留空。",
+    "开源项目按近 90 天创建、近 30 天活跃及工程用途筛选，Star 仅为当前观测；项目创建与 push 不等于发布日期。",
+    "METR 是有访问边界的报告评审；AA 的风格指数不评好坏，健康对话基准不等于临床认证；OpenAI 的编码成绩是厂商实验。",
+    "九渠道覆盖限制逐项保存。未执行第三方代码、训练模型、安装技能或调用付费服务。"
   ]
 }
