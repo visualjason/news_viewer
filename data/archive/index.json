@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-22",
+    "revision": 1,
+    "title": "检索与工具流更新：6 条资讯、两个新工具及 FasterNet 精读",
+    "item_count": 9,
+    "path": "data/archive/2026-10-22-r1.json"
+  },
+  {
     "issue_date": "2026-10-21",
     "revision": 1,
     "title": "评测与 Agent 工程：8 条资讯、两个开发工具及 VideoMAE V2 精读",
