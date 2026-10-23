@@ -1,0 +1,315 @@
+{
+  "collection_started_at": "2026-10-23T00:23:11.897Z",
+  "collected_at": "2026-10-23T00:28:40.698Z",
+  "window": {
+    "start": "2026-10-16T00:28:40.698Z",
+    "end": "2026-10-23T00:28:40.698Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7,
+    "end_exclusive": true
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-23",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "detail": "检查 AI/CV/LG recent 首批，22 日列表与两篇 21 日提交记录核实；Charts、HGM-Dual 仅读摘要，未造全文数字。GLIP 是另外的历史全文专题。未穷尽分页。"
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-23",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "detail": "读 IBM ALTK-Evolve 20 日实验与 NVIDIA SimReady Central 21 日说明。前者 train∪test 榜单与 held-out 结果分开，后者逐资产 profile/许可未逐一审核，不运行第三方技能。"
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-23",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "detail": "METR 22 日红队原文已读，评估是 7–8 月历史系统，保留后续修补仅厂商声称、未复核边界。AA 动态榜单非新独立实验报告；NIST 配置入口仍跳 SI 页面。"
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-23",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "detail": "博客入口与 Core release API 检查。1.7.0、22 日 17:47:38Z 新增生产工具参数增量语义，明确补充昨日读取支持，并保留迁移方式。未查遍所有集成包。"
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-23",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "detail": "检查博客和 release API。OCRia-1 新入口正文可读，但页面未给出可核实发布日期，本期不按周内新发布收录。release 0.14.25 仍为 9 月 21 日超窗。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-23",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "detail": "官方入口与 TypeScript SDK API 检查，最新可见 2.3.1、10 月 5 日超窗，不重复；未遍历其他 SDK。"
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-23",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "detail": "读 Decisions GA 与 FDE 工程案例，区分已宣布 API 能力、客户自述收益与独立实测。未调用 API 或访问内部评测。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-23",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "detail": "首批实际取 100、nextCursor 仍存在，未完整分页；未核实有源代码/权限/复现条件的新实践入选。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-23",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "detail": "检查官网与 cookbook 入口/README，未核实周内新案例的独立日期和复现条件，未执行代码或调用付费服务。"
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "langchain-core-1-7-0",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain",
+          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.7.0"
+        }
+      ]
+    },
+    {
+      "item_id": "metr-internal-monitor-redteam-20261022",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "METR / Redwood Research",
+          "url": "https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/"
+        }
+      ]
+    },
+    {
+      "item_id": "openai-decisions-ga-20261022",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/decisions-api/"
+        }
+      ]
+    },
+    {
+      "item_id": "openai-fde-case-20261022",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "OpenAI / Colin Jarvis",
+          "url": "https://openai.com/index/forward-deployed-engineering-means/"
+        }
+      ]
+    },
+    {
+      "item_id": "altk-evolve-service-20261020",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "IBM Research / HF 社区",
+          "url": "https://huggingface.co/blog/ibm-research/altk-evolve-bc"
+        }
+      ]
+    },
+    {
+      "item_id": "simready-central-20261021",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "NVIDIA / HF 社区",
+          "url": "https://huggingface.co/blog/nvidia/simready-central-assets-robotics-ai-factories"
+        }
+      ]
+    },
+    {
+      "item_id": "charts-agent-arxiv-2610-30072",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Xinzhe Wang 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.30072"
+        }
+      ]
+    },
+    {
+      "item_id": "hgm-dual-arxiv-2610-30042",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Sudipta Paul 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.30042"
+        }
+      ]
+    },
+    {
+      "item_id": "github-wavect-semaprax",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "README",
+          "publisher": "wavect/semaprax",
+          "url": "https://github.com/wavect/semaprax"
+        },
+        {
+          "ref_id": "api",
+          "title": "公开 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/wavect/semaprax"
+        }
+      ]
+    },
+    {
+      "item_id": "github-khanhtq29vn-contextcraft",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "README",
+          "publisher": "khanhtq29vn/contextcraft",
+          "url": "https://github.com/khanhtq29vn/contextcraft"
+        },
+        {
+          "ref_id": "api",
+          "title": "公开 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/khanhtq29vn/contextcraft"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-glip-arxiv-2112-03857",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "正式会议记录",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/html/Li_Grounded_Language-Image_Pre-Training_CVPR_2022_paper.html"
+        },
+        {
+          "ref_id": "pdf",
+          "title": "正式全文",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Grounded_Language-Image_Pre-Training_CVPR_2022_paper.pdf"
+        },
+        {
+          "ref_id": "supp",
+          "title": "补充材料",
+          "publisher": "作者 / CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/supplemental/Li_Grounded_Language-Image_Pre-Training_CVPR_2022_supplemental.pdf"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者实现及 README",
+          "publisher": "Microsoft",
+          "url": "https://github.com/microsoft/GLIP"
+        },
+        {
+          "ref_id": "arxiv",
+          "title": "稳定论文记录",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2112.03857"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 304,
+    "queried_candidates": 48,
+    "errors": [],
+    "selected": [
+      {
+        "item_id": "github-wavect-semaprax",
+        "lane": "new",
+        "metrics": {
+          "stars": 25,
+          "forks": 3,
+          "license": "Apache-2.0",
+          "observed_at": "2026-10-23T00:23:17.802Z",
+          "stars_delta": 0,
+          "previous_observed_at": "2026-10-22T00:27:23.588Z",
+          "growth_percent": 0
+        }
+      },
+      {
+        "item_id": "github-khanhtq29vn-contextcraft",
+        "lane": "new",
+        "metrics": {
+          "stars": 20,
+          "forks": 1,
+          "license": "MIT",
+          "observed_at": "2026-10-23T00:23:21.245Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      }
+    ]
+  },
+  "registry": {
+    "records": 100,
+    "pagination_complete": false
+  },
+  "paper": {
+    "id": "arxiv:2112.03857",
+    "venue": "CVPR 2022",
+    "pages": "10965-10975",
+    "fulltext": "Formal main text methods, experiments and conclusion read through PDF text extraction; parser warnings retained but relevant text and tables readable",
+    "supplement": "B, C and D experimental details read; no qualitative figure analysis",
+    "code": "Author README and API checked, MIT; released weights/data variants differentiated; no execution"
+  },
+  "access_notes": [
+    "OCRia-1 body readable but publication date not established",
+    "Current research briefs are abstract only, not fulltext deep dives",
+    "NIST configured URL redirects SI page",
+    "METR report covers historical system; subsequent patch claims not independently reassessed",
+    "Registry and topic discovery are partial",
+    "No third-party code, skill, model or paid service executed",
+    "Final link HEAD checks returned 200 for selected public article/repository/paper URLs except two OpenAI articles (proxy HEAD 403; article bodies and dates read through web tool). Repository API GETs succeeded during review; not repeatedly HEAD-queried to conserve public quota."
+  ]
+}
