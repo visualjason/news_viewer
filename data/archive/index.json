@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-24",
+    "revision": 1,
+    "title": "从“能运行”到“能重复成功”：10 条资讯、两个新项目与 OneFormer 精读",
+    "item_count": 13,
+    "path": "data/archive/2026-10-24-r1.json"
+  },
+  {
     "issue_date": "2026-10-23",
     "revision": 1,
     "title": "从经验到可靠执行：8 条资讯、两个新项目与 GLIP 精读",
