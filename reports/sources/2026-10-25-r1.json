@@ -1,0 +1,325 @@
+{
+  "collection_started_at": "2026-10-25T02:47:10.076Z",
+  "collected_at": "2026-10-25T02:52:30.340Z",
+  "window": {
+    "start": "2026-10-18T02:52:30.340Z",
+    "end": "2026-10-25T02:52:30.340Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7,
+    "end_exclusive": true
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-25",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "detail": "检查 AI/CV/LG recent 首批，最新列表仍为23日；22日 SCE 与 Sensorimotor Alignment 的 v1/摘要核实，速览不编造全文细节。DepthSplat为另外的历史正式全文专题，未穷尽分页。"
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-25",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "detail": "回看20–23日未收录原文：LitPivot、Mundo、TorchTPU、MPS候选版、Granite Speech。区分官方/企业/社区作者，保留小样本、算子兼容、硬件条件、非实时和语言支持边界。"
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-25",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "detail": "METR和AA入口检查，最新可见报告/文章仍为22/23日已收录内容；本期不重复，也不把厂商模型说明列为独立评测。NIST配置入口仍跳SI页面，保留覆盖缺口。"
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-25",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "detail": "检查博客与Core release API，最新仍为23日retrieval指南及22日Core1.7.0，均已收录，不重发；未遍历所有集成包。"
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-25",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "detail": "博客入口和release API检查，OCRia-1未建立可核实发布日期，不作为本周新公告；最新release0.14.25仍为9月21日超窗。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-25",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "detail": "官方入口和TypeScript SDK API检查，最新2.4.0为23日18:32:25Z，昨日已收录；未穷尽全部SDK和规范提案。"
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-25",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "detail": "新闻入口最新仍23日，补选本周未收录的22日Uber推广公告，读正文并区分宣布覆盖人数与实际部署/量化收益。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-25",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "detail": "实际GET首批100，nextCursor存在，未完整分页；未核实有充分工程证据的新实践入选。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-25",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "detail": "官网及cookbook README已检查，未建立周内新增实践的独立发布日期与验证步骤；没有执行示例或调用付费服务。"
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "litpivot-blog-20261023",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Ai2 / HF 企业文章",
+          "url": "https://huggingface.co/blog/allenai/litpivot"
+        }
+      ]
+    },
+    {
+      "item_id": "mundo-world-model-20261023",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Yihang Luo 等 / HF 社区",
+          "url": "https://huggingface.co/blog/Luo-Yihang/mundo-world-model"
+        }
+      ]
+    },
+    {
+      "item_id": "hf-torchtpu-20261020",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Hugging Face",
+          "url": "https://huggingface.co/blog/hf-torchtpu"
+        }
+      ]
+    },
+    {
+      "item_id": "mps-pytorch-2-15-20261020",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Hugging Face PyTorch 团队",
+          "url": "https://huggingface.co/blog/mps-pytorch-2-15"
+        }
+      ]
+    },
+    {
+      "item_id": "granite-speech-5-20261021",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "IBM / HF 企业文章",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5"
+        }
+      ]
+    },
+    {
+      "item_id": "uber-chatgpt-work-20261022",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/uber-chatgpt-work-rollout/"
+        }
+      ]
+    },
+    {
+      "item_id": "sce-arxiv-2610-31593",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Jeffrey Olmo 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.31593"
+        }
+      ]
+    },
+    {
+      "item_id": "sensorimotor-arxiv-2610-31670",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Yunfei Xie 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.31670"
+        }
+      ]
+    },
+    {
+      "item_id": "github-iffix-neutrino",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "README",
+          "publisher": "iffiX/neutrino",
+          "url": "https://github.com/iffiX/neutrino"
+        },
+        {
+          "ref_id": "api",
+          "title": "公开 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/iffiX/neutrino"
+        },
+        {
+          "ref_id": "license",
+          "title": "许可证",
+          "publisher": "iffiX/neutrino",
+          "url": "https://github.com/iffiX/neutrino/blob/HEAD/LICENSE"
+        }
+      ]
+    },
+    {
+      "item_id": "github-opensec-git-pi-bolt",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "README",
+          "publisher": "opensec-git/Pi-Bolt",
+          "url": "https://github.com/opensec-git/Pi-Bolt"
+        },
+        {
+          "ref_id": "api",
+          "title": "公开 API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/opensec-git/Pi-Bolt"
+        },
+        {
+          "ref_id": "license",
+          "title": "许可证",
+          "publisher": "opensec-git/Pi-Bolt",
+          "url": "https://github.com/opensec-git/Pi-Bolt/blob/HEAD/LICENSE"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-depthsplat-cvpr2025",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "正式会议记录",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Xu_DepthSplat_Connecting_Gaussian_Splatting_and_Depth_CVPR_2025_paper.html"
+        },
+        {
+          "ref_id": "pdf",
+          "title": "正式全文",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_DepthSplat_Connecting_Gaussian_Splatting_and_Depth_CVPR_2025_paper.pdf"
+        },
+        {
+          "ref_id": "supp",
+          "title": "补充材料",
+          "publisher": "作者 / CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/supplemental/Xu_DepthSplat_Connecting_Gaussian_CVPR_2025_supplemental.pdf"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者实现及 README",
+          "publisher": "cvg",
+          "url": "https://github.com/cvg/depthsplat"
+        },
+        {
+          "ref_id": "arxiv",
+          "title": "稳定论文记录",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2410.13862"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 330,
+    "queried_candidates": 48,
+    "errors": [],
+    "selected": [
+      {
+        "item_id": "github-iffix-neutrino",
+        "lane": "new",
+        "metrics": {
+          "stars": 36,
+          "forks": 2,
+          "license": "MIT",
+          "observed_at": "2026-10-25T02:47:16.189Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-opensec-git-pi-bolt",
+        "lane": "new",
+        "metrics": {
+          "stars": 552,
+          "forks": 24,
+          "license": "MIT",
+          "observed_at": "2026-10-25T02:47:18.046Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      }
+    ]
+  },
+  "registry": {
+    "records": 100,
+    "pagination_complete": false
+  },
+  "paper": {
+    "id": "arxiv:2410.13862",
+    "venue": "CVPR2025",
+    "pages": "16453-16463",
+    "fulltext": "Formal main methods, experiments and conclusion read through PDF text extraction",
+    "supplement": "A initialization experiment and C high-resolution recipe read; no qualitative figure conclusions",
+    "code": "Author README and camera convention, environment, checkpoint update notes read; no execution"
+  },
+  "access_notes": [
+    "Initial guessed supplemental PDF path returned404; corrected using formal CVF record and read successfully",
+    "Recent preprint briefs are abstract only",
+    "NIST configured URL redirectsSI",
+    "Registry and GitHub discovery are partial",
+    "Publisher reports not independently replicated; no paid services, third-party code or skills executed"
+  ]
+}

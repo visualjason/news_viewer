@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-25",
+    "revision": 1,
+    "title": "周内补遗：8 条工程与研究资讯、两个新项目及 DepthSplat 精读",
+    "item_count": 11,
+    "path": "data/archive/2026-10-25-r1.json"
+  },
+  {
     "issue_date": "2026-10-24",
     "revision": 1,
     "title": "从“能运行”到“能重复成功”：10 条资讯、两个新项目与 OneFormer 精读",
