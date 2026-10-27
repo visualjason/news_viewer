@@ -1,422 +1,457 @@
 {
   "schema_version": "1.0",
-  "issue_date": "2026-10-25",
+  "issue_date": "2026-10-27",
   "revision": 1,
-  "generated_at": "2026-10-25T02:52:30.340Z",
+  "generated_at": "2026-10-27T00:29:27.246Z",
   "window": {
-    "start": "2026-10-18T02:52:30.340Z",
-    "end": "2026-10-25T02:52:30.340Z",
+    "start": "2026-10-20T00:29:27.246Z",
+    "end": "2026-10-27T00:29:27.246Z",
     "timezone": "Asia/Shanghai",
     "lookback_days": 7,
     "end_exclusive": true
   },
   "briefing": {
-    "headline": "周内补遗：8 条工程与研究资讯、两个新项目及 DepthSplat 精读",
-    "takeaway": "从原生硬件后端、Mac本地推理到语音模型、可控世界模拟和评估代理；项目选Neutrino、Pi-Bolt，历史论文轮换到CVPR2025多视图深度与高斯重建。",
+    "headline": "效率、身份与验收：9 条资讯、两个开发工具和RepViT精读",
+    "takeaway": "关注Terra发布与独立测评、CodeRabbit跨仓库审查、企业Agent身份及视频代码评估；项目选Blaze、Perspica，论文轮换到移动端视觉效率。",
     "actions": [
-      "升级硬件后端时分别验正确性、兼容性、冷编译和稳态性能。",
-      "会议语音流程拆分转写、说话人、时间戳与专名验收。",
-      "离线代理用于筛选，真实闭环和业务结果仍需最终验证。"
+      "把模型档位与真实任务成本一起回归，不只看单项榜单。",
+      "列清每种入口和后台任务的身份、工具、记忆权限。",
+      "对生成产物分开验证运行成功、业务正确与交付质量。"
     ]
   },
   "items": [
     {
-      "item_id": "litpivot-blog-20261023",
-      "type": "blog",
-      "title": "LitPivot：把研究问题、贡献和验证方案分别放回文献里审视",
-      "published_at": "2026-10-23",
-      "published_at_precision": "day",
-      "publication_timezone": null,
-      "summary": "新介绍文章展示一种研究构思流程：选择提案片段，匹配文献，以带证据的批评推动修改。",
-      "why_it_matters": "研究方向变化后，原评估计划和支撑文献也可能失配，值得显式联动检查。",
-      "application": "把提案拆为问题、贡献、评估三个部分，每次修改同时检查证据和验收是否仍对应。",
-      "technical_analysis": "17 人实验让同一参与者分别使用两种工具，文献集合相同；两名不知工具来源的专家只评“文献支撑程度”。",
-      "caveats": "读发布正文，未核实论文全文或复现。更好的文献依据不证明实际科研创新更高；新近的是 23 日介绍文章，不将 4 月预印本当本周新研究。",
-      "evidence_note": "核实原文日期到日，不补造时刻或时区；作者结果未独立复测。建议为编辑判断。",
-      "canonical_url": "https://huggingface.co/blog/allenai/litpivot",
-      "sources": [
-        {
-          "ref_id": "primary",
-          "title": "原始来源",
-          "publisher": "Ai2 / HF 企业文章",
-          "url": "https://huggingface.co/blog/allenai/litpivot"
-        }
-      ],
-      "editorial_section": "ai_practice"
-    },
-    {
-      "item_id": "mundo-world-model-20261023",
-      "type": "blog",
-      "title": "Mundo：让显式三维状态控制模拟，再用视频模型生成外观",
-      "published_at": "2026-10-23",
-      "published_at_precision": "day",
-      "publication_timezone": null,
-      "summary": "作者从场景图像构建三维代理，使用场景程序和模拟器更新物体，再以代理视频约束生成结果。",
-      "why_it_matters": "将物理状态与视觉渲染分开，有利于观察可控交互到底由谁计算。",
-      "application": "先区分几何重建、状态转移、视频外观三项验收，并检查不可见区域及小物体的一致性。",
-      "technical_analysis": "文章描述多视图输入、代理场景、相机与视频模型条件；长视频分块并复用前段帧作为前缀。",
-      "caveats": "读作者技术说明及限制，未运行或验证代码开放状态。作者称重建通常 10–20 分钟、八张 A800 下渲染约 1.5fps；无长期记忆，小物体可能漂浮和幻觉，不能称实时物理数字孪生。",
-      "evidence_note": "核实原文日期到日，不补造时刻或时区；作者结果未独立复测。建议为编辑判断。",
-      "canonical_url": "https://huggingface.co/blog/Luo-Yihang/mundo-world-model",
-      "sources": [
-        {
-          "ref_id": "primary",
-          "title": "原始来源",
-          "publisher": "Yihang Luo 等 / HF 社区",
-          "url": "https://huggingface.co/blog/Luo-Yihang/mundo-world-model"
-        }
-      ],
-      "editorial_section": "ai_practice"
-    },
-    {
-      "item_id": "hf-torchtpu-20261020",
+      "item_id": "openai-gpt-6-1-terra-20261026",
       "type": "product",
-      "title": "TorchTPU：把 TPU 接成 PyTorch 设备，仍需核对实际算子兼容",
-      "published_at": "2026-10-20",
+      "title": "GPT‑6.1 Terra 发布：视觉操作与编码能力转向更低调用成本",
+      "published_at": "2026-10-26",
       "published_at_precision": "day",
       "publication_timezone": null,
-      "summary": "官方文章介绍原生后端在 Transformers、Diffusers 与 Kernels 的集成，可从 eager 模式开始再选择编译和分片。",
-      "why_it_matters": "已有 PyTorch 流程有了新的硬件适配入口，但“少改代码”不代表所有负载直接稳定运行。",
-      "application": "固定库、驱动与硬件版本，分别测试 eager/compile、冷编译与稳态，以及自定义算子和分布式路径。",
-      "technical_analysis": "示例用 device_map=tpu 或 pipe.to(tpu)，同图像尺寸可复用编译图；作者称已在 TPU 运行的测试 96.5% 通过，nightly 结果公开仍在推进。",
-      "caveats": "已读原文，未调用云 TPU。通过率不是全部 Hub 模型的兼容率；特定 batch 下的 kernel 加速不当作端到端收益。不同于先前 Trainium/TorchNeuron，本文涉及 Google TPU 后端。",
-      "evidence_note": "核实原文日期到日，不补造时刻或时区；作者结果未独立复测。建议为编辑判断。",
-      "canonical_url": "https://huggingface.co/blog/hf-torchtpu",
-      "sources": [
-        {
-          "ref_id": "primary",
-          "title": "原始来源",
-          "publisher": "Hugging Face",
-          "url": "https://huggingface.co/blog/hf-torchtpu"
-        }
-      ]
-    },
-    {
-      "item_id": "mps-pytorch-2-15-20261020",
-      "type": "blog",
-      "title": "PyTorch 2.15 MPS 候选版：FP8、Metal 算子与视频解码内存改善",
-      "published_at": "2026-10-20",
-      "published_at_precision": "day",
-      "publication_timezone": null,
-      "summary": "团队介绍 Apple Silicon 的 FP8 存储、解码算子与 padding 等 Metal 路径改进，文章提供候选版本试用方式。",
-      "why_it_matters": "本地模型升级需同时看正确性、内存和最低系统要求，不能只比较 tokens/s。",
-      "application": "在独立环境用现有模型回归 CPU 对照、显存指标和生成质量，检查 macOS≥15、Python≥3.11。",
-      "technical_analysis": "文章区分 tensor、allocator、driver 三类内存；Wan2.2 特定 tiled VAE 的 driver 峰值约 270→8GiB，allocator-reserved 峰值仍约 8GiB。",
-      "caveats": "读正文和试用章节，未安装或压测；是 20 日候选版说明，不宣称今日稳定版发布。不同模型和设置收益不同，文中 MoE 倍数表述不完全一致，本期不引用为统一性能结论。",
-      "evidence_note": "核实原文日期到日，不补造时刻或时区；作者结果未独立复测。建议为编辑判断。",
-      "canonical_url": "https://huggingface.co/blog/mps-pytorch-2-15",
-      "sources": [
-        {
-          "ref_id": "primary",
-          "title": "原始来源",
-          "publisher": "Hugging Face PyTorch 团队",
-          "url": "https://huggingface.co/blog/mps-pytorch-2-15"
-        }
-      ],
-      "editorial_section": "ai_practice"
-    },
-    {
-      "item_id": "granite-speech-5-20261021",
-      "type": "product",
-      "title": "Granite Speech 更新：转写翻译、快速 CTC 与说话人标注分工",
-      "published_at": "2026-10-21",
-      "published_at_precision": "day",
-      "publication_timezone": null,
-      "summary": "公告同时介绍新 5.0 2B，以及更新的 470M Turbo CTC 和 4.1 2B Plus，面向不同语音工作流。",
-      "why_it_matters": "会议纪要的“谁说了什么、何时说”不能只用转写错误率衡量。",
-      "application": "按转写、翻译、说话人和时间戳分别建小测试集；用实际噪声、专名与长录音验证。",
-      "technical_analysis": "新 2B 支持六种语言转写及若干与英语互译方向、最多 2000 个关键词偏置；4.1 Plus 保持接口并更新权重，增强归属和时间戳。",
-      "caveats": "读发布正文，未跑权重或复测榜单。英语短音频 WER 不代表中文转写支持或所有语言表现；普通 2B、CTC 与 Plus 的功能不能混为一款。作者称模型均为 Apache-2.0，使用前核对具体产物。",
-      "evidence_note": "核实原文日期到日，不补造时刻或时区；作者结果未独立复测。建议为编辑判断。",
-      "canonical_url": "https://huggingface.co/blog/ibm-granite/granite-speech-5",
-      "sources": [
-        {
-          "ref_id": "primary",
-          "title": "原始来源",
-          "publisher": "IBM / HF 企业文章",
-          "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5"
-        }
-      ]
-    },
-    {
-      "item_id": "uber-chatgpt-work-20261022",
-      "type": "news",
-      "title": "Uber 从千人试点扩至三万余人：企业 Agent 配套技能与集成治理",
-      "published_at": "2026-10-22",
-      "published_at_precision": "day",
-      "publication_timezone": null,
-      "summary": "公告宣布 ChatGPT Work 从约 1000 人试点扩展到 Uber 全球三万余员工，并配合内部技能库、批准的集成及培训。",
-      "why_it_matters": "规模落地的可借鉴点包括权限、技能与培训安排，尚不能凭覆盖人数推导业务收益。",
-      "application": "试点先明确可读写数据、审批边界、失败转人工和按任务计的验收指标，再决定推广范围。",
-      "technical_analysis": "文章列出研究、会议简报、演示文稿和数据分析等跨应用用途，并称后续将分享可测量结果。",
-      "caveats": "读官方公告，未访问 Uber 内部系统或独立核验使用率。22 日是宣布启动推广，不是所有员工已完成部署或已实现量化提效。",
-      "evidence_note": "核实原文日期到日，不补造时刻或时区；作者结果未独立复测。建议为编辑判断。",
-      "canonical_url": "https://openai.com/index/uber-chatgpt-work-rollout/",
+      "summary": "公告将视觉理解、计算机操作和写作作为主要定位，并宣布在 ChatGPT Work、Codex 和 API 开放。",
+      "why_it_matters": "高频任务可以比较更低成本模型，但不能只凭单个基准替换复杂任务的主模型。",
+      "application": "先用真实截图、表单和代码任务做固定预算回归，分别测成功率、延迟、错误恢复与成本。",
+      "technical_analysis": "标准 API 价格为每百万 input/cached input/output token 1/0.05/5 美元；作者指出最复杂编码仍更适合 Sol/Astra。AA 的26日独立测评也显示效率取决于推理档位。",
+      "caveats": "已读官方正文和 AA 原文，未调用模型或核实账户可用性。内部事实性及操作基准不是通用可靠性保证；相对优势随任务、推理档位和实际 token 使用变化。",
+      "evidence_note": "原文发表日期到日，不补造时刻或时区；作者结果未独立复测，建议为编辑判断。",
+      "canonical_url": "https://openai.com/index/introducing-gpt-6-1-terra/",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
           "publisher": "OpenAI",
-          "url": "https://openai.com/index/uber-chatgpt-work-rollout/"
+          "url": "https://openai.com/index/introducing-gpt-6-1-terra/"
+        },
+        {
+          "ref_id": "aa",
+          "title": "独立测评",
+          "publisher": "Artificial Analysis",
+          "url": "https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier"
         }
       ]
     },
     {
-      "item_id": "sce-arxiv-2610-31593",
-      "type": "paper",
-      "title": "研究速览 · Simulated Control Evals：用目标环境的工具模拟补充控制评估",
-      "published_at": "2026-10-22T17:26:42Z",
-      "published_at_precision": "second",
-      "publication_timezone": "UTC",
-      "summary": "预印本用语言模型模拟工具响应，并在可实际执行的 LinuxArena 中检验预测误差，比较跨环境迁移的控制评估。",
-      "why_it_matters": "控制测试如果任务与部署场景不同，防护效果的外推可能失真。",
-      "application": "先在可执行任务上校准模拟误差，再用模拟筛选需要真实执行的高风险场景。",
-      "technical_analysis": "摘要在五个 monitor、5% 审计预算下报告安全预测 RMSE 3.6 个百分点，跨环境 BashArena 对照 10.1；属于特定测试设置。",
-      "caveats": "仅核实摘要与 v1 时间，未读全文、模型提示或复现。工具模拟可能遗漏真实副作用，不能替代最终生产环境评估或当独立安全认证。",
-      "evidence_note": "核实 v1 精确提交时间，摘要级研究速览。建议为编辑判断。",
-      "canonical_url": "https://arxiv.org/abs/2610.31593",
+      "item_id": "coderabbit-security-20261026",
+      "type": "blog",
+      "title": "CodeRabbit 安全审查：从 PR 追踪到共享依赖与关联仓库",
+      "published_at": "2026-10-26",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "案例介绍用 Sol 联合其他模型和扫描工具，分析代码变更的跨文件、依赖及跨仓库影响。",
+      "why_it_matters": "安全问题常在接口和依赖交互处暴露，仅看新增行可能遗漏真实影响。",
+      "application": "把关键调用链、共享认证库和现有扫描结果纳入复核；修复 PR 保留人工验收与回归。",
+      "technical_analysis": "对用户选定发现可尝试在隔离沙箱验证，并为支持的问题起草修复 PR；不测试生产系统。审查流程独立于写代码的 Agent。",
+      "caveats": "读官方客户案例，未独立核实召回率、误报率或收益。“独立审查”是流程角色，不等于外部独立评测，模型发现也不自动证明可利用。",
+      "evidence_note": "原文发表日期到日，不补造时刻或时区；作者结果未独立复测，建议为编辑判断。",
+      "canonical_url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security/",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "publisher": "Jeffrey Olmo 等 / arXiv",
-          "url": "https://arxiv.org/abs/2610.31593"
+          "publisher": "OpenAI / CodeRabbit 案例",
+          "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security/"
+        }
+      ],
+      "editorial_section": "ai_practice"
+    },
+    {
+      "item_id": "signals-work-activities-20261026",
+      "type": "news",
+      "title": "OpenAI Signals 新数据：按工作活动观察使用结构，不能推导岗位替代",
+      "published_at": "2026-10-26",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "发布映射到165类工作活动的数据，按季度呈现近百个国家的消费者工作用途。",
+      "why_it_matters": "可以研究不同任务的使用变化，但消息分布与真实就业任务分布存在明显差异。",
+      "application": "分析时先说明个人套餐样本、国家覆盖和分类缺失，再与其他指标结合，避免直接换算效率或就业影响。",
+      "technical_analysis": "数据跨2025Q1至2026Q3；连续观察的74国前十活动占比均值从56.0%降至51.1%。样本不含企业消息与Codex，部分活动归入Other。",
+      "caveats": "已读文章及样本范围，未下载或复算。消息使用量不是任务完成量、工时或生产率；美国职业活动映射与其他国家的可比性也需另检验。",
+      "evidence_note": "原文发表日期到日，不补造时刻或时区；作者结果未独立复测，建议为编辑判断。",
+      "canonical_url": "https://openai.com/index/chatgpt-expanding-world-of-work/",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "OpenAI Economic Research",
+          "url": "https://openai.com/index/chatgpt-expanding-world-of-work/"
+        }
+      ]
+    },
+    {
+      "item_id": "company-harness-20261024",
+      "type": "blog",
+      "title": "企业 Agent 的五个基础部件：入口、身份、记忆、执行与后台触发",
+      "published_at": "2026-10-24",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "文章归纳内部Agent共同需求：工作入口、代用户或固定身份、分层记忆、沙箱代码执行和事件/定时触发。",
+      "why_it_matters": "多人环境里必须知道每次操作是谁授权、使用谁的凭据，而不只是模型能否调用工具。",
+      "application": "为每个入口列身份、可用工具和记忆范围；把后台身份与交互身份分开，并为高风险操作保留审批。",
+      "technical_analysis": "示例中工程Agent交互时代表用户，后台审查用GitHub App；邮件工具限私聊，部分公开发布只给白名单。全局/用户记忆并列，作者承认记忆设计仍在探索。",
+      "caveats": "读原文，未部署服务或独立测量成效。框架提供连接与沙箱不等于自动解决所有权限隔离；文中的触发示例也不是本任务新增发送或执行授权。",
+      "evidence_note": "原文发表日期到日，不补造时刻或时区；作者结果未独立复测，建议为编辑判断。",
+      "canonical_url": "https://www.langchain.com/blog/components-building-company-harness",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain",
+          "url": "https://www.langchain.com/blog/components-building-company-harness"
+        }
+      ],
+      "editorial_section": "ai_practice"
+    },
+    {
+      "item_id": "code2video-aa-20261026",
+      "type": "news",
+      "title": "Code2Video-AA：能渲染视频，不等于完成设计意图",
+      "published_at": "2026-10-26",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "独立评测方用114条设计brief测试27个模型，一次生成HyperFrames HTML、渲染后作成对视觉评判。",
+      "why_it_matters": "评估生成式产品应把运行成功率和交付质量分开，避免只测文件是否产出。",
+      "application": "固定brief、画面约束与预算，分别统计渲染失败、视觉质量及人工修改量，再比较成本。",
+      "technical_analysis": "26日dataset0.3.0中3042/3078个产物成功渲染；Opus5.5 max with fallback为1536 Elo，Sol max为1369。方法页说明Gemini4 Argon作评委，五轴Elo取均值。",
+      "caveats": "读发布与方法表，未复现或人工复审视频；Elo是模型评委、指定渲染器及提示条件下相对分数，不是人类审美共识，也不等于真实应用交互正确。",
+      "evidence_note": "原文发表日期到日，不补造时刻或时区；作者结果未独立复测，建议为编辑判断。",
+      "canonical_url": "https://artificialanalysis.ai/articles/code2video-aa",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Artificial Analysis",
+          "url": "https://artificialanalysis.ai/articles/code2video-aa"
+        },
+        {
+          "ref_id": "method",
+          "title": "评估方法",
+          "publisher": "Artificial Analysis",
+          "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking#code2video-aa"
+        }
+      ]
+    },
+    {
+      "item_id": "granite-ensemble-20261022",
+      "type": "blog",
+      "title": "Granite 时间序列集成：用四种模型换稳健起点，也要核算成本",
+      "published_at": "2026-10-22",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "默认配方组合四个既有预训练模型，统一返回点预测及分位数，不重新训练成员或拟合组合权重。",
+      "why_it_matters": "跨序列不确定最佳架构时可作基线，但多模型调用会增加加载及推理成本。",
+      "application": "用滚动回测比较季节朴素、最佳单模型和两类集成，分别看MASE、区间覆盖、延迟与分组退化。",
+      "technical_analysis": "作者在97个GIFT-Eval配置的20日榜单快照中报告：默认集成MASE0.683、最佳成员0.685；最佳成员CRPS/MWQL0.467，集成0.471。IQR按预测区间窄度赋权，可能偏爱过度自信成员。",
+      "caveats": "原网页经本地代理读取，浏览工具直开失败；未跑模型。优势很小且非所有指标最优，额外扩展配方成员有单独许可限制；80%名义预测区间不保证实际覆盖80%。",
+      "evidence_note": "原文发表日期到日，不补造时刻或时区；作者结果未独立复测，建议为编辑判断。",
+      "canonical_url": "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "IBM Research / HF企业文章",
+          "url": "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1"
+        }
+      ],
+      "editorial_section": "ai_practice"
+    },
+    {
+      "item_id": "microduck-isaac-20261021",
+      "type": "blog",
+      "title": "Microduck 仿真到实机：动作接口、舵机模型和随机化决定能否交接",
+      "published_at": "2026-10-21",
+      "published_at_precision": "day",
+      "publication_timezone": null,
+      "summary": "教程给出Isaac Lab/Newton中训练步行、仿真评估、ONNX导出和硬件交接流程。",
+      "why_it_matters": "训练成功还需处理真实舵机回差、延迟及观察归一化差异，不能只看仿真奖励。",
+      "application": "先固定任务和preset、检查61维观察/14维动作及缩放，再按原文在支架支持下低速验证并准备回退。",
+      "technical_analysis": "使用BAM舵机模型与backlash预设，对质量、摩擦、编码器偏移、电压和延迟等随机化；Arena还要求ONNX不超过64MiB，兼容性与步行质量分开。",
+      "caveats": "原文经本地代理读取，未安装代码、操作机器人或调用服务。教程使用develop分支会变化，需固定commit；示例并行训练吞吐不代表单机或实机控制性能，视频演示不是安全认证。",
+      "evidence_note": "原文发表日期到日，不补造时刻或时区；作者结果未独立复测，建议为编辑判断。",
+      "canonical_url": "https://huggingface.co/blog/nvidia/microduck-isaac-lab-sim-to-real",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "NVIDIA / HF社区文章",
+          "url": "https://huggingface.co/blog/nvidia/microduck-isaac-lab-sim-to-real"
+        }
+      ],
+      "editorial_section": "ai_practice"
+    },
+    {
+      "item_id": "semanteq-arxiv-2610-32919",
+      "type": "paper",
+      "title": "研究速览 · SemantEq：证明成立，也不代表形式化忠实于原题",
+      "published_at": "2026-10-23T17:20:12Z",
+      "published_at_precision": "second",
+      "publication_timezone": "UTC",
+      "summary": "预印本为自然语言数学命题的形式化构建更受约束的双向等价检查，并审计Lean实际检查的证明项。",
+      "why_it_matters": "证明器越来越强时，单纯检验逻辑等价可能接受两个都可证明却语义无关的命题。",
+      "application": "把形式化正确性与证明正确性分开验收，记录允许的变换规则，并用已知不等价样本做反例测试。",
+      "technical_analysis": "摘要区分搜索证明、模型生成证明与独立接受策略，强调允许重排/重写等受限步骤，不只检查脚本中是否提到另一命题。",
+      "caveats": "仅读摘要与v1记录，未读全文或运行Lean审计。特定标注集上的精确率不等于所有数学语言转换都被完整验证。",
+      "evidence_note": "v1精确提交时间已核实，摘要级速览；建议为编辑判断。",
+      "canonical_url": "https://arxiv.org/abs/2610.32919",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Xinrui Li 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.32919"
         }
       ],
       "research_status": "preprint"
     },
     {
-      "item_id": "sensorimotor-arxiv-2610-31670",
+      "item_id": "ngramrl-arxiv-2610-32881",
       "type": "paper",
-      "title": "研究速览 · Sensorimotor Alignment：先用离线表征指标筛选具身模型",
-      "published_at": "2026-10-22T17:59:51Z",
+      "title": "研究速览 · NgramRL：复用同一提示的近期rollout作投机草稿",
+      "published_at": "2026-10-23T16:47:29Z",
       "published_at_precision": "second",
       "publication_timezone": "UTC",
-      "summary": "提出无需训练的 S² 指标，测量感觉表征与物理运动几何的对齐，用作闭环机器人测试前的低成本筛选。",
-      "why_it_matters": "模型筛选可先用离线代理减少候选，但最终任务成功仍需实际闭环验证。",
-      "application": "在自己的场景上比较指标排序与真实任务成功率，保留排序失败案例及跨域偏差。",
-      "technical_analysis": "摘要报告跨具身模型家族的正相关，也讨论微调成 VLA 前筛选 VLM 骨干的用途。",
-      "caveats": "仅读摘要及提交记录，未核实全文数据、统计显著性或代码。相关性不是因果解释，代理指标高不保证真实机器人任务安全或成功。",
-      "evidence_note": "核实 v1 精确提交时间，摘要级研究速览。建议为编辑判断。",
-      "canonical_url": "https://arxiv.org/abs/2610.31670",
+      "summary": "预印本利用有界的近期rollout历史建立按提示分组的n-gram草稿，无额外草稿模型训练或持久GPU草稿状态。",
+      "why_it_matters": "RL后训练的rollout可能反复出现结构化片段，可探索用CPU缓存降低生成成本。",
+      "application": "对照冷/热缓存、策略更新速度及重复率，分别测rollout吞吐和完整训练耗时，并验证目标模型校验路径。",
+      "technical_analysis": "摘要给出自适应预取与缺失时顺序回退；Spider特定配置下预取相对同步NgramRL吞吐1.38倍，不能称完整RL训练同倍提速。",
+      "caveats": "仅读摘要与提交记录，未核实全文实现、统计或代码。作者声称校验保持rollout分布，本次未独立检验；热缓存每次forward提交token数不等于端到端吞吐。",
+      "evidence_note": "v1精确提交时间已核实，摘要级速览；建议为编辑判断。",
+      "canonical_url": "https://arxiv.org/abs/2610.32881",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "publisher": "Yunfei Xie 等 / arXiv",
-          "url": "https://arxiv.org/abs/2610.31670"
+          "publisher": "Nilesh Prasad Pandey 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.32881"
         }
       ],
       "research_status": "preprint"
     },
     {
-      "item_id": "github-iffix-neutrino",
+      "item_id": "github-indexable-inc-blaze",
       "type": "github",
       "editorial_section": "github_radar",
       "radar_lane": "new",
-      "title": "新项目观察 · Neutrino：集中访问家中开发机的终端、编辑器与文件",
-      "summary": "远程开发服务面板，聚合终端、编辑器、远程桌面、文件及声明端口，支持多种外部接入方式。",
-      "why_it_matters": "设备间切换工作时，可集中管理入口；真正验收重点是访问范围与连通性。",
-      "application": "先在本地网络配置测试服务，逐项检查终端和文件权限，再按文档验证受控的组网连接。",
-      "technical_analysis": "MIT；README 提供 Linux、macOS、Windows、Android 入口，并建议 NetBird/EasyTier 方式。作者明确 Direct 公网 8443 的安全仍在测试。",
-      "caveats": "读 README、LICENSE 与 API，未安装或连接设备。作者明确暂勿将 Direct 暴露公网；集中凭据/端口的功能不等于已通过安全审计。首次观测，不能称已证实飙升。",
-      "canonical_url": "https://github.com/iffiX/neutrino",
-      "created_at": "2026-08-30T03:41:52Z",
-      "pushed_at": "2026-10-25T02:45:38Z",
+      "title": "新项目观察 · Blaze：用驻留编译状态缩短Rust编辑后的重建",
+      "summary": "Rust开发构建工具，首次走cargo，再驻留项目并增量编译变更函数，更新已有程序以减少重复链接。",
+      "why_it_matters": "可在密集编辑时探索缩短反馈回路，仍需标准编译器检查最终产物。",
+      "application": "先用非关键小仓库对照cargo的构建/测试结果及内存；核对被固定的nightly和目标平台，不把局部函数修改基准当全量构建加速。",
+      "technical_analysis": "API识别Apache-2.0，实际LICENSE-APACHE及Cargo元数据MIT OR Apache-2.0已读。macOS Apple Silicon和Linux有加速路径；Windows仍走cargo，采用固定nightly、额外消耗内存。",
+      "caveats": "README明确项目年轻、应以cargo check/CI为最终标准。使用此前介绍过的ra-jit引擎，本条新增的是面向cargo流程的工具封装，不把引擎重报为全新技术；未安装或运行。",
+      "canonical_url": "https://github.com/indexable-inc/blaze",
+      "created_at": "2026-10-19T23:31:09Z",
+      "pushed_at": "2026-10-27T00:22:21Z",
       "github_metrics": {
-        "stars": 36,
-        "forks": 2,
-        "license": "MIT",
-        "observed_at": "2026-10-25T02:47:16.189Z",
+        "stars": 623,
+        "forks": 21,
+        "license": "Apache-2.0",
+        "observed_at": "2026-10-27T00:23:38.370Z",
         "stars_delta": null,
         "previous_observed_at": null,
         "growth_percent": null
       },
-      "evidence_note": "API 排除 fork/归档；创建 2026-08-30T03:41:52Z，push 2026-10-25T02:45:38Z。日增长为 null，无有效历史基线；创建/push 不是正式发布日期。",
+      "evidence_note": "API排除fork/归档；创建2026-10-19T23:31:09Z，push 2026-10-27T00:22:21Z。首次有效观测增长null；创建/push不是release日期。",
       "sources": [
         {
           "ref_id": "readme",
           "title": "README",
-          "publisher": "iffiX/neutrino",
-          "url": "https://github.com/iffiX/neutrino"
+          "publisher": "indexable-inc/blaze",
+          "url": "https://github.com/indexable-inc/blaze"
         },
         {
           "ref_id": "api",
-          "title": "公开 API",
+          "title": "公开API",
           "publisher": "GitHub",
-          "url": "https://api.github.com/repos/iffiX/neutrino"
+          "url": "https://api.github.com/repos/indexable-inc/blaze"
         },
         {
           "ref_id": "license",
           "title": "许可证",
-          "publisher": "iffiX/neutrino",
-          "url": "https://github.com/iffiX/neutrino/blob/HEAD/LICENSE"
+          "publisher": "indexable-inc/blaze",
+          "url": "https://github.com/indexable-inc/blaze/blob/HEAD/LICENSE-APACHE"
         }
       ]
     },
     {
-      "item_id": "github-opensec-git-pi-bolt",
+      "item_id": "github-sshah03-perspica",
       "type": "github",
       "editorial_section": "github_radar",
       "radar_lane": "new",
-      "title": "新项目观察 · Pi-Bolt：将 Pi 编码工具预编译为本地可执行文件",
-      "summary": "基于既有 Pi 工具的原生发行路线，目标是减少启动、流式显示和本地工具执行的运行时开销。",
-      "why_it_matters": "可观察客户端开销能否减少，但本地加速不会自动提升远端模型推理速度。",
-      "application": "先记录原 Pi 配置和扩展，分别比较冷启动、长会话与实际插件；按 CPU 指令集选择发行文件。",
-      "technical_analysis": "MIT，继承上游 Pi；默认无 JIT，动态加载扩展解释执行，bun:ffi 等扩展可能需另选 JIT 构建。支持 Linux/ARM64、macOS Apple Silicon、Windows x64 及 Termux。",
-      "caveats": "读 README、LICENSE 与 API，未下载运行。10 倍等为作者特定版本基准，不外推所有工具或模型；仓库创建是新观察标准，不表示 Pi 产品刚诞生，发行物还含其他许可证组件。",
-      "canonical_url": "https://github.com/opensec-git/Pi-Bolt",
-      "created_at": "2026-10-02T18:35:24Z",
-      "pushed_at": "2026-10-25T02:43:49Z",
+      "title": "新项目观察 · Perspica：把代码差异按行为变化重新组织",
+      "summary": "本地diff分析工具，用Tree-sitter解析两版本，识别重命名、签名、移动及逻辑变化，并提示未同步调用等线索。",
+      "why_it_matters": "审查Agent产物时可先减少机械噪声，把注意力放在接口变化和真正的行为风险。",
+      "application": "用已知改动的PR检查重命名/跨文件调用分析，保留原始diff和测试；启用可选LLM前核对发送范围。",
+      "technical_analysis": "MIT，README标beta；本地确定性分析不需模型，LLM仅为可选意图分组、风险和学习解释层。未支持语言仍显示普通行差异。",
+      "caveats": "读README、LICENSE与API，未安装运行；AST/调用分析不证明语义等价或无遗漏，不能代替测试与人工审查。首次观测无有效日基线，不称飙升。",
+      "canonical_url": "https://github.com/sshah03/perspica",
+      "created_at": "2026-09-30T20:04:09Z",
+      "pushed_at": "2026-10-27T00:17:20Z",
       "github_metrics": {
-        "stars": 552,
-        "forks": 24,
+        "stars": 39,
+        "forks": 4,
         "license": "MIT",
-        "observed_at": "2026-10-25T02:47:18.046Z",
+        "observed_at": "2026-10-27T00:23:45.252Z",
         "stars_delta": null,
         "previous_observed_at": null,
         "growth_percent": null
       },
-      "evidence_note": "API 排除 fork/归档；创建 2026-10-02T18:35:24Z，push 2026-10-25T02:43:49Z。日增长为 null，无有效历史基线；创建/push 不是正式发布日期。",
+      "evidence_note": "API排除fork/归档；创建2026-09-30T20:04:09Z，push 2026-10-27T00:17:20Z。首次有效观测增长null；创建/push不是release日期。",
       "sources": [
         {
           "ref_id": "readme",
           "title": "README",
-          "publisher": "opensec-git/Pi-Bolt",
-          "url": "https://github.com/opensec-git/Pi-Bolt"
+          "publisher": "sshah03/perspica",
+          "url": "https://github.com/sshah03/perspica"
         },
         {
           "ref_id": "api",
-          "title": "公开 API",
+          "title": "公开API",
           "publisher": "GitHub",
-          "url": "https://api.github.com/repos/opensec-git/Pi-Bolt"
+          "url": "https://api.github.com/repos/sshah03/perspica"
         },
         {
           "ref_id": "license",
           "title": "许可证",
-          "publisher": "opensec-git/Pi-Bolt",
-          "url": "https://github.com/opensec-git/Pi-Bolt/blob/HEAD/LICENSE"
+          "publisher": "sshah03/perspica",
+          "url": "https://github.com/sshah03/perspica/blob/HEAD/LICENSE"
         }
       ]
     },
     {
-      "item_id": "paper-depthsplat-cvpr2025",
+      "item_id": "paper-repvit-cvpr2024",
       "type": "paper",
       "editorial_section": "daily_paper",
-      "title": "每日论文精读 · CVPR 2025｜DepthSplat：让深度与高斯重建互相训练",
-      "paper_id": "arxiv:2410.13862",
+      "title": "每日论文精读 · CVPR 2024｜RepViT：从ViT结构选择反推移动端CNN",
+      "paper_id": "arxiv:2307.09283",
       "authors": [
-        "Haofei Xu",
-        "Songyou Peng",
-        "Fangjinhua Wang",
-        "Hermann Blum",
-        "Daniel Barath",
-        "Andreas Geiger",
-        "Marc Pollefeys"
+        "Ao Wang",
+        "Hui Chen",
+        "Zijia Lin",
+        "Jungong Han",
+        "Guiguang Ding"
       ],
       "conference": "CVPR",
-      "conference_year": 2025,
-      "analysis_date": "2026-10-25",
-      "published_at": "2025-06",
+      "conference_year": 2024,
+      "analysis_date": "2026-10-27",
+      "published_at": "2024-06",
       "published_at_precision": "month",
       "publication_timezone": null,
-      "canonical_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Xu_DepthSplat_Connecting_Gaussian_Splatting_and_Depth_CVPR_2025_paper.html",
-      "summary": "历史论文专题：把预训练单目深度特征与多视图匹配的 cost volume 早期融合，预测深度和逐像素高斯；再用可微渲染损失反向预训练深度网络。",
-      "why_it_matters": "单目先验擅长补足难匹配区域，多视图几何帮助尺度与一致性；同时可利用有相机位姿、无真值深度的数据训练。",
-      "application": "从相机参数已知的小场景开始，分别验收深度误差、新视角画质、输入视图数与重建内存，再决定是否使用渲染预训练。",
-      "technical_analysis": "共享 CNN 和多视图 transformer 提取匹配特征，plane-sweep 构建 cost volume；Depth Anything V2 的单目 ViT 特征与其按通道拼接，经 2D U-Net/softmax 深度回归。用相机参数将深度反投影成高斯中心，另一个头预测透明度、协方差、颜色。训练深度用真值逆深度损失；训练新视角用 MSE+LPIPS，可作为深度预训练阶段。",
-      "evidence_note": "正式 CVF 记录核实 CVPR 2025、16453–16463 页；正文方法、实验、限制与补充 A/C 的设置、消融通过 PDF 文本读取。原始年份 2025，今日分析 2026-10-25，不作为近 7 天新闻。",
+      "canonical_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_RepViT_Revisiting_Mobile_CNN_From_ViT_Perspective_CVPR_2024_paper.html",
+      "summary": "历史论文专题：从MobileNetV3-L出发，借鉴token/channel mixer分离、stem和阶段布局等设计，形成不含自注意力的移动端纯CNN。",
+      "why_it_matters": "移动端性能取决于实际算子、访存和编译支持；不能仅以FLOPs或“Transformer/CNN”标签选择模型。",
+      "application": "固定目标设备与导出链，比较部署后延迟、准确率和任务头开销；把蒸馏、预训练轮数和输入大小作为独立条件记录。",
+      "technical_analysis": "空间混合采用重参数化depthwise卷积，通道混合采用较窄的pointwise扩展/投影；同时调整早期卷积、下采样、分类器、阶段深度与隔块SE。训练多分支在推理时折叠，不是把自注意力硬塞进CNN。",
+      "evidence_note": "CVF正式收录核实CVPR2024、15909–15920页；正文方法、实验、分析与补充A/B/C/E相关文字表格已读。原会议2024，今日分析2026-10-27，不计本周新论文。",
       "deep_dive": [
         {
-          "heading": "问题与核心创新 · §1–§3",
-          "content": "纯多视图匹配在遮挡、无纹理、反光区域可能失效；纯单目深度缺少跨视图一致尺度。DepthSplat 融合的是单目特征与 cost volume，不是简单把两张深度图求平均。任务间的第二条联系是用新视角渲染训练整个网络，再把深度分支迁移到深度估计。所谓无监督是此预训练阶段无需真值深度，仍需多视图、相机参数以及目标图像，也用了已有预训练单目模型。",
+          "heading": "研究问题与方法 · §3.1–3.5",
+          "content": "论文先统一MobileNetV3-L的训练配方，暂不蒸馏，并为CoreML支持换用GeLU，再逐步改结构；所以起点71.5%不是原论文默认设置。把DW卷积前移形成独立空间混合，配重参数化分支；通道扩展比统一到2并加宽网络。stem用两层stride2的3×3，阶段间加深下采样，分类头简化为池化和线性层，更多深度放在第三阶段，SE隔块放置。最终是纯CNN，不含MHSA。",
           "ref_ids": [
             "pdf"
           ]
         },
         {
-          "heading": "方法流程 · §3.1–3.5",
-          "content": "超过两个输入视图时，每个参考视图按相机距离取最近两个邻居做交叉注意力与相关性，避免全局两两匹配开销。多视图特征按候选深度平面 warp 后计算相关；单目特征插值到同分辨率，拼接后用 U-Net 回归候选深度分布并加权取深度。两尺度版本在粗深度附近做更高分辨率局部搜索，最后由 DPT 头上采样并预测高斯属性。深度任务与渲染任务使用不同监督目标，不是任意无位姿照片即可重建。",
+          "heading": "主结果与公平比较 · 表1、2",
+          "content": "ImageNet-1K、224²，表1使用RegNetY-16GF教师蒸馏，300/450epoch：M1.0为80.0/80.3%，M2.3为83.3/83.7%。表2不蒸馏300epoch，M1.0仅78.6%，M2.3为82.5%，不能把蒸馏结果称为结构单独贡献。设备延迟是iPhone12/iOS16、CoreML、batch1，M1.0约1.0ms；RTX3090吞吐使用能容纳的最大2次幂batch，是另一种测量，不可直接互换。",
+          "ref_ids": [
+            "pdf",
+            "code"
+          ]
+        },
+        {
+          "heading": "消融 · §3、表6、7",
+          "content": "结构变更并非每步都同时提升精度和速度：分离mixer后71.5→68.3%，延迟1.01→0.81ms；加宽并调扩展比后73.5%/0.89ms，简化分类器也有精度下降。表6移除训练期重参数化，M0.9精度78.74→78.47%，M1.5为82.29→82.09%。表7 M0.9无SE/每块SE/隔块SE为77.92/78.75/78.74%，延迟0.83/0.92/0.87ms；隔块SE是收益和代价折中，不是绝对精度最高。",
           "ref_ids": [
             "pdf"
           ]
         },
         {
-          "heading": "互补性消融 · 表 1、2、3",
-          "content": "表 2 的 Small 单尺度设置：完整模型 TartanAir Abs Rel=8.46%、RealEstate10K PSNR=26.84；去单目分支变12.25%/26.04，去 cost volume 变11.34%/23.24，支持两类信息互补。表 3 中注意力融合 Abs Rel=8.40%、简单拼接8.46%，不是拼接每项最优，选择它主要是结构更简单。表1在两个256²输入、单A100测时：Small38M/0.050s，Large354M/0.079s；Large更准但参数更多，不能把这些速度泛化成高分辨率端到端流程。",
-          "ref_ids": [
-            "pdf"
-          ]
-        },
-        {
-          "heading": "渲染是否帮助深度 · 表 4、5 与补充 A.1",
-          "content": "表4相同架构，在 RealEstate10K 做渲染预训练，再在 TartanAir+VKITTI2 监督微调；对比只做监督微调，TartanAir Abs Rel10.86→10.20%，零样本KITTI11.56→10.68%，ScanNet6.70→6.60%。表5另一个设定是在ScanNet训练的Base，有/无GS预训练分别3.8%/4.5%，不能与表4的零样本结果混用。补充A.1反向检验深度初始化帮助渲染：仅单目预训练、加多视图初始化、完整深度初始化的PSNR为26.59/26.76/26.81，提升有限但方向一致。",
+          "heading": "下游迁移与SAM口径 · 表3–5、补充E",
+          "content": "表5检测MaskRCNN、语义SemanticFPN；backbone延迟按512²图像测，不能拿它当完整检测系统。M1.1为4.9ms、39.8boxAP/37.2maskAP/40.6mIoU；EfficientFormer-L1为5.4ms、37.9/35.4/38.9。RepViT-SAM用M2.3替换图像编码器，SAM-1B的1%数据、8epoch，从ViT-H嵌入蒸馏。表3的近10倍来自Macbook M1 Pro图像编码器44.8vs482.2ms，另有约11.8ms mask decoder；iPhone上MobileSAM是OOM，不能宣称同机测出10倍。COCO/SegInW还使用外部检测器提供框提示，效果不全来自编码器。",
           "ref_ids": [
             "pdf",
             "supp"
           ]
         },
         {
-          "heading": "画质、扩展与代价 · 表 6–8、§5",
-          "content": "表6两个视图RealEstate10K：DepthSplat27.47/0.889/0.114（PSNR/SSIM/LPIPS），MVSplat26.39/0.869/0.128。表7在DL3DV微调后，两个视图DepthSplat PSNR19.31、耗时0.083s，MVSplat17.54/0.072s；六视图分别24.19/0.132s与22.93/0.263s，低视图数不保证更快。表8是RealEstate10K预训练直接跨数据集测试，不能混作表7微调结果。限制包括必须输入相机位姿、逐像素高斯随图像数和分辨率增长、缺少区域依赖单目先验；画质好不等于几何绝对正确。",
+          "heading": "局限与应用 · §4及补充B",
+          "content": "优势在作者特定移动端编译链，不能保证Android、GPU或其他batch同样领先。预训练、蒸馏、分辨率、模型头均影响结果，纯CNN也不能自动消除分布偏移；补充鲁棒性测试中的挑战集成绩仍低于干净集。适合将其作为图像分类或分割编码器候选，通过任务实际精度和整条链延迟决定是否替换，不能把1ms分类宣传成1ms分割。",
           "ref_ids": [
-            "pdf"
+            "pdf",
+            "supp"
           ]
         },
         {
-          "heading": "复现条件与步骤 · §4、补充 C、作者仓库",
-          "content": "作者仓库开发环境Python3.10、PyTorch2.4/CUDA12.4；内参前两行按图像宽高归一化，外参为OpenCV camera-to-world（右/下/前）。先固定camera-ready模型及数据划分，作者2025-03-27曾简化架构并重训，不混用初版权重。先两视图跑预训练checkpoint，再对完整测试集算深度或渲染指标；调试用test_chunk_interval=10只测十分之一，不能冒充全量。论文标准训练用4×GH200，RealEstate10K150k步/batch32，Small约一天、Large约两天。高分辨率补充C另用Small，先256×448/batch256，再448×768/batch64、4–10视图微调；它不是表6的Large同一配方。未下载运行权重，数据/模型/依赖许可须复现时另核对。",
+          "heading": "复现条件与步骤 · 补充A、作者README",
+          "content": "作者README建议Python3.8、requirements环境，训练例为8GPU。ImageNet需自行准备授权数据，补充A给AdamW、lr0.004、batch2048、cosine、5epoch预热、weight_decay0.025，300/450epoch及相应蒸馏配方。先固定变体、teacher和checkpoint，跑完整val；再用utils.replace_batchnorm转推理结构，核对转换前后输出，export_coreml.py导出，在iPhone12/iOS16的Xcode14基准工具测延迟。SAM使用专门蒸馏权重与1024²输入，勿误用分类权重。源码、数据、权重和部署依赖许可须分别核对，本次未安装训练或压测。",
           "ref_ids": [
-            "pdf",
             "supp",
             "code"
           ]
         }
       ],
-      "caveats": "历史作者实验，未独立复现。正式正文与补充材料相关文字、表格已读，不对未查看的定性图作结论；相机参数、预训练先验与不同评测口径都保留。",
+      "caveats": "历史作者实验，未独立复现。只依据可读文字表格，不评价未检查的定性图；补充材料部分图中文字提取乱码，不据其作推断。",
       "sources": [
         {
           "ref_id": "cvf",
           "title": "正式会议记录",
           "publisher": "CVF",
-          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Xu_DepthSplat_Connecting_Gaussian_Splatting_and_Depth_CVPR_2025_paper.html"
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_RepViT_Revisiting_Mobile_CNN_From_ViT_Perspective_CVPR_2024_paper.html"
         },
         {
           "ref_id": "pdf",
           "title": "正式全文",
           "publisher": "CVF",
-          "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_DepthSplat_Connecting_Gaussian_Splatting_and_Depth_CVPR_2025_paper.pdf"
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Wang_RepViT_Revisiting_Mobile_CNN_From_ViT_Perspective_CVPR_2024_paper.pdf"
         },
         {
           "ref_id": "supp",
           "title": "补充材料",
-          "publisher": "作者 / CVF",
-          "url": "https://openaccess.thecvf.com/content/CVPR2025/supplemental/Xu_DepthSplat_Connecting_Gaussian_CVPR_2025_supplemental.pdf"
+          "publisher": "作者/CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Wang_RepViT_Revisiting_Mobile_CVPR_2024_supplemental.pdf"
         },
         {
           "ref_id": "code",
-          "title": "作者实现及 README",
-          "publisher": "cvg",
-          "url": "https://github.com/cvg/depthsplat"
+          "title": "作者实现及README",
+          "publisher": "THU-MIG",
+          "url": "https://github.com/THU-MIG/RepViT"
         },
         {
           "ref_id": "arxiv",
           "title": "稳定论文记录",
           "publisher": "arXiv",
-          "url": "https://arxiv.org/abs/2410.13862"
+          "url": "https://arxiv.org/abs/2307.09283"
         }
       ]
     }
   ],
   "source_stats": {
-    "news_count": 8,
+    "news_count": 9,
     "weekly_preprint_count": 2,
     "github_radar_count": 2,
     "new_project_count": 2,
     "rising_project_count": 0,
     "established_project_count": 0,
     "historical_paper_count": 1,
-    "github_candidates": 330,
+    "github_candidates": 345,
     "github_queried_candidates": 48,
     "registry_records_fetched": 100,
     "registry_pagination_complete": false,
@@ -424,101 +459,102 @@
       {
         "id": "arxiv-ai",
         "status": "checked",
-        "checked_during": "2026-10-25",
+        "checked_during": "2026-10-27",
         "urls": [
           "https://arxiv.org/list/cs.AI/recent",
           "https://arxiv.org/list/cs.CV/recent",
           "https://arxiv.org/list/cs.LG/recent"
         ],
-        "detail": "检查 AI/CV/LG recent 首批，最新列表仍为23日；22日 SCE 与 Sensorimotor Alignment 的 v1/摘要核实，速览不编造全文细节。DepthSplat为另外的历史正式全文专题，未穷尽分页。"
+        "detail": "检查AI/CV/LG recent首批，最新26日列表；SemantEq和NgramRL实际v1为23日，按摘要速览不编造全文消融。RepViT另作历史正式全文专题，未穷尽列表分页。"
       },
       {
         "id": "huggingface-blog",
         "status": "checked",
-        "checked_during": "2026-10-25",
+        "checked_during": "2026-10-27",
         "urls": [
           "https://huggingface.co/blog"
         ],
-        "detail": "回看20–23日未收录原文：LitPivot、Mundo、TorchTPU、MPS候选版、Granite Speech。区分官方/企业/社区作者，保留小样本、算子兼容、硬件条件、非实时和语言支持边界。"
+        "detail": "入口及未收录周内原文检查；读22日IBM集成与21日Microduck全文，本地代理访问可用，浏览工具直开失败。分别保留榜单快照/许可与develop分支/硬件交接限制。"
       },
       {
         "id": "independent-evaluations",
         "status": "checked",
-        "checked_during": "2026-10-25",
+        "checked_during": "2026-10-27",
         "urls": [
           "https://metr.org/",
           "https://artificialanalysis.ai/",
           "https://www.nist.gov/ai-measurement-and-evaluation"
         ],
-        "detail": "METR和AA入口检查，最新可见报告/文章仍为22/23日已收录内容；本期不重复，也不把厂商模型说明列为独立评测。NIST配置入口仍跳SI页面，保留覆盖缺口。"
+        "detail": "METR最新22日报告已收录不重发；读AA26日Terra与Code2Video-AA及方法表，厂商基准和独立测评分开，保留模型评委与测试条件。NIST配置入口仍跳SI页面。"
       },
       {
         "id": "langchain",
         "status": "checked",
-        "checked_during": "2026-10-25",
+        "checked_during": "2026-10-27",
         "urls": [
           "https://www.langchain.com/blog",
           "https://github.com/langchain-ai/langchain/releases"
         ],
-        "detail": "检查博客与Core release API，最新仍为23日retrieval指南及22日Core1.7.0，均已收录，不重发；未遍历所有集成包。"
+        "detail": "读24日company harness正文，按身份与工具、记忆、执行边界整理。Core最新1.7.0为22日已收录，不重复；未遍历所有集成包。"
       },
       {
         "id": "llamaindex",
         "status": "checked",
-        "checked_during": "2026-10-25",
+        "checked_during": "2026-10-27",
         "urls": [
           "https://www.llamaindex.ai/blog",
           "https://github.com/run-llama/llama_index/releases"
         ],
-        "detail": "博客入口和release API检查，OCRia-1未建立可核实发布日期，不作为本周新公告；最新release0.14.25仍为9月21日超窗。"
+        "detail": "博客入口和release API已查；OCRia-1尚未建立可核实发布日期，不当周内新公告。最新release0.14.25仍9月21日超窗。"
       },
       {
         "id": "modelcontextprotocol",
         "status": "checked",
-        "checked_during": "2026-10-25",
+        "checked_during": "2026-10-27",
         "urls": [
           "https://modelcontextprotocol.io/",
           "https://github.com/modelcontextprotocol"
         ],
-        "detail": "官方入口和TypeScript SDK API检查，最新2.4.0为23日18:32:25Z，昨日已收录；未穷尽全部SDK和规范提案。"
+        "detail": "官方入口及TypeScript SDK API已查，2.4.0仍23日18:32:25Z，已收录；未穷尽所有SDK或提案。"
       },
       {
         "id": "openai-news",
         "status": "checked",
-        "checked_during": "2026-10-25",
+        "checked_during": "2026-10-27",
         "urls": [
           "https://openai.com/news/"
         ],
-        "detail": "新闻入口最新仍23日，补选本周未收录的22日Uber推广公告，读正文并区分宣布覆盖人数与实际部署/量化收益。"
+        "detail": "读26日Terra、CodeRabbit、工作活动数据全文，日期由新闻索引/正文核实；公告可用性、客户案例和样本数据范围分开，不调用模型。"
       },
       {
         "id": "mcp-registry-practice",
         "status": "checked",
-        "checked_during": "2026-10-25",
+        "checked_during": "2026-10-27",
         "urls": [
           "https://registry.modelcontextprotocol.io/"
         ],
-        "detail": "实际GET首批100，nextCursor存在，未完整分页；未核实有充分工程证据的新实践入选。"
+        "detail": "实际GET首批100，nextCursor存在，未完整分页；未核实充分的新工程实践入选，不将注册视为安全审核。"
       },
       {
         "id": "tinyfish-practice-discovery",
         "status": "checked",
-        "checked_during": "2026-10-25",
+        "checked_during": "2026-10-27",
         "urls": [
           "https://www.tinyfish.ai/",
           "https://github.com/tinyfish-io/tinyfish-cookbook"
         ],
-        "detail": "官网及cookbook README已检查，未建立周内新增实践的独立发布日期与验证步骤；没有执行示例或调用付费服务。"
+        "detail": "官网和cookbook README检查，未核实周内新增案例的独立日期及完整复现条件；未执行示例或调用付费服务。"
       }
     ]
   },
   "selection_notes": [
-    "真实滚动七天 UTC 2026-10-18T02:52:30.340Z 至 2026-10-25T02:52:30.340Z，北京时间展示；原文到日不补造时刻/时区。",
-    "本期回看周内未收录内容，不将20–23日文章称为25日新发布。8条资讯含2篇摘要级预印本，另加CVPR2025历史全文分析。",
-    "GitHub 330候选、实际查询48、错误0；独立新项目预算及Trending/topic发现均非全站榜。",
-    "新项目两席：Neutrino36Star、Pi-Bolt552Star，均首次有效观测、增长null；Pi-Bolt基于已有Pi，不把新仓库当新产品诞生。已推荐成熟项目部分达到增长阈值，未核实足够值得重发的工程新进展；prompts.chat许可证仍NOASSERTION，增长及成熟席不凑数。",
-    "MPS按文章标为release candidate；driver峰值不等于allocator或模型权重。Mundo不是实时模拟，LitPivot的专家评分不是科研创新测量。",
-    "独立评测无新报告入选，NIST跳转、LlamaIndex日期和Registry分页缺口如实保留。未运行第三方代码、模型、技能或付费服务。",
-    "DepthSplat表4零样本与表5监督ScanNet分开，表7微调与表8跨域分开；正式camera-ready设置与早期权重不混用。"
+    "实际UTC窗口2026-10-20T00:29:27.246Z至2026-10-27T00:29:27.246Z，右端不含，按北京时间展示；原文到日不补造时区/时刻。",
+    "任务收到的心跳时间为26日，实际继续执行已是27日，按实际当天建刊；不补写未经采集的26日期刊。历史URL/事件/论文标识去重，周内旧文保持真实发表日。",
+    "GitHub 345候选、查询48、错误0；Trending/topic仅发现，不是完整全站榜。",
+    "精选两个新仓库：Blaze623Star、Perspica39Star，首次观测增长null。最新已存25日快照到27日观测约45.6小时，超20–28小时日窗口，未冒充日增；增长席空缺，成熟席不凑数。",
+    "9条资讯含2篇摘要级预印本；AA Terra作为发布条目的第二来源合并，不重复计数，Code2Video是独立新评估主题。历史RepViT不计周内新论文。",
+    "Blaze使用曾介绍过的ra-jit，注明新增工具封装及固定nightly、内存和Windows边界；不把引擎或新仓库创建重复宣传成首次发明。",
+    "LlamaIndex日期、NIST跳转、Registry首批及浏览工具访问失败均保留。未安装第三方代码、执行技能、操作机器人或调用付费服务。",
+    "RepViT蒸馏/非蒸馏、300/450epoch、224²分类/512²backbone/1024²SAM和编码器/解码器分别报告。"
   ]
 }

@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-27",
+    "revision": 1,
+    "title": "效率、身份与验收：9 条资讯、两个开发工具和RepViT精读",
+    "item_count": 12,
+    "path": "data/archive/2026-10-27-r1.json"
+  },
+  {
     "issue_date": "2026-10-25",
     "revision": 1,
     "title": "周内补遗：8 条工程与研究资讯、两个新项目及 DepthSplat 精读",
