@@ -1,0 +1,330 @@
+{
+  "collection_started_at": "2026-10-27T23:57:09.681Z",
+  "collected_at": "2026-10-28T00:03:32.374Z",
+  "window": {
+    "start": "2026-10-21T00:03:32.374Z",
+    "end": "2026-10-28T00:03:32.374Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7,
+    "end_exclusive": true
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "checked_during": "2026-10-28",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "detail": "查AI/CV/LG recent首批，最新27日列表；入选两篇实际v1为26日的摘要速览。未穷尽分页，LLaVA另读正式全文作历史专题。"
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "checked_during": "2026-10-28",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "detail": "检查入口并读27日LiquidAI/Ai2及26日CLI正文。两篇浏览工具直开失败，通过本地代理读取原文；CLI是几周功能回顾，未当作26日统一上线。"
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "checked_during": "2026-10-28",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "detail": "METR最新22日Agent监控评估已收录；AA最新26日Terra/Code2Video也已收录，不重复。NIST配置入口仍跳转SI测量页，覆盖缺口。Ai2新颖性研究是研究团队发布，不冒充独立第三方测评。"
+    },
+    {
+      "id": "langchain",
+      "status": "checked",
+      "checked_during": "2026-10-28",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "detail": "检查入口、读27日设计Agent案例，突出分镜/粗剪/制作与反馈实现，区别于已收录通用harness。Core API最新1.7.0为22日，已收录。"
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "checked_during": "2026-10-28",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "detail": "博客和release API检查；OCRia-1未核实可靠发布日期，暂不当本周新公告。最新v0.14.25仍9月21日超窗。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked",
+      "checked_during": "2026-10-28",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "detail": "官方入口及TS SDK API检查，最新2.4.0为23日18:32:25Z，已收录不重复；未穷尽所有SDK与提案。"
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "checked_during": "2026-10-28",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "detail": "检查入口并读27日Oracle合作全文，区分在建Workspace与美国Marketplace采购。26日已收录模型/客户/研究数据不重复。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "checked",
+      "checked_during": "2026-10-28",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "detail": "实际GET首批100条，nextCursor存在，未完整分页；未核实具有新增工程价值的实践入选，Registry注册不等于安全审查。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked",
+      "checked_during": "2026-10-28",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "detail": "官网和cookbook README检查，未建立周内新增案例的可靠发布日期与完整复现证据；不将README现有功能写成今日发布，未调用付费服务。"
+    }
+  ],
+  "selected_sources": [
+    {
+      "item_id": "liquid-lfm3-20261027",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LiquidAI / HF团队文章",
+          "url": "https://huggingface.co/blog/LiquidAI/lfm3"
+        }
+      ]
+    },
+    {
+      "item_id": "ai2-novelty-judge-20261027",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Ai2 / HF企业文章",
+          "url": "https://huggingface.co/blog/allenai/novelty-bench"
+        }
+      ]
+    },
+    {
+      "item_id": "hf-cli-recap-20261026",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Hugging Face / 社区文章",
+          "url": "https://huggingface.co/blog/huggingface/whats-new-in-the-hf-cli-and-huggingface-hub-librar"
+        }
+      ]
+    },
+    {
+      "item_id": "langchain-design-agent-20261027",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "LangChain",
+          "url": "https://www.langchain.com/blog/design-agent"
+        }
+      ]
+    },
+    {
+      "item_id": "oracle-chatgpt-apps-20261027",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/oracle-apps-in-chatgpt/"
+        }
+      ]
+    },
+    {
+      "item_id": "decisionrag-arxiv-2610-35868",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Chao Wan 等 / arXiv",
+          "url": "https://arxiv.org/abs/2610.35868"
+        }
+      ]
+    },
+    {
+      "item_id": "es-centroid-arxiv-2610-35865",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "publisher": "Akshat Gupta / arXiv",
+          "url": "https://arxiv.org/abs/2610.35865"
+        }
+      ]
+    },
+    {
+      "item_id": "github-dspv-caprock",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "README",
+          "publisher": "dspv/caprock",
+          "url": "https://github.com/dspv/caprock"
+        },
+        {
+          "ref_id": "api",
+          "title": "公开API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/dspv/caprock"
+        },
+        {
+          "ref_id": "license",
+          "title": "许可证",
+          "publisher": "dspv/caprock",
+          "url": "https://github.com/dspv/caprock/blob/HEAD/LICENSE"
+        }
+      ]
+    },
+    {
+      "item_id": "github-neomjs-neo-agent-brain",
+      "sources": [
+        {
+          "ref_id": "readme",
+          "title": "README",
+          "publisher": "neomjs/neo-agent-brain",
+          "url": "https://github.com/neomjs/neo-agent-brain"
+        },
+        {
+          "ref_id": "api",
+          "title": "公开API",
+          "publisher": "GitHub",
+          "url": "https://api.github.com/repos/neomjs/neo-agent-brain"
+        },
+        {
+          "ref_id": "license",
+          "title": "许可证",
+          "publisher": "neomjs/neo-agent-brain",
+          "url": "https://github.com/neomjs/neo-agent-brain/blob/HEAD/LICENSE"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-llava15-cvpr2024",
+      "sources": [
+        {
+          "ref_id": "cvf",
+          "title": "正式会议记录",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Liu_Improved_Baselines_with_Visual_Instruction_Tuning_CVPR_2024_paper.html"
+        },
+        {
+          "ref_id": "pdf",
+          "title": "正式全文",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Liu_Improved_Baselines_with_Visual_Instruction_Tuning_CVPR_2024_paper.pdf"
+        },
+        {
+          "ref_id": "supp",
+          "title": "补充材料",
+          "publisher": "CVF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Liu_Improved_Baselines_with_CVPR_2024_supplemental.pdf"
+        },
+        {
+          "ref_id": "code",
+          "title": "作者实现及README",
+          "publisher": "作者",
+          "url": "https://github.com/haotian-liu/LLaVA"
+        },
+        {
+          "ref_id": "arxiv",
+          "title": "稳定标识",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2310.03744"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "candidate_count": 352,
+    "queried_candidates": 48,
+    "errors": [],
+    "selected": [
+      {
+        "item_id": "github-dspv-caprock",
+        "lane": "new",
+        "metrics": {
+          "stars": 36,
+          "forks": 2,
+          "license": "Apache-2.0",
+          "observed_at": "2026-10-27T23:57:17.695Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      },
+      {
+        "item_id": "github-neomjs-neo-agent-brain",
+        "lane": "new",
+        "metrics": {
+          "stars": 12,
+          "forks": 4,
+          "license": "MIT",
+          "observed_at": "2026-10-27T23:57:16.096Z",
+          "stars_delta": null,
+          "previous_observed_at": null,
+          "growth_percent": null
+        }
+      }
+    ],
+    "not_repeated_growth": {
+      "full_name": "indexable-inc/blaze",
+      "node_id": "R_kgDOVQNsMQ",
+      "stars": 1493,
+      "forks": 43,
+      "description": "Incremental rust builds up to 92x faster than cargo/rustc",
+      "license": "Apache-2.0",
+      "language": "Rust",
+      "html_url": "https://github.com/indexable-inc/blaze",
+      "created_at": "2026-10-19T23:31:09Z",
+      "pushed_at": "2026-10-27T23:54:46Z",
+      "observed_at": "2026-10-27T23:57:15.304Z",
+      "stars_delta": 870,
+      "previous_observed_at": "2026-10-27T00:23:38.370Z",
+      "growth_percent": 139.64686998394865
+    }
+  },
+  "registry": {
+    "records": 100,
+    "pagination_complete": false
+  },
+  "paper": {
+    "id": "arxiv:2310.03744",
+    "venue": "CVPR2024",
+    "pages": "26296-26306",
+    "fulltext": "Formal main methods, experiments Tables2-4, Sections4-6 read via PDF text extraction",
+    "supplement": "A.1 HD224, A.2 data mixture and A.3 hyperparameters read; qualitative images not interpreted",
+    "code": "Author README Python3.10, v1_5 training recipe and model/data license notices read; no execution"
+  },
+  "access_notes": [
+    "HF LFM3/Ai2 and LangChain direct web-tool opens failed; original HTML read through local proxy",
+    "Registry pagination and GitHub discovery partial",
+    "NIST configured URL redirects to SI measurement",
+    "Only abstract records read for weekly preprints",
+    "No paid APIs, installed skills, third-party code or training executed"
+  ]
+}

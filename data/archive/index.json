@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-28",
+    "revision": 1,
+    "title": "从设计验收到多模态配方：7条资讯、两个新项目与LLaVA-1.5精读",
+    "item_count": 10,
+    "path": "data/archive/2026-10-28-r1.json"
+  },
+  {
     "issue_date": "2026-10-27",
     "revision": 1,
     "title": "效率、身份与验收：9 条资讯、两个开发工具和RepViT精读",
