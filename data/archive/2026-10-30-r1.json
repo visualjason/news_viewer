@@ -1,0 +1,329 @@
+{
+  "schema_version": "1.0",
+  "issue_date": "2026-10-30",
+  "revision": 1,
+  "generated_at": "2026-10-30T08:59:43.562Z",
+  "window": {
+    "start": "2026-10-23T08:59:43.562Z",
+    "end": "2026-10-30T08:59:43.562Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7
+  },
+  "briefing": {
+    "headline": "浏览器Agent的会话边界与Depth Anything历史精读",
+    "takeaway": "本期少量发布：2条已核实资讯、2个新项目和1篇视觉论文；其余候选证据不足不凑数。",
+    "actions": [
+      "核对浏览器状态的线程/用户范围。",
+      "把企业写入权限与模型能力分开验收。",
+      "相对深度与米制深度分别评估。"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "managed-browser-20261029",
+      "type": "blog",
+      "published_at": "2026-10-29",
+      "title": "Managed Deep Agents 增加浏览器：会话隔离与人工登录交接",
+      "canonical_url": "https://www.langchain.com/blog/browser-use-in-managed-deep-agents",
+      "summary": "LangChain发布托管浏览器能力，支持thread和user作用域，以及把浏览器交给用户登录后继续任务。",
+      "why_it_matters": "跨线程保留登录与每线程隔离是不同产品行为，需要明确选择。",
+      "application": "先用thread范围测试只读流程；需要用户级登录时验证身份映射、退出与状态清理。",
+      "technical_analysis": "浏览器独立运行在沙箱，通过私有localhost桥访问Agent沙箱内应用；snapshot读无障碍树，run批量执行，handoff交接用户。",
+      "caveats": "已读官方正文，未部署。100项WebVoyager内部测试不是所有真实网站的成功率；不将同日版本回顾重复计为另一条。",
+      "published_at_precision": "day",
+      "evidence_note": "原文日期到日；建议为编辑判断，未补造时区时刻。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "url": "https://www.langchain.com/blog/browser-use-in-managed-deep-agents"
+        }
+      ]
+    },
+    {
+      "item_id": "servicenow-expansion-20261028",
+      "type": "product",
+      "published_at": "2026-10-28",
+      "title": "ServiceNow合作扩展：把业务规则带入ChatGPT工作流",
+      "canonical_url": "https://openai.com/index/openai-servicenow-partnership-expansion/",
+      "summary": "公告计划连接ServiceNow业务上下文、工作流与ChatGPT/Codex，并展示交互体验预览。",
+      "why_it_matters": "企业Agent的可执行动作取决于组织规则和实例权限，不能只看模型能力。",
+      "application": "列清拟开放的记录读取和写入能力，先在测试实例验证授权与审计。",
+      "technical_analysis": "客户选择连接实例和开放能力，Action Fabric应用已有业务规则与权限；应用开发、运维、安全等新能力含计划及预览。",
+      "caveats": "已读官方合作正文相关章节，未登录验证可用性，不把预览和计划当全面上线，也未独立验证效率。",
+      "published_at_precision": "day",
+      "evidence_note": "原文日期到日；建议为编辑判断，未补造时区时刻。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "url": "https://openai.com/index/openai-servicenow-partnership-expansion/"
+        }
+      ]
+    },
+    {
+      "item_id": "github-onurozcan-omux",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "radar_lane": "new",
+      "title": "新项目观察 · omux：原生macOS终端集中管理编码会话",
+      "summary": "SwiftUI/SwiftTerm应用，按项目管理Claude/Codex会话，保留对话ID，提供worktree、PR状态和差异评论。",
+      "technical_analysis": "macOS14+、Swift5.9+；Codex CLI要求0.165.0+，app-server集成实验性。",
+      "application": "先验证重启恢复和worktree隔离；部分批准表单仍须终端处理，不能假定侧栏支持全部交互。",
+      "why_it_matters": "为多会话开发提供可检查的状态与工程隔离入口，适合小范围评估。",
+      "canonical_url": "https://github.com/onurozcan/omux",
+      "created_at": "2026-10-27T18:34:06Z",
+      "pushed_at": "2026-10-30T08:53:20Z",
+      "github_metrics": {
+        "full_name": "onurozcan/omux",
+        "node_id": "R_kgDOVZmftQ",
+        "stars": 67,
+        "forks": 9,
+        "description": "Native macOS terminal for running many Claude Code and Codex sessions side by side. Projects, worktrees, live agent status, Allow/Deny from the sidebar, resumable conversations, pull request status and file previews. Built with SwiftUI.",
+        "license": "MIT",
+        "language": "Swift",
+        "html_url": "https://github.com/onurozcan/omux",
+        "created_at": "2026-10-27T18:34:06Z",
+        "pushed_at": "2026-10-30T08:53:20Z",
+        "observed_at": "2026-10-30T08:57:20.967Z",
+        "stars_delta": null,
+        "previous_observed_at": null
+      },
+      "evidence_note": "API、README、MIT许可证正文已读；创建/push不代表首次发布。",
+      "caveats": "未安装运行或配置凭据；首次/无有效20–28小时基线时增长为null，不称飙升。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "README",
+          "url": "https://github.com/onurozcan/omux"
+        },
+        {
+          "ref_id": "primary",
+          "title": "API",
+          "url": "https://api.github.com/repos/onurozcan/omux"
+        },
+        {
+          "ref_id": "primary",
+          "title": "MIT许可",
+          "url": "https://github.com/onurozcan/omux/blob/HEAD/LICENSE"
+        }
+      ]
+    },
+    {
+      "item_id": "github-autonomous-ai-openharness",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "radar_lane": "new",
+      "title": "新项目观察 · OpenHarness：跨机器集中查看Agent终端",
+      "summary": "以每机器daemon和tmux运行会话，支持worktree，远程路径包括直接WebRTC、TURN与中继。",
+      "technical_analysis": "提供macOS/Linux应用；README描述端到端加密，但本次未审计实现。",
+      "application": "先在测试机器检查断连恢复、身份绑定和权限；README性能数字有特定fixture，不能代表所有工作负载。",
+      "why_it_matters": "为多会话开发提供可检查的状态与工程隔离入口，适合小范围评估。",
+      "canonical_url": "https://github.com/autonomous-ai/openharness",
+      "created_at": "2026-08-04T07:53:15Z",
+      "pushed_at": "2026-10-30T08:55:05Z",
+      "github_metrics": {
+        "full_name": "autonomous-ai/openharness",
+        "node_id": "R_kgDOTtZdLA",
+        "stars": 1394,
+        "forks": 130,
+        "description": "The ultimate harness for coding agents and beyond. All your agents. All your machines. One command center. Start with code, then follow your curiosity and build across disciplines: CAD, circuits, robots, games and music.",
+        "license": "MIT",
+        "language": "TypeScript",
+        "html_url": "https://github.com/autonomous-ai/openharness",
+        "created_at": "2026-08-04T07:53:15Z",
+        "pushed_at": "2026-10-30T08:55:05Z",
+        "observed_at": "2026-10-30T08:57:19.802Z",
+        "stars_delta": null,
+        "previous_observed_at": null
+      },
+      "evidence_note": "API、README、MIT许可证正文已读；创建/push不代表首次发布。",
+      "caveats": "未安装运行或配置凭据；首次/无有效20–28小时基线时增长为null，不称飙升。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "README",
+          "url": "https://github.com/autonomous-ai/openharness"
+        },
+        {
+          "ref_id": "primary",
+          "title": "API",
+          "url": "https://api.github.com/repos/autonomous-ai/openharness"
+        },
+        {
+          "ref_id": "primary",
+          "title": "MIT许可",
+          "url": "https://github.com/autonomous-ai/openharness/blob/HEAD/LICENSE"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-depthanything-cvpr2024",
+      "paper_id": "arxiv:2401.10891",
+      "type": "paper",
+      "editorial_section": "daily_paper",
+      "conference": "CVPR",
+      "conference_year": 2024,
+      "analysis_date": "2026-10-30",
+      "title": "每日论文精读 · CVPR 2024｜Depth Anything：伪标签规模之外，为什么需要困难训练目标",
+      "canonical_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Yang_Depth_Anything_Unleashing_the_Power_of_Large-Scale_Unlabeled_Data_CVPR_2024_paper.pdf",
+      "authors": [
+        "Lihe Yang",
+        "Bingyi Kang",
+        "Zilong Huang",
+        "Xiaogang Xu",
+        "Jiashi Feng",
+        "Hengshuang Zhao"
+      ],
+      "summary": "历史论文专题。通过约150万标注图训练教师，为6200万无标注图生成深度伪标签，再训练具有强扰动与语义约束的学生。",
+      "why_it_matters": "大规模自训练并非只增加伪标签数量，学生任务难度与保留的语义先验影响收益。",
+      "application": "用于相对深度候选和生成控制信号；需要米制距离时另做目标域标定与验证。",
+      "technical_analysis": "DINOv2编码器配DPT解码器，尺度/平移不变监督结合无标签伪监督及冻结DINOv2特征对齐；不是直接输出可信物理距离。",
+      "evidence_note": "已读CVF正式全文方法、实验、消融与结论，PDF水印确认CVPR2024收录。原始年份2024，今日分析2026-10-30；未当本周新论文。",
+      "deep_dive": [
+        {
+          "heading": "研究问题与流程 · §3",
+          "content": "直接混合标注和伪标注未明显改善。先训练深度教师，再对无标签图作伪标注；学生重新初始化，面对强颜色扰动和CutMix，教师输入保持干净。分区域计算仿射不变损失后按面积加权。冻结DINOv2提供语义特征余弦监督，容忍阈值0.85，避免把同一物体不同深度部位强制完全对齐。"
+        },
+        {
+          "heading": "实验与比较 · 表2–5",
+          "content": "表2相对深度零样本：ViT-L在KITTI AbsRel0.076、δ1为0.947；MiDaS3.1分别0.127/0.850。MiDaS已见KITTI和NYUv2训练图，比较不是相同训练数据预算。表3NYUv2米制微调AbsRel0.056，表4KITTI0.046，是有目标域训练的另一设置，不能套到零样本相对深度。表5米制跨域仍有明显误差，如DIODE Outdoor AbsRel0.794。"
+        },
+        {
+          "heading": "消融 · 表9、11",
+          "content": "ViT-L的KITTI AbsRel：仅标注0.085，直接加无标注仍0.085，加强扰动0.081，再加语义约束0.076；NYUv2对应0.053/0.054/0.048/0.043。说明简单堆数据不足，且各增量依赖前一步配置。表11微调后本编码器比原始DINOv2有提升，但不能把不同任务头和训练阶段当作单次推理能力。"
+        },
+        {
+          "heading": "复现步骤与条件 · §4.1、作者README",
+          "content": "固定V1仓库和权重，不混用V2。按requirements准备环境，先用run.py选择vits/vitb/vitl跑固定图片集，核对RGB、518目标尺度、保持比例及14倍数预处理。训练教师20epoch，学生遍历无标签集一次，batch标注:无标注为1:2；编码器学习率5e-6、解码器10倍，AdamW线性衰减。完整重训需要大规模数据和教师标注资源，本次未执行。"
+        },
+        {
+          "heading": "局限和应用判断",
+          "content": "伪标签可能继承教师错误，大数据和DINOv2预训练成本不能忽略。相对深度可作视觉效果和几何先验，跨域米制结果不保证实际机器人距离可靠；单张深度也不自动获得视频时序稳定性。未检查定性图片，不根据文字声称所有低光/雾天均可靠。"
+        }
+      ],
+      "caveats": "作者历史实验，未独立复现；正式主文已读，补充材料未读取，因此不补造主文未列硬件和训练细节。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "CVF正式全文",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Yang_Depth_Anything_Unleashing_the_Power_of_Large-Scale_Unlabeled_Data_CVPR_2024_paper.pdf"
+        },
+        {
+          "ref_id": "primary",
+          "title": "作者仓库及README",
+          "url": "https://github.com/LiheYoung/Depth-Anything"
+        },
+        {
+          "ref_id": "primary",
+          "title": "稳定标识",
+          "url": "https://arxiv.org/abs/2401.10891"
+        }
+      ]
+    }
+  ],
+  "source_stats": {
+    "news_count": 2,
+    "github_radar_count": 2,
+    "historical_paper_count": 1,
+    "coverage": [
+      {
+        "id": "arxiv-ai",
+        "requested_id": "anxiv-ai",
+        "note": "暂按 arXiv AI 理解",
+        "urls": [
+          "https://arxiv.org/list/cs.AI/recent",
+          "https://arxiv.org/list/cs.CV/recent",
+          "https://arxiv.org/list/cs.LG/recent"
+        ],
+        "focus": "AI、视觉、机器学习论文；预印本不能冒充会议已录用论文",
+        "status": "checked",
+        "detail": "AI recent最新30日，首批发现尚未完成新论文全文核实，本期不凑摘要。"
+      },
+      {
+        "id": "huggingface-blog",
+        "urls": [
+          "https://huggingface.co/blog"
+        ],
+        "focus": "区分官方与社区作者，回到模型、代码和论文验证",
+        "status": "checked",
+        "detail": "博客入口检查，大部分已收录；未充分核实社区新发布，留作覆盖缺口。"
+      },
+      {
+        "id": "independent-evaluations",
+        "urls": [
+          "https://metr.org/",
+          "https://artificialanalysis.ai/",
+          "https://www.nist.gov/ai-measurement-and-evaluation"
+        ],
+        "focus": "独立评测发现渠道；必须核实方法、样本、模型版本和测试日期，不能只转排行榜",
+        "status": "checked",
+        "detail": "METR最新22日已收录；AA有29日新模型评测但本次未核实方法，不转榜单。"
+      },
+      {
+        "id": "langchain",
+        "urls": [
+          "https://www.langchain.com/blog",
+          "https://github.com/langchain-ai/langchain/releases"
+        ],
+        "focus": "Agent、LangGraph、评测和工程实践",
+        "status": "checked",
+        "detail": "读29日Browser Use正文；同日v0.10回顾不重复计数。"
+      },
+      {
+        "id": "llamaindex",
+        "urls": [
+          "https://www.llamaindex.ai/blog",
+          "https://github.com/run-llama/llama_index/releases"
+        ],
+        "focus": "RAG、文档处理、Agent 和工程实践",
+        "status": "checked",
+        "detail": "博客入口检查，OCRia日期及详细实验未核实，未入选。"
+      },
+      {
+        "id": "modelcontextprotocol",
+        "urls": [
+          "https://modelcontextprotocol.io/",
+          "https://github.com/modelcontextprotocol"
+        ],
+        "focus": "协议规范、SDK 和正式发布",
+        "status": "checked",
+        "detail": "官方规范入口检查，未穷尽SDK release。"
+      },
+      {
+        "id": "openai-news",
+        "urls": [
+          "https://openai.com/news/"
+        ],
+        "focus": "官方产品和研究公告，区分公告与独立验证",
+        "status": "checked",
+        "detail": "读28日ServiceNow相关章节；29日安全文章未完整核实不入选。"
+      },
+      {
+        "id": "mcp-registry-practice",
+        "urls": [
+          "https://registry.modelcontextprotocol.io/"
+        ],
+        "focus": "发现有源代码、安装说明、权限边界和使用案例的 MCP；注册不等于安全审核通过",
+        "status": "checked",
+        "detail": "Registry API首批可读，未完整分页，注册不代表审核。"
+      },
+      {
+        "id": "tinyfish-practice-discovery",
+        "urls": [
+          "https://www.tinyfish.ai/",
+          "https://github.com/tinyfish-io/tinyfish-cookbook"
+        ],
+        "focus": "官方 Web Agent 示例和可复现实践；不默认调用付费服务或安装发现的代码",
+        "status": "checked",
+        "detail": "官网检查，未充分核实新实践日期/代码，未调用服务。"
+      }
+    ]
+  },
+  "selection_notes": [
+    "滚动7天窗口2026-10-23T08:59:43.562Z至2026-10-30T08:59:43.562Z；保留真实发布日期。",
+    "来源检查不等于穷尽；未完成方法验证的评测与实践不入选。",
+    "GitHub候选375，实查48，错误0；新项目2席，增长/成熟席不凑数。",
+    "最近已存快照28日至30日超日窗口，缺有效基线增长null；不把累计Star当日增。"
+  ]
+}

@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-10-30",
+    "revision": 1,
+    "title": "浏览器Agent的会话边界与Depth Anything历史精读",
+    "item_count": 5,
+    "path": "data/archive/2026-10-30-r1.json"
+  },
+  {
     "issue_date": "2026-10-28",
     "revision": 1,
     "title": "从设计验收到多模态配方：7条资讯、两个新项目与LLaVA-1.5精读",

@@ -1,0 +1,183 @@
+{
+  "window": {
+    "start": "2026-10-23T08:59:43.562Z",
+    "end": "2026-10-30T08:59:43.562Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "requested_id": "anxiv-ai",
+      "note": "暂按 arXiv AI 理解",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "focus": "AI、视觉、机器学习论文；预印本不能冒充会议已录用论文",
+      "status": "checked",
+      "detail": "AI recent最新30日，首批发现尚未完成新论文全文核实，本期不凑摘要。"
+    },
+    {
+      "id": "huggingface-blog",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "focus": "区分官方与社区作者，回到模型、代码和论文验证",
+      "status": "checked",
+      "detail": "博客入口检查，大部分已收录；未充分核实社区新发布，留作覆盖缺口。"
+    },
+    {
+      "id": "independent-evaluations",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "focus": "独立评测发现渠道；必须核实方法、样本、模型版本和测试日期，不能只转排行榜",
+      "status": "checked",
+      "detail": "METR最新22日已收录；AA有29日新模型评测但本次未核实方法，不转榜单。"
+    },
+    {
+      "id": "langchain",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "focus": "Agent、LangGraph、评测和工程实践",
+      "status": "checked",
+      "detail": "读29日Browser Use正文；同日v0.10回顾不重复计数。"
+    },
+    {
+      "id": "llamaindex",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "focus": "RAG、文档处理、Agent 和工程实践",
+      "status": "checked",
+      "detail": "博客入口检查，OCRia日期及详细实验未核实，未入选。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "focus": "协议规范、SDK 和正式发布",
+      "status": "checked",
+      "detail": "官方规范入口检查，未穷尽SDK release。"
+    },
+    {
+      "id": "openai-news",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "focus": "官方产品和研究公告，区分公告与独立验证",
+      "status": "checked",
+      "detail": "读28日ServiceNow相关章节；29日安全文章未完整核实不入选。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "focus": "发现有源代码、安装说明、权限边界和使用案例的 MCP；注册不等于安全审核通过",
+      "status": "checked",
+      "detail": "Registry API首批可读，未完整分页，注册不代表审核。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "focus": "官方 Web Agent 示例和可复现实践；不默认调用付费服务或安装发现的代码",
+      "status": "checked",
+      "detail": "官网检查，未充分核实新实践日期/代码，未调用服务。"
+    }
+  ],
+  "selected": [
+    {
+      "id": "managed-browser-20261029",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "url": "https://www.langchain.com/blog/browser-use-in-managed-deep-agents"
+        }
+      ]
+    },
+    {
+      "id": "servicenow-expansion-20261028",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "url": "https://openai.com/index/openai-servicenow-partnership-expansion/"
+        }
+      ]
+    },
+    {
+      "id": "github-onurozcan-omux",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "README",
+          "url": "https://github.com/onurozcan/omux"
+        },
+        {
+          "ref_id": "primary",
+          "title": "API",
+          "url": "https://api.github.com/repos/onurozcan/omux"
+        },
+        {
+          "ref_id": "primary",
+          "title": "MIT许可",
+          "url": "https://github.com/onurozcan/omux/blob/HEAD/LICENSE"
+        }
+      ]
+    },
+    {
+      "id": "github-autonomous-ai-openharness",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "README",
+          "url": "https://github.com/autonomous-ai/openharness"
+        },
+        {
+          "ref_id": "primary",
+          "title": "API",
+          "url": "https://api.github.com/repos/autonomous-ai/openharness"
+        },
+        {
+          "ref_id": "primary",
+          "title": "MIT许可",
+          "url": "https://github.com/autonomous-ai/openharness/blob/HEAD/LICENSE"
+        }
+      ]
+    },
+    {
+      "id": "paper-depthanything-cvpr2024",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "CVF正式全文",
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Yang_Depth_Anything_Unleashing_the_Power_of_Large-Scale_Unlabeled_Data_CVPR_2024_paper.pdf"
+        },
+        {
+          "ref_id": "primary",
+          "title": "作者仓库及README",
+          "url": "https://github.com/LiheYoung/Depth-Anything"
+        },
+        {
+          "ref_id": "primary",
+          "title": "稳定标识",
+          "url": "https://arxiv.org/abs/2401.10891"
+        }
+      ]
+    }
+  ]
+}
