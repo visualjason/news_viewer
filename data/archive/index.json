@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-11-02",
+    "revision": 1,
+    "title": "网站训练偏好信号与ConvNeXt历史论文专题",
+    "item_count": 2,
+    "path": "data/archive/2026-11-02-r1.json"
+  },
+  {
     "issue_date": "2026-10-30",
     "revision": 1,
     "title": "浏览器Agent的会话边界与Depth Anything历史精读",
