@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-11-03",
+    "revision": 1,
+    "title": "长期Agent的上下文挑战与OC-SORT历史精读",
+    "item_count": 3,
+    "path": "data/archive/2026-11-03-r1.json"
+  },
+  {
     "issue_date": "2026-11-02",
     "revision": 1,
     "title": "网站训练偏好信号与ConvNeXt历史论文专题",

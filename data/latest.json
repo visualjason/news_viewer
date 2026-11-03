@@ -1,109 +1,150 @@
 {
   "schema_version": "1.0",
-  "issue_date": "2026-11-02",
+  "issue_date": "2026-11-03",
   "revision": 1,
-  "generated_at": "2026-11-02T14:04:44.723Z",
+  "generated_at": "2026-11-03T00:00:24.977Z",
   "window": {
-    "start": "2026-10-26T14:04:44.723Z",
-    "end": "2026-11-02T14:04:44.723Z",
+    "start": "2026-10-27T00:00:24.977Z",
+    "end": "2026-11-03T00:00:24.977Z",
     "timezone": "Asia/Shanghai",
     "lookback_days": 7
   },
   "briefing": {
-    "headline": "网站训练偏好信号与ConvNeXt历史论文专题",
-    "takeaway": "本期仅发布1条已核实公告和1篇论文精读；其余候选证据尚不足，覆盖缺口保留。",
+    "headline": "长期Agent的上下文挑战与OC-SORT历史精读",
+    "takeaway": "1条已核实实践文章、1个新项目和1篇视觉论文；其他候选核验不足，保留缺口。",
     "actions": [
-      "现有爬虫规则继续保留。",
-      "比较骨干时统一训练与评估条件。"
+      "把异步恢复和通知规则写入验收。",
+      "固定检测输入再比较跟踪关联。"
     ]
   },
   "items": [
     {
-      "item_id": "training-preferences-20261030",
-      "type": "news",
-      "title": "网站训练偏好共享信号：OpenAI宣布计划支持，尚非全面实施",
-      "published_at": "2026-10-30",
+      "item_id": "context-challenges-20261102",
+      "type": "blog",
+      "editorial_section": "ai_practice",
+      "published_at": "2026-11-02",
       "published_at_precision": "day",
-      "canonical_url": "https://openai.com/index/helping-websites-express-ai-training-preferences/",
-      "summary": "OpenAI宣布将尊重robots.txt中的通用训练偏好信号，希望减少网站逐个维护爬虫规则的负担。",
-      "why_it_matters": "站点运营者需要区分新的协作信号与已生效的单独爬虫控制。",
-      "application": "保留已有robots.txt控制，跟踪正式实现细节；不要因公告就删除现有规则。",
-      "technical_analysis": "公告说未来数月实施，并继续遵守现有控制；相关IETF工作仍在推进。",
-      "evidence_note": "官方原文正文及30日新闻索引核实；未实际探测爬虫行为。",
-      "caveats": "这是自愿承诺与实施计划，不等于已普遍生效，也不构成对其他提供商行为的保证。",
+      "title": "持续运行的Agent：难题转向通知、记忆取舍与异步恢复",
+      "canonical_url": "https://www.langchain.com/blog/context-engineering-challenges-late-2026",
+      "summary": "Harrison Chase讨论从交互编码Agent转向主动、长期目标Agent后出现的上下文工程问题。",
+      "why_it_matters": "工具循环本身趋于稳定，不代表长期任务的中断、反馈和目标约束已有通用解法。",
+      "application": "为后台任务明确何时通知、记什么、暂停时如何恢复；用实际失败案例检查目标是否容易被投机满足。",
+      "technical_analysis": "文章区分记忆数据结构和决定记忆内容的智能层，并指出异步任务在主Agent运行、结束或等审批时的回调语义不同。",
+      "evidence_note": "经代理读官方全文，日期2日核实；建议为编辑判断。",
+      "caveats": "作者观点与问题清单，不是经基准验证的新算法；并未声称已解决这些问题，也不构成本任务新授权。",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "url": "https://openai.com/index/helping-websites-express-ai-training-preferences/"
+          "url": "https://www.langchain.com/blog/context-engineering-challenges-late-2026"
         }
       ]
     },
     {
-      "item_id": "paper-convnext-cvpr2022",
-      "type": "paper",
-      "editorial_section": "daily_paper",
-      "paper_id": "arxiv:2201.03545",
-      "conference": "CVPR",
-      "conference_year": 2022,
-      "analysis_date": "2026-11-02",
-      "title": "每日论文精读 · CVPR 2022｜ConvNeXt：把训练配方与架构贡献分开",
-      "authors": [
-        "Zhuang Liu",
-        "Hanzi Mao",
-        "Chao-Yuan Wu",
-        "Christoph Feichtenhofer",
-        "Trevor Darrell",
-        "Saining Xie"
-      ],
-      "canonical_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_A_ConvNet_for_the_2020s_CVPR_2022_paper.pdf",
-      "summary": "历史论文A ConvNet for the 2020s，以现代训练配方为起点，逐步把ResNet改造成纯卷积层级骨干。",
-      "why_it_matters": "系统比较经常混入训练、分辨率及预训练数据差异；论文提供了可逐项检查的演进路径。",
-      "application": "选取同等预算骨干作真实任务对照，固定配方再消融，不把FLOPs视为设备延迟。",
-      "technical_analysis": "4×4步长4 stem，7×7 depthwise卷积、4倍通道扩展的倒置瓶颈、LayerNorm和GELU，阶段间独立下采样；不含自注意力。",
-      "evidence_note": "CVF正式CVPR2022全文已下载读取方法、表1/3/4、实验与结论；2022历史工作，今日分析2026-11-02，不计本周新闻。",
-      "deep_dive": [
-        {
-          "heading": "问题、创新与流程 · §2",
-          "content": "先将ResNet50从90epoch默认配方转为300epoch、AdamW和Mixup/CutMix等增强，准确率76.1→78.8，不能算架构贡献。再改变阶段计算分配、patchify stem、depthwise与宽度、倒置瓶颈及大核。保留标准卷积构件，创新在系统组合和对照分析，并非每个模块首次提出。"
-        },
-        {
-          "heading": "增量消融 · 图2及§2.2–2.6",
-          "content": "阶段块数改为3/3/9/3后78.8→79.4；stem79.5；depthwise配加宽80.5，倒置瓶颈80.6；前移depthwise暂降79.9，大核7×7恢复80.6，9或11未进一步获益。减少激活/归一化、BN转LN及独立下采样继续改善。它是顺序路线，不是每项完全独立的因果效应。"
-        },
-        {
-          "heading": "分类与迁移实验 · 表1、3、4",
-          "content": "表1 ImageNet1K224²，ConvNeXt-T82.1%、29M、4.5G，Swin-T81.3%、28M、4.5G；V100吞吐774.7与757.9图/秒。87.8%来自22K预训练XL、384²设置，不能当小模型1K训练结果。表3Mask-RCNN3×配置T模型boxAP46.2、maskAP41.7，Swin-T46.0/41.6；Cascade配置两者T均50.4/43.7。表4UperNet多尺度测试，1K预训练T为46.7mIoU对45.8，不能与单尺度或不同头直接互换。"
-        },
-        {
-          "heading": "局限、应用与复现 · §3–4及作者仓库",
-          "content": "论文不证明卷积在所有任务优于Transformer；depthwise的内存访问可能使相似FLOPs对应不同速度。先固定作者代码、T模型和ImageNet1K权重，运行验证，再以300epoch统一配方重训；准备数据授权和训练资源。目标检测按Mask-RCNN3×、分割按UperNet160K迭代batch16分别复现，分别记录输入、精度和设备。作者README提供训练/迁移入口，本次未运行代码；补充材料未读取，不补造主文未给细节。"
-        }
-      ],
-      "caveats": "历史作者结果未独立复现，未检查定性图片；训练配方、预训练数据、输入尺度和任务头需保持可比。",
+      "item_id": "github-nanako0129-sepia",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "radar_lane": "new",
+      "title": "新项目观察 · Sepia：按文体组织写作与审阅规则",
+      "canonical_url": "https://github.com/Nanako0129/sepia",
+      "summary": "可移植Agent Skill，提供写作、只诊断审阅、最小改写和完整重写入口，并区分小说、PR回复、复盘、工单等文体。",
+      "why_it_matters": "文体规则与事实边界分开，可以减少不同交付场景共用一套模板造成的问题。",
+      "application": "先对匿名旧文做只诊断对照，核实事实未被改写；安装前审阅规则，不以检测器分数作为写作目的。",
+      "technical_analysis": "README描述统一SKILL.md与各平台封装，小说先处理结构再处理表面风格。MIT许可正文已读；研究数字为作者引用，本次未独立审计。",
+      "github_metrics": {
+        "stars": 3584,
+        "observed_at": "2026-11-02T23:59:01.918Z",
+        "stars_delta": null,
+        "previous_observed_at": null,
+        "growth_percent": null,
+        "license": "MIT"
+      },
+      "created_at": "2026-08-28T05:56:49Z",
+      "pushed_at": "2026-11-02T23:56:03Z",
+      "evidence_note": "README、API及LICENSE核实；创建/push不代表首次发布。",
+      "caveats": "未安装技能或执行仓库内容，不把研究中的检测率当该工具有效性的证明。无有效日基线时增长null，不称飙升。",
       "sources": [
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_A_ConvNet_for_the_2020s_CVPR_2022_paper.pdf"
+          "url": "https://github.com/Nanako0129/sepia"
         },
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "url": "https://github.com/facebookresearch/ConvNeXt"
+          "url": "https://github.com/Nanako0129/sepia/blob/HEAD/LICENSE"
         },
         {
           "ref_id": "primary",
           "title": "原始来源",
-          "url": "https://arxiv.org/abs/2201.03545"
+          "url": "https://api.github.com/repos/Nanako0129/sepia"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-ocsort-cvpr2023",
+      "paper_id": "arxiv:2203.14360",
+      "type": "paper",
+      "editorial_section": "daily_paper",
+      "conference": "CVPR",
+      "conference_year": 2023,
+      "analysis_date": "2026-11-03",
+      "title": "每日论文精读 · CVPR 2023｜OC-SORT：重关联之后为什么还要修正滤波状态",
+      "canonical_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Cao_Observation-Centric_SORT_Rethinking_SORT_for_Robust_Multi-Object_Tracking_CVPR_2023_paper.pdf",
+      "authors": [
+        "Jinkun Cao",
+        "Jiangmiao Pang",
+        "Xinshuo Weng",
+        "Rawal Khirodkar",
+        "Kris Kitani"
+      ],
+      "summary": "历史论文专题。用真实观测锚定虚拟轨迹，修正遮挡期间Kalman状态误差，并以观测运动方向辅助关联。",
+      "why_it_matters": "短时重新匹配成功不代表状态已经恢复，错误速度可能让下一帧再次丢失目标。",
+      "application": "固定检测结果，专门检查遮挡重现及非线性运动序列，再分别比较关联质量和检测质量。",
+      "technical_analysis": "ORU在轨迹恢复时回放虚拟观测更新；OCM加入方向一致性代价；OCR用最后真实观测做第二次恢复尝试。",
+      "evidence_note": "CVF正式全文已读取方法、实验与消融，水印确认CVPR2023；2023会议/2022预印本，今日分析不计周内新闻。",
+      "deep_dive": [
+        {
+          "heading": "研究问题与流程 · §3–4",
+          "content": "SORT在遮挡时依赖预测，位置/速度误差会积累。ORU以丢失前与重现时观测为锚生成常速虚拟轨迹，在重激活时重新执行预测与更新；它修正当前滤波状态，不是拥有未来任意帧的离线跟踪。OCM比较历史观测方向与候选方向，IoU代价加权合并；OCR再匹配未匹配轨迹的末次观测。"
+        },
+        {
+          "heading": "实验条件与主结果 · §5.1、表1",
+          "content": "MOT17等复用ByteTrack检测器输出，KITTI用PermaTrack检测；HOTA兼顾检测与关联，AssA/IDF1更直接反映关联，MOTA受检测影响较大。表1MOT17 private，OC-SORT HOTA63.2对ByteTrack63.1，提升不是所有场景都巨大。论文的700+FPS是已有检测输入下CPU关联速度，不含检测器，不能称完整视频处理700FPS。"
+        },
+        {
+          "heading": "消融与参数 · 表5–7",
+          "content": "表5 MOT17-val HOTA从基础64.9经ORU66.3、再加OCM66.4、OCR66.5；对应DanceTrack-val47.8→48.5→52.1→52.1，运动方向项的收益明显依赖场景。表6常速虚拟轨迹优于所试LR/GPR，复杂模型并非自动更好；表7方向时间跨度存在噪声与线性近似的权衡，不能无限增大。"
+        },
+        {
+          "heading": "复现条件、步骤与局限 · §5及作者README",
+          "content": "固定论文代码版本与检测文件，先复现MOT17验证切分，再测试DanceTrack。原文OCM跨度3、方向权重0.2、IoU门槛0.3，MOT20检测阈值0.4、其他0.6；记录是否使用线性插值，区分private/public协议。Kalman运动假设仍存在，若检测漏失或重关联错误，虚拟轨迹也可能错误。作者README2026重构及更新数字不能倒灌为2023原表结论。本次未运行代码，补充材料未读取，不编造主文之外证明和硬件条件。"
+        }
+      ],
+      "caveats": "历史作者实验未独立复现；只读文字表格，未根据未查看定性图推断效果。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Cao_Observation-Centric_SORT_Rethinking_SORT_for_Robust_Multi-Object_Tracking_CVPR_2023_paper.pdf"
+        },
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "url": "https://github.com/noahcao/OC_SORT"
+        },
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "url": "https://arxiv.org/abs/2203.14360"
         }
       ]
     }
   ],
   "source_stats": {
     "news_count": 1,
+    "github_radar_count": 1,
     "historical_paper_count": 1,
-    "github_radar_count": 0,
     "coverage": [
       {
         "id": "arxiv-ai",
@@ -116,7 +157,7 @@
         ],
         "focus": "AI、视觉、机器学习论文；预印本不能冒充会议已录用论文",
         "status": "partial",
-        "detail": "AI recent入口最新2日，候选未完成原文核实，覆盖有限。"
+        "detail": "本次入口检查可读；未完成充分的新条目事实核验，不凑数。"
       },
       {
         "id": "huggingface-blog",
@@ -125,7 +166,7 @@
         ],
         "focus": "区分官方与社区作者，回到模型、代码和论文验证",
         "status": "partial",
-        "detail": "博客入口检查，发现NVIDIA转录等候选但未完整验证，不凑条目。"
+        "detail": "本次入口检查可读；未完成充分的新条目事实核验，不凑数。"
       },
       {
         "id": "independent-evaluations",
@@ -136,7 +177,7 @@
         ],
         "focus": "独立评测发现渠道；必须核实方法、样本、模型版本和测试日期，不能只转排行榜",
         "status": "partial",
-        "detail": "METR最新22日超窗；AA有新评测但方法未充分核实，不转榜单。"
+        "detail": "METR最新22日超窗；AA有新评测但方法未复核，暂不转榜。"
       },
       {
         "id": "langchain",
@@ -146,7 +187,7 @@
         ],
         "focus": "Agent、LangGraph、评测和工程实践",
         "status": "partial",
-        "detail": "入口最新29日版本/浏览器文章，浏览器已收录，不重复。"
+        "detail": "读2日上下文挑战全文，观点与经验证事实分开。"
       },
       {
         "id": "llamaindex",
@@ -156,7 +197,7 @@
         ],
         "focus": "RAG、文档处理、Agent 和工程实践",
         "status": "partial",
-        "detail": "博客入口检查；新内容日期及详细实验未充分核实。"
+        "detail": "本次入口检查可读；未完成充分的新条目事实核验，不凑数。"
       },
       {
         "id": "modelcontextprotocol",
@@ -166,7 +207,7 @@
         ],
         "focus": "协议规范、SDK 和正式发布",
         "status": "partial",
-        "detail": "官方入口检查，未穷尽SDK发布。"
+        "detail": "本次入口检查可读；未完成充分的新条目事实核验，不凑数。"
       },
       {
         "id": "openai-news",
@@ -175,7 +216,7 @@
         ],
         "focus": "官方产品和研究公告，区分公告与独立验证",
         "status": "partial",
-        "detail": "新闻索引及30日训练偏好正文核实，其余候选尚未完成核验。"
+        "detail": "索引发现2日LifeVal等，未完整核实，暂不入选；30日训练偏好已收录。"
       },
       {
         "id": "mcp-registry-practice",
@@ -184,7 +225,7 @@
         ],
         "focus": "发现有源代码、安装说明、权限边界和使用案例的 MCP；注册不等于安全审核通过",
         "status": "partial",
-        "detail": "Registry首批可读，未完整分页，不据注册判断安全。"
+        "detail": "首批API可读，未完整分页，不代表安全审核。"
       },
       {
         "id": "tinyfish-practice-discovery",
@@ -194,13 +235,14 @@
         ],
         "focus": "官方 Web Agent 示例和可复现实践；不默认调用付费服务或安装发现的代码",
         "status": "partial",
-        "detail": "官网检查，实践日期和复现证据未完成核实；未调用付费服务。"
+        "detail": "本次入口检查可读；未完成充分的新条目事实核验，不凑数。"
       }
     ]
   },
   "selection_notes": [
-    "GitHub发现392候选，实查48，错误0；已保存真实快照。",
-    "本次未完成新项目README/许可的充分审阅，项目席留空；不宣称没有合格项目。上次快照30日超20–28小时，不把跨日差冒充日增。",
-    "质量不足少发；采集覆盖有限，不宣称穷尽最近7天。"
+    "实际滚动7天窗口到2026-11-03T00:00:24.977Z。",
+    "GitHub候选402，实查48，错误0；非完整榜单。",
+    "新项目只选已读README/许可的Sepia，其余未充分审阅，不用成熟项目填满。增长只依有效日快照，不以push推导。",
+    "部分搜索/打开批量请求失败，改用原站代理读取；覆盖不完整，不宣称无其他重要新闻。"
   ]
 }
