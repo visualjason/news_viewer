@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-11-05",
+    "revision": 1,
+    "title": "Git审阅工具整合、终端开发新项目与SimSiam精读",
+    "item_count": 5,
+    "path": "data/archive/2026-11-05-r1.json"
+  },
+  {
     "issue_date": "2026-11-03",
     "revision": 1,
     "title": "长期Agent的上下文挑战与OC-SORT历史精读",

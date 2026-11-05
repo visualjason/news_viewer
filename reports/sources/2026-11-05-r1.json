@@ -1,0 +1,108 @@
+{
+  "window": {
+    "start": "2026-10-29T00:00:49.507Z",
+    "end": "2026-11-05T00:00:49.507Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7
+  },
+  "coverage": [
+    {
+      "id": "arxiv-ai",
+      "requested_id": "anxiv-ai",
+      "note": "暂按 arXiv AI 理解",
+      "urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.CV/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ],
+      "focus": "AI、视觉、机器学习论文；预印本不能冒充会议已录用论文",
+      "status": "partial",
+      "detail": "本次入口检查可读，未穷尽条目；未充分核实的候选不收录。"
+    },
+    {
+      "id": "huggingface-blog",
+      "urls": [
+        "https://huggingface.co/blog"
+      ],
+      "focus": "区分官方与社区作者，回到模型、代码和论文验证",
+      "status": "partial",
+      "detail": "本次入口检查可读，未穷尽条目；未充分核实的候选不收录。"
+    },
+    {
+      "id": "independent-evaluations",
+      "urls": [
+        "https://metr.org/",
+        "https://artificialanalysis.ai/",
+        "https://www.nist.gov/ai-measurement-and-evaluation"
+      ],
+      "focus": "独立评测发现渠道；必须核实方法、样本、模型版本和测试日期，不能只转排行榜",
+      "status": "partial",
+      "detail": "METR最新22日超窗；AA新评测未充分核实方法，覆盖缺口。"
+    },
+    {
+      "id": "langchain",
+      "urls": [
+        "https://www.langchain.com/blog",
+        "https://github.com/langchain-ai/langchain/releases"
+      ],
+      "focus": "Agent、LangGraph、评测和工程实践",
+      "status": "partial",
+      "detail": "入口检查，2日上下文挑战已收录不重发。"
+    },
+    {
+      "id": "llamaindex",
+      "urls": [
+        "https://www.llamaindex.ai/blog",
+        "https://github.com/run-llama/llama_index/releases"
+      ],
+      "focus": "RAG、文档处理、Agent 和工程实践",
+      "status": "partial",
+      "detail": "本次入口检查可读，未穷尽条目；未充分核实的候选不收录。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "urls": [
+        "https://modelcontextprotocol.io/",
+        "https://github.com/modelcontextprotocol"
+      ],
+      "focus": "协议规范、SDK 和正式发布",
+      "status": "partial",
+      "detail": "本次入口检查可读，未穷尽条目；未充分核实的候选不收录。"
+    },
+    {
+      "id": "openai-news",
+      "urls": [
+        "https://openai.com/news/"
+      ],
+      "focus": "官方产品和研究公告，区分公告与独立验证",
+      "status": "partial",
+      "detail": "读4日Pierre交易公告，承接3日物理工程已读原文；均未曾归档。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "urls": [
+        "https://registry.modelcontextprotocol.io/"
+      ],
+      "focus": "发现有源代码、安装说明、权限边界和使用案例的 MCP；注册不等于安全审核通过",
+      "status": "partial",
+      "detail": "首批API可读，未完整分页；Registry不代表安全审核。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "urls": [
+        "https://www.tinyfish.ai/",
+        "https://github.com/tinyfish-io/tinyfish-cookbook"
+      ],
+      "focus": "官方 Web Agent 示例和可复现实践；不默认调用付费服务或安装发现的代码",
+      "status": "partial",
+      "detail": "本次入口检查可读，未穷尽条目；未充分核实的候选不收录。"
+    }
+  ],
+  "selection_notes": [
+    "真实滚动7天窗口2026-10-29T00:00:49.507Z至2026-11-05T00:00:49.507Z；保留原文发表日。",
+    "GitHub 436候选，实查48，错误0；Trending/topic只是发现，不是全站榜。",
+    "两个新项目不按成熟1万Star门槛筛选，日增长依实际快照；无有效基线为null，不称飙升。",
+    "昨日未完成导入的4日草稿保留不改；本期5日首次导入已去重内容，不把草稿说成已发布。",
+    "九来源覆盖有限，资讯只选两篇充分核实原文，不宣称其他来源没有重要更新。"
+  ]
+}
