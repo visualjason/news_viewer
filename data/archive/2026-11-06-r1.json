@@ -1,0 +1,221 @@
+{
+  "schema_version": "1.0",
+  "issue_date": "2026-11-06",
+  "revision": 1,
+  "generated_at": "2026-11-06T11:13:30.061Z",
+  "window": {
+    "start": "2026-10-30T11:13:30.061Z",
+    "end": "2026-11-06T11:13:30.061Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7
+  },
+  "briefing": {
+    "headline": "安全模型、研发风险复核与SETR历史论文",
+    "takeaway": "2条已核实发布与1篇视觉专题；其余候选保留核验缺口。",
+    "actions": [
+      "区分能力、遵守范围与实际风险。",
+      "分割比较保持预训练和测试协议一致。"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "gpt6-cyber-20261105",
+      "type": "product",
+      "title": "GPT-6 Cyber发布：能力与任务范围遵守需分别评估",
+      "published_at": "2026-11-05",
+      "summary": "官方发布面向授权安全研究的模型，并报告漏洞验证及范围遵守测试。",
+      "why_it_matters": "能发现漏洞与能遵守测试边界是不同指标。",
+      "application": "仅在授权测试环境验证，固定目标和规则，审阅结果与补丁。",
+      "technical_analysis": "ExploitGym成功率48.5%对上一代32.1%；范围测试的高遵守率仅对应特定隔离评估。",
+      "caveats": "已读公告相关正文，未核实系统卡全部设置或独立复测；不把基准当通用保证，也未调用模型。",
+      "canonical_url": "https://openai.com/index/introducing-gpt-6-cyber/",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "url": "https://openai.com/index/introducing-gpt-6-cyber/"
+        }
+      ]
+    },
+    {
+      "item_id": "metr-rd-review-20261105",
+      "type": "news",
+      "title": "METR复核研发风险：低风险判断与预警阈值分开",
+      "published_at": "2026-11-05",
+      "summary": "5日发表的独立复核讨论Anthropic八月报告与截至七月15日的内部能力情况。",
+      "why_it_matters": "报告发布日期不等于测试日期，预警阈值也不等于灾难风险已经发生。",
+      "application": "阅读评估时记录对象版本、观察时段、反事实假设及不确定性。",
+      "technical_analysis": "METR大体赞同当时直接灾难风险低，但认为未跨研发加速预警阈值的公开论证过于确定。",
+      "caveats": "依据公开复核正文相关章节，部分依据被删节；不是今日模型能力测试，本次未独立重算。",
+      "canonical_url": "https://metr.org/blog/2026-11-05-rd-section-anthropic-risk-report-august-2026-review/",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "url": "https://metr.org/blog/2026-11-05-rd-section-anthropic-risk-report-august-2026-review/"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-setr-cvpr2021",
+      "paper_id": "arxiv:2012.15840",
+      "type": "paper",
+      "editorial_section": "daily_paper",
+      "conference": "CVPR",
+      "conference_year": 2021,
+      "analysis_date": "2026-11-06",
+      "title": "每日论文精读 · CVPR 2021｜SETR：全局编码不等于细节恢复",
+      "canonical_url": "https://arxiv.org/html/2012.15840v3",
+      "authors": [
+        "Sixiao Zheng",
+        "Jiachen Lu",
+        "Hengshuang Zhao",
+        "Xiatian Zhu",
+        "Zekun Luo",
+        "Yabiao Wang",
+        "Yanwei Fu",
+        "Jianfeng Feng",
+        "Tao Xiang",
+        "Philip H.S. Torr",
+        "Li Zhang"
+      ],
+      "summary": "历史专题：将16×16图块序列交给Transformer，再恢复像素分割。",
+      "why_it_matters": "分离全局建模与解码恢复，便于检查上下文和边界需求。",
+      "application": "固定预训练、裁剪与测试尺度，再比较解码器。",
+      "technical_analysis": "Naive一次上采样；PUP逐步上采样；MLA聚合不同层同分辨率特征，并非传统空间金字塔。",
+      "evidence_note": "CVF核实CVPR2021收录；正式PDF访问失败，改读arXiv v3全文方法、实验、消融与结论，版本差异未逐项对照。",
+      "deep_dive": [
+        {
+          "heading": "实验与消融 · 表2、4",
+          "content": "Cityscapes单尺度80k，PUP79.34、Naive77.90；PUP随机初始化40k仅42.27，说明预训练重要。ADE20K MLA单尺度48.64、多尺度50.28，不能混为同条件结果。"
+        },
+        {
+          "heading": "限制与复现 · §4.1及作者仓库",
+          "content": "全局注意力随token数平方增长，图块化损失局部细节；结果依赖预训练与解码。固定作者SETR配置及权重，Cityscapes裁剪768、batch8，SGD初始lr0.01、momentum0.9、wd0；先复现单尺度再加多尺度。未运行代码；不把历史榜首说成当前最优。"
+        }
+      ],
+      "caveats": "作者历史实验未复现；未检查定性图片，补充可视化不作推断。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Zheng_Rethinking_Semantic_Segmentation_From_a_Sequence-to-Sequence_Perspective_With_Transformers_CVPR_2021_paper.html"
+        },
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "url": "https://arxiv.org/html/2012.15840v3"
+        },
+        {
+          "ref_id": "primary",
+          "title": "原始来源",
+          "url": "https://github.com/fudan-zvg/SETR"
+        }
+      ]
+    }
+  ],
+  "source_stats": {
+    "news_count": 2,
+    "github_radar_count": 0,
+    "historical_paper_count": 1,
+    "coverage": [
+      {
+        "id": "arxiv-ai",
+        "requested_id": "anxiv-ai",
+        "note": "暂按 arXiv AI 理解",
+        "urls": [
+          "https://arxiv.org/list/cs.AI/recent",
+          "https://arxiv.org/list/cs.CV/recent",
+          "https://arxiv.org/list/cs.LG/recent"
+        ],
+        "focus": "AI、视觉、机器学习论文；预印本不能冒充会议已录用论文",
+        "status": "partial",
+        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+      },
+      {
+        "id": "huggingface-blog",
+        "urls": [
+          "https://huggingface.co/blog"
+        ],
+        "focus": "区分官方与社区作者，回到模型、代码和论文验证",
+        "status": "partial",
+        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+      },
+      {
+        "id": "independent-evaluations",
+        "urls": [
+          "https://metr.org/",
+          "https://artificialanalysis.ai/",
+          "https://www.nist.gov/ai-measurement-and-evaluation"
+        ],
+        "focus": "独立评测发现渠道；必须核实方法、样本、模型版本和测试日期，不能只转排行榜",
+        "status": "partial",
+        "detail": "读METR5日复核相关正文，历史观察时段与今日发布分开；AA新评测未完整核实。"
+      },
+      {
+        "id": "langchain",
+        "urls": [
+          "https://www.langchain.com/blog",
+          "https://github.com/langchain-ai/langchain/releases"
+        ],
+        "focus": "Agent、LangGraph、评测和工程实践",
+        "status": "partial",
+        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+      },
+      {
+        "id": "llamaindex",
+        "urls": [
+          "https://www.llamaindex.ai/blog",
+          "https://github.com/run-llama/llama_index/releases"
+        ],
+        "focus": "RAG、文档处理、Agent 和工程实践",
+        "status": "partial",
+        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+      },
+      {
+        "id": "modelcontextprotocol",
+        "urls": [
+          "https://modelcontextprotocol.io/",
+          "https://github.com/modelcontextprotocol"
+        ],
+        "focus": "协议规范、SDK 和正式发布",
+        "status": "partial",
+        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+      },
+      {
+        "id": "openai-news",
+        "urls": [
+          "https://openai.com/news/"
+        ],
+        "focus": "官方产品和研究公告，区分公告与独立验证",
+        "status": "partial",
+        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+      },
+      {
+        "id": "mcp-registry-practice",
+        "urls": [
+          "https://registry.modelcontextprotocol.io/"
+        ],
+        "focus": "发现有源代码、安装说明、权限边界和使用案例的 MCP；注册不等于安全审核通过",
+        "status": "partial",
+        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+      },
+      {
+        "id": "tinyfish-practice-discovery",
+        "urls": [
+          "https://www.tinyfish.ai/",
+          "https://github.com/tinyfish-io/tinyfish-cookbook"
+        ],
+        "focus": "官方 Web Agent 示例和可复现实践；不默认调用付费服务或安装发现的代码",
+        "status": "partial",
+        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+      }
+    ]
+  },
+  "selection_notes": [
+    "窗口2026-10-30T11:13:30.061Z至2026-11-06T11:13:30.061Z。",
+    "GitHub 453候选、实查48、错误0，保存真实快照；项目尚未充分审阅，席位留空，不宣称无合格项目。",
+    "保留已有4日未跟踪文件，不修改；本期只提交6日产物。",
+    "SETR正式PDF多次传输失败，arXiv HTML可读；记录版本限制。"
+  ]
+}
