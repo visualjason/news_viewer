@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-11-07",
+    "revision": 1,
+    "title": "第三方连接安全、新开发工具与SimMIM历史精读",
+    "item_count": 3,
+    "path": "data/archive/2026-11-07-r1.json"
+  },
+  {
     "issue_date": "2026-11-06",
     "revision": 1,
     "title": "安全模型、研发风险复核与SETR历史论文",

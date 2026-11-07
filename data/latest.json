@@ -1,122 +1,132 @@
 {
   "schema_version": "1.0",
-  "issue_date": "2026-11-06",
+  "issue_date": "2026-11-07",
   "revision": 1,
-  "generated_at": "2026-11-06T11:13:30.061Z",
+  "generated_at": "2026-11-07T00:19:54.257Z",
   "window": {
-    "start": "2026-10-30T11:13:30.061Z",
-    "end": "2026-11-06T11:13:30.061Z",
+    "start": "2026-10-31T00:19:54.257Z",
+    "end": "2026-11-07T00:19:54.257Z",
     "timezone": "Asia/Shanghai",
     "lookback_days": 7
   },
   "briefing": {
-    "headline": "安全模型、研发风险复核与SETR历史论文",
-    "takeaway": "2条已核实发布与1篇视觉专题；其余候选保留核验缺口。",
+    "headline": "第三方连接安全、新开发工具与SimMIM历史精读",
+    "takeaway": "1条已核实资讯、1个新项目观察与1篇视觉论文；来源覆盖有限，少量精选。",
     "actions": [
-      "区分能力、遵守范围与实际风险。",
-      "分割比较保持预训练和测试协议一致。"
+      "检查Agent跨服务身份和数据边界。",
+      "试用终端工具先在测试数据与会话中验证。",
+      "视觉预训练同时检查成本与下游效果。"
     ]
   },
   "items": [
     {
-      "item_id": "gpt6-cyber-20261105",
-      "type": "product",
-      "title": "GPT-6 Cyber发布：能力与任务范围遵守需分别评估",
-      "published_at": "2026-11-05",
-      "summary": "官方发布面向授权安全研究的模型，并报告漏洞验证及范围遵守测试。",
-      "why_it_matters": "能发现漏洞与能遵守测试边界是不同指标。",
-      "application": "仅在授权测试环境验证，固定目标和规则，审阅结果与补丁。",
-      "technical_analysis": "ExploitGym成功率48.5%对上一代32.1%；范围测试的高遵守率仅对应特定隔离评估。",
-      "caveats": "已读公告相关正文，未核实系统卡全部设置或独立复测；不把基准当通用保证，也未调用模型。",
-      "canonical_url": "https://openai.com/index/introducing-gpt-6-cyber/",
-      "sources": [
-        {
-          "ref_id": "primary",
-          "title": "原始来源",
-          "url": "https://openai.com/index/introducing-gpt-6-cyber/"
-        }
-      ]
-    },
-    {
-      "item_id": "metr-rd-review-20261105",
+      "item_id": "openai-hacktron-20261106",
       "type": "news",
-      "title": "METR复核研发风险：低风险判断与预警阈值分开",
-      "published_at": "2026-11-05",
-      "summary": "5日发表的独立复核讨论Anthropic八月报告与截至七月15日的内部能力情况。",
-      "why_it_matters": "报告发布日期不等于测试日期，预警阈值也不等于灾难风险已经发生。",
-      "application": "阅读评估时记录对象版本、观察时段、反事实假设及不确定性。",
-      "technical_analysis": "METR大体赞同当时直接灾难风险低，但认为未跨研发加速预警阈值的公开论证过于确定。",
-      "caveats": "依据公开复核正文相关章节，部分依据被删节；不是今日模型能力测试，本次未独立重算。",
-      "canonical_url": "https://metr.org/blog/2026-11-05-rd-section-anthropic-risk-report-august-2026-review/",
+      "title": "OpenAI与Hacktron合作：安全测试转向第三方服务连接边界",
+      "published_at": "2026-11-06",
+      "published_at_precision": "day",
+      "canonical_url": "https://openai.com/index/partnering-with-hacktron/",
+      "summary": "双方将共同选择优先测试区域，重点检查OpenAI系统与第三方服务的交互，并通过Daybreak Red扩展Hacktron的模型访问。",
+      "why_it_matters": "编辑判断：连接器和身份流转应成为Agent系统测试对象，单独检查模型输出并不充分。",
+      "application": "列出服务之间的数据、身份和权限流；在授权范围内设计跨服务测试，保留复现证据并安排人工审阅。",
+      "technical_analysis": "公告介绍Hacktron的代码审查、渗透测试及红队Agent工作；没有公开本次合作的量化结果。",
+      "evidence_note": "已读11月6日官方公告正文；合作安排是已证实公告事实，实践建议是编辑判断。",
+      "caveats": "未独立验证漏洞和效率收益；测试范围以具体漏洞奖励计划授权为准。",
       "sources": [
         {
           "ref_id": "primary",
-          "title": "原始来源",
-          "url": "https://metr.org/blog/2026-11-05-rd-section-anthropic-risk-report-august-2026-review/"
+          "title": "核实来源",
+          "url": "https://openai.com/index/partnering-with-hacktron/"
         }
       ]
     },
     {
-      "item_id": "paper-setr-cvpr2021",
-      "paper_id": "arxiv:2012.15840",
+      "item_id": "github-R_kgDOVFudAQ",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "radar_lane": "new",
+      "title": "新项目观察 · zpeek：在终端浏览数据库与外键关联",
+      "canonical_url": "https://github.com/alaleks/zpeek",
+      "summary": "Zig编写的数据库TUI，README列出PostgreSQL、MySQL/MariaDB、SQLite及ClickHouse，提供SQL编辑、查询历史、外键跳转和结果导出。",
+      "why_it_matters": "编辑判断：适合减少日常开发时在多个工具之间切换的成本；新项目席位不按总Star与成熟项目竞争。",
+      "application": "先用SQLite副本验证浏览、查询及导出，再用只读测试账号验证远程连接；不要用作者本地基准推断自己的性能。",
+      "technical_analysis": "创建于2026-10-12T08:17:48Z；最近推送2026-11-06T08:05:48Z，只作为活跃证据。采集时17 Star，许可证MIT。",
+      "evidence_note": "已读仓库README和许可证入口；创建时间、活跃时间及Star来自本次API快照。未运行项目。",
+      "caveats": "没有20–28小时有效基线，日增长为null；这是近90天新项目观察，不是今日发布或飙升结论。README功能为作者描述，未独立验证。",
+      "created_at": "2026-10-12T08:17:48Z",
+      "pushed_at": "2026-11-06T08:05:48Z",
+      "github_metrics": {
+        "stars": 17,
+        "observed_at": "2026-11-07T00:15:47.232Z",
+        "stars_delta": null,
+        "previous_observed_at": null,
+        "license": "MIT"
+      },
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "核实来源",
+          "url": "https://github.com/alaleks/zpeek"
+        },
+        {
+          "ref_id": "primary",
+          "title": "核实来源",
+          "url": "https://github.com/alaleks/zpeek/blob/master/LICENSE"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-simmim-cvpr2022",
+      "paper_id": "arxiv:2111.09886",
       "type": "paper",
       "editorial_section": "daily_paper",
       "conference": "CVPR",
-      "conference_year": 2021,
-      "analysis_date": "2026-11-06",
-      "title": "每日论文精读 · CVPR 2021｜SETR：全局编码不等于细节恢复",
-      "canonical_url": "https://arxiv.org/html/2012.15840v3",
-      "authors": [
-        "Sixiao Zheng",
-        "Jiachen Lu",
-        "Hengshuang Zhao",
-        "Xiatian Zhu",
-        "Zekun Luo",
-        "Yabiao Wang",
-        "Yanwei Fu",
-        "Jianfeng Feng",
-        "Tao Xiang",
-        "Philip H.S. Torr",
-        "Li Zhang"
-      ],
-      "summary": "历史专题：将16×16图块序列交给Transformer，再恢复像素分割。",
-      "why_it_matters": "分离全局建模与解码恢复，便于检查上下文和边界需求。",
-      "application": "固定预训练、裁剪与测试尺度，再比较解码器。",
-      "technical_analysis": "Naive一次上采样；PUP逐步上采样；MLA聚合不同层同分辨率特征，并非传统空间金字塔。",
-      "evidence_note": "CVF核实CVPR2021收录；正式PDF访问失败，改读arXiv v3全文方法、实验、消融与结论，版本差异未逐项对照。",
+      "conference_year": 2022,
+      "analysis_date": "2026-11-07",
+      "title": "每日论文精读 · CVPR 2022｜SimMIM：重建更好不等于迁移更好",
+      "canonical_url": "https://arxiv.org/abs/2111.09886",
+      "summary": "历史论文专题：用简单掩码任务学习可微调的视觉表征，今天分析，非本周新闻。",
+      "why_it_matters": "编辑判断：预训练代理指标应与最终业务指标分别验收。",
+      "application": "先做固定预算的轻量基线，再决定是否增加解码器复杂度。",
+      "technical_analysis": "§3：32×32随机掩码，mask token进入ViT/Swin编码器，线性头回归RGB；L1仅计算被遮区域，无需离散词表。",
+      "evidence_note": "CVF核实CVPR2022、9653–9663页；正式PDF403，ar5iv全文正文及附录可读；未逐项核对正式版差异。",
       "deep_dive": [
         {
-          "heading": "实验与消融 · 表2、4",
-          "content": "Cityscapes单尺度80k，PUP79.34、Naive77.90；PUP随机初始化40k仅42.27，说明预训练重要。ADE20K MLA单尺度48.64、多尺度50.28，不能混为同条件结果。"
+          "heading": "实验与消融 · §4.1，表2、4",
+          "content": "ImageNet-1K、Swin-B、192输入，预训练和微调各100轮：线性头82.8%，逆Swin-B头82.5%且训练成本2.3倍；仅遮挡区损失82.8%，全图损失81.7%。同一消融协议，不能与800轮ViT结果混比。"
         },
         {
-          "heading": "限制与复现 · §4.1及作者仓库",
-          "content": "全局注意力随token数平方增长，图块化损失局部细节；结果依赖预训练与解码。固定作者SETR配置及权重，Cityscapes裁剪768、batch8，SGD初始lr0.01、momentum0.9、wd0；先复现单尺度再加多尺度。未运行代码；不把历史榜首说成当前最优。"
+          "heading": "局限及工程判断",
+          "content": "微调准确率不是线性可分性或生成质量的保证；大模型依赖训练数据与预算。本文没有证明对你的业务数据有效，建议另测少样本、域外及类别不均衡场景。"
+        },
+        {
+          "heading": "复现条件与步骤 · 作者仓库",
+          "content": "官方microsoft/SimMIM已归档，README提供Python3.8、CUDA11.3/cuDNN8、PyTorch及Apex环境。准备合法ImageNet数据，固定配置和依赖，先用提供权重跑main_finetune.py --eval；再用main_simmim.py预训练并微调。对照100轮消融时保持分辨率与训练长度一致；实际GPU与batch调整单独记录。未下载权重或执行训练。"
         }
       ],
-      "caveats": "作者历史实验未复现；未检查定性图片，补充可视化不作推断。",
+      "caveats": "依据全文文字与表格，未独立复现实验或检查图像像素；历史结果不代表当前最优。",
       "sources": [
         {
           "ref_id": "primary",
-          "title": "原始来源",
-          "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Zheng_Rethinking_Semantic_Segmentation_From_a_Sequence-to-Sequence_Perspective_With_Transformers_CVPR_2021_paper.html"
+          "title": "核实来源",
+          "url": "https://openaccess.thecvf.com/content/CVPR2022/html/Xie_SimMIM_A_Simple_Framework_for_Masked_Image_Modeling_CVPR_2022_paper.html"
         },
         {
           "ref_id": "primary",
-          "title": "原始来源",
-          "url": "https://arxiv.org/html/2012.15840v3"
+          "title": "核实来源",
+          "url": "https://ar5iv.labs.arxiv.org/html/2111.09886"
         },
         {
           "ref_id": "primary",
-          "title": "原始来源",
-          "url": "https://github.com/fudan-zvg/SETR"
+          "title": "核实来源",
+          "url": "https://github.com/microsoft/SimMIM"
         }
       ]
     }
   ],
   "source_stats": {
-    "news_count": 2,
-    "github_radar_count": 0,
+    "news_count": 1,
+    "github_radar_count": 1,
     "historical_paper_count": 1,
     "coverage": [
       {
@@ -130,7 +140,7 @@
         ],
         "focus": "AI、视觉、机器学习论文；预印本不能冒充会议已录用论文",
         "status": "partial",
-        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+        "detail": "recent入口仅检查首50/1374篇；SwarmEvolve未完成正文核验，不入选。"
       },
       {
         "id": "huggingface-blog",
@@ -139,7 +149,7 @@
         ],
         "focus": "区分官方与社区作者，回到模型、代码和论文验证",
         "status": "partial",
-        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+        "detail": "博客入口可读，未核实足够新增候选，覆盖不足，不等于没有新内容。"
       },
       {
         "id": "independent-evaluations",
@@ -150,7 +160,7 @@
         ],
         "focus": "独立评测发现渠道；必须核实方法、样本、模型版本和测试日期，不能只转排行榜",
         "status": "partial",
-        "detail": "读METR5日复核相关正文，历史观察时段与今日发布分开；AA新评测未完整核实。"
+        "detail": "METR最新复核已收录于本地6日期；AA新评测方法未充分核验。"
       },
       {
         "id": "langchain",
@@ -160,7 +170,7 @@
         ],
         "focus": "Agent、LangGraph、评测和工程实践",
         "status": "partial",
-        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+        "detail": "入口可读；已发布的context engineering事件去重，其他候选核验不足。"
       },
       {
         "id": "llamaindex",
@@ -170,7 +180,7 @@
         ],
         "focus": "RAG、文档处理、Agent 和工程实践",
         "status": "partial",
-        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+        "detail": "入口可读，OCR候选发布时间与全文未充分核验。"
       },
       {
         "id": "modelcontextprotocol",
@@ -180,7 +190,7 @@
         ],
         "focus": "协议规范、SDK 和正式发布",
         "status": "partial",
-        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+        "detail": "入口返回7月介绍文章，不作为本周新闻。"
       },
       {
         "id": "openai-news",
@@ -189,7 +199,7 @@
         ],
         "focus": "官方产品和研究公告，区分公告与独立验证",
         "status": "partial",
-        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+        "detail": "核实6日Hacktron公告正文和日期；6日本地待推送的Cyber事件去重。"
       },
       {
         "id": "mcp-registry-practice",
@@ -198,7 +208,7 @@
         ],
         "focus": "发现有源代码、安装说明、权限边界和使用案例的 MCP；注册不等于安全审核通过",
         "status": "partial",
-        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+        "detail": "仅检查API首100条，未遍历分页，新增实践未充分核验。"
       },
       {
         "id": "tinyfish-practice-discovery",
@@ -208,14 +218,15 @@
         ],
         "focus": "官方 Web Agent 示例和可复现实践；不默认调用付费服务或安装发现的代码",
         "status": "partial",
-        "detail": "本次入口检查可读，覆盖有限，候选未充分核实不入选。"
+        "detail": "仅产品入口，无已核实近期实践；未调用付费服务。"
       }
     ]
   },
   "selection_notes": [
-    "窗口2026-10-30T11:13:30.061Z至2026-11-06T11:13:30.061Z。",
-    "GitHub 453候选、实查48、错误0，保存真实快照；项目尚未充分审阅，席位留空，不宣称无合格项目。",
-    "保留已有4日未跟踪文件，不修改；本期只提交6日产物。",
-    "SETR正式PDF多次传输失败，arXiv HTML可读；记录版本限制。"
+    "实际7天窗口2026-10-31T00:19:54.257Z至2026-11-07T00:19:54.257Z；资讯显示原始日期。",
+    "GitHub候选463、实查48，API错误0；Trending入口读取未返回可用项目列表。新项目和其他topic由配置查询发现。",
+    "48个候选审阅2个新项目，其中rozi已收录去重，入选1个；新项目未填满2席，未完成其他候选核验；增长无有效基线，成熟席位未填；不是全站排名，不能据此认定没有其他合格项目。",
+    "九来源覆盖有缺口，未达到8至15条，不以旧事件或未读正文凑数。",
+    "保留4日未跟踪文件及6日待推送提交；本次只新增7日产物。"
   ]
 }
