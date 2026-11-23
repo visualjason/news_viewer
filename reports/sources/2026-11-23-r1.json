@@ -1,0 +1,63 @@
+{
+  "issue_date": "2026-11-23",
+  "revision": 1,
+  "window": {
+    "start": "2026-11-16T16:07:54+08:00",
+    "end": "2026-11-23T16:07:54+08:00",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7
+  },
+  "sources": [
+    {
+      "id": "anxiv-ai",
+      "interpretation": "arXiv AI",
+      "coverage": "部分检查近期列表；候选全文与重要性未充分核验，未入选。"
+    },
+    {
+      "id": "huggingface-blog",
+      "coverage": "可读；核实OpenRouter推理路由公告。"
+    },
+    {
+      "id": "independent-evaluations",
+      "coverage": "渠道集合。METR最新相关报告日期为11月5日，超窗；Artificial Analysis新模型页核心指标未就绪；NIST未核实到本窗口新证据。"
+    },
+    {
+      "id": "langchain",
+      "coverage": "核实Tool Gateway公测公告与From tasks to goals观点文章。"
+    },
+    {
+      "id": "llamaindex",
+      "coverage": "检查官方博客/发布入口；未核实到窗口内达到筛选标准的候选。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "coverage": "检查文档与GitHub发布入口，未找到可核实窗口内的重要新增。"
+    },
+    {
+      "id": "openai-news",
+      "coverage": "核实并入选5篇官方材料；内部数据与合作成效保留厂商报告限制。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "coverage": "公开API只检查有限首批记录，未遍历分页；无已核实入选实践。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "coverage": "公开产品/实践入口未发现可核实的近期案例；未调用付费服务。"
+    }
+  ],
+  "github": {
+    "candidate_count": 488,
+    "queried_candidates": 48,
+    "api_errors": 0,
+    "trending": "受限/未获得可用列表",
+    "valid_growth_baseline": false,
+    "selected_new_projects": 2,
+    "stars_delta": null
+  },
+  "limitations": [
+    "来源入口、首批结果和API候选预算限制覆盖范围。",
+    "Trending页面无法作为可用信号；GitHub候选不是全站排名。",
+    "新闻条目仅收录原始来源可核实的材料；未核验候选记为覆盖缺口，不推断其不存在。"
+  ]
+}

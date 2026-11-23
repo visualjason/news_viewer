@@ -1,232 +1,348 @@
 {
   "schema_version": "1.0",
-  "issue_date": "2026-11-07",
+  "issue_date": "2026-11-23",
   "revision": 1,
-  "generated_at": "2026-11-07T00:19:54.257Z",
+  "generated_at": "2026-11-23T08:07:54Z",
   "window": {
-    "start": "2026-10-31T00:19:54.257Z",
-    "end": "2026-11-07T00:19:54.257Z",
+    "start": "2026-11-16T08:07:54Z",
+    "end": "2026-11-23T08:07:54Z",
     "timezone": "Asia/Shanghai",
     "lookback_days": 7
   },
   "briefing": {
-    "headline": "第三方连接安全、新开发工具与SimMIM历史精读",
-    "takeaway": "1条已核实资讯、1个新项目观察与1篇视觉论文；来源覆盖有限，少量精选。",
+    "headline": "预训练评测、Agent工程边界与视觉操控论文",
+    "takeaway": "9条近期资讯、2个新项目观察与1篇CVPR论文深读；没有有效Star日增长基线，来源覆盖仍有缺口。",
     "actions": [
-      "检查Agent跨服务身份和数据边界。",
-      "试用终端工具先在测试数据与会话中验证。",
-      "视觉预训练同时检查成本与下游效果。"
+      "把AI评测拆到具体任务与可复核的基线，注意厂商自测和样本偏差。",
+      "Agent试点先划定文件、网络、工具和人工审批边界，并验证暂停与回滚。",
+      "对新项目只做隔离环境试用；GitHub Star增长暂无可比快照。"
     ]
   },
   "items": [
     {
-      "item_id": "openai-hacktron-20261106",
+      "item_id": "openai-perplexity-intelligence-20261122",
       "type": "news",
-      "title": "OpenAI与Hacktron合作：安全测试转向第三方服务连接边界",
-      "published_at": "2026-11-06",
+      "title": "OpenAI提出用预训练困惑度衡量语言模型进步",
+      "published_at": "2026-11-22",
       "published_at_precision": "day",
-      "canonical_url": "https://openai.com/index/partnering-with-hacktron/",
-      "summary": "双方将共同选择优先测试区域，重点检查OpenAI系统与第三方服务的交互，并通过Daybreak Red扩展Hacktron的模型访问。",
-      "why_it_matters": "编辑判断：连接器和身份流转应成为Agent系统测试对象，单独检查模型输出并不充分。",
-      "application": "列出服务之间的数据、身份和权限流；在授权范围内设计跨服务测试，保留复现证据并安排人工审阅。",
-      "technical_analysis": "公告介绍Hacktron的代码审查、渗透测试及红队Agent工作；没有公开本次合作的量化结果。",
-      "evidence_note": "已读11月6日官方公告正文；合作安排是已证实公告事实，实践建议是编辑判断。",
-      "caveats": "未独立验证漏洞和效率收益；测试范围以具体漏洞奖励计划授权为准。",
+      "canonical_url": "https://openai.com/index/perplexity-and-intelligence/",
+      "summary": "OpenAI研究负责人讨论以跨熵/对数困惑度追踪预训练进步，并分享内部模型序列的趋势观察。",
+      "why_it_matters": "编辑判断：若指标可跨数据与训练阶段校准，研究团队可更早发现预训练进展；但它不能代替真实任务评估。",
+      "application": "记录预训练语料、混合比例和评测集版本，分别报告困惑度、下游能力与后训练结果。",
+      "technical_analysis": "文章同时指出跨实验室数据混合可比性、指标与下游能力脱钩、后训练影响以及可能存在未知下限等限制。",
+      "evidence_note": "已读OpenAI官方文章；内部趋势为公司报告，跨实验室比较是作者提出的研究方向。",
+      "caveats": "不是独立复现或统一公开基准；不可据此推出不同实验室模型的绝对能力排序。",
       "sources": [
         {
           "ref_id": "primary",
           "title": "核实来源",
-          "url": "https://openai.com/index/partnering-with-hacktron/"
+          "url": "https://openai.com/index/perplexity-and-intelligence/"
         }
       ]
     },
     {
-      "item_id": "github-R_kgDOVFudAQ",
+      "item_id": "openai-medchembench-20261120",
+      "type": "news",
+      "title": "MedChemBench把药物化学任务拆成可测的模型基准",
+      "published_at": "2026-11-20",
+      "published_at_precision": "day",
+      "canonical_url": "https://openai.com/index/introducing-medchembench/",
+      "summary": "OpenAI介绍MedChemBench：汇集117篇论文与专利中的99道问题、761个分子结构，覆盖结构重建、科学推理、候选排序/选择及数值性质预测。",
+      "why_it_matters": "编辑判断：细分任务更能暴露模型在药物化学流程中的具体短板，避免把单一问答成绩误当成研发能力。",
+      "application": "先在本地匿名化任务集上按结构重建、数值预测和排序分别测量；涉及候选筛选时保留化学家复核。",
+      "technical_analysis": "官方文章说明该基准测量知识与推理任务，而非完整实验研发；比较设置涉及模型、推理预算等差异。",
+      "evidence_note": "已读官方基准介绍及其任务定义。",
+      "caveats": "文中模型结果为OpenAI自测；单次回答、无实验工具及潜在训练数据暴露等限制意味着分数不能证明药物发现效益。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "核实来源",
+          "url": "https://openai.com/index/introducing-medchembench/"
+        }
+      ]
+    },
+    {
+      "item_id": "openai-performance-factory-20261119",
+      "type": "news",
+      "title": "OpenAI展示用Codex排查线上性能回归的闭环",
+      "published_at": "2026-11-19",
+      "published_at_precision": "day",
+      "canonical_url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/",
+      "summary": "OpenAI描述内部流程：性能告警触发调查任务，Codex分析并提出修复供工程师审阅，部署后再由Agent核验是否回到基线；公司称三个月多完成1700余次调查并定位600余个根因。",
+      "why_it_matters": "编辑判断：这类闭环比只让Agent写代码更适合工程团队试点，因为检测、审批和部署后验证都能留下边界。",
+      "application": "挑选非关键服务做影子分析；要求每个建议附指标证据、最小变更、人工审批和部署后自动回归检查。",
+      "technical_analysis": "官方案例描述告警至部署后验证的内部工作流及统计量。",
+      "evidence_note": "数字和效果为OpenAI内部报告。",
+      "caveats": "没有公开实现或外部验证；调查数量不等同于成功修复数或节省工时。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "核实来源",
+          "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/"
+        }
+      ]
+    },
+    {
+      "item_id": "openai-jagged-frontier-20261118",
+      "type": "news",
+      "title": "OpenAI报告：长任务成功率上升，任务类型差异仍大",
+      "published_at": "2026-11-18",
+      "published_at_precision": "day",
+      "canonical_url": "https://openai.com/index/research-acceleration-jagged-frontier/",
+      "summary": "OpenAI内部研究称，2026年3月至10月，在估计耗时2–4小时任务上的Agent成功率由23%升至46%，4–8小时任务由13%升至35%；监控类任务表现较高，部分代码任务仍低。",
+      "why_it_matters": "编辑判断：平均成功率掩盖任务间差距，企业应按工作单元而非笼统“Agent能力”决定自动化范围。",
+      "application": "把工作拆成可回滚步骤，先在监控、资料整理等低风险环节测量；对代码变更保留审批、测试和回退。",
+      "technical_analysis": "文章给出任务时长分组及任务类别差异，同时讨论任务选择变化等方法限制。",
+      "evidence_note": "已读OpenAI官方研究文章。",
+      "caveats": "公司内部样本和方法；任务委派构成随时间变化可能混杂趋势，不能视为独立、随机受控实验。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "核实来源",
+          "url": "https://openai.com/index/research-acceleration-jagged-frontier/"
+        }
+      ]
+    },
+    {
+      "item_id": "openai-chip-design-20261118",
+      "type": "news",
+      "title": "OpenAI与AMD公布芯片设计模型评测及PPA案例",
+      "published_at": "2026-11-18",
+      "published_at_precision": "day",
+      "canonical_url": "https://openai.com/index/advancing-chip-design-with-our-models/",
+      "summary": "OpenAI称模型在AMD优化基线上实现最高14%的PPA改进，并介绍RISC-V模拟评测：隐藏工作负载、9881次评分运行，违反检查或面积超阈值会计零分。",
+      "why_it_matters": "编辑判断：将可执行设计检查、隐藏负载和失败惩罚纳入评测，比只比较生成代码更贴近芯片工程约束。",
+      "application": "评估硬件Agent时加入综合/仿真、面积与功耗边界、隐藏任务和失败即零分规则；核验客户案例的基线与适用范围。",
+      "technical_analysis": "公告描述AMD合作案例和RISC-V评测设计；AMD/制造提交相关进展由合作方叙述。",
+      "evidence_note": "已读OpenAI官方公告。",
+      "caveats": "PPA收益为合作方报告的最高值，未经独立核实；RISC-V模拟结果不能直接等同于流片效果。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "核实来源",
+          "url": "https://openai.com/index/advancing-chip-design-with-our-models/"
+        }
+      ]
+    },
+    {
+      "item_id": "openai-codex-sandbox-20261118",
+      "type": "news",
+      "title": "Codex沙箱按工作区、操作系统与网络权限分层",
+      "published_at": "2026-11-18",
+      "published_at_precision": "day",
+      "canonical_url": "https://openai.com/index/inside-the-codex-sandbox/",
+      "summary": "OpenAI说明Codex在macOS、Linux和Windows使用不同的系统隔离；工作区模式限制写入范围，网络默认关闭，并讨论被忽略目录与依赖注入风险。",
+      "why_it_matters": "编辑判断：Agent安全边界需要同时约束文件系统、网络和依赖来源；单靠提示词无法阻止进程访问。",
+      "application": "从最小可写目录和默认无网络开始；逐项审查忽略目录中的可执行依赖，按需授权联网并记录授权理由。",
+      "technical_analysis": "官方文章描述平台差异、`:workspace`权限语义、网络代理及忽略路径风险。",
+      "evidence_note": "已读OpenAI官方技术文章。",
+      "caveats": "产品具体配置会变；文章未给出覆盖所有系统与威胁模型的独立安全证明。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "核实来源",
+          "url": "https://openai.com/index/inside-the-codex-sandbox/"
+        }
+      ]
+    },
+    {
+      "item_id": "hf-openrouter-20261116",
+      "type": "news",
+      "title": "Hugging Face将语言模型推理路由接入OpenRouter",
+      "published_at": "2026-11-16",
+      "published_at_precision": "day",
+      "canonical_url": "https://huggingface.co/blog/openrouter",
+      "summary": "Hugging Face称其语言模型推理路由现由OpenRouter提供，可依据实时指标在80多个提供方间选择并重试；图像、视频、音频仍走其他路由。",
+      "why_it_matters": "编辑判断：统一API降低切换供应商成本，但路由变化会影响账单、密钥管理和可重复性。",
+      "application": "迁移前核对个人/组织API调用、账单归属和自带密钥支持；固定模型与提供方做回归测试，并查看多模态是否受影响。",
+      "technical_analysis": "Hugging Face官方博客说明语言模型路由变化、80+提供方及支持范围。",
+      "evidence_note": "事实来自服务方公告；流量和成本收益为合作方陈述。",
+      "caveats": "博客称语言模型自定义路由不再使用用户自带Provider key，费用改由HF账号结算；具体可用性以账户条款为准。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "核实来源",
+          "url": "https://huggingface.co/blog/openrouter"
+        }
+      ]
+    },
+    {
+      "item_id": "langsmith-tool-gateway-20261119",
+      "type": "news",
+      "title": "LangSmith推出受治理的Agent工具网关公测",
+      "published_at": "2026-11-19",
+      "published_at_precision": "day",
+      "canonical_url": "https://www.langchain.com/blog/langsmith-tool-gateway",
+      "summary": "LangChain介绍托管工具层：接入MCP或内置服务、按Agent配置工具集，并通过统一MCP地址处理身份、访问策略和追踪。",
+      "why_it_matters": "编辑判断：集中授权与审计能减少每个Agent单独维护连接器的重复工作，也形成新的平台依赖。",
+      "application": "用低风险工具制作最小权限试点，验证身份映射、拒绝策略、追踪完整性、数据驻留和费用，再接生产数据。",
+      "technical_analysis": "官方公告称功能为Public Beta，并描述MCP服务器、工具集和统一URL工作方式。",
+      "evidence_note": "已读LangChain官方博客。",
+      "caveats": "这是商业托管服务；部分策略与审计细节需要访问产品文档，未能独立验证所有能力。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "核实来源",
+          "url": "https://www.langchain.com/blog/langsmith-tool-gateway"
+        }
+      ]
+    },
+    {
+      "item_id": "langchain-goals-20261116",
+      "type": "news",
+      "title": "LangChain谈从一次性任务转向持续目标型Agent",
+      "published_at": "2026-11-16",
+      "published_at_precision": "day",
+      "canonical_url": "https://www.langchain.com/blog/from-tasks-to-goals",
+      "summary": "LangChain文章提出，持续Agent应围绕结果目标拆解任务，并提供任务列表、澄清入口、反馈指标及暂停/停止机制。",
+      "why_it_matters": "编辑判断：长期运行让停止条件和人工接管成为产品核心，而不只是模型规划能力。",
+      "application": "定义目标完成判据、预算/时间上限、敏感操作审批、暂停与交接路径，并在小规模试点记录误触发和恢复成本。",
+      "technical_analysis": "这是LangChain对Agent产品形态的观点文章，强调目标、任务状态、反馈与记忆。",
+      "evidence_note": "已读文章正文。",
+      "caveats": "属于厂商观点与设计建议，不是已验证的长期Agent能力实验。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "核实来源",
+          "url": "https://www.langchain.com/blog/from-tasks-to-goals"
+        }
+      ]
+    },
+    {
+      "item_id": "github-R_kgDOUrTiCw",
       "type": "github",
       "editorial_section": "github_radar",
       "radar_lane": "new",
-      "title": "新项目观察 · zpeek：在终端浏览数据库与外键关联",
-      "canonical_url": "https://github.com/alaleks/zpeek",
-      "summary": "Zig编写的数据库TUI，README列出PostgreSQL、MySQL/MariaDB、SQLite及ClickHouse，提供SQL编辑、查询历史、外键跳转和结果导出。",
-      "why_it_matters": "编辑判断：适合减少日常开发时在多个工具之间切换的成本；新项目席位不按总Star与成熟项目竞争。",
-      "application": "先用SQLite副本验证浏览、查询及导出，再用只读测试账号验证远程连接；不要用作者本地基准推断自己的性能。",
-      "technical_analysis": "创建于2026-10-12T08:17:48Z；最近推送2026-11-06T08:05:48Z，只作为活跃证据。采集时17 Star，许可证MIT。",
-      "evidence_note": "已读仓库README和许可证入口；创建时间、活跃时间及Star来自本次API快照。未运行项目。",
-      "caveats": "没有20–28小时有效基线，日增长为null；这是近90天新项目观察，不是今日发布或飙升结论。README功能为作者描述，未独立验证。",
-      "created_at": "2026-10-12T08:17:48Z",
-      "pushed_at": "2026-11-06T08:05:48Z",
+      "title": "新项目观察 · n8n-io/nod：本地优先、带确认机制的网页操作Agent",
+      "canonical_url": "https://github.com/n8n-io/nod",
+      "summary": "README将nod描述为本地优先的个人Agent，可在网站上执行操作，并在行动前请求确认。",
+      "why_it_matters": "编辑判断：在浏览器操作Agent中把人工确认放进交互流程，值得关注其权限提示与实际失败恢复设计。",
+      "application": "先在非敏感测试账号和公开网页验证其识别、确认、取消及恢复流程；不要直接接入邮箱、支付或生产后台。",
+      "technical_analysis": "仓库创建于2026-09-25，采集时3151 stars，最近推送为2026-11-23；创建与推送时间仅用于新项目和活跃度判断。",
+      "evidence_note": "已阅读GitHub仓库README、About与许可证页面；项目功能为作者描述，未安装或运行。",
+      "caveats": "近90天创建且近30天活跃的新项目观察。没有20–28小时有效快照基线，stars_delta为null；不是增长或今日发布结论。",
+      "created_at": "2026-09-25T13:46:42Z",
+      "pushed_at": "2026-11-23T07:55:43Z",
       "github_metrics": {
-        "stars": 17,
-        "observed_at": "2026-11-07T00:15:47.232Z",
+        "stars": 3151,
+        "observed_at": "2026-11-23T08:02:44.486Z",
         "stars_delta": null,
         "previous_observed_at": null,
-        "license": "MIT"
+        "license": "Apache-2.0"
       },
       "sources": [
         {
           "ref_id": "primary",
-          "title": "核实来源",
-          "url": "https://github.com/alaleks/zpeek"
+          "title": "GitHub仓库README与元数据",
+          "url": "https://github.com/n8n-io/nod"
         },
         {
           "ref_id": "primary",
-          "title": "核实来源",
-          "url": "https://github.com/alaleks/zpeek/blob/master/LICENSE"
+          "title": "GitHub许可证",
+          "url": "https://github.com/n8n-io/nod/blob/main/LICENSE"
         }
       ]
     },
     {
-      "item_id": "paper-simmim-cvpr2022",
-      "paper_id": "arxiv:2111.09886",
-      "type": "paper",
-      "editorial_section": "daily_paper",
-      "conference": "CVPR",
-      "conference_year": 2022,
-      "analysis_date": "2026-11-07",
-      "title": "每日论文精读 · CVPR 2022｜SimMIM：重建更好不等于迁移更好",
-      "canonical_url": "https://arxiv.org/abs/2111.09886",
-      "summary": "历史论文专题：用简单掩码任务学习可微调的视觉表征，今天分析，非本周新闻。",
-      "why_it_matters": "编辑判断：预训练代理指标应与最终业务指标分别验收。",
-      "application": "先做固定预算的轻量基线，再决定是否增加解码器复杂度。",
-      "technical_analysis": "§3：32×32随机掩码，mask token进入ViT/Swin编码器，线性头回归RGB；L1仅计算被遮区域，无需离散词表。",
-      "evidence_note": "CVF核实CVPR2022、9653–9663页；正式PDF403，ar5iv全文正文及附录可读；未逐项核对正式版差异。",
-      "deep_dive": [
-        {
-          "heading": "实验与消融 · §4.1，表2、4",
-          "content": "ImageNet-1K、Swin-B、192输入，预训练和微调各100轮：线性头82.8%，逆Swin-B头82.5%且训练成本2.3倍；仅遮挡区损失82.8%，全图损失81.7%。同一消融协议，不能与800轮ViT结果混比。"
-        },
-        {
-          "heading": "局限及工程判断",
-          "content": "微调准确率不是线性可分性或生成质量的保证；大模型依赖训练数据与预算。本文没有证明对你的业务数据有效，建议另测少样本、域外及类别不均衡场景。"
-        },
-        {
-          "heading": "复现条件与步骤 · 作者仓库",
-          "content": "官方microsoft/SimMIM已归档，README提供Python3.8、CUDA11.3/cuDNN8、PyTorch及Apex环境。准备合法ImageNet数据，固定配置和依赖，先用提供权重跑main_finetune.py --eval；再用main_simmim.py预训练并微调。对照100轮消融时保持分辨率与训练长度一致；实际GPU与batch调整单独记录。未下载权重或执行训练。"
-        }
-      ],
-      "caveats": "依据全文文字与表格，未独立复现实验或检查图像像素；历史结果不代表当前最优。",
+      "item_id": "github-R_kgDOURwr6g",
+      "type": "github",
+      "editorial_section": "github_radar",
+      "radar_lane": "new",
+      "title": "新项目观察 · Samsung/tizen-agent-skills：为Tizen应用开发提供Agent技能",
+      "canonical_url": "https://github.com/Samsung/tizen-agent-skills",
+      "summary": "仓库README列出面向Tizen SDK的技能与插件，覆盖Web、Native和.NET应用的创建、构建、调试与测试，并包含Samsung电视开发场景。",
+      "why_it_matters": "编辑判断：把平台SDK流程封装为可复用技能，可能降低Agent辅助专用设备开发的接入成本。",
+      "application": "先在模拟器与样例应用中检查技能指令、SDK命令和输出；确认构建产物及人工审批边界后再用于真实设备项目。",
+      "technical_analysis": "仓库创建于2026-09-08，采集时21 stars，最近推送为2026-11-23；Apache-2.0许可。",
+      "evidence_note": "已阅读仓库README、About与许可证页面；所列功能未独立运行验证。",
+      "caveats": "近90天创建且近30天活跃的新项目观察。没有20–28小时有效快照基线，stars_delta为null；推送时间不表示发布或Star增长。",
+      "created_at": "2026-09-08T01:22:07Z",
+      "pushed_at": "2026-11-23T07:58:08Z",
+      "github_metrics": {
+        "stars": 21,
+        "observed_at": "2026-11-23T08:02:44.486Z",
+        "stars_delta": null,
+        "previous_observed_at": null,
+        "license": "Apache-2.0"
+      },
       "sources": [
         {
           "ref_id": "primary",
-          "title": "核实来源",
-          "url": "https://openaccess.thecvf.com/content/CVPR2022/html/Xie_SimMIM_A_Simple_Framework_for_Masked_Image_Modeling_CVPR_2022_paper.html"
+          "title": "GitHub仓库README与元数据",
+          "url": "https://github.com/Samsung/tizen-agent-skills"
         },
         {
           "ref_id": "primary",
-          "title": "核实来源",
-          "url": "https://ar5iv.labs.arxiv.org/html/2111.09886"
+          "title": "GitHub许可证",
+          "url": "https://github.com/Samsung/tizen-agent-skills/blob/main/LICENSE"
+        }
+      ]
+    },
+    {
+      "item_id": "paper-doi-10.1109-CVPR52734.2025.02098",
+      "paper_id": "doi:10.1109/CVPR52734.2025.02098",
+      "type": "paper",
+      "editorial_section": "daily_paper",
+      "conference": "CVPR",
+      "conference_year": 2025,
+      "analysis_date": "2026-11-23",
+      "title": "每日论文深读 · CVPR 2025｜3D-MVP：用多视角预训练提升机器人操作表征",
+      "canonical_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Qian_3D-MVP_3D_Multiview_Pretraining_for_Manipulation_CVPR_2025_paper.html",
+      "summary": "历史会议论文专题：在多视角RGB-D与三维坐标输入上做掩码重建预训练，再迁移到机器人操作；原始论文发表于CVPR 2025，今日分析而非本周新闻。",
+      "why_it_matters": "编辑判断：把无标注三维资产转为操作表征预训练数据，提供了从视觉预训练到具身任务迁移的一条可检验路径。",
+      "application": "若有模拟器与演示数据，先复现单任务RVT基线，再比较随机初始化和Objaverse预训练，并按难度与场景扰动拆分报告。",
+      "technical_analysis": "§3.1将点云渲染为上、左、右、前、后五个虚拟RGB-D视图；各视图含RGB、深度及世界/相机坐标等10通道，经多视角Transformer预测末端执行器6DoF姿态与夹爪状态。§3.2用Objaverse渲染图像做掩码自编码器预训练，再微调操控编码器。",
+      "evidence_note": "核实CVF正式论文集收录CVPR 2025、页码22530–22539；已读取官方PDF全文与实验表格。稳定标识DOI 10.1109/CVPR52734.2025.02098。",
+      "deep_dive": [
+        {
+          "heading": "研究问题与方法创新 · §3",
+          "content": "研究如何利用大规模无标注3D资产改善机器人操作视觉表征。输入点云被渲染为五个固定视角；多视角编码器聚合RGB-D与几何坐标，动作解码器输出姿态和夹爪状态。预训练阶段对Objaverse物体渲染进行掩码重建，随后用操作数据微调。作者报告从Objaverse抽取20万高质量模型进行预训练。"
+        },
+        {
+          "heading": "实验与消融 · §4.1–4.3，表1、表2及图4",
+          "content": "RLBench表1在18项任务的平均成功率为67.5%，RVT随机初始化为62.9%，PerAct为49.4%；收益主要在中等难度任务，已接近天花板的简单任务和极难任务提升有限。表2在作者相同消融设置中，完整Objaverse/RGB遮挡为67.6%，更小数据子集为65.3%，遮挡所有通道而非RGB为64.4%。COLOSSEUM图4覆盖12类扰动和20项任务，在多数纹理、尺寸、颜色、照明扰动下优于对照。不同任务集与训练协议的结果不可直接混比。"
+        },
+        {
+          "heading": "局限、应用价值与复现条件 · §5",
+          "content": "作者明确限制包括固定相机视角、没有显式建模物体间空间关系、假设近似静态场景/机器人/物体，且每个下游任务仍需少量标注演示；不能据此推断可直接处理新任务。复现需PyTorch、8张NVIDIA V100、Objaverse资产及RLBench/COLOSSEUM环境和演示数据。建议先按论文五视图实现输入，再重现RVT基线，最后分别做掩码预训练和扰动评测。作者项目页为https://jasonqsy.github.io/3DMVP；未核实到可用作者GitHub代码仓库，因此不提供仓库链接。未下载权重或独立复现实验。"
+        }
+      ],
+      "caveats": "论文结果来自作者在模拟器和特定资产/任务上的实验；未做独立复现。作者项目页存在，但本次未确认公开代码仓库。",
+      "sources": [
+        {
+          "ref_id": "primary",
+          "title": "CVF正式论文集条目",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Qian_3D-MVP_3D_Multiview_Pretraining_for_Manipulation_CVPR_2025_paper.html"
         },
         {
           "ref_id": "primary",
-          "title": "核实来源",
-          "url": "https://github.com/microsoft/SimMIM"
+          "title": "CVF官方论文PDF",
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Qian_3D-MVP_3D_Multiview_Pretraining_for_Manipulation_CVPR_2025_paper.pdf"
+        },
+        {
+          "ref_id": "primary",
+          "title": "作者项目页",
+          "url": "https://jasonqsy.github.io/3DMVP"
         }
       ]
     }
   ],
+  "selection_notes": [
+    "资讯窗口为2026-11-16T08:07:54Z至2026-11-23T08:07:54Z（Asia/Shanghai执行时刻对应UTC边界）；原文日期保留为来源发布日期。",
+    "仅纳入能核对原始来源、日期和正文且具有评测、工程或实践价值的候选；厂商自测、观点文章和内部案例均标注证据限制。",
+    "最近7天没有核实到足够高质量且与历史不重复的候选时少发，不为达到8–15条而凑数。",
+    "CVPR 2025论文是历史专题，不属于最近7天新闻；稳定标识DOI 10.1109/CVPR52734.2025.02098。",
+    "GitHub采集快照候选488、查询48、API错误0；本期评审2个新项目，无成熟精选或增长条目。此前有效快照不在20–28小时窗口内，两项stars_delta均为null。GitHub Trending页面受限，API查询不是全站排名。",
+    "arXiv、独立评测与部分来源存在读取/窗口覆盖限制；具体缺口见来源覆盖报告。"
+  ],
   "source_stats": {
-    "news_count": 1,
-    "github_radar_count": 1,
+    "news_count": 9,
+    "github_radar_count": 2,
     "historical_paper_count": 1,
     "coverage": [
-      {
-        "id": "arxiv-ai",
-        "requested_id": "anxiv-ai",
-        "note": "暂按 arXiv AI 理解",
-        "urls": [
-          "https://arxiv.org/list/cs.AI/recent",
-          "https://arxiv.org/list/cs.CV/recent",
-          "https://arxiv.org/list/cs.LG/recent"
-        ],
-        "focus": "AI、视觉、机器学习论文；预印本不能冒充会议已录用论文",
-        "status": "partial",
-        "detail": "recent入口仅检查首50/1374篇；SwarmEvolve未完成正文核验，不入选。"
-      },
-      {
-        "id": "huggingface-blog",
-        "urls": [
-          "https://huggingface.co/blog"
-        ],
-        "focus": "区分官方与社区作者，回到模型、代码和论文验证",
-        "status": "partial",
-        "detail": "博客入口可读，未核实足够新增候选，覆盖不足，不等于没有新内容。"
-      },
-      {
-        "id": "independent-evaluations",
-        "urls": [
-          "https://metr.org/",
-          "https://artificialanalysis.ai/",
-          "https://www.nist.gov/ai-measurement-and-evaluation"
-        ],
-        "focus": "独立评测发现渠道；必须核实方法、样本、模型版本和测试日期，不能只转排行榜",
-        "status": "partial",
-        "detail": "METR最新复核已收录于本地6日期；AA新评测方法未充分核验。"
-      },
-      {
-        "id": "langchain",
-        "urls": [
-          "https://www.langchain.com/blog",
-          "https://github.com/langchain-ai/langchain/releases"
-        ],
-        "focus": "Agent、LangGraph、评测和工程实践",
-        "status": "partial",
-        "detail": "入口可读；已发布的context engineering事件去重，其他候选核验不足。"
-      },
-      {
-        "id": "llamaindex",
-        "urls": [
-          "https://www.llamaindex.ai/blog",
-          "https://github.com/run-llama/llama_index/releases"
-        ],
-        "focus": "RAG、文档处理、Agent 和工程实践",
-        "status": "partial",
-        "detail": "入口可读，OCR候选发布时间与全文未充分核验。"
-      },
-      {
-        "id": "modelcontextprotocol",
-        "urls": [
-          "https://modelcontextprotocol.io/",
-          "https://github.com/modelcontextprotocol"
-        ],
-        "focus": "协议规范、SDK 和正式发布",
-        "status": "partial",
-        "detail": "入口返回7月介绍文章，不作为本周新闻。"
-      },
-      {
-        "id": "openai-news",
-        "urls": [
-          "https://openai.com/news/"
-        ],
-        "focus": "官方产品和研究公告，区分公告与独立验证",
-        "status": "partial",
-        "detail": "核实6日Hacktron公告正文和日期；6日本地待推送的Cyber事件去重。"
-      },
-      {
-        "id": "mcp-registry-practice",
-        "urls": [
-          "https://registry.modelcontextprotocol.io/"
-        ],
-        "focus": "发现有源代码、安装说明、权限边界和使用案例的 MCP；注册不等于安全审核通过",
-        "status": "partial",
-        "detail": "仅检查API首100条，未遍历分页，新增实践未充分核验。"
-      },
-      {
-        "id": "tinyfish-practice-discovery",
-        "urls": [
-          "https://www.tinyfish.ai/",
-          "https://github.com/tinyfish-io/tinyfish-cookbook"
-        ],
-        "focus": "官方 Web Agent 示例和可复现实践；不默认调用付费服务或安装发现的代码",
-        "status": "partial",
-        "detail": "仅产品入口，无已核实近期实践；未调用付费服务。"
-      }
+      "9个指定来源均按配置检查；部分源仅部分读取或无可核实的新候选。",
+      "GitHub API候选覆盖受48条查询预算限制，Trending页面读取受限。",
+      "近期资讯没有为满额而添加未经验证条目。"
     ]
-  },
-  "selection_notes": [
-    "实际7天窗口2026-10-31T00:19:54.257Z至2026-11-07T00:19:54.257Z；资讯显示原始日期。",
-    "GitHub候选463、实查48，API错误0；Trending入口读取未返回可用项目列表。新项目和其他topic由配置查询发现。",
-    "48个候选审阅2个新项目，其中rozi已收录去重，入选1个；新项目未填满2席，未完成其他候选核验；增长无有效基线，成熟席位未填；不是全站排名，不能据此认定没有其他合格项目。",
-    "九来源覆盖有缺口，未达到8至15条，不以旧事件或未读正文凑数。",
-    "保留4日未跟踪文件及6日待推送提交；本次只新增7日产物。"
-  ]
+  }
 }

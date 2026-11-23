@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-11-23",
+    "revision": 1,
+    "title": "预训练评测、Agent工程边界与视觉操控论文",
+    "item_count": 12,
+    "path": "data/archive/2026-11-23-r1.json"
+  },
+  {
     "issue_date": "2026-11-07",
     "revision": 1,
     "title": "第三方连接安全、新开发工具与SimMIM历史精读",
