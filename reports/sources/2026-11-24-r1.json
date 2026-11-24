@@ -1,0 +1,81 @@
+{
+  "issue_date": "2026-11-24",
+  "window": {
+    "start": "2026-11-17T13:37:06Z",
+    "end": "2026-11-24T13:37:06Z",
+    "timezone": "Asia/Shanghai",
+    "lookback_days": 7
+  },
+  "channels": [
+    {
+      "id": "arxiv-ai",
+      "status": "checked",
+      "note": "检查cs.AI近期列表；本期CV专题按正式CVPR 2026论文集核验。没有仅凭摘要扩展为本期入选新闻的预印本。"
+    },
+    {
+      "id": "huggingface-blog",
+      "status": "checked",
+      "note": "核验并选入Agent评测方法、Inkling 2 Mini及MoE专家流式推理三篇正文；模型和速度数据为发布者/作者报告。"
+    },
+    {
+      "id": "independent-evaluations",
+      "status": "checked",
+      "note": "核验METR于11月20日发布的AI R&D能力测量更新，选入其独立评估；同时检查Artificial Analysis与NIST渠道。能力趋势、内部任务与建模限制均在条目中说明。"
+    },
+    {
+      "id": "langchain",
+      "status": "checked-no-new",
+      "note": "检查博客和GitHub发布页；最近一期已收LangSmith Tool Gateway及目标型Agent文章，本期未发现另外一项未重复且达到门槛的新进展。"
+    },
+    {
+      "id": "llamaindex",
+      "status": "checked",
+      "note": "核验并选入11月23日OCRia-nano-1发布正文；官方博客中的速度/准确率数据为厂商自测，模型权重采用改版Open RAIL-M。"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "status": "checked-no-new",
+      "note": "检查官网规范入口及GitHub组织；本期未检出符合7天窗口的规范/SDK正式发布，官网以文档入口为主。"
+    },
+    {
+      "id": "openai-news",
+      "status": "checked",
+      "note": "核验GPT-6.2 ChatGPT系统卡、Shirudo公告、Codex Security工程文章及Agents SDK alpha.2发布；安全评测与产品效果为OpenAI自报。"
+    },
+    {
+      "id": "mcp-registry-practice",
+      "status": "partial",
+      "note": "官方Registry页面可访问，但列表仍停留在加载状态；未据注册记录推断安全性，也未找到可复核且符合条件的新实践案例。"
+    },
+    {
+      "id": "tinyfish-practice-discovery",
+      "status": "checked-no-new",
+      "note": "检查官方主页和公开cookbook；本期没有确认新的、无需付费且可独立复现的实践案例，未调用付费服务或运行第三方代码。"
+    }
+  ],
+  "coverage_gaps": [
+    "GitHub collector发现489个候选，按48个仓库预算实际查询，日志含39条API/search 403错误；Trending页面访问受限，因此不是全站排名。",
+    "评测渠道只作发现入口；本期新模型的公开对比多来自发布方或所引用评测机构，未完成独立复现实验。",
+    "MCP Registry前端服务器列表未加载，MCP正式发布覆盖以官网和组织级检查为限。"
+  ],
+  "github": {
+    "candidate_count": 489,
+    "queried_candidates": 48,
+    "reported_api_errors": 39,
+    "previous_snapshot": "2026-11-23-r1",
+    "previous_snapshot_observed_at": "2026-11-23T08:03:12.150Z",
+    "current_snapshot_observed_at": "2026-11-24T13:30:09.445Z",
+    "actual_interval_hours": 29.45,
+    "valid_growth_baseline": false,
+    "trending_access": "restricted URL fetch failed",
+    "note": "The prior sample’s latest per-repository observation was outside the configured 20–28 hour interval; selected repositories also had no matching node_id baseline, so all deltas remain null."
+  },
+  "paper": {
+    "stable_id": "arXiv:2507.06233",
+    "conference": "CVPR",
+    "year": 2026,
+    "official_proceedings_verified": true,
+    "full_text_read": true,
+    "dedupe_checked": true
+  }
+}

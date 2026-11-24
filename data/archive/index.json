@@ -1,5 +1,12 @@
 [
   {
+    "issue_date": "2026-11-24",
+    "revision": 1,
+    "title": "AI能力评测、轻量本地推理与Agent工程：2026年11月24日日报",
+    "item_count": 13,
+    "path": "data/archive/2026-11-24-r1.json"
+  },
+  {
     "issue_date": "2026-11-23",
     "revision": 1,
     "title": "预训练评测、Agent工程边界与视觉操控论文",
